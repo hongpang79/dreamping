@@ -1,0 +1,22 @@
+img	{ border:none; }
+a.no_line:link, a.no_line:visited, a.no_line:active { color:#333333; text-decoration:none; }
+a.no_line:hover { text-decoration:none;}
+
+.bt_a11		{ background:url(/admin/img/tbtn_bg_001.gif) right top no-repeat; font-size:12px; font-family:µ¸¿ò; color:#333333; text-decoration:none; cursor:pointer; }
+.bt_a12		{ background:url(/admin/img/tbtn_bg_002.gif) no-repeat; height:19px; padding:4px 8px 0 8px; }
+.bt_a21		{ background:url(/admin/img/tbtn_bg_011.gif) right top no-repeat; font-size:12px; font-family:µ¸¿ò; color:#ffffff; font-weight:bold; text-decoraiton:none; cursor:pointer; }
+.bt_a22		{ background:url(/admin/img/tbtn_bg_012.gif) no-repeat; height:28px; padding:7px 16px 0 14px; text-decoration:none; }
+
+.bt_a31		{ height:19px; border:none; background:url(/admin/img/tbtn_bg_001.gif) right top no-repeat; cursor:pointer; font-size:11px; font-family:µ¸¿ò; color:#333333; }
+.bt_a32		{ height:28px; border:none; background:url(/admin/img/tbtn_bg_011.gif) right top no-repeat; cursor:pointer; font-size:12px; font-family:µ¸¿ò; color:#ffffff; font-weight:bold; }
+img.imp		{ margin-bottom:2px; }
+
+.bt_a41		{ background:url(/admin/img/tbtn_bg_001.gif) right top no-repeat; cursor:pointer; border-collapse:collapse; }
+.bt_a42		{ background:url(/admin/img/tbtn_bg_002.gif) no-repeat; font-size:12px; color:#333333; padding:3px 8px 0 8px; }
+.bt_a51		{ background:url(/admin/img/tbtn_bg_011.gif) right top no-repeat; cursor:pointer; border-collapse:collapse; }
+.bt_a52		{ background:url(/admin/img/tbtn_bg_012.gif) no-repeat; font-size:12px; color:#ffffff; font-weight:bold; padding:3px 16px 0 16px; }
+
+*:first-child+html .tmb12	{ margin-top:-2px; padding-top:3px; }
+* html .tmb12				{ margin-top:-2px; padding-top:3px; }
+*:first-child+html .tmb22	{ margin-top:-2px; padding-top:3px; }
+* html .tmb22				{ margin-top:-2px; padding-top:3px; }

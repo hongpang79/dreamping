@@ -1,0 +1,13 @@
+#calendar_container { width:300; background-color:white; border:1px solid #DEDEDE; }
+#calendar_container #calendar_title { width:292px; padding-top:2px; padding-bottom:2px; text-align:center; color:#939393; margin:2px; border:1px solid #CCCCCC; }
+#calendar_container #calendar_title span { cursor:pointer; color:#000000; }
+#calendar_container #calendar_date_select { width:292px; margin:2px; }
+#calendar_container #calendar_date_select .saturday { background-color:#CCDDFF; color:#0000FF; }
+#calendar_container #calendar_date_select .sunday { background-color:#FFDDCC; color:#FF0000; }
+#calendar_container #calendar_date_select .holiday { background-color:#DDFFCC; color:#00FF00; }
+#calendar_container #calendar_date_select .holiday_text { color:#CCCCCC; font-size:8px; overflow:hide; }
+#calendar_container #calendar_date_select .today { border:1px solid red; }
+#calendar_container #calendar_date_select th{ margin:1px; padding:1px; vertical-align:middle; }
+#calendar_container #calendar_date_select td{ border:1px solid #DEDEDE; width:30px; height:30px; text-align:center; vertical-align:middle; padding:1px; margin:1px; }
+#calendar_container #calendar_date_select td.mover { background-color:#CCCCCC; }
+#calendar_container #calendar_date_select td.mover div.holiday_text { color:#666666; font-size:10px; overflow:hide; }
