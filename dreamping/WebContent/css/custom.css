@@ -1,0 +1,147 @@
+@CHARSET "UTF-8";
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+/* Navigation link */
+.navbar-nav > li > a {
+	font-size: 1rem;
+	padding: 15px;
+	text-shadow: none;
+}
+
+/* Navigation link hover */
+.navbar-nav li.dropdown.open > .dropdown-toggle,
+.navbar li.dropdown.active > .dropdown-toggle,
+.navbar li.dropdown.open.active > .dropdown-toggle,
+.navbar > .active > a,
+.navbar > .active > a:hover,
+.navbar > .active > a:focus {
+	background-color: #DDDDDD;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+	font-size: 1rem;
+	border-radius: 0px;
+	padding: 0;
+	margin: 0;
+}
+
+/* Dropdown link */
+.dropdown-menu > li > a {
+	padding: 10px 20px;
+}
+
+/* Dropdown link hover */
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+	background-color: #DDDDDD;
+	background-image: none;
+	color: inherit;
+}
+
+/* Dropdown link active */
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+	background-color: #666 !important;
+	background-image: none;
+	color: #fff;
+}
+
+
+/* LOGO */
+.navbar-nav h1 {
+	margin: 0;
+}
+
+.navbar-brand {
+	font-size: 1.5rem !important;
+	font-weight: 600 !important;
+	padding: 4px 20px !important;
+}
+
+/* Remove Firefox selection dot */
+a, a:focus, a:active, a:hover, object, embed { outline: none; }
+:-moz-any-link:focus { outline: none; }
+input::-moz-focus-inner { border: 0; }
+:focus { outline: 0; }
+
+.featrued {
+	background: url("../img/bg-header.jpg") no-repeat center 0;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-color: #394A5F;
+	color: #FFFFFF;
+	padding: 240px 0 40px;
+	margin-bottom: 24px;
+}
+
+.featured .jumbotron {
+	background-color: transparent;
+	padding: 0;
+}
+
+.btn {
+	background-image: none !important;
+	border-radius: 0 !important;
+	border-width: 0 !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	text-shadow: none !important;
+	opacity: 1;
+}
+
+.btn:hover, .btn:focus {
+	opacity: 0.8;
+	outline: 0 none;
+}
+
+.btn, .btn:hover, .btn:focus {
+	-webkit-transition: all 0.1s ease 0s !important;
+	-moz-transition: all 0.1s ease 0s !important;
+	-o-transition: all 0.1s ease 0s !important;
+	-ms-transition: all 0.1s ease 0s !important;
+	transition: all 0.1s ease 0s !important;
+}
+
+.btn-primary {
+	background-color: #428BCA;
+	color: #FFFFFF;
+	font-weight: 600;
+}
+
+/* Desktop Only */
+@media (min-width: 1025px) {
+	/* Show sublevel on hover */
+	ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
+}
+
+@media (min-width: 980px) {
+	body { padding-top: 50px; }
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.navar-fixed-top { margin-bottom: 0px; }
+}
+
+@media (max-width: 767px) {
+	.featured, .footer {
+		margin: -20px -20px 0 !important;
+	}
+	.featured .container-fluid,
+	.footer .container-fluid {
+		padding: 0 20px;
+	}
+}
