@@ -7,7 +7,9 @@ body {
 
 /* Navigation link */
 .navbar-nav > li > a {
-	font-size: 1rem;
+	font-size: 1.4rem;
+	font-weight: 600 !important;
+	color: #404040;
 	padding: 15px;
 	text-shadow: none;
 }
@@ -19,7 +21,8 @@ body {
 .navbar > .active > a,
 .navbar > .active > a:hover,
 .navbar > .active > a:focus {
-	background-color: #DDDDDD;
+	background-color: #FFFFFF;
+	color: #404040;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -27,7 +30,7 @@ body {
 
 /* Dropdown menu */
 .dropdown-menu {
-	font-size: 1rem;
+	font-size: 1.4rem;
 	border-radius: 0px;
 	padding: 0;
 	margin: 0;
@@ -43,7 +46,8 @@ body {
 .dropdown-menu > li > a:focus,
 .dropdown-submenu:hover > a,
 .dropdown-submenu:focus > a {
-	background-color: #DDDDDD;
+	background-color: #FFFFFF;
+	color: #404040;
 	background-image: none;
 	color: inherit;
 }
@@ -75,8 +79,8 @@ a, a:focus, a:active, a:hover, object, embed { outline: none; }
 input::-moz-focus-inner { border: 0; }
 :focus { outline: 0; }
 
-.featrued {
-	background: url("../img/bg-header.jpg") no-repeat center 0;
+.jumbotron {
+	background: url("../img/dreampingIntroLogo.jpg") no-repeat center 0;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -87,7 +91,7 @@ input::-moz-focus-inner { border: 0; }
 	margin-bottom: 24px;
 }
 
-.featured .jumbotron {
+.jumbotron {
 	background-color: transparent;
 	padding: 0;
 }
@@ -125,7 +129,7 @@ input::-moz-focus-inner { border: 0; }
 /* Desktop Only */
 @media (min-width: 1025px) {
 	/* Show sublevel on hover */
-	ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
+	ul.navbar-nav li.dropdown:hover ul.dropdown-menu{ display: block; }
 }
 
 @media (min-width: 980px) {
@@ -133,15 +137,15 @@ input::-moz-focus-inner { border: 0; }
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
-	.navar-fixed-top { margin-bottom: 0px; }
+	.navar-fixed-top { margin-bottom: 0px; height: 500px;}
 }
 
 @media (max-width: 767px) {
-	.featured, .footer {
+	.jumbotron, .footer {
 		margin: -20px -20px 0 !important;
 	}
-	.featured .container-fluid,
-	.footer .container-fluid {
+	.jumbotron .container,
+	.footer {
 		padding: 0 20px;
 	}
 }
