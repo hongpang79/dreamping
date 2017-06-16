@@ -96,6 +96,13 @@ input::-moz-focus-inner { border: 0; }
 	padding: 0;
 }
 
+.middleLine {
+	background: url("../img/middleLineIcon.png") no-repeat center 0;
+	background-color: #FFFFFF;
+	color: #FFFFFF;
+	padding: 168px 0 40px;
+}
+
 .btn {
 	background-image: none !important;
 	border-radius: 0 !important;

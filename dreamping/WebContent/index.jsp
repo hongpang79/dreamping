@@ -33,8 +33,34 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- google map api -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC77RaVRaZvkNrzi60j_-ls2R7jJP49VFc"></script>
+    <script>
+    	function initialize(){
+    		var Y_point = 37.6529829;
+    		var X_point = 127.3679587;
+    		var zoomLevel = 16;
+    		var markerTitle = "드림핑";
+    		var markerMaxWidth = 300;
+    		var contentString = '<div><h2>드림핑</h2><p>플로라이더와 빈티지 카라반 카바나가 있는 꿈의 캠핑!</p></div>';
+    		var myLatlng = new google.maps.LatLng(Y_point, X_point);
+    		var mapOptions = {
+    				zoom: zoomLevel,
+    				center: myLatlng,
+    				mapTypeId: google.maps.MapTypeId.ROADMAP
+    		}
+    		var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+    		var marker = new google.maps.Marker({myLatlng, map, markerTitle});
+    		var infowindow = new google.maps.InfoWindow(contentString, markerMaxWidth);
+    		google.maps.event.addListener(marker, 'clcik', function(){
+    			infowindow.open(map.marker);
+    		});
+    		
+    	}
+    </script>
 </head>
-<body>
+<body onload="initialize()">
 	<nav class="navbar navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -52,6 +78,7 @@
 					<li><a href="#">FLOWRIDER CAFE</a></li>
 					<li><a href="#">VINTAGE CARAVAN</a></li>
 					<li><a href="#">VINTAGE CABANA</a></li>
+					<li><a href="#">M&M WaterLeisure</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">RESERVATION<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">예약하기</a>
@@ -72,29 +99,52 @@
 	
 	<div class="jumbotron">
 		<div class="container">
-			<p><br><br><br><br><br><br><br><br><br><br><br></p>
+			<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
 		</div>
 	</div><!-- /#jumbotron -->
 	
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>donec id ...</p>
-				<p><a class="btn btn-inverse" href="#" role="button">View details &raquo;</a></p>
+				<img src="img/flowrider.png">
 			</div>
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>donec id ...</p>
-				<p><a class="btn btn-inverse" href="#" role="button">View details &raquo;</a></p>
+			<div class="col-md-8">
+				<img src="img/camping.png">
 			</div>
-			<div class="col-md-4">
-				<h2>Heading</h2>
-				<p>donec id ...</p>
-				<p><a class="btn btn-inverse" href="#" role="button">View details &raquo;</a></p>
+			<div class="col-md-5">
+				<img src="img/glamping.png">
+			</div>
+			<div class="col-md-7">
+				<img src="img/flowriderhouse.png"  style="padding:250px 250px 0;">
+			</div>
+			<div class="col-md-5">
+				<img src="img/caravan.png" style="padding:250px 0;">
+			</div>
+			<div class="col-md-7">
+				<img src="img/urbancamping.png">
+			</div>
+			<div class="col-md-5">
+				<img src="img/event.png">
+			</div>
+			<div class="col-md-7">
+				<img src="img/cafe.png">
 			</div>
 		</div>
-		<hr>
+		<div class="middleLine">
+		</div>
+		<div style="clear: both;"></div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-9">
+				<h3 style="font-weight: 600;">MAP<span style="color: #f29b5c3;">_</span></h3>
+				<h4 style="font-weight: 600;">경기도 남양주시 화도읍 금남리 123</h4>
+				<br>
+			</div>
+			<div style="clear: both;"></div>
+			<div class="col-md-12">
+				<div id="map_view" style="width:100%; height:500px;"></div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-3"></div>
 			<div class="col-md-9">
