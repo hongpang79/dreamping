@@ -1,192 +1,218 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<!-- Site info -->
-	<title>DreamPing</title>
-	<meta name="description" content="끔꿔왔던 캠핑의 모든것 드림핑">
-	<meta name="author" content="hongpang">
-	<meta name="designer" content="hongpang / lifegoesondesign">
-	<meta name="dcterms.rightsHolder" content="더드림핑">
-	<meta name="keywords" content="드림핑 카바나 카라반 글램핑 서핑 플로라이더 수상레저">
-	
-	<!-- Icons -->
-	<link rel="shortcut icon" href="ico/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon.png">
-	<meta property="og:image" content="ico/thumbnail.png"/>
-	
-	<!-- Main Scripts -->
-	<script src="js/jquery-1.10.1.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	
-	<!-- Style -->
-	<link rel="stylesheet" href="css/bootstrap.css?ver=2">
-	<link rel="stylesheet" href="css/bootstrap-theme.css">
-	<link rel="stylesheet" href="css/custom.css?ver=2">
-	
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<jsp:include page="/header.jsp" />
 
-    <!-- google map api -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC77RaVRaZvkNrzi60j_-ls2R7jJP49VFc"></script>
-    <script>
-    	function initialize(){
-    		var Y_point = 37.6529829;
-    		var X_point = 127.3679587;
-    		var zoomLevel = 16;
-    		var markerTitle = "드림핑";
-    		var markerMaxWidth = 300;
-    		var contentString = '<div><h2>드림핑</h2><p>플로라이더와 빈티지 카라반 카바나가 있는 꿈의 캠핑!</p></div>';
-    		var myLatlng = new google.maps.LatLng(Y_point, X_point);
-    		var mapOptions = {
-    				zoom: zoomLevel,
-    				center: myLatlng,
-    				mapTypeId: google.maps.MapTypeId.ROADMAP
-    		}
-    		var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
-    		var marker = new google.maps.Marker({myLatlng, map, markerTitle});
-    		var infowindow = new google.maps.InfoWindow(contentString, markerMaxWidth);
-    		google.maps.event.addListener(marker, 'clcik', function(){
-    			infowindow.open(map.marker);
-    		});
-    		
-    	}
-    </script>
-</head>
-<body onload="initialize()">
-	<nav class="navbar navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="glyphicon-bar"></span>
-					<span class="glyphicon-bar"></span>
-					<span class="glyphicon-bar"></span>
-				</button>
-				
-				<!-- LOGO -->
-				<h1><a class="navbar-brand" href="#"><img src="img/headerLogo.png"></a></h1>
-			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<ul class="navbar-nav pull-right">
-					<li><a href="#">FLOWRIDER CAFE</a></li>
-					<li><a href="#">VINTAGE CARAVAN</a></li>
-					<li><a href="#">VINTAGE CABANA</a></li>
-					<li><a href="#">M&M WaterLeisure</a></li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">RESERVATION<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">예약하기</a>
-							<li><a href="#">예약확인</a>
-						</ul>
-					</li>
-					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">COMMUNITY<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="#">공지사항</a>
-							<li><a href="#">갤러리</a>
-							<li><a href="#">Q&A</a>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	
-	<div class="jumbotron">
-		<div class="container">
-			<p><br><br><br><br><br><br><br><br><br><br><br><br></p>
-		</div>
-	</div><!-- /#jumbotron -->
-	
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-4">
-				<img src="img/flowrider.png">
-			</div>
-			<div class="col-md-8">
-				<img src="img/camping.png">
-			</div>
-			<div class="col-md-5">
-				<img src="img/glamping.png">
-			</div>
-			<div class="col-md-7">
-				<img src="img/flowriderhouse.png"  style="padding:250px 250px 0;">
-			</div>
-			<div class="col-md-5">
-				<img src="img/caravan.png" style="padding:250px 0;">
-			</div>
-			<div class="col-md-7">
-				<img src="img/urbancamping.png">
-			</div>
-			<div class="col-md-5">
-				<img src="img/event.png">
-			</div>
-			<div class="col-md-7">
-				<img src="img/cafe.png">
-			</div>
-		</div>
-		<div class="middleLine">
-		</div>
-		<div style="clear: both;"></div>
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-9">
-				<h3 style="font-weight: 600;">MAP<span style="color: #f29b5c3;">_</span></h3>
-				<h4 style="font-weight: 600;">경기도 남양주시 화도읍 금남리 123</h4>
-				<br>
-			</div>
-			<div style="clear: both;"></div>
-			<div class="col-md-12">
-				<div id="map_view" style="width:100%; height:500px;"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-3"></div>
-			<div class="col-md-9">
-				<h5 style="font-weight: 600;">Home | 이용약관 | 개인정보 취급방침</h5>
-			</div>
-		</div>
-		<br>
-		<footer>
-			<div class="row">
-				<div class="col-md-3" style="display: inline-block;text-align: center;">
-					<img src="img/footerLogo.png" style="text-align:center; padding:50px;">
-					<p>&copy; 2017 <span style="color: #f83600;">DREAMPING</span>, All Right Reserved</p>
-				</div>
-				<div class="col-md-2">
-					<h4>INFORMATION</h4><br>
-					<p>상호명 : 더드림핑</p>
-					<p>대표자명 : 맹정환</p>
-					<p>주소 : 경기도 남양주시 화도읍 금남리 123</p>
-					<p>대표전화 : 1500-0000</p>
-					<p>현장전화 : 000.0000.0000</p>
-					<br><br>
-				</div>
-				<div class="col-md-2">
-					<h4>LICENCE</h4><br>
-					<p>사업자등록번호 : 000-00-000000</p>
-					<p>통신판매신고번호 : </p>
-					<p>e-mail : dreamping@gmail.com</p>
-					<p>개인정보보호정책 책임자 : 맹정환</p>
-					<br><br>
-				</div>
-				<div class="col-md-2">
-					<h4>BANK INFO</h4><br>
-					<p>은행명 : XX은행</p>
-					<p>계좌번호 : </p>
-					<p>예금주 : (주)더드림핑</p>
-					<br><br>
-				</div>
-				<div class="col-md-3">
-					<h4>Instagram</h4><br>
-				</div>
-			</div>
-		</footer>
-	</div><!-- /container -->
-</body>
-</html>
+<!-- animation -->
+<section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-after-navbar" id="header1-1" style="background-image: url(assets/images/0.gif);">
+    <div class="mbr-table-cell">
+        <div class="container">
+            <div class="row">
+                <div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- slider -->
+<section class="mbr-slider mbr-section mbr-section__container carousel slide mbr-section-nopadding" data-ride="carousel" data-keyboard="false" data-wrap="true" data-pause="false" data-interval="5000" id="slider-1">
+    <div>
+        <div>
+            <div>
+                <ol class="carousel-indicators">
+                    <li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="0" class="active"></li><li data-app-prevent-settings="" data-target="#slider-1" class="" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(assets/images/man-back.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
+                                        <h2 class="mbr-section-title display-1">FULL SCREEN SLIDER</h2>
+                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="https://www.youtube.com/watch?v=uNCr7NdOJgw">
+                        <div class="mbr-table-cell">
+                            
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-1">
+                                        <h2 class="mbr-section-title display-1">VIDEO SLIDE</h2>
+                                        <p class="mbr-section-lead lead">Slide with youtube video background and color overlay. Title and text are aligned to the left.</p>
+
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-primary" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(assets/images/sparklers.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-3 text-xs-right">
+                                        <h2 class="mbr-section-title display-1">IMAGE SLIDE</h2>
+                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
+
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#slider-1">
+                    <span class="icon-prev" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a data-app-prevent-settings="" class="right carousel-control" role="button" data-slide="next" href="#slider-1">
+                    <span class="icon-next" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- village -->
+<section class="mbr-cards mbr-section mbr-section-nopadding" id="features3-2" style="background-color: rgb(255, 255, 255);">
+    <div class="mbr-cards-row row">
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+              <div class="card cart-block">
+                  <div class="card-img"><img src="img/caravan_small.jpg" class="card-img-top"></div>
+                  <div class="card-block">
+                    <h4 class="card-title">VINTAGE CARAVAN</h4>
+                    <h5 class="card-subtitle">Bootstrap 4 has been noted</h5>
+                    <p class="card-text">Bootstrap 4 has been noted as one of the most reliable and proven frameworks and Mobirise has been equipped to develop websites using this framework.</p>
+                    <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="img/cavana_small.jpg" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h4 class="card-title">VINTAGE CAVANA</h4>
+                        <h5 class="card-subtitle">One of Bootstrap 4's big points</h5>
+                        <p class="card-text">One of Bootstrap 4's big points is responsiveness and Mobirise makes effective use of this by generating highly responsive website for you.</p>
+                        <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="img/tipi.png" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h4 class="card-title">VINTAGE TIPI</h4>
+                        <h5 class="card-subtitle">Google has a highly exhaustive list of fonts</h5>
+                        <p class="card-text">Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise makes it easy for you to use them on your website easily and freely.</p>
+                        <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- contents -->
+<section class="mbr-cards mbr-section mbr-section-nopadding" id="features3-g" style="background-color: rgb(255, 255, 255);">
+    <div class="mbr-cards-row row">
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+              <div class="card cart-block">
+                  <div class="card-img"><img src="img/surfcafe.png" class="card-img-top"></div>
+                  <div class="card-block">
+                    <h4 class="card-title"><font color="#000000">SURF CAFE</font></h4>
+                    <h5 class="card-subtitle">Bootstrap 4 has been noted</h5>
+                    <p class="card-text">Bootstrap 4 has been noted as one of the most reliable and proven frameworks and Mobirise has been equipped to develop websites using this framework.</p>
+                    <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="img/mm_small.jpg" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h4 class="card-title">M&amp;M Watersports</h4>
+                        <h5 class="card-subtitle">One of Bootstrap 4's big points</h5>
+                        <p class="card-text">One of Bootstrap 4's big points is responsiveness and Mobirise makes effective use of this by generating highly responsive website for you.</p>
+                        <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+            <div class="container">
+                <div class="card cart-block">
+                    <div class="card-img"><img src="img/sniper.png" class="card-img-top"></div>
+                    <div class="card-block">
+                        <h4 class="card-title">DREAM Sniper</h4>
+                        <h5 class="card-subtitle">Google has a highly exhaustive list of fonts</h5>
+                        <p class="card-text">Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise makes it easy for you to use them on your website easily and freely.</p>
+                        <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</section>
+
+<!-- 아이콘 line -->
+<section class="mbr-info mbr-info-extra mbr-section mbr-section-md-padding mbr-background" id="msg-box1-7" style="background-image: url(assets/images/middlelineicon-2000x175.png); padding-top: 0px; padding-bottom: 120px;">
+    <div class="container">
+        <div class="row">
+            <div class="mbr-table-md-up">
+                <div class="mbr-table-cell mbr-right-padding-md-up col-md-8 text-xs-center text-md-left">
+                </div>
+                <div class="mbr-table-cell col-md-4">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- map title -->
+<section class="mbr-info mbr-info-extra mbr-section mbr-section-md-padding" id="msg-box1-e" style="background-color: rgb(255, 255, 255); padding-top: 30px; padding-bottom: 30px;">
+    <div class="container">
+        <div class="row">
+	        <div class="mbr-table-md-up">
+                <div class="mbr-table-cell mbr-right-padding-md-up col-md-8 text-xs-center text-md-left">
+                    <h2 class="mbr-info-subtitle mbr-section-subtitle"><strong>MAP_</strong></h2>
+                    <h3 class="mbr-info-title mbr-section-title display-2"><span style="font-weight: normal;">경기도 남양주시 화도읍 금남리 123</span></h3>
+                </div>
+                <div class="mbr-table-cell col-md-4">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- google map -->
+<section class="mbr-section mbr-section__container" id="map2-4" style="background-color: rgb(255, 255, 255); padding-top: 0px; padding-bottom: 0px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="mbr-map">
+                	<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJk0JC2Bc0YzURbNzAjD7USPY" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<jsp:include page="/footer.jsp" />
