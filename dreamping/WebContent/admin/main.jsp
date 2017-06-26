@@ -27,11 +27,11 @@ int rsvtRefdCompCnt = statistics.getRsvtRefdCompCnt();
 %>
 <html>
 <head>
-<title>UrbanSlowCity Admin</title>
+<title>드림핑 관리</title>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
-<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="icon" href="/ico/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon.png">
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 </head>
 
