@@ -26,9 +26,9 @@ if(!cmd.equals("list")){
 <head>
 <title>예약환경설정</title>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+<link rel="icon" href="/ico/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/ico/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon.png">
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <script language=javascript src='/admin/js/common.js'></script>
 <script language=javascript src='/admin/js/admin.js'></script>
@@ -592,16 +592,10 @@ else
     <div style="margin:-5px 0 15px 0;">
 					* 기간설정은 년도에 상관없이 1월 1일 부터 12월31일 기준으로 입력하시기 바랍니다.<br>
     </div>
-
-<table border="0" align="center">
-<tr>
-<td align="center">
-	<img src="/admin/img/reservation/tbtn_bg_022.gif" align="absmiddle" class="imp"><input type="button" value="저장하기" class="bt_a32 tmb22" onclick="submitSave()">
-	<img src="/admin/img/reservation/tbtn_bg_022.gif" align="absmiddle" class="imp"><input type="button" value="취소하기" class="bt_a32 tmb22" onclick="location.reload();">
-</td>
-</tr>
-</table>
-
+	<div class="bottom_cmd">
+		<img src="/admin/img/btn_save.gif" onclick="submitSave()">
+		<img src="/admin/img/btn_cancel.gif" onclick="location.reload();">
+	</div>
 </table>
 
 

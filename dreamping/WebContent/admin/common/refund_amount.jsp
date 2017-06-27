@@ -138,7 +138,7 @@ if(!cmd.equals("list")){
 <!--본문 타이틀------------------------------------------------------------>
 <ul class="content_title">
 	<li>환불금액 설정</li>
-	<li class="location">캠핑장관리>기본정보>환불금액설정</li>
+	<li class="location">공통설정관리>기본정보>환불금액설정</li>
 </ul>
 
 <ul class="desc">

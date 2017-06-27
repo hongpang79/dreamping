@@ -686,6 +686,7 @@ public class CommonDAO {
 				pstmt.setInt(2, orderNo);
 				pstmt.setString(3, useStartDay);
 				pstmt.setString(4, useEndDay);
+				rtn = pstmt.executeUpdate();
 				
 				msg = "저장되었습니다.";
 				
@@ -697,10 +698,11 @@ public class CommonDAO {
 				String useEndDay = request.getParameter("useEndDay");
 				String orgZoneName = request.getParameter("orgZoneName");
 				
-				SQL = "UPDATE zone_information SET order_no = order_no+1 WHERE order_no >= ?";
-				pstmt = conn.prepareStatement(SQL);
-				pstmt.setInt(1, orderNo);
-				rtn = pstmt.executeUpdate();
+				//update 필요가 없음. 20170627
+//				SQL = "UPDATE zone_information SET order_no = order_no+1 WHERE order_no >= ?";
+//				pstmt = conn.prepareStatement(SQL);
+//				pstmt.setInt(1, orderNo);
+//				rtn = pstmt.executeUpdate();
 				
 				SQL = "UPDATE zone_information SET zone_name=?, order_no=?, use_start_day=?, use_end_day=? WHERE zone_no=?";
 				pstmt = conn.prepareStatement(SQL);
@@ -709,12 +711,14 @@ public class CommonDAO {
 				pstmt.setString(3, useStartDay);
 				pstmt.setString(4, useEndDay);
 				pstmt.setInt(5, zoneNo);
+				rtn = pstmt.executeUpdate();
 				
 				if(!orgZoneName.equals(zoneName)){
 					SQL = "UPDATE reservation_day SET zone_name=? WHERE zone_name=?";
 					pstmt = conn.prepareStatement(SQL);
 					pstmt.setString(1, zoneName);
 					pstmt.setString(2, orgZoneName);
+					rtn = pstmt.executeUpdate();
 				}
 				
 				msg = "수정되었습니다.";
@@ -731,10 +735,12 @@ public class CommonDAO {
 				SQL = "DELETE FROM zone_information WHERE zone_no=?";
 				pstmt = conn.prepareStatement(SQL);
 				pstmt.setInt(1, zoneNo);
+				rtn = pstmt.executeUpdate();
 				
 				msg = "삭제되었습니다.";
 			}
-			rtn = pstmt.executeUpdate();
+			//rtn = pstmt.executeUpdate();
+			System.out.println("[CommonDAO] processZone - rtn : " + rtn);
 			if(rtn == 0){
 				msg = "처리중 오류가 발생했습니다. 관리자에게 문의해 주세요!";
 			}

@@ -80,7 +80,7 @@ $(function() {
 <!--본문 타이틀------------------------------------------------------------>
 <ul class="content_title">
 	<li>SMS발송내역조회</li>
-	<li class="location">캠핑장관리>SMS관리>SMS발송내역조회</li>
+	<li class="location">공통설정관리>SMS관리>SMS발송내역조회</li>
 </ul>
 
 <br>

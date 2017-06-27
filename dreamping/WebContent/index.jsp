@@ -37,7 +37,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="https://www.youtube.com/watch?v=uNCr7NdOJgw">
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(assets/images/sparklers.jpg);">
                         <div class="mbr-table-cell">
                             
                             <div class="container-slide container">

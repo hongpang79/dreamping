@@ -57,7 +57,7 @@ function deleteCheck(zoneNo, orderNo)
 {
 	frm = document.bankinfo;
 
-	if(confirm('해당 Zone을 삭제하시겠습니까?') == true) {
+	if(confirm('해당 그룹을 삭제하시겠습니까?') == true) {
 		frm.cmd.value = 'delete';
 		frm.zoneNo.value = zoneNo;
 		frm.orderNo.value = orderNo;
@@ -71,7 +71,7 @@ function formCheck()
 		
 		if(sform.zoneName.value.length == 0)
 		{
-			alert('ZONE NAME을 입력하세요.');
+			alert('그룹명을 입력하세요.');
 			sform.siteName.focus();
 			return false;
 		}
@@ -143,8 +143,8 @@ $(function() {
 </script>
 <!--본문 타이틀------------------------------------------------------------>
 <ul class="content_title">
-	<li>ZONE 설정</li>
-	<li class="location">캠핑장관리>캠핑장정보>ZONE설정</li>
+	<li>그룹 설정</li>
+	<li class="location">공통설정관리>그룹정보>그룹설정</li>
 </ul>
 
 			<!--본문 내용 시작--------------------------------------------------------->
@@ -164,7 +164,7 @@ $(function() {
 					<table id="listing_table" class="product_table">
 						<thead>
 						<tr height='28'>
-							<th width='250' align="center">ZONE</th>
+							<th width='250' align="center">그룹명</th>
 							<th width='80' align="center">정렬순서</th>
 							<th align="center">사용시작일자</th>
 							<th align="center">사용종료일자</th>
@@ -216,7 +216,7 @@ $(function() {
 				</td>
 			</tr>
 			</table>
-			<!--무통장입금 계좌 입력-->
+			<!--그룹명 입력-->
 			<div id='add' style='display:block'>
 			<table border='0' cellspacing='0' cellpadding='0'>
 			<tr>
@@ -227,7 +227,7 @@ $(function() {
 					<input type='hidden' id='zoneNoOrg' name='zoneNoOrg'>
 					<input type='hidden' id='orgZoneName' name='orgZoneName'>
 						<tr height='28'>
-							<td class='tbsbj' width='140'>ZONE NAME</td>
+							<td class='tbsbj' width='140'>그룹명</td>
 							<td class='tbcont'>
                                 <input type='text' id='zoneName' size='30' name='zoneName' value="" >
 							</td>
@@ -258,7 +258,7 @@ $(function() {
 			<table border='3' cellpadding='7' cellspacing='0' width='800' bordercolor='ECD08A' style='margin-top:20'>
 				<tr><Td style='color:585858;line-height:180%;padding-left:20'>
 						<b>[사용안내]</b><br>
-						<b class=ol>ㆍ</b> 등록하고자 하는 ZONE NAME을 입력 후 정렬순서를 입력 해 주십시오.<br>
+						<b class=ol>ㆍ</b> 등록하고자 하는 그룹명을 입력 후 정렬순서를 입력 해 주십시오.<br>
 						<b class=ol>ㆍ</b> 정렬순서에 따라 예약화면에 순서대로 표시됩니다.<br>
 						<b class=ol>ㆍ</b> 사용기간은 년도와 월까지만 적용되며 일자는 무시됩니다.(월단위로 기간이 등록된다고 생각하시면 됩니다.)
 				    </td>

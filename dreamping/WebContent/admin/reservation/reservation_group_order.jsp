@@ -17,6 +17,7 @@
 <title>UrbanSlowCity Admin</title>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
+<link rel="stylesheet" type="text/css" href="/admin/css/text_button.css">
 <script language=javascript src='/admin/js/common.js'></script>
 <script language=javascript src='/admin/js/admin.js'></script>
 <script type="text/javascript" src="/js/popup.js"></script>

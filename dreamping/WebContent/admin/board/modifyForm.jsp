@@ -151,7 +151,7 @@
 			<input type="hidden" name="reStep" value="<%=article.getReStep()%>">
 			<input type="hidden" name="reLevel" value="<%=article.getReLevel()%>">
 			<input type="hidden" name="writer" value="<%=article.getWriter()%>">
-        	<input type='hidden' name='password' value="slowcity" />
+        	<input type='hidden' name='password' value="ping" />
 		
 		<tr>
 			<td>
@@ -189,11 +189,11 @@
 								<tr>
 									<td width='62'>
 										<a href='/admin/board/list.jsp?category=<%=category%>&pageNum=<%=pageNum%>&flag=<%=flag%>&com_board_search_code=<%=comBoardSearchCode%>&com_board_search_value=<%=comBoardSearchValue%>'>
-										<img src='/images/board/list.gif' vspace='7' border='0'></a><!-- 목록보기버튼 -->
+										<img src='/admin/img/board/list.gif' vspace='7' border='0'></a><!-- 목록보기버튼 -->
 									</td>
 									<td class='bbsnewf5' height='34' align='center'>
-										<input type='image' id="submitbtn" src='/images/board/confirm.gif' vspace='7' border='0'><!-- 확인버튼 -->
-					      	<a href="javascript:location.href='/admin/board/view.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>&category=<%=category%>&flag=<%=flag %>&com_board_search_code=<%=comBoardSearchCode %>&com_board_search_value=<%=comBoardSearchValue %>';"><img src='/images/board/cancel.gif' vspace='7' border='0'></a><!-- 취소버튼 -->
+										<input type='image' id="submitbtn" src='/admin/img/board/confirm.gif' vspace='7' border='0'><!-- 확인버튼 -->
+					      	<a href="javascript:location.href='/admin/board/view.jsp?num=<%=article.getNum()%>&pageNum=<%=pageNum%>&category=<%=category%>&flag=<%=flag %>&com_board_search_code=<%=comBoardSearchCode %>&com_board_search_value=<%=comBoardSearchValue %>';"><img src='/admin/img/board/cancel.gif' vspace='7' border='0'></a><!-- 취소버튼 -->
 					    </td>
 					    <td width='62'></td>
 					</tr>

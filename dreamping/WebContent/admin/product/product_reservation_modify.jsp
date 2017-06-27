@@ -103,6 +103,7 @@ if(step.equals("new")){
 <title>SITE관리 > SITE</title>
 <meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
+<link rel="stylesheet" type="text/css" href="/admin/css/text_button.css">
 <script language=javascript src='/admin/js/common.js'></script>
 <script language=javascript src='/admin/js/admin.js'></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />

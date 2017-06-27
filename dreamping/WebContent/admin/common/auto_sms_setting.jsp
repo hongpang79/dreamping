@@ -55,7 +55,7 @@ $(document).ready(
 
 <ul class="content_title">
 	<li>SMS 발송 메시지 관리</li>
-	<li class="location">캠핑장관리>SMS관리>SMS 발송메시지관리</li>
+	<li class="location">공통설정관리>SMS관리>SMS 발송메시지관리</li>
 </ul>
 
 <ul class="desc">

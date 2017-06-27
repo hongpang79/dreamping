@@ -161,12 +161,12 @@
 <%
 			int wid=0;  // 들여쓰기 설정(레벨에 따라)
 %>
-							<img src="/images/board/level.gif" width="<%=wid%>">
+							<img src="/admin/img/board/level.gif" width="<%=wid%>">
 <%			
 			if(article.getReLevel()>0){
 				wid=5*(article.getReLevel());
 %>				
-							<img src="/images/board/reply_ic.gif"">
+							<img src="/admin/img/board/reply_ic.gif"">
 <%			
 			}													
 			
@@ -216,26 +216,26 @@
 	
 	    if(flag.equals("search")) {
 	    	if (startPage > 10) {    %>
-	        	<a href="/admin/board/list.jsp?pageNum=<%= startPage - 10 %>&category=<%=category%>&flag=search&com_board_search_code=<%=comBoardSearchCode %>&com_board_search_value=<%=comBoardSearchValue %>"><img src="/images/board/btn_prev.gif" alt="이전" /></a>
+	        	<a href="/admin/board/list.jsp?pageNum=<%= startPage - 10 %>&category=<%=category%>&flag=search&com_board_search_code=<%=comBoardSearchCode %>&com_board_search_value=<%=comBoardSearchValue %>"><img src="/admin/img/board/btn_prev.gif" alt="이전" /></a>
 <%      	}
 		    for (int i = startPage ; i <= endPage ; i++) {  %>
 		        <a href="/admin/board/list.jsp?pageNum=<%= i %>&category=<%=category%>&flag=search&com_board_search_code=<%=comBoardSearchCode %>&com_board_search_value=<%=comBoardSearchValue %>">&nbsp;<%= i %></a>
 <%
 		    }
 		    if (endPage < pageCount) {  %>
-		    	<a href="/admin/board/list.jsp?pageNum=<%= startPage + 10 %>&category=<%=category%>&flag=search&com_board_search_code=<%=comBoardSearchCode %>&com_board_search_value=<%=comBoardSearchValue %>">&nbsp;<img src="/images/board/btn_next.gif" alt="다음" /></a>
+		    	<a href="/admin/board/list.jsp?pageNum=<%= startPage + 10 %>&category=<%=category%>&flag=search&com_board_search_code=<%=comBoardSearchCode %>&com_board_search_value=<%=comBoardSearchValue %>">&nbsp;<img src="/admin/img/board/btn_next.gif" alt="다음" /></a>
 <%
 		    }
 	    }else{
 	        if (startPage > 10) {    %>
-	            <a href="/admin/board/list.jsp?pageNum=<%= startPage - 10 %>&category=<%=category%>"><img src="/images/board/btn_prev.gif" alt="이전" /></a>
+	            <a href="/admin/board/list.jsp?pageNum=<%= startPage - 10 %>&category=<%=category%>"><img src="/admin/img/board/btn_prev.gif" alt="이전" /></a>
 <%      	}
 	        for (int i = startPage ; i <= endPage ; i++) {  %>
 	            <a href="/admin/board/list.jsp?pageNum=<%= i %>&category=<%=category%>">&nbsp;<%= i %></a>
 <%
 	        }
 	        if (endPage < pageCount) {  %>
-	            <a href="/admin/board/list.jsp?pageNum=<%= startPage + 10 %>&category=<%=category%>">&nbsp;<img src="/images/board/btn_next.gif" alt="다음" /></a>
+	            <a href="/admin/board/list.jsp?pageNum=<%= startPage + 10 %>&category=<%=category%>">&nbsp;<img src="/admin/img/board/btn_next.gif" alt="다음" /></a>
 <%
 	        }
 	    }
@@ -244,7 +244,7 @@
 						</td>
 						<td width='62' align='right' <% if(category.equals("qna")) out.print("style='display:none'"); %>>
 						<!-- 글쓰기 -->		
-							<a href='/admin/board/writeForm.jsp?category=<%=category%>' style=''><img alt='' src='/images/board/write.gif' border='0' /></a>
+							<a href='/admin/board/writeForm.jsp?category=<%=category%>' style=''><img alt='' src='/admin/img/board/write.gif' border='0' /></a>
 						<!-- //글쓰기 -->
 						</td>
 					</tr>
@@ -274,7 +274,7 @@
 								</div>
 							</td>
 							<td class="est_btn_cell">
-								<input title="input" alt="" type='image' src='/images/board/search.gif' border='0' align='absmiddle'>
+								<input title="input" alt="" type='image' src='/admin/img/board/search.gif' border='0' align='absmiddle'>
 							</td>
 						</tr>
 					</form>
