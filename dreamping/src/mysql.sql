@@ -47,9 +47,11 @@ CREATE TABLE `season` (
 ) ENGINE=MyISAM DEFAULT CHARSET=euckr;
 
 /* INSERT INTO `season` VALUES ('L','비수기','01-01','02-29'); */
-INSERT INTO `season` VALUES ('M','준성수기','03-01','06-30');
-INSERT INTO `season` VALUES ('M','준성수기','09-01','11-30');
-INSERT INTO `season` VALUES ('H','성수기','07-01','08-31');
+INSERT INTO `season` VALUES ('M','준성수기','04-01','06-30');
+INSERT INTO `season` VALUES ('M','준성수기','09-01','10-31');
+INSERT INTO `season` VALUES ('H','성수기','07-01','07-31');
+INSERT INTO `season` VALUES ('H','성수기','08-16','08-31');
+INSERT INTO `season` VALUES ('P','극성수기','08-01','08-15');
 /* INSERT INTO `season` VALUES ('L','비수기','12-01','12-31'); */
 
 CREATE TABLE `zone_information` (
@@ -141,6 +143,9 @@ CREATE TABLE `product` (
   `high_season_weekday` int(6) default NULL,/*성수기 평일*/
   `high_season_weekend` int(6) default NULL,/*성수기 주말*/
   `high_season_picnic` int(6) default NULL,/*성수기 피크닉*/
+  `peak_season_weekday` int(6) default NULL,/*극성수기 평일*/
+  `peak_season_weekend` int(6) default NULL,/*극성수기 주말*/
+  `peak_season_picnic` int(6) default NULL,/*극성수기 피크닉*/
   `display_start_day` date default NULL,
   `display_end_day` date default NULL,
   `use_yn` varchar(1) default 'Y', 	/*사용여부*/
@@ -152,6 +157,7 @@ CREATE TABLE `product` (
   `flat_price_start_day` date default NULL,
   `flat_price_end_day` date default NULL,
   `product_memo` varchar(512) default NULL,
+  `del_yn` varchar(1) default 'N',
   PRIMARY KEY  (`product_no`)
 ) ENGINE=MyISAM DEFAULT CHARSET=euckr;
 

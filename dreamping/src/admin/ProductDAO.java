@@ -38,7 +38,7 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String SQL = "SELECT z.zone_name, s.* FROM zone_information z, product s where z.zone_no = s.zone_no " +
+		String SQL = "SELECT z.zone_name, s.* FROM zone_information z, product s WHERE s.del_yn = 'N' AND z.zone_no = s.zone_no " +
 	             "ORDER BY product_no ASC";
 //			System.out.println("[ProductDAO][selectProductList] SQL = " + SQL);
 		try{
@@ -67,6 +67,9 @@ public class ProductDAO {
 					product.setHighSeasonWeekday(rs.getInt("high_season_weekday"));
 					product.setHighSeasonWeekend(rs.getInt("high_season_weekend"));
 					product.setHighSeasonPicnic(rs.getInt("high_season_picnic"));
+					product.setPeakSeasonWeekday(rs.getInt("peak_season_weekday"));
+					product.setPeakSeasonWeekend(rs.getInt("peak_season_weekend"));
+					product.setPeakSeasonPicnic(rs.getInt("peak_season_picnic"));
 					product.setDisplayStartDay(rs.getDate("display_start_day"));
 					product.setDisplayEndDay(rs.getDate("display_end_day"));
 					product.setSale(rs.getInt("sale"));
@@ -127,6 +130,9 @@ public class ProductDAO {
 					product.setHighSeasonWeekday(rs.getInt("high_season_weekday"));
 					product.setHighSeasonWeekend(rs.getInt("high_season_weekend"));
 					product.setHighSeasonPicnic(rs.getInt("high_season_picnic"));
+					product.setPeakSeasonWeekday(rs.getInt("peak_season_weekday"));
+					product.setPeakSeasonWeekend(rs.getInt("peak_season_weekend"));
+					product.setPeakSeasonPicnic(rs.getInt("peak_season_picnic"));
 					product.setDisplayStartDay(rs.getDate("display_start_day"));
 					product.setDisplayEndDay(rs.getDate("display_end_day"));
 					product.setSale(rs.getInt("sale"));
@@ -183,6 +189,9 @@ public class ProductDAO {
 					product.setHighSeasonWeekday(rs.getInt("high_season_weekday"));
 					product.setHighSeasonWeekend(rs.getInt("high_season_weekend"));
 					product.setHighSeasonPicnic(rs.getInt("high_season_picnic"));
+					product.setPeakSeasonWeekday(rs.getInt("peak_season_weekday"));
+					product.setPeakSeasonWeekend(rs.getInt("peak_season_weekend"));
+					product.setPeakSeasonPicnic(rs.getInt("peak_season_picnic"));
 					product.setDisplayStartDay(rs.getDate("display_start_day"));
 					product.setDisplayEndDay(rs.getDate("display_end_day"));
 					product.setUseYn(rs.getString("use_yn"));
@@ -336,6 +345,9 @@ public class ProductDAO {
 		int highSeasonWeekday = 0;
 		int highSeasonWeekend = 0;
 		int highSeasonPicnic = 0;
+		int peakSeasonWeekday = 0;
+		int peakSeasonWeekend = 0;
+		int peakSeasonPicnic = 0;
 		String displayStartDay = "";
 		String displayEndDay = "";
 		String useYn = "";
@@ -370,6 +382,9 @@ public class ProductDAO {
 				highSeasonWeekday = Integer.parseInt((String)request.getParameter("highSeasonWeekday"));
 				highSeasonWeekend = Integer.parseInt((String)request.getParameter("highSeasonWeekend"));
 				highSeasonPicnic = Integer.parseInt((String)request.getParameter("highSeasonPicnic"));
+				peakSeasonWeekday = Integer.parseInt((String)request.getParameter("peakSeasonWeekday"));
+				peakSeasonWeekend = Integer.parseInt((String)request.getParameter("peakSeasonWeekend"));
+				peakSeasonPicnic = Integer.parseInt((String)request.getParameter("peakSeasonPicnic"));
 				displayStartDay = request.getParameter("displayStartDay")==""?null:request.getParameter("displayStartDay");
 				displayEndDay = request.getParameter("displayEndDay")==""?null:request.getParameter("displayEndDay");
 				useYn = request.getParameter("useYn");
@@ -386,9 +401,9 @@ public class ProductDAO {
 			if(step.equals("insert")){
 				SQL = "INSERT INTO product (product_name,zone_no,site_no,site_name,users,max_users,add_child_price,add_user_price,"
 			        + "low_season_weekday,low_season_weekend,low_season_picnic,middle_season_weekday,middle_season_weekend,middle_season_picnic,"
-			        + "high_season_weekday,high_season_weekend,high_season_picnic,display_start_day,display_end_day,"
-			        + "use_yn,sale,sale_start_day,sale_end_day,sale_memo,flat_price,flat_price_start_day,flat_price_end_day,product_memo) "
-					+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			        + "high_season_weekday,high_season_weekend,high_season_picnic,high_season_weekday,high_season_weekend,high_season_picnic,"
+			        + "display_start_day,display_end_day,use_yn,sale,sale_start_day,sale_end_day,sale_memo,flat_price,flat_price_start_day,flat_price_end_day,product_memo) "
+					+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				conn = ConnectionUtil.getConnection();
 				pstmt = conn.prepareStatement(SQL);
 				pstmt.setString(1, productName);
@@ -408,17 +423,20 @@ public class ProductDAO {
 				pstmt.setInt(15, highSeasonWeekday);
 				pstmt.setInt(16, highSeasonWeekend);
 				pstmt.setInt(17, highSeasonPicnic);
-				pstmt.setString(18, displayStartDay);
-				pstmt.setString(19, displayEndDay);
-				pstmt.setString(20, useYn);
-				pstmt.setInt(21, sale);
-				pstmt.setString(22, saleStartDay);
-				pstmt.setString(23, saleEndDay);
-				pstmt.setString(24, saleMemo);
-				pstmt.setInt(25, flatPrice);
-				pstmt.setString(26, flatPriceStartDay);
-				pstmt.setString(27, flatPriceEndDay);
-				pstmt.setString(28, productMemo);
+				pstmt.setInt(18, peakSeasonWeekday);
+				pstmt.setInt(19, peakSeasonWeekend);
+				pstmt.setInt(20, peakSeasonPicnic);
+				pstmt.setString(21, displayStartDay);
+				pstmt.setString(22, displayEndDay);
+				pstmt.setString(23, useYn);
+				pstmt.setInt(24, sale);
+				pstmt.setString(25, saleStartDay);
+				pstmt.setString(26, saleEndDay);
+				pstmt.setString(27, saleMemo);
+				pstmt.setInt(28, flatPrice);
+				pstmt.setString(29, flatPriceStartDay);
+				pstmt.setString(30, flatPriceEndDay);
+				pstmt.setString(31, productMemo);
 				
 				rtn = pstmt.executeUpdate();
 				
@@ -426,7 +444,9 @@ public class ProductDAO {
 				productNo = Integer.parseInt((String) request.getParameter("productNo"));
 				SQL = "UPDATE product SET product_name=?, zone_no=?, site_no=?, site_name=?, users=?, max_users=?,  " 
 				    + "add_child_price=?, add_user_price=?, low_season_weekday=?, low_season_weekend=?, low_season_picnic=?, "
-				    + "middle_season_weekday=?, middle_season_weekend=?, middle_season_picnic=?, high_season_weekday=?, high_season_weekend=?, high_season_picnic=?, "
+				    + "middle_season_weekday=?, middle_season_weekend=?, middle_season_picnic=?, "
+				    + "high_season_weekday=?, high_season_weekend=?, high_season_picnic=?, "
+				    + "peak_season_weekday=?, peak_season_weekend=?, peak_season_picnic=?, "
 				    + "display_start_day=?, display_end_day=?, use_yn=?, sale=?, sale_start_day=?, sale_end_day=?, sale_memo=?, flat_price=?,flat_price_start_day=?,flat_price_end_day=?, product_memo=? "
 				    + "WHERE product_no = ?";
 				
@@ -449,18 +469,21 @@ public class ProductDAO {
 				pstmt.setInt(15, highSeasonWeekday);
 				pstmt.setInt(16, highSeasonWeekend);
 				pstmt.setInt(17, highSeasonPicnic);
-				pstmt.setString(18, displayStartDay);
-				pstmt.setString(19, displayEndDay);
-				pstmt.setString(20, useYn);
-				pstmt.setInt(21, sale);
-				pstmt.setString(22, saleStartDay);
-				pstmt.setString(23, saleEndDay);
-				pstmt.setString(24, saleMemo);
-				pstmt.setInt(25, flatPrice);
-				pstmt.setString(26, flatPriceStartDay);
-				pstmt.setString(27, flatPriceEndDay);
-				pstmt.setString(28, productMemo);
-				pstmt.setInt(29, productNo);
+				pstmt.setInt(18, peakSeasonWeekday);
+				pstmt.setInt(19, peakSeasonWeekend);
+				pstmt.setInt(20, peakSeasonPicnic);
+				pstmt.setString(21, displayStartDay);
+				pstmt.setString(22, displayEndDay);
+				pstmt.setString(23, useYn);
+				pstmt.setInt(24, sale);
+				pstmt.setString(25, saleStartDay);
+				pstmt.setString(26, saleEndDay);
+				pstmt.setString(27, saleMemo);
+				pstmt.setInt(28, flatPrice);
+				pstmt.setString(29, flatPriceStartDay);
+				pstmt.setString(30, flatPriceEndDay);
+				pstmt.setString(31, productMemo);
+				pstmt.setInt(32, productNo);
 				
 				rtn = pstmt.executeUpdate();
 				
@@ -486,7 +509,8 @@ public class ProductDAO {
 		
 	    try {
 			conn = ConnectionUtil.getConnection();
-	        pstmt = conn.prepareStatement("delete from product where product_no=?");
+	        //pstmt = conn.prepareStatement("delete from product where product_no=?");
+			pstmt = conn.prepareStatement("UPDATE product SET del_yn='Y' WHERE product_no = ?");
 	        pstmt.setInt(1, siteNo);
 	        x = pstmt.executeUpdate();
 	    } catch(Exception ex) {
@@ -504,7 +528,7 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String SQL = "SELECT product_name FROM product WHERE product_no IN (" + productNos +")";
+		String SQL = "SELECT product_name FROM product WHERE del_yn = 'N' AND product_no IN (" + productNos +")";
 //		System.out.println("[ProductDAO][selectProductList] SQL = " + SQL);
 		
 		try{
@@ -553,6 +577,9 @@ public class ProductDAO {
 		int highSeasonWeekday = 0;
 		int highSeasonWeekend = 0;
 		int highSeasonPicnic = 0;
+		int peakSeasonWeekday = 0;
+		int peakSeasonWeekend = 0;
+		int peakSeasonPicnic = 0;
 		String displayStartDay = "";
 		String displayEndDay = "";
 		String useYn = "";
@@ -584,6 +611,9 @@ public class ProductDAO {
 				highSeasonWeekday = Integer.parseInt((String)request.getParameter("highSeasonWeekday"));
 				highSeasonWeekend = Integer.parseInt((String)request.getParameter("highSeasonWeekend"));
 				highSeasonPicnic = Integer.parseInt((String)request.getParameter("highSeasonPicnic"));
+				peakSeasonWeekday = Integer.parseInt((String)request.getParameter("peakSeasonWeekday"));
+				peakSeasonWeekend = Integer.parseInt((String)request.getParameter("peakSeasonWeekend"));
+				peakSeasonPicnic = Integer.parseInt((String)request.getParameter("peakSeasonPicnic"));
 				displayStartDay = request.getParameter("displayStartDay")==""?null:request.getParameter("displayStartDay");
 				displayEndDay = request.getParameter("displayEndDay")==""?null:request.getParameter("displayEndDay");
 				useYn = request.getParameter("useYn");
@@ -602,6 +632,7 @@ public class ProductDAO {
 				    + "low_season_weekday=?, low_season_weekend=?, low_season_picnic=?, "
 				    + "middle_season_weekday=?, middle_season_weekend=?, middle_season_picnic=?, "
 				    + "high_season_weekday=?, high_season_weekend=?, high_season_picnic=?, "
+				    + "peak_season_weekday=?, peak_season_weekend=?, peak_season_picnic=?, "
 				    + "display_start_day=?, display_end_day=?, use_yn=?, "
 				    + "sale=?, sale_start_day=?, sale_end_day=?, sale_memo=?, "
 				    + "flat_price=?,flat_price_start_day=?,flat_price_end_day=?, product_memo=? "
@@ -624,17 +655,20 @@ public class ProductDAO {
 				pstmt.setInt(11, highSeasonWeekday);
 				pstmt.setInt(12, highSeasonWeekend);
 				pstmt.setInt(13, highSeasonPicnic);
-				pstmt.setString(14, displayStartDay);
-				pstmt.setString(15, displayEndDay);
-				pstmt.setString(16, useYn);
-				pstmt.setInt(17, sale);
-				pstmt.setString(18, saleStartDay);
-				pstmt.setString(19, saleEndDay);
-				pstmt.setString(20, saleMemo);
-				pstmt.setInt(21, flatPrice);
-				pstmt.setString(22, flatPriceStartDay);
-				pstmt.setString(23, flatPriceEndDay);
-				pstmt.setString(24, productMemo);
+				pstmt.setInt(14, peakSeasonWeekday);
+				pstmt.setInt(15, peakSeasonWeekend);
+				pstmt.setInt(16, peakSeasonPicnic);
+				pstmt.setString(17, displayStartDay);
+				pstmt.setString(18, displayEndDay);
+				pstmt.setString(19, useYn);
+				pstmt.setInt(20, sale);
+				pstmt.setString(21, saleStartDay);
+				pstmt.setString(22, saleEndDay);
+				pstmt.setString(23, saleMemo);
+				pstmt.setInt(24, flatPrice);
+				pstmt.setString(25, flatPriceStartDay);
+				pstmt.setString(26, flatPriceEndDay);
+				pstmt.setString(27, productMemo);
 				
 				rtn = pstmt.executeUpdate();
 				

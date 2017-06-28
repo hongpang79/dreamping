@@ -92,6 +92,11 @@ if(!cmd.equals("list")){
                         if( !from.value ) return alert( '성수기 기간 시작일을 입력해 주세요' );
                         if( !to.value ) return alert( '성수기 기간 종료일을 입력해 주세요' );
                         break;
+                        
+                    case 'busyPeakFrom' :
+                        if( !from.value ) return alert( '극성수기 기간 시작일을 입력해 주세요' );
+                        if( !to.value ) return alert( '극성수기 기간 종료일을 입력해 주세요' );
+                        break;
 
                     default :
                         continue;
@@ -485,7 +490,7 @@ else
 <%
 	seasonCode = "M";
 	vSeason = CommonDAO.getInstance().selectSeasonList(seasonCode);
-	if (vSeason == null){
+	if (vSeason == null || vSeason.size() == 0){
 %>        	
                 <span style="padding-top:10px;">
                 <input type="hidden" id="busyMiddleaddCalUseFlag0" name="busyMiddleaddCalUseFlag[0]" value="T">
@@ -544,7 +549,7 @@ else
 <%
 	seasonCode = "H";
 	vSeason = CommonDAO.getInstance().selectSeasonList(seasonCode);
-	if (vSeason == null){
+	if (vSeason == null || vSeason.size() == 0){
 %>        	
                 <span style="padding-top:10px;">
                 <input type="hidden" id="busyaddCalUseFlag0" name="busyaddCalUseFlag[0]" value="T">
@@ -585,6 +590,66 @@ else
 	}
 %>                  
             	<span id="busyAddDate"></span>
+            </div>
+		</td>
+	</tr>
+</table>
+    <div style="margin:-5px 0 15px 0;">
+					* 기간설정은 년도에 상관없이 1월 1일 부터 12월31일 기준으로 입력하시기 바랍니다.<br>
+    </div>
+    
+<ul class="bullet_title"><li style="font-weight:normal;">극성수기 기간설정</ul>
+<table class="product_table">
+	<col class="title" width="200"></col>
+	<tr>
+		<th rowspan="2">극성수기 설정</th>
+		<td>
+
+        	<div id="busyPeakFrom" name="busyPeakFrom"  style="display:block;" >
+<%
+	seasonCode = "P";
+	vSeason = CommonDAO.getInstance().selectSeasonList(seasonCode);
+	if (vSeason == null || vSeason.size() == 0){
+%>        	
+                <span style="padding-top:10px;">
+                <input type="hidden" id="busyPeakaddCalUseFlag0" name="busyPeakaddCalUseFlag[0]" value="T">
+                <input type="text" size="12" id="busyPeakFrom_add[]" name="busyPeakFrom_add[]" onfocus="blur()">
+                <img src="/admin/img/reservation/btn_calendar.gif" class="linked" align="middle" onclick="cal.toggle( event , this.previousSibling.previousSibling );" alt="달력">
+                &nbsp; 부터 &nbsp;&nbsp;
+                <input type="text" size="12" id="busyPeakTo_add[]" name="busyPeakTo_add[]" onfocus="blur()">
+                <img src="/admin/img/reservation/btn_calendar.gif" class="linked" align="middle" onclick="cal.toggle( event , this.previousSibling.previousSibling );" alt="달력">
+                &nbsp; 까지 &nbsp;&nbsp;
+                <img src="/admin/img/btn_add.gif"  class="linked" align="absmiddle" onclick="addRows('busyPeak');" alt="추가">
+                </span>
+<%
+	}else{
+		season = null;
+		for(int i=0; i<vSeason.size(); i++){
+			season = vSeason.get(i);
+			startSeason = year+"-"+season.getStartSeason();
+			endSeason = year+"-"+season.getEndSeason();
+%>
+			     <span id="busyPeakaddCalRow<%=i%>"><br>
+				 <input type="hidden" id="busyPeakaddCalUseFlag<%=i%>" name="busyPeakaddCalUseFlag[]" value="T">
+        		 <input type="text" id="busyPeakFrom_add<%=i%>" size="12" name="busyPeakFrom_add[]" value="<%=startSeason %>" onfocus="blur()">&nbsp;
+        		 <img src="/admin/img/reservation/btn_calendar.gif" class="linked" align="middle" onclick="cal.toggle( event , this.previousSibling.previousSibling);" alt="달력">&nbsp; 부터 &nbsp;&nbsp;
+        		 <input type="text" id="busyPeakTo_add<%=i%>" size="12" name="busyPeakTo_add[]" value="<%=endSeason %>" onfocus="blur()" >&nbsp;
+        		 <img src="/admin/img/reservation/btn_calendar.gif" class="linked" align="middle" onclick="cal.toggle( event , this.previousSibling.previousSibling);" alt="달력">&nbsp; 까지  &nbsp;&nbsp;&nbsp;
+        		 <img src="/admin/img/btn_add.gif" class="linked" align="absmiddle" onclick="addRows('busyPeak');" alt="추가">&nbsp;
+<%
+			if(i>0){
+%>        		 
+        		 <img src="/admin/img/btn_del.gif" class="linked" align="absmiddle" onclick="deleteRows('busyPeakadd', '<%=i%>');" alt="삭제">
+<%
+			}
+%>        		 
+        		 </span>
+			   
+<%			
+		}
+	}
+%>                  
+            	<span id="busyPeakAddDate"></span>
             </div>
 		</td>
 	</tr>

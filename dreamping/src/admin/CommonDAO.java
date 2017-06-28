@@ -84,10 +84,13 @@ public class CommonDAO {
 		int length = 0;
 		String[] middleFlag = request.getParameterValues("busyMiddleaddCalUseFlag[]");
 		String[] hightFlag = request.getParameterValues("busyaddCalUseFlag[]");
+		String[] peakFlag = request.getParameterValues("busyPeakaddCalUseFlag[]");
 		String[] startMiddleSeason = request.getParameterValues("busyMiddleFrom_add[]");
 		String[] endMiddleSeason = request.getParameterValues("busyMiddleTo_add[]");
 		String[] startHighSeason = request.getParameterValues("busyFrom_add[]");
 		String[] endHighSeason = request.getParameterValues("busyTo_add[]");
+		String[] startPeakSeason = request.getParameterValues("busyPeakFrom_add[]");
+		String[] endPeakSeason = request.getParameterValues("busyPeakTo_add[]");
 //		System.out.println("[CommonDAO][selectRefundList] SQL = " + SQL);
 		
 		try{
@@ -127,6 +130,28 @@ public class CommonDAO {
 					if(flag.equals("T")){
 						startSeason = startHighSeason[i].substring(5);
 						endSeason = endHighSeason[i].substring(5);
+						
+						pstmt = conn.prepareStatement(SQL);
+						pstmt.setString(1, seasonCode);
+						pstmt.setString(2, seasonName);
+						pstmt.setString(3, startSeason);
+						pstmt.setString(4, endSeason);
+						pstmt.executeUpdate();
+						rtn++;
+					}
+					
+				}
+			}
+			
+			if(startPeakSeason.length>0){
+				length = startPeakSeason.length;
+				seasonCode = "P";
+				seasonName = "극성수기";
+				for(int i=0; i<length; i++){
+					flag = hightFlag[i];
+					if(flag.equals("T")){
+						startSeason = startPeakSeason[i].substring(5);
+						endSeason = endPeakSeason[i].substring(5);
 						
 						pstmt = conn.prepareStatement(SQL);
 						pstmt.setString(1, seasonCode);

@@ -59,8 +59,9 @@ public class SiteVO {
 	String zoneName,siteName,productName,useYn,saleMemo,productMemo;
 	int zoneNo,orderNo,zoneCnt,siteNo,productNo,users,maxUsers,addChildPrice,addUserPrice,sale,flatPrice;
 	int lowSeasonWeekday,lowSeasonWeekend,lowSeasonPicnic;
-	int highSeasonWeekday,highSeasonWeekend,highSeasonPicnic;
 	int middleSeasonWeekday,middleSeasonWeekend,middleSeasonPicnic;
+	int highSeasonWeekday,highSeasonWeekend,highSeasonPicnic;
+	int peakSeasonWeekday,peakSeasonWeekend,peakSeasonPicnic;
 	Date displayStartDay,displayEndDay,saleStartDay,saleEndDay,flatPriceStartDay,flatPriceEndDay,useStartDay,useEndDay;
 	
 	public int getLowSeasonPicnic() {
@@ -94,6 +95,24 @@ public class SiteVO {
 		this.middleSeasonPicnic = middleSeasonPicnic;
 	}
 		
+	public int getPeakSeasonWeekday() {
+		return peakSeasonWeekday;
+	}
+	public void setPeakSeasonWeekday(int peakSeasonWeekday) {
+		this.peakSeasonWeekday = peakSeasonWeekday;
+	}
+	public int getPeakSeasonWeekend() {
+		return peakSeasonWeekend;
+	}
+	public void setPeakSeasonWeekend(int peakSeasonWeekend) {
+		this.peakSeasonWeekend = peakSeasonWeekend;
+	}
+	public int getPeakSeasonPicnic() {
+		return peakSeasonPicnic;
+	}
+	public void setPeakSeasonPicnic(int peakSeasonPicnic) {
+		this.peakSeasonPicnic = peakSeasonPicnic;
+	}
 	public String getZoneName() {
 		return zoneName;
 	}

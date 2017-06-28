@@ -252,7 +252,7 @@ $(function() {
 		<td colspan="3"><input type="text" id="productName" name="productName" size="30" value="<%=productName%>"></td>
 	</tr>
 	<tr>
-		<th>Zone</th>
+		<th>상품그룹</th>
 		<td>
 			<select id="zoneNo" name="zoneNo">
 				<option value=''>-- SELECT --</option>																			
@@ -305,6 +305,14 @@ $(function() {
             주중 <input type="text" id="highSeasonWeekday" name="highSeasonWeekday" size="18" style="text-align:right;padding-right:1px;" value="<%=highSeasonWeekday%>"> 원 &nbsp;&nbsp;&nbsp;
             주말 <input type="text" id="highSeasonWeekend" name="highSeasonWeekend" size="18" style="text-align:right;padding-right:1px;" value="<%=highSeasonWeekend%>"> 원 &nbsp;&nbsp;&nbsp;
             피크닉 <input type="text" id="highSeasonPicnic" name="highSeasonPicnic" size="18" style="text-align:right;padding-right:1px;" value="<%=highSeasonPicnic%>"> 원
+        </td>
+	</tr>
+	<tr>
+        <th>극성수기 요금</th>
+        <td colspan="3">
+            주중 <input type="text" id="peakSeasonWeekday" name="peakSeasonWeekday" size="18" style="text-align:right;padding-right:1px;" value="<%=peakSeasonWeekday%>"> 원 &nbsp;&nbsp;&nbsp;
+            주말 <input type="text" id="peakSeasonWeekend" name="peakSeasonWeekend" size="18" style="text-align:right;padding-right:1px;" value="<%=peakSeasonWeekend%>"> 원 &nbsp;&nbsp;&nbsp;
+            피크닉 <input type="text" id="peakSeasonPicnic" name="peakSeasonPicnic" size="18" style="text-align:right;padding-right:1px;" value="<%=peakSeasonPicnic%>"> 원
         </td>
 	</tr>
 	<tr>
