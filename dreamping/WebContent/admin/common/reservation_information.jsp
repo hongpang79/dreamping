@@ -493,7 +493,7 @@ else
 	if (vSeason == null || vSeason.size() == 0){
 %>        	
                 <span style="padding-top:10px;">
-                <input type="hidden" id="busyMiddleaddCalUseFlag0" name="busyMiddleaddCalUseFlag[0]" value="T">
+                <input type="hidden" id="busyMiddleaddCalUseFlag0" name="busyMiddleaddCalUseFlag[]" value="T">
                 <input type="text" size="12" id="busyMiddleFrom_add[]" name="busyMiddleFrom_add[]" onfocus="blur()">
                 <img src="/admin/img/reservation/btn_calendar.gif" class="linked" align="middle" onclick="cal.toggle( event , this.previousSibling.previousSibling );" alt="달력">
                  &nbsp; 부터 &nbsp;&nbsp;
@@ -552,7 +552,7 @@ else
 	if (vSeason == null || vSeason.size() == 0){
 %>        	
                 <span style="padding-top:10px;">
-                <input type="hidden" id="busyaddCalUseFlag0" name="busyaddCalUseFlag[0]" value="T">
+                <input type="hidden" id="busyaddCalUseFlag0" name="busyaddCalUseFlag[]" value="T">
                 <input type="text" size="12" id="busyFrom_add[]" name="busyFrom_add[]" onfocus="blur()">
                 <img src="/admin/img/reservation/btn_calendar.gif" class="linked" align="middle" onclick="cal.toggle( event , this.previousSibling.previousSibling );" alt="달력">
                 &nbsp; 부터 &nbsp;&nbsp;
@@ -612,7 +612,7 @@ else
 	if (vSeason == null || vSeason.size() == 0){
 %>        	
                 <span style="padding-top:10px;">
-                <input type="hidden" id="busyPeakaddCalUseFlag0" name="busyPeakaddCalUseFlag[0]" value="T">
+                <input type="hidden" id="busyPeakaddCalUseFlag0" name="busyPeakaddCalUseFlag[]" value="T">
                 <input type="text" size="12" id="busyPeakFrom_add[]" name="busyPeakFrom_add[]" onfocus="blur()">
                 <img src="/admin/img/reservation/btn_calendar.gif" class="linked" align="middle" onclick="cal.toggle( event , this.previousSibling.previousSibling );" alt="달력">
                 &nbsp; 부터 &nbsp;&nbsp;

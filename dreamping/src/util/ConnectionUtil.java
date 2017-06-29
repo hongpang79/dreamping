@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * urban slowcity
- * cafe24 id : urbanslowcity
- * p/w : 1899
+ * thedreamping
+ * cafe24 id : mnm080203
+ * p/w : qpwo1012!
  * @author kr007951
  *
  */
@@ -38,12 +38,9 @@ public class ConnectionUtil {
 	}
 	
 	public static Connection getConnection() throws SQLException{
-//		String url = "jdbc:mysql://localhost:3306/urbanslowcity";
-//		String id = "urbanslowcity";
-//		String password = "slowcity5457";
-		String url = "jdbc:mysql://localhost:3306/urban";
-		String id = "urban";
-		String password = "slowcity";
+		String url = "jdbc:mysql://localhost:3306/thedreamping";
+		String id = "thedreamping";
+		String password = "qpwo1012!";
 		Connection con = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");

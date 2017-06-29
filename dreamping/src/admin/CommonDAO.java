@@ -91,7 +91,7 @@ public class CommonDAO {
 		String[] endHighSeason = request.getParameterValues("busyTo_add[]");
 		String[] startPeakSeason = request.getParameterValues("busyPeakFrom_add[]");
 		String[] endPeakSeason = request.getParameterValues("busyPeakTo_add[]");
-//		System.out.println("[CommonDAO][selectRefundList] SQL = " + SQL);
+//		System.out.println("[CommonDAO][processSeason] SQL = " + SQL);
 		
 		try{
 			conn = ConnectionUtil.getConnection();
@@ -148,7 +148,7 @@ public class CommonDAO {
 				seasonCode = "P";
 				seasonName = "극성수기";
 				for(int i=0; i<length; i++){
-					flag = hightFlag[i];
+					flag = peakFlag[i];
 					if(flag.equals("T")){
 						startSeason = startPeakSeason[i].substring(5);
 						endSeason = endPeakSeason[i].substring(5);

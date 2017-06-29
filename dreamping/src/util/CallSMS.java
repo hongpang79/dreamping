@@ -19,7 +19,9 @@ import org.jsoup.select.Elements;
 
 /**
  * SMS연동 페이지 주소
- * http://www.sendgo.co.kr/
+ * cafe24
+ * id : mlksms
+ * pw : qpwo1012!
  * @id urban
  * @pass slowcity
  *
