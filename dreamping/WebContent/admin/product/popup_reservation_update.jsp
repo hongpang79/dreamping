@@ -32,6 +32,9 @@ int middleSeasonPicnic = 0;
 int highSeasonWeekday = 0;
 int highSeasonWeekend = 0;
 int highSeasonPicnic = 0;
+int peakSeasonWeekday = 0;
+int peakSeasonWeekend = 0;
+int peakSeasonPicnic = 0;
 String displayStartDay = "";
 String displayEndDay = "";
 String useYn = "Y";
@@ -64,6 +67,9 @@ if(step.equals("select")){
 	highSeasonWeekday = product.getHighSeasonWeekday();
 	highSeasonWeekend = product.getHighSeasonWeekend();
 	highSeasonPicnic = product.getHighSeasonPicnic();
+	peakSeasonWeekday = product.getPeakSeasonWeekday();
+	peakSeasonWeekend = product.getPeakSeasonWeekend();
+	peakSeasonPicnic = product.getPeakSeasonPicnic();
 	displayStartDay = product.getDisplayStartDay()==null?"":transFormat.format(product.getDisplayStartDay());
 	displayEndDay = product.getDisplayEndDay()==null?"":transFormat.format(product.getDisplayEndDay());
 	useYn = product.getUseYn()==null?"Y":product.getUseYn();
@@ -92,7 +98,7 @@ if(step.equals("select")){
 %>
 <html>
 <head>
-<title>UrbanSlowCity Admin</title>
+<title>THE DREAMPING ADMIN</title>
 <meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <script language=javascript src='/admin/js/common.js'></script>
@@ -220,6 +226,14 @@ $(function() {
 	            주중 <input type="text" id="highSeasonWeekday" name="highSeasonWeekday" size="18" style="text-align:right;padding-right:1px;" value="<%=highSeasonWeekday%>"> 원 &nbsp;&nbsp;&nbsp;
 	            주말 <input type="text" id="highSeasonWeekend" name="highSeasonWeekend" size="18" style="text-align:right;padding-right:1px;" value="<%=highSeasonWeekend%>"> 원 &nbsp;&nbsp;&nbsp;
 	            피크닉 <input type="text" id="highSeasonPicnic" name="highSeasonPicnic" size="18" style="text-align:right;padding-right:1px;" value="<%=highSeasonPicnic%>"> 원
+	        </td>
+		</tr>
+		<tr>
+	        <th>극성수기 요금</th>
+	        <td colspan="3">
+	            주중 <input type="text" id="peakSeasonWeekday" name="peakSeasonWeekday" size="18" style="text-align:right;padding-right:1px;" value="<%=peakSeasonWeekday%>"> 원 &nbsp;&nbsp;&nbsp;
+	            주말 <input type="text" id="peakSeasonWeekend" name="peakSeasonWeekend" size="18" style="text-align:right;padding-right:1px;" value="<%=peakSeasonWeekend%>"> 원 &nbsp;&nbsp;&nbsp;
+	            피크닉 <input type="text" id="peakSeasonPicnic" name="peakSeasonPicnic" size="18" style="text-align:right;padding-right:1px;" value="<%=peakSeasonPicnic%>"> 원
 	        </td>
 		</tr>
 		<tr>

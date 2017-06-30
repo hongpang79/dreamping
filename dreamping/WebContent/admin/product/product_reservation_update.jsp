@@ -11,13 +11,13 @@
 %>
 <html>
 <head>
-<title>UrbanSlowCity Admin</title>
+<title>THE DREAMPING ADMIN</title>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <link rel="stylesheet" type="text/css" href="/admin/css/text_button.css">
-<script language=javascript src='/admin/js/common.js'></script>
-<script language=javascript src='/admin/js/admin.js'></script>
-<script type="text/javascript" src="/js/popup.js"></script>
+<script type="text/javascript" src='/admin/js/common.js'></script>
+<script type="text/javascript" src='/admin/js/admin.js'></script>
+<script type="text/javascript" src="/admin/js/popup.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
@@ -44,7 +44,7 @@
 	
 
 
-<script language=javascript>	
+<script type="text/javascript">	
 	function modifyProduct()
 	{
 		var productNo = '';
@@ -55,13 +55,17 @@
 			productNo = $(elem).val();
 		});
 		
+		if(productNo == null || productNo.length == 0){
+			alert('상품을 선택하세요!');
+			return false;
+		}
 		//alert(productNos);
 		
 		//if( !confirm( '수정하시겠습니까?' ) ) return;
 
 		var url = "/admin/product/popup_reservation_update.jsp?productNo="+productNo+"&productNos="+productNos;
 		url = encodeURI(url);
-		popup.openWindowPopup(url, 'Products Modify', {width : '840px', height : '580px'});
+		popup.openWindowPopup(url, 'Products Modify', {width : '840px', height : '600px'});
 	}
 
 	
@@ -85,9 +89,10 @@
 		<th rowspan="2">상품명</th>
 		<th rowspan="2">기준인원<br>/최대인원</th>
 		<th colspan="2">추가요금</th>
-		<th colspan="3">비수기 요금</th>
-        <th colspan="3">준성수기 요금</th>
-		<th colspan="3">성수기 요금</th>
+		<th colspan="2">비수기</th>
+        <th colspan="2">준성수기</th>
+		<th colspan="2">성수기</th>
+		<th colspan="2">극성수기</th>
 		<th rowspan="2">Display<br>기간</th>
 		<th rowspan="2">sale<br>기간</th>
 	</tr>
@@ -96,13 +101,12 @@
 		<th>일반</th>
 		<th>주중</th>
 		<th>주말</th>
-		<th>피크닉</th>
 		<th>주중</th>
 		<th>주말</th>
-		<th>피크닉</th>
         <th>주중</th>
 		<th>주말</th>
-		<th>피크닉</th>
+		<th>주중</th>
+		<th>주말</th>
 	</tr>
 	</thead>
 	<tbody>
@@ -136,6 +140,9 @@
 		int highSeasonWeekday = 0;
 		int highSeasonWeekend = 0;
 		int highSeasonPicnic = 0;
+		int peakSeasonWeekday = 0;
+		int peakSeasonWeekend = 0;
+		int peakSeasonPicnic = 0;
 		SiteVO product = null;
 		for(int i=0; i<count; i++){
 			product = vProduct.get(i);
@@ -156,6 +163,9 @@
 			highSeasonWeekday = product.getHighSeasonWeekday();
 			highSeasonWeekend = product.getHighSeasonWeekend();
 			highSeasonPicnic = product.getHighSeasonPicnic();
+			peakSeasonWeekday = product.getPeakSeasonWeekday();
+			peakSeasonWeekend = product.getPeakSeasonWeekend();
+			peakSeasonPicnic = product.getPeakSeasonPicnic();
 			productMemo = product.getProductMemo();
 			displayStartDay = product.getDisplayStartDay()==null?"":transFormat.format(product.getDisplayStartDay()); 
 			displayEndDay = product.getDisplayEndDay()==null?"":transFormat.format(product.getDisplayEndDay()); 
@@ -173,13 +183,12 @@
 			<td><% out.print(nf.format(addUserPrice)); %></td>
 			<td><% out.print(nf.format(lowSeasonWeekday)); %></td>
 			<td><% out.print(nf.format(lowSeasonWeekend)); %></td>
-			<td><% out.print(nf.format(lowSeasonPicnic)); %></td>
 			<td><% out.print(nf.format(middleSeasonWeekday)); %></td>
 			<td><% out.print(nf.format(middleSeasonWeekend)); %></td>
-			<td><% out.print(nf.format(middleSeasonPicnic)); %></td>
 			<td><% out.print(nf.format(highSeasonWeekday)); %></td>
 			<td><% out.print(nf.format(highSeasonWeekend)); %></td>
-			<td><% out.print(nf.format(highSeasonPicnic)); %></td>
+			<td><% out.print(nf.format(peakSeasonWeekday)); %></td>
+			<td><% out.print(nf.format(peakSeasonWeekend)); %></td>
 			<td><%=displayStartDay %> ~ <%=displayEndDay %></td>
 			<td><%=saleStartDay %> ~ <%=saleEndDay %></td>
 		</tr>

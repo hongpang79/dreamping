@@ -401,7 +401,7 @@ public class ProductDAO {
 			if(step.equals("insert")){
 				SQL = "INSERT INTO product (product_name,zone_no,site_no,site_name,users,max_users,add_child_price,add_user_price,"
 			        + "low_season_weekday,low_season_weekend,low_season_picnic,middle_season_weekday,middle_season_weekend,middle_season_picnic,"
-			        + "high_season_weekday,high_season_weekend,high_season_picnic,high_season_weekday,high_season_weekend,high_season_picnic,"
+			        + "high_season_weekday,high_season_weekend,high_season_picnic,peak_season_weekday,peak_season_weekend,peak_season_picnic,"
 			        + "display_start_day,display_end_day,use_yn,sale,sale_start_day,sale_end_day,sale_memo,flat_price,flat_price_start_day,flat_price_end_day,product_memo) "
 					+ "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				conn = ConnectionUtil.getConnection();
