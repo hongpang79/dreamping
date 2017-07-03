@@ -1,17 +1,20 @@
 package board;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class Board extends HttpServlet {
+
 	private static final long serialVersionUID = 1L;
- 
+	 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 requestPro(request,response);
 	}
@@ -22,24 +25,26 @@ public class Board extends HttpServlet {
 
 	private void requestPro(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
 		request.setCharacterEncoding("UTF-8");
+		String action = request.getParameter("action");
 		String step = request.getParameter("step");
+		String category = request.getParameter("category");
+		String path = "";
 		
 		if(step == null){
 			step = "list";
 		}
 //		System.out.println("step : " + step);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			
+				
 		if(step.equals("list")){
-			BoardDAO action = new BoardDAO();
+			BoardDAO bd = new BoardDAO();
 			int start = Integer.parseInt(request.getParameter("start"));
 			int end = Integer.parseInt(request.getParameter("end"));
 			int currentPage = Integer.parseInt(request.getParameter("currentPage"));
-			String category = request.getParameter("category");
 			List<BoardVO> list = null;
 			String result = "";
 			String expoCont = "<div class='element expoCont'><a href='/main/board/view.jsp?num=";
-			String param = "&pageNum="+currentPage+"&category="+category;
+			String param = "&pageNum="+currentPage+"&category="+category+"&action=review";
 			String imgs = "'><img src='";
 			String imge = "' alt='' /></a>";
 			String dl = "<dl><dt class='fs_14 mgb05'><a href='/main/board/view.jsp?num=";
@@ -55,7 +60,7 @@ public class Board extends HttpServlet {
 					end = end + (10 * (currentPage-1));
 				}
 //				System.out.println("[Board][step : list] start : " + start + " , end : " + end);
-				list = action.getArticles(start, end, category);
+				list = bd.getArticles(start, end, category);
 				int cnt = list.size();
 				if(cnt > 0){
 					for(int i=0; i<cnt; i++){
@@ -68,7 +73,7 @@ public class Board extends HttpServlet {
 							result = result + str.substring(0,98) + p;
 						}else{
 							result = result + str + p;
-						}											
+						}						
 						result = result + sdf.format(article.getRegDate()) + span + article.getReadCount() + spane;
 					}
 					
@@ -83,8 +88,37 @@ public class Board extends HttpServlet {
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(result);
 //			System.out.println("data = " + result);
+		}else if(step.equals("passwordChk")){
+			int num = Integer.parseInt((String) request.getParameter("num"));
+//			String pageNum = request.getParameter("pageNum");
+			String password = request.getParameter("b_passwd");
+			try {
+				BoardDAO bd = new BoardDAO();
+				int rtn = bd.getPasswordCheck(num, password);
+				response.setContentType("text/html; charset=UTF-8");
+		    	if(rtn == 0){
+		    		PrintWriter pr=response.getWriter();
+					pr.println("<html>");
+					pr.println("<head><script language='JavaScript'>");
+					pr.println("alert('비밀번호가 틀렸습니다.');");
+					pr.println("location.href='/main/board/list.jsp?action=board&category=qna';");
+					pr.println("</script>");
+					pr.println("</head></html>");
+		    	}else{
+		    		path = "/main/board/view.jsp";
+		    		BoardVO board = bd.getArticle(num);
+					request.setAttribute("board", board);
+					
+					RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+					dispatcher.forward(request,	response);
+				}
+				
+	    	} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
 		}
 	}
 
-
-} 
+}

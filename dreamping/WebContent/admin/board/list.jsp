@@ -23,7 +23,13 @@
     }else if("qna".equals(category)){
     	categoryName = "문의하기";
     }else if("photo".equals(category)){
-    	categoryName = "포토앨범";
+    	categoryName = "스쿠터 후기";
+    }else if("review".equals(category)){
+    	categoryName = "출발전 한컷";
+    }else if("nolgo".equals(category)){
+    	categoryName = "놀고";
+    }else if("mukgo".equals(category)){
+        categoryName = "먹고";
     }
     String pageNum = request.getParameter("pageNum");
     if (pageNum == null) {//페이지 번호가 인수로 넘어오지 않으면 1을 기억
@@ -111,11 +117,10 @@
 <table border=0 cellpadding=0 cellspacing=0>
 	<tr><td height=20></td></tr>
 </table>
-	<link rel='stylesheet' type='text/css' href='/css/company.css'>
+	<link rel='stylesheet' type='text/css' href='/admin/css/company.css'>
 	<script language='javascript' src='/js/common.js'></script>
 	<!-- 게시판 시작 -->
-	<link rel="StyleSheet" href="/css/board_6.css" type="text/css">
-	<script language="javascript" src="/js/board.js?com_board_id=6&template=bizdemo18406"></script>
+	<link rel="StyleSheet" href="/admin/css/board_6.css" type="text/css">
 	<table border="0" cellspacing="0" cellpadding="0" width="800" bgcolor="#ffffff" background="">
 		<tr>
 			<td>	
@@ -179,8 +184,19 @@
 							<a href="/admin/board/view.jsp?num=<%=article.getNum()%>&pageNum=<%=currentPage%>&category=<%=category%>">
 <%			
 			}
+	    	
+	    	if(category.equals("qna")){
+%>	    		
+	    		<img src="/images/content/icon_question.png" alt="Q"/>
+<%
+	    		if(article.getReDescription()!=null){
+%>	    			
+	    			<img src="/images/content/icon_answer.png" alt="A" class="mgl03" />
+<%
+	    		}
+	    	}
 %>												
-							<%=article.getSubject()%></a></td>
+							&nbsp;<%=article.getSubject()%></a></td>
 						<td class="bbswriter"><%=article.getWriter()%></td>
 						<td class="bbsetc_dateof_write"><%= sdf.format(article.getRegDate())%></td>
 						<td class="bbsetc_view_count"><%=article.getReadCount()%></td>

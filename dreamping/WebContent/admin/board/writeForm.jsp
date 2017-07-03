@@ -24,12 +24,18 @@
 		ref=article.getRef();
 		reStep=article.getReStep();
 		reLevel=article.getReLevel();
-		subject = "[답변] " + article.getSubject();
-		description = "<br><br><br> -------------------- Original Message -------------------- <br>" 
-		            + article.getDescription();
   	}catch(Exception e){}
   }else if("photo".equals(category)){
-	categoryName = "포토앨범";
+	categoryName = "스쿠터 후기";
+	thumbImgUrl = request.getParameter("thumbImgUrl")==null ? "":request.getParameter("thumbImgUrl"); 
+  }else if("review".equals(category)){
+	categoryName = "출발전 한컷";
+	thumbImgUrl = request.getParameter("thumbImgUrl")==null ? "":request.getParameter("thumbImgUrl"); 
+  }else if("nolgo".equals(category)){
+	categoryName = "놀고";
+	thumbImgUrl = request.getParameter("thumbImgUrl")==null ? "":request.getParameter("thumbImgUrl");   
+  }else if("mukgo".equals(category)){
+    categoryName = "먹고";
 	thumbImgUrl = request.getParameter("thumbImgUrl")==null ? "":request.getParameter("thumbImgUrl"); 
   }
   
@@ -68,11 +74,10 @@
 <table border=0 cellpadding=0 cellspacing=0>
 	<tr><td height=20></td></tr>
 </table>
-	<link rel='stylesheet' type='text/css' href='/css/company.css'>
+	<link rel='stylesheet' type='text/css' href='/admin/css/company.css'>
 	<script language='javascript' src='/js/common.js'></script>
 	<!-- 게시판 시작 -->
-	<link rel="StyleSheet" href="/css/board_6.css" type="text/css">
-	<script language="javascript" src="/js/board.js?com_board_id=6&template=bizdemo18406"></script>
+	<link rel="StyleSheet" href="/admin/css/board_6.css" type="text/css">
 	<!-- SmartEditor를 사용하기 위해서 다음 js파일을 추가 (경로 확인) -->
 	<script type="text/javascript" src="/js/HuskyEZCreator.js" charset="utf-8"></script>
 	<!-- jQuery를 사용하기위해 jQuery라이브러리 추가 -->
@@ -137,9 +142,7 @@
 		}*/
 	</style>
 	<!-- 게시판 시작 -->
-	<link rel="StyleSheet" href="/css/board_6.css" type="text/css">
-	<script language="javascript" src="/js/board.js?com_board_id=6&template=bizdemo18406"></script>
-	<script language="javascript" type="text/javascript" src="/js/board_util.js"></script>
+	<link rel="StyleSheet" href="/admin/css/board_6.css" type="text/css">
 	<table border="0" cellspacing="0" cellpadding="0" width="800" bgcolor="#ffffff" background="">
 		<tr>
 			<td>
@@ -150,15 +153,15 @@
 				    <input type="hidden" name="ref" value="<%=ref%>">
 				    <input type="hidden" name="re_step" value="<%=reStep%>">
 				    <input type="hidden" name="re_level" value="<%=reLevel%>">
-					<input type="hidden" name="writer" value="어반슬로우시티">
-					<input type="hidden" name="password" value="slowcity" />
+					<input type="hidden" name="writer" value="관리자">
+					<input type="hidden" name="password" value="mnmdream" />
 					<table border="1" cellpadding="3" cellspacing="0" width="100%" style="border-collapse:collapse" bordercolor="#E5E5E5">
 				<!-- 본문 -->	
 						<tr height='30' class='board'>
 							<td class="board_bgcolor"><span style="color:#000000;font-size:12px;">제목</span></td>
 							<td class="board_desc"><input title="input" type='text' class='public_input input_form' id='subject' name="subject" style="border:1px solid #EAEAEA;height:20px;" maxlength="100" size="100" value="<%=subject%>"/></td>
 						</tr>
-				<%if(category.equals("photo")){ %>
+				<%if(category.equals("photo")||category.equals("review")){ %>
 						<tr height='30' class='board'>
 							<td class="board_bgcolor"><span style="color:#000000;font-size:12px;">목록이미지</span></td>
 							<td class="board_desc"><input title="input" type='file' class='public_input input_form' id='thumbImgUrl' name="thumbImgUrl" style="border:1px solid #EAEAEA;height:20px;" maxlength="50" size="50" value="<%=thumbImgUrl%>"/>
@@ -196,11 +199,11 @@
 						<tr>
 							<td width='62'>
 								<a href='/admin/board/list.jsp?category=<%=category%>'>
-								<img src='/images/board/list.gif' vspace='7' border='0'></a><!-- 목록보기버튼 -->
+								<img src='/admin/img/board/list.gif' vspace='7' border='0'></a><!-- 목록보기버튼 -->
 							</td>
 							<td class='bbsnewf5' height='34' align='center'>
-								<input type='image' id="submitbtn" src='/images/board/confirm.gif' vspace='7' border='0'><!-- 확인버튼 -->
-				      			<a href="javascript:document.com_board.reset();"><img src='/images/board/cancel.gif' vspace='7' border='0'></a><!-- 취소버튼 -->
+								<input type='image' id="submitbtn" src='/admin/img/board/confirm.gif' vspace='7' border='0'><!-- 확인버튼 -->
+				      			<a href="javascript:document.com_board.reset();"><img src='/admin/img/board/cancel.gif' vspace='7' border='0'></a><!-- 취소버튼 -->
 						    </td>
 						    <td width='62'></td>
 						</tr>

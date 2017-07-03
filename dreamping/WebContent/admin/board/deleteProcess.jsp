@@ -19,7 +19,6 @@
 	<!-- 
 		alert("글이 삭제되었습니다.");
 		location.href="/admin/board/list.jsp?category=<%=category%>&pageNum=<%=pageNum%>&flag=<%=flag%>&com_board_search_code=<%=comBoardSearchCode%>&com_board_search_value=<%=comBoardSearchValue%>";
-		self.close();
 	-->
 	</script>      
 <% }else{%>

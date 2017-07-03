@@ -9,6 +9,7 @@ public class BoardVO{
     private String subject;
     private String email;
     private String description;
+    private String reDescription;
     private String password;
     private String noticeYn;
     private String secretYn;
@@ -56,6 +57,12 @@ public class BoardVO{
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public String getReDescription() {
+		return reDescription;
+	}
+	public void setReDescription(String reDescription) {
+		this.reDescription = reDescription;
 	}
 	public String getPassword() {
 		return password;

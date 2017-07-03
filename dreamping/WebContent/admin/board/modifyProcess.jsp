@@ -1,20 +1,44 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="board.BoardDAO"%>
 <%@ page import="java.sql.Timestamp"%>
+<%@ page import="java.io.File" %>
+<%@ page import="com.oreilly.servlet.MultipartRequest" %>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
+<%@ page import="board.BoardDAO"%>
 <% 
 	request.setCharacterEncoding("UTF-8");
+	String path = application.getRealPath("/SE2/upload");
+	MultipartRequest mr = new MultipartRequest(request, path, 1024*1024*5, "utf-8", new DefaultFileRenamePolicy());
 %>
 <jsp:useBean id="article" scope="page" class="board.BoardVO">
    <jsp:setProperty name="article" property="*"/>
 </jsp:useBean>
 <%
-	int num = Integer.parseInt(request.getParameter("num"));
-	String pageNum = request.getParameter("pageNum");
-	String flag = request.getParameter("flag");
-	String category = request.getParameter("category");
-	String comBoardSearchCode = request.getParameter("com_board_search_code")==null?"":new String(request.getParameter("com_board_search_code").getBytes("ISO-8859-1"),"UTF-8");;
-	String comBoardSearchValue = request.getParameter("com_board_search_value")==null?"":new String(request.getParameter("com_board_search_value").getBytes("ISO-8859-1"),"UTF-8");
-
+	String action = mr.getParameter("action");
+	String category = mr.getParameter("category");
+	String pageNum = mr.getParameter("pageNum");
+	String flag = mr.getParameter("flag");
+	String comBoardSearchCode = mr.getParameter("comBoardSearchCode");
+	String comBoardSearchValue = mr.getParameter("comBoardSearchValue");
+	String thumbImgUrl = "";
+	if("photo".equals(category)||"review".equals(category)){
+		File s_file = mr.getFile("thumbImgUrl");
+		System.out.println(s_file);
+		if(s_file == null){
+			thumbImgUrl = mr.getParameter("thumbImgUrlOrg");
+		}else{
+			thumbImgUrl = "/SE2/upload/"+s_file.getName();
+		}
+	}
+	
+	article.setCategory(category);
+	article.setNum(Integer.parseInt((String) mr.getParameter("num")));
+	article.setWriter(mr.getParameter("writer"));
+	article.setEmail(mr.getParameter("email"));
+	article.setSubject(mr.getParameter("subject"));
+	article.setPassword(mr.getParameter("password"));
+	article.setThumbImgUrl(thumbImgUrl);
+	article.setDescription(mr.getParameter("description"));
+	
 	BoardDAO dbPro = BoardDAO.getInstance();
     int check = dbPro.updateArticle(article);
 

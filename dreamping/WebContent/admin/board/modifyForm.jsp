@@ -20,7 +20,13 @@
     }else if("qna".equals(request.getParameter("category"))){
     	categoryName = "문의하기";
     }else if("photo".equals(request.getParameter("photo"))){
-    	categoryName = "포토앨범";
+    	categoryName = "스쿠터 후기";
+    }else if("review".equals(request.getParameter("review"))){
+    	categoryName = "출발전 한컷";
+    }else if("nolgo".equals(category)){
+    	categoryName = "놀고";
+    }else if("mukgo".equals(category)){
+        categoryName = "먹고";
     }
     
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -28,6 +34,10 @@
 	try{
 		BoardDAO dbPro = BoardDAO.getInstance();
 		BoardVO article =  dbPro.getArticle(num);
+		String thumbImgUrlOrg = article.getThumbImgUrl();
+		if(thumbImgUrlOrg==null){
+			thumbImgUrlOrg = "";
+		}
  %>
 <html>
 <head>
@@ -63,11 +73,10 @@
 <table border=0 cellpadding=0 cellspacing=0>
 	<tr><td height=20></td></tr>
 </table>
-	<link rel='stylesheet' type='text/css' href='/css/company.css'>
+	<link rel='stylesheet' type='text/css' href='/admin/css/company.css'>
 	<script language='javascript' src='/js/common.js'></script>
 	<!-- 게시판 시작 -->
-	<link rel="StyleSheet" href="/css/board_6.css" type="text/css">
-	<script language="javascript" src="/js/board.js?com_board_id=6&template=bizdemo18406"></script>
+	<link rel="StyleSheet" href="/admin/css/board_6.css" type="text/css">
 	<!-- SmartEditor를 사용하기 위해서 다음 js파일을 추가 (경로 확인) -->
 	<script type="text/javascript" src="/js/HuskyEZCreator.js" charset="utf-8"></script>
 	<!-- jQuery를 사용하기위해 jQuery라이브러리 추가 -->
@@ -132,14 +141,12 @@
 		}*/
 	</style>
 	<!-- 게시판 시작 -->
-	<link rel="StyleSheet" href="/css/board_6.css" type="text/css">
-	<script language="javascript" src="/js/board.js?com_board_id=6&template=bizdemo18406"></script>
-	<script language="javascript" type="text/javascript" src="/js/board_util.js"></script>
+	<link rel="StyleSheet" href="/admin/css/board_6.css" type="text/css">
 	<table border="0" cellspacing="0" cellpadding="0" width="800" bgcolor="#ffffff" background="">
 	</table>
 	<table border="0" cellspacing="0" cellpadding="0" width="800" bgcolor="#ffffff" background="">
 	
-		<form name='com_board' method='post' action='/admin/board/modifyProcess.jsp' onSubmit='return com_board_writeformCheck()'>
+		<form name='com_board' method='post' enctype="multipart/form-data" action='/admin/board/modifyProcess.jsp' onSubmit='return com_board_writeformCheck()'>
 			<input type="hidden" name="category" value="<%=category%>">
 			<input type="hidden" name="pageNum" value="<%=pageNum%>">
 			<input type="hidden" name="flag" value="<%=flag%>">
@@ -151,7 +158,8 @@
 			<input type="hidden" name="reStep" value="<%=article.getReStep()%>">
 			<input type="hidden" name="reLevel" value="<%=article.getReLevel()%>">
 			<input type="hidden" name="writer" value="<%=article.getWriter()%>">
-        	<input type='hidden' name='password' value="ping" />
+        	<input type='hidden' name='password' value="jeju" />
+        	<input type="hidden" name="thumbImgUrlOrg" value="<%=thumbImgUrlOrg %>">
 		
 		<tr>
 			<td>
@@ -161,6 +169,14 @@
 						<td class="board_bgcolor"><span style="color:#000000;font-size:12px;">제목</span></td>
 						<td class="board_desc"><input title="input" type='text' class='public_input input_form' id='border' name="subject" style="border:1px solid #EAEAEA;height:20px;" maxlength="100" size="100" value="<%=article.getSubject()%>"/></td>
 					</tr>
+				<%if(category.equals("photo")||category.equals("review")){ %>
+					<tr height='30' class='board'>
+						<td class="board_bgcolor"><span style="color:#000000;font-size:12px;">목록이미지</span></td>
+						<td class="board_desc"><input title="input" type='file' class='public_input input_form' id='thumbImgUrl' name="thumbImgUrl" style="border:1px solid #EAEAEA;height:20px;" maxlength="50" size="50" value=""/>
+						&nbsp;&nbsp;(가로 327px로 올려주세요.)&nbsp;&nbsp;<%=thumbImgUrlOrg%>
+						</td>
+					</tr>			
+				<%}%>
 					<tr height='30'>
 						<td colspan='2' align='center' width='100%'>
 							<textarea title="input" name='description' id='description' style='display:none;'><%=article.getDescription()%></textarea>

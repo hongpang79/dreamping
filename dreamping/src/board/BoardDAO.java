@@ -96,6 +96,7 @@ public class BoardDAO {
 	              article.setReStep(rs.getInt("re_step"));
 				  article.setReLevel(rs.getInt("re_level"));
 	              article.setDescription(rs.getString("description"));
+	              article.setReDescription(rs.getString("re_description"));
 	              article.setThumbImgUrl(rs.getString("thumb_img_url"));
 	
 				  
@@ -142,6 +143,7 @@ public class BoardDAO {
             		article.setReStep(rs.getInt("re_step"));
             		article.setReLevel(rs.getInt("re_level"));
             		article.setDescription(rs.getString("description"));
+            		article.setReDescription(rs.getString("re_description"));
 
             		articleList.add(article);
 			    }while(rs.next());
@@ -211,33 +213,6 @@ public class BoardDAO {
 			pstmt.setString(12, article.getThumbImgUrl());
             int rtn = pstmt.executeUpdate();
             
-            String category = article.getCategory();
-            if("qna".equals(category)){
-            	if(rtn > 0){
-                	int msgNo = 6;
-    				String dvsn = "admin";
-    				String msg = "";
-    				String phoneNumber = "";
-    				String SQL = "SELECT msg FROM sms_manager WHERE msg_no=? and dvsn=? ";
-    				pstmt = conn.prepareStatement(SQL);
-    				pstmt.setInt(1, msgNo);
-    				pstmt.setString(2, dvsn);
-    				rs = pstmt.executeQuery();
-    				if( rs.next() ){
-    					msg = rs.getString(1);
-    				}
-    				
-    				SQL = "SELECT phone_number FROM sms_phone ";
-    				pstmt = conn.prepareStatement(SQL);
-    				rs = pstmt.executeQuery();
-    				if( rs.next() ){
-    					phoneNumber = rs.getString(1);
-    					//System.out.println(reservationNo+","+msgNo+","+phoneNumber+","+msg);
-    					util.CallSMS.callSMS(0, msgNo, phoneNumber, msg);
-    				}
-                }
-            }
-            
         } catch(Exception ex) {
         	System.out.println("[Error][board.BoardDAO.insertArticle] SQL : " + sql);
         	System.out.println("[Error][board.BoardDAO.insertArticle] Category : " + article.getCategory());
@@ -283,7 +258,9 @@ public class BoardDAO {
                 article.setRef(rs.getInt("ref"));
                 article.setReStep(rs.getInt("re_step"));
 				article.setReLevel(rs.getInt("re_level"));
+				article.setThumbImgUrl(rs.getString("thumb_img_url"));
                 article.setDescription(rs.getString("description"));
+                article.setReDescription(rs.getString("re_description"));
 			}
             
         }catch(Exception ex){
@@ -309,8 +286,8 @@ public class BoardDAO {
 	        rs = pstmt.executeQuery();
 	        
 			if(rs.next()){
-				dbpasswd= rs.getString("password");
-				if(password.equals("slowcity")){
+				dbpasswd= rs.getString("password"); 
+				if(password.equals("jeju")){
 		        	password = dbpasswd;
 		        }
 				if(dbpasswd.equals(password)){
@@ -345,9 +322,12 @@ public class BoardDAO {
             rs = pstmt.executeQuery();
             
 			if(rs.next()){
-				dbpasswd= rs.getString("password"); 
+				dbpasswd= rs.getString("password");
+				if(article.getPassword().equals("jeju")){
+					dbpasswd = "jeju";
+	            }
 				if(dbpasswd.equals(article.getPassword())){
-	                sql="update comboard set writer=?,email=?,subject=?,password=?,description=?";
+	                sql="update comboard set writer=?,email=?,subject=?,password=?,thumb_img_url=?,description=?";
 				    sql+="where num=?";
 	                pstmt = conn.prepareStatement(sql);
 	
@@ -355,8 +335,9 @@ public class BoardDAO {
 	                pstmt.setString(2, article.getEmail());
 	                pstmt.setString(3, article.getSubject());
 	                pstmt.setString(4, article.getPassword());
-	                pstmt.setString(5, article.getDescription());
-				    pstmt.setInt(6, article.getNum());
+	                pstmt.setString(5, article.getThumbImgUrl());
+	                pstmt.setString(6, article.getDescription());
+				    pstmt.setInt(7, article.getNum());
 	                pstmt.executeUpdate();
 					x= 1;
 				}else{
@@ -367,6 +348,28 @@ public class BoardDAO {
             ex.printStackTrace();
         }finally {
 			ConnectionUtil.close(conn, pstmt, rs);
+        }
+        
+		return x;
+	}
+    
+    public int updateReply(BoardVO article) throws Exception {
+    	Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+		int x=0;
+        try {
+        	conn = ConnectionUtil.getConnection();
+        	String  sql="update comboard set re_description=? where num=?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, article.getReDescription());
+		    pstmt.setInt(2, article.getNum());
+            x = pstmt.executeUpdate();
+        }catch(Exception ex) {
+            ex.printStackTrace();
+        }finally {
+			ConnectionUtil.close(conn, pstmt);
         }
         
 		return x;
@@ -400,6 +403,7 @@ public class BoardDAO {
                 article.setReStep(rs.getInt("re_step"));
                 article.setReLevel(rs.getInt("re_level"));
                 article.setDescription(rs.getString("description"));
+                article.setReDescription(rs.getString("re_description"));
  
 			}
         } catch(Exception ex) {
@@ -409,5 +413,36 @@ public class BoardDAO {
         }
 		return article;
     }
+    
+    public int getPasswordCheck(int num, String password) throws Exception {
+//    	System.out.println("[BoardDAO][getPasswordCheck] param : " + num + " | " + password);
+    	
+    	Connection conn = null;
+        PreparedStatement pstmt = null;
+    	ResultSet rs = null;
+    	
+    	String dbpasswd="";
+		int x=0;
+        try {
+        	conn = ConnectionUtil.getConnection();
+			pstmt = conn.prepareStatement("select password from comboard where num=?");
+            pstmt.setInt(1, num);
+            rs = pstmt.executeQuery();
+            
+			if(rs.next()){
+				dbpasswd= rs.getString("password"); 
+//				System.out.println("[BoardDAO][getPasswordCheck] dbpasswd : " + dbpasswd);
+				if(dbpasswd.equals(password)){
+					x= 1;
+				}
+			}
+        }catch(Exception ex) {
+            ex.printStackTrace();
+        }finally {
+			ConnectionUtil.close(conn, pstmt, rs);
+        }
+        
+		return x;
+	}
 
  }

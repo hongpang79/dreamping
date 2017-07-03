@@ -18,8 +18,8 @@ CREATE TABLE `comboard` (
   `writer` varchar(10) default NULL,
   `password` varchar(12) default NULL,
   `email` varchar(30) default NULL,
-  `subject` varchar(50) default NULL,
-  `reg_date` date default NULL,
+  `subject` varchar(255) default NULL,
+  `reg_date` datetime default NULL,
   `read_count` int(11) default NULL,
   `notice_yn` varchar(1) default 'N',
   `secret_yn` varchar(1) default 'N',
@@ -28,6 +28,7 @@ CREATE TABLE `comboard` (
   `re_level` int(11) default NULL,
   `thumb_img_url` varchar(255) default NULL,
   `description` mediumtext,
+  `re_description` mediumtext,
   PRIMARY KEY  (`num`)
 ) ENGINE=MyISAM;
 

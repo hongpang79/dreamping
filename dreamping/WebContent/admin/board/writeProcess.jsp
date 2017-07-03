@@ -16,7 +16,7 @@
 <%
 	String category = mr.getParameter("category");
 	String thumbImgUrl = "";
-	if("photo".equals(category)){
+	if("photo".equals(category)||"review".equals(category)||"nolgo".equals(category)||"mukgo".equals(category)){
 		File s_file = mr.getFile("thumbImgUrl");
 		thumbImgUrl = "/SE2/upload/"+s_file.getName();	
 	}

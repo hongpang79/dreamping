@@ -16,13 +16,19 @@
 	if (category == null){
 		category = "notice";
 	  	categoryName = "공지사항";
-	}else if("notice".equals(request.getParameter("category"))){
+	}else if("notice".equals(category)){
 		categoryName = "공지사항";
-	}else if("qna".equals(request.getParameter("category"))){
+	}else if("qna".equals(category)){
 		categoryName = "문의하기";
-	}else if("photo".equals(request.getParameter("photo"))){
-		categoryName = "포토앨범";
-	}
+	}else if("photo".equals(category)){
+    	categoryName = "스쿠터 후기";
+    }else if("review".equals(category)){
+    	categoryName = "출발전 한컷";
+	}else if("nolgo".equals(category)){
+    	categoryName = "놀고";
+    }else if("mukgo".equals(category)){
+        categoryName = "먹고";
+    }
 	  
 	try{
 		BoardDAO dbPro = BoardDAO.getInstance();
@@ -39,6 +45,46 @@
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <script language=javascript src='/admin/js/common.js'></script>
 <script language=javascript src='/admin/js/admin.js'></script>
+<!-- SmartEditor를 사용하기 위해서 다음 js파일을 추가 (경로 확인) -->
+	<script type="text/javascript" src="/js/HuskyEZCreator.js" charset="utf-8"></script>
+	<!-- jQuery를 사용하기위해 jQuery라이브러리 추가 -->
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript">
+		var oEditors = [];
+		$(function(){
+		      nhn.husky.EZCreator.createInIFrame({
+		          oAppRef: oEditors,
+		          elPlaceHolder: "reDescription", //textarea에서 지정한 id와 일치해야 합니다. 
+		          //SmartEditor2Skin.html 파일이 존재하는 경로
+		          sSkinURI: "/SmartEditor2Skin.html",  
+		          htParams : {
+		              // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+		              bUseToolbar : true,             
+		              // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+		              bUseVerticalResizer : true,     
+		              // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+		              bUseModeChanger : true,         
+		              fOnBeforeUnload : function(){
+		                   
+		              }
+		          }, 
+		          fOnAppLoad : function(){
+		              //기존 저장된 내용의 text 내용을 에디터상에 뿌려주고자 할때 사용
+		              oEditors.getById["reDescription"].exec("PASTE_HTML", [""]);
+		          },
+		          fCreator: "createSEditor2"
+		      });
+		      
+		      //저장버튼 클릭시 form 전송
+		      $("#submitbtn").click(function(){
+		          oEditors.getById["reDescription"].exec("UPDATE_CONTENTS_FIELD", []);
+		          $("#com_board").submit();
+		      });    
+		});
+		 
+		 
+		 
+	</script>
 </head>
 
 <body bgcolor='#FFFFFF' topmargin='0' leftmargin='0'>
@@ -66,12 +112,8 @@
 <table border=0 cellpadding=0 cellspacing=0>
 	<tr><td height=20></td></tr>
 </table>
-	<link rel='stylesheet' type='text/css' href='/css/company.css'>
-	<script language='javascript' src='/js/common.js'></script>
 	<!-- 게시판 시작 -->
-	<link rel="StyleSheet" href="/css/board_6.css" type="text/css">
-	<script language="javascript" src="/js/board.js?com_board_id=6&template=bizdemo18406"></script>
-	<script language="javascript" type="text/javascript" src="/js/board_util.js"></script>
+	<link rel="StyleSheet" href="/admin/css/board_6.css" type="text/css">
 	
 	<table border="0" cellspacing="0" cellpadding="0" width="800" bgcolor="#ffffff" background="">
 		<tr>
@@ -155,6 +197,43 @@
 	    		<tr>
 	    			<td height='10'></td>
 	    		</tr>
+<% if(!category.equals("notice")){ %>	    		
+			<form name='com_board' method='post' action='/admin/board/replyProcess.jsp'>
+			  	<input type="hidden" name="category" value="<%=category%>"/>
+			  	<input type="hidden" name="num" value="<%=num%>"/>
+	    		<table border='1' cellpadding='0' cellspacing='0' width='100%' style='border-collapse:collapse' bordercolor='#e5e5e5' class="board">
+	    			<!--답글 내용 -->
+					<tr height="30">
+						<td colspan="2" class="board_description" width="100%" height="100px">
+							<textarea title="input" name='reDescription' id='reDescription' style='display:none;' ><%=article.getReDescription()%></textarea>
+						</td>
+					</tr>
+					<!-- //내용 -->
+	    		</table>
+	    		<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+		    		<tr>
+		    			<td height='10'></td>
+		    		</tr>
+	    		</table>
+	    		<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+	    			<tr>
+	    				<td height='1' bgcolor='#E5E5E5'></td>
+	    			</tr>
+	    			<tr>
+						<td align='right'>
+							<input type='image' id="submitbtn" src='/admin/img/board/reply.gif' vspace='7' border='0' >
+						</td>
+					</tr>
+	   			</table>
+	   		</form>
+	   			<table border='0' cellpadding='0' cellspacing='0' width='100%'>
+		    		<tr>
+		    			<td height='10'></td>
+		    		</tr>
+	    		</table>
+<%
+	}
+%>	    		
 	   		</table>
 	
 		   <!-- 게시물 평가 -->
@@ -189,7 +268,7 @@
 							<tr>
 								<td class='bbsnewf5' height='34' align='left' width='50%' style="border:0px">
 					    			<a href="/admin/board/list.jsp?category=<%=category%>&pageNum=<%=pageNum%>&flag=<%=flag%>&com_board_search_code=<%=comBoardSearchCode%>&com_board_search_value=<%=comBoardSearchValue%>">
-					    			<img src="/images/board/list.gif" border='0' align='absmiddle' alt=''></a>
+					    			<img src="/admin/img/board/list.gif" border='0' align='absmiddle' alt=''></a>
 								</td>
 							</tr>
 						</table>
@@ -198,15 +277,15 @@
 	     			</td>
 	     			<td align='right' width='50%'>
 				       <!-- 스팸신고 -->
-				       <a href='javascript:alert("권한이 없습니다.")' style='display:none'><img alt='' src='/images/board/spam.gif' border='0' /></a>
+				       <a href='javascript:alert("권한이 없습니다.")' style='display:none'><img alt='' src='/admin/img/board/spam.gif' border='0' /></a>
 				       <!-- 추천하기 -->
-				       <a href='javascript:alert("권한이 없습니다.")' style='display:none'><img alt='' src='/images/board/recommend.gif' border='0' /></a>
+				       <a href='javascript:alert("권한이 없습니다.")' style='display:none'><img alt='' src='/admin/img/board/recommend.gif' border='0' /></a>
 				       <!-- 수정하기 -->
-				       <a href="javascript:location.href='/admin/board/modifyForm.jsp?category=<%=category%>&pageNum=<%=pageNum%>&flag=<%=flag%>&com_board_search_code=<%=comBoardSearchCode%>&com_board_search_value=<%=comBoardSearchValue%>&num=<%=num%>'";><img alt='' src='/images/board/modify.gif' border='0' /></a>
+				       <a href="javascript:location.href='/admin/board/modifyForm.jsp?category=<%=category%>&pageNum=<%=pageNum%>&flag=<%=flag%>&com_board_search_code=<%=comBoardSearchCode%>&com_board_search_value=<%=comBoardSearchValue%>&num=<%=num%>'"; <% if(category.equals("qna")) out.print("style='display:none'"); %>><img alt='' src='/admin/img/board/modify.gif' border='0' /></a>
 				       <!-- 삭제하기 -->
-				       <a href="javascript: if(!confirm('글을 삭제 하시겠습니까?')){retrun;} location.href='/admin/board/deleteProcess.jsp?category=<%=category%>&pageNum=<%=pageNum%>&flag=<%=flag%>&com_board_search_code=<%=comBoardSearchCode%>&com_board_search_value=<%=comBoardSearchValue%>&num=<%=num%>&password=slowcity'";><img alt='' src='/images/board/delete.gif' border='0' /></a>
+				       <a href="javascript: if(!confirm('글을 삭제 하시겠습니까?')){retrun;} location.href='/admin/board/deleteProcess.jsp?category=<%=category%>&pageNum=<%=pageNum%>&flag=<%=flag%>&com_board_search_code=<%=comBoardSearchCode%>&com_board_search_value=<%=comBoardSearchValue%>&num=<%=num%>&password=jeju'";><img alt='' src='/admin/img/board/delete.gif' border='0' /></a>
 				       <!-- 답글쓰기 -->
-				       <a href="javascript:location.href='/admin/board/writeForm.jsp?category=<%=category%>&pageNum=<%=pageNum%>&flag=<%=flag%>&com_board_search_code=<%=comBoardSearchCode%>&com_board_search_value=<%=comBoardSearchValue%>&num=<%=num%>'"; <% if(!category.equals("qna")) out.print("style='display:none'"); %>><img alt='' src='/images/board/reply.gif' border='0' /></a>
+				       
 	     			</td>
 	    		</tr>
 	   		</table>
