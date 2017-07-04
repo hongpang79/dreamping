@@ -22,14 +22,12 @@
     	categoryName = "공지사항";
     }else if("qna".equals(category)){
     	categoryName = "문의하기";
+    }else if("event".equals(category)){
+    	categoryName = "이벤트";
     }else if("photo".equals(category)){
-    	categoryName = "스쿠터 후기";
-    }else if("review".equals(category)){
-    	categoryName = "출발전 한컷";
-    }else if("nolgo".equals(category)){
-    	categoryName = "놀고";
-    }else if("mukgo".equals(category)){
-        categoryName = "먹고";
+    	categoryName = "갤러리";
+    }else if("group".equals(category)){
+    	categoryName = "제휴/단체문의";
     }
     String pageNum = request.getParameter("pageNum");
     if (pageNum == null) {//페이지 번호가 인수로 넘어오지 않으면 1을 기억

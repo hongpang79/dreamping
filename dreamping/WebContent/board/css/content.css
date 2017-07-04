@@ -1,0 +1,857 @@
+#animation{position:relative;width:100%;height:720px;
+	-webkit-transform: scale(0.5);
+-moz-transform: scale(0.5);
+-o-transform: scale(0.5);
+-ms-transform: scale(0.5);
+transform: scale(0.5);
+-webkit-transform-origin: 50% 0%;
+-moz-transform-origin: 50% 0%;
+-o-transform-origin: 50% 0%;
+-ms-transform-origin: 50% 0%;
+transform-origin: 50% 0%;
+}
+
+.main_con{height:360px}
+
+#top_banner{width:100%;height:80px;background:#f5ece5;position:relative;}
+#top_banner .wrap{width:1100px;margin:0 auto}
+#top_banner .wrap h3{width:1100px;height:80px;}
+#top_banner .close{position:absolute;top:23px;right:30px;width:35px;height:35px;}
+
+
+#container h2{padding:40px 0 33px;text-align:center;}
+
+.p_tc{display:table-cell}
+.p_tl{display:table-column}
+
+.m_b{display:none;}	
+
+.m_layout_tc{display:block;}
+.m_layout_tl{display:block;}	
+
+col.w_120{width:120px;}
+
+/* rent */
+.search_cover{border:solid 1px #e1e1e1;background:#f5f5f5;padding:29px 0;text-align:center;}
+.search_cover ul{display:inline-block;zoom:1;*display:inline;margin-top:20px;}
+.search_cover ul li{float:left;margin-left:20px;font-size:16px;color:#888;}
+.search_cover ul li:first-child{margin-left:0;}
+.search_cover ul li select{margin:0;height:40px;display:inline;width:70px;background:#fff url('http://jjscooter.cdn3.cafe24.com/images/content/bg_arrow.png') no-repeat 90% center;font-size:16px;}	
+.search_btn{display:block;background:#444;color:#fff !important;line-height:40px;text-align:center;font-size:16px;width:150px;}
+.reserve_info{border:solid 1px #e1e1e1;border-top:none;margin-bottom:20px;text-align:center;line-height:69px;color:#c3976c;}
+.bike_list{overflow:hidden;border-top:solid 1px #e1e1e1;border-left:solid 1px #e1e1e1;}
+.bike_list li{float:left;width:33.3%;}
+.bike_list li a{display:block;border:solid 1px #e1e1e1;border-left:none;border-top:none;}
+.bike_list li a img{width:100%;height:100%;}
+.bike_list li dl{text-align:center;font-size:16px;height:60px;padding-top:17px;background:#f9f9f9;border:solid 1px #e1e1e1;border-left:none;border-top:none;}
+.bike_list li dl dd del{font-size:16px;letter-spacing:0;}
+.bike_list li dl dd span{font-family:'Play';font-size:23px;color:#ff7800;vertical-align:bottom}
+
+.sort_list{border:solid 1px #e1e1e1;margin-bottom:10px;}
+.sort_list a{display:block;width:100px;line-height:40px;text-align:center;font-size:14px;}
+.sort_list a.on{background:#888;color:#fff;}
+
+/* reserve */
+.bike_reserve{}
+.bike_reserve .name{border:solid 1px #e3e3e3;margin-bottom:20px;height:48px;line-height:48px;color:#000;font-size:18px;padding-left:20px;position:relative;}
+.bike_reserve .name a{position:absolute;right:0;top:0;display:block;padding-top:15px;width:48px;text-align:center;border-left:solid 1px #e3e3e3;height:33px;}
+.bike_reserve .reserve_cover{overflow:hidden;}
+.bike_reserve .title{border-bottom:solid 1px #e3e3e3;background:#f9f9f9;line-height:48px;padding-left:20px;color:#444;font-size:14px;}
+.bike_reserve .bike_info{width:70%;float:left;}
+.bike_reserve .bike_info > p{min-height:545px;}
+.bike_reserve .bike_info img {max-width:100%;}
+.bike_reserve .bike_detail{border:solid 1px #e3e3e3;}
+.bike_reserve .bike_detail > div{padding:10px 20px;font-size:13px;}
+.bike_reserve .bike_detail > div ul > li{line-height:18px;color:#888;}
+.bike_reserve .reserve_detail{width:29%;float:right;}
+.bike_reserve .reserve_detail .search{padding:20px;border:solid 1px #e3e3e3;}
+.bike_reserve .reserve_detail .search dt{font-size:14px;color:#444;padding-bottom:5px;}
+.bike_reserve .reserve_detail .search dd{position:relative;padding-bottom:20px;}
+.bike_reserve .reserve_detail .search dd.hour{height:38px;line-height:38px;padding:0 0 0 5px;margin-bottom:10px;border:solid 1px #d1d1d1;background:#f9f9f9;}
+.bike_reserve .reserve_detail .search dd select{position:absolute;right:0;top:0;width:70px;height:40px;line-height:40px;display:inline-block;background:#f9f9f9 url('../images/content/bg_arrow.png') no-repeat 90% center;}
+.bike_reserve .reserve_detail .search dd p input[type='text']{background:#f9f9f9;font-size:16px;}
+.bike_reserve .reserve_detail .search dd span.selectbox_title{background-color:#f9f9f9;}
+.bike_reserve .reserve_detail .search > div{display:inline-block;zoom:1*display:inline;width:100%;}
+.bike_reserve .reserve_detail .search > div dl{float:left;width:49%}
+.bike_reserve .reserve_detail .search > div dl.people_num{float:left;}
+.bike_reserve .reserve_detail .search > div dl dd{padding-right:0;}
+.bike_reserve .reserve_detail .search > div dl dd select{background-position:95% 50%;width:100%;}
+.bike_reserve .reserve_detail .search > div dl dd input[type="text"]{width:100%;}
+.bike_reserve .reserve_detail .charge{border:solid 1px #e3e3e3;border-top:none;padding:10px 20px;height:280px;}
+.bike_reserve .reserve_detail .charge ul li p{font-size:14px;color:#444;padding-bottom:5px;}
+.bike_reserve .reserve_detail .charge ul li > dl{overflow:hidden;border:solid 1px #d1d1d1;padding:10px;background:#f9f9f9;}
+.bike_reserve .reserve_detail .charge ul li > dl dt{float:left;clear:both;line-height:20px;width:110px;}
+.bike_reserve .reserve_detail .charge ul li > dl dd{padding-left:110px;text-align:right;font-size:16px;line-height:24px;}
+.bike_reserve .reserve_detail .charge  ul li .payment{border:solid 1px #d1d1d1;line-height:45px;background:#f9f9f9;text-align:center;font-size:16px;padding-bottom:0;}
+.bike_reserve .reserve_detail .charge  ul li .payment span{font-size:23px;color:#ff7800;}
+.bike_reserve .reserve_detail .charge ul li > div{width:100%;display:inline-block;}
+.bike_reserve .reserve_detail .charge ul li > div > dl{width:49%;float:left;}
+.bike_reserve .reserve_detail .charge ul li > div > dl dt{line-height:20px;font-size:14px;padding-bottom:5px;}
+.bike_reserve .reserve_detail .charge ul li > div > dl.people_num{float:right;}
+.bike_reserve .reserve_detail .charge ul li > div > dl.people_num input{width:123px}
+.bike_reserve .reserve_detail .charge ul li > div > dl select{height:40px;line-height:40px;background:#f9f9f9 url('http://jjscooter.cdn3.cafe24.com/images/content/bg_arrow.png') no-repeat 90% center;}
+.bike_reserve .reserve_detail .search .search_btn{width:100%;padding:0;}
+.bike_reserve .reserve_detail .reserver_info{margin-top:10px;border:solid 1px #e3e3e3;}
+.bike_reserve .reserve_detail .reserver_info .title{border-bottom:none;}
+.bike_reserve .reserve_detail .reserver_info input[type="text"]{font-size:14px;}
+.bike_reserve .reserve_detail .reserver_info .phone_num{display:inline-block;width:100%;}
+.bike_reserve .reserve_detail .reserver_info .phone_num li{float:left;}
+.bike_reserve .reserve_detail .reserver_info .phone_num li input{width:45px;margin:0;}
+.bike_reserve .reserve_detail .confirm_cont{border:solid 1px #e3e3e3;border-bottom:none;margin-top:10px;padding:20px;}
+.bike_reserve .reserve_detail .confirm_cont .fs_14{color:#c3976c}
+.bike_reserve .reserve_detail .btn{overflow:hidden;}
+.bike_reserve .reserve_detail .btn li{float:left;width:50%;background:#e65f25}
+.bike_reserve .reserve_detail .btn li:first-child{background:#999}
+.bike_reserve .reserve_detail .btn li a{display:block;text-align:center;line-height:126px;font-size:18px;color:#fff;padding:0;}
+
+/* table_write */
+.board_write {}
+.board_write table {width:100%;position:relative;}
+.board_write table tbody th {font-weight:normal;padding-left:10px;height:50px;border-left:1px solid none;border-top:1px solid #e3e3e3;text-align:left;font-size:13px;color:#888;}
+.board_write table tbody th span{color:#c3976c;}
+.board_write table tbody td {padding:8px 0 9px 10px;border-left:1px solid #e3e3e3;border-top:1px solid #e3e3e3;text-align:left;font-size:13px;color:#666;}
+.board_write table tbody td .intxt01{height:28px;line-height:28px;}
+/*.board_write table tbody tr:first-child th, .board_write table tbody tr:first-child td{border-top:none;}
+.board_write table tbody td.padding{padding-top:10px;padding-bottom:10px;}
+
+/*table_list*/
+.board_list table{border-left:solid 1px #e7e7e7;}
+.board_list table th{font-weight:normal;font-size:13px;background:#f4f4f4;border:solid 1px #e7e7e7;border-left:none;padding:15px 0;text-align:center;}/*background:#f9f8f3*/
+.board_list table td{border-right:solid 1px #e7e7e7;border-bottom:solid 1px #e7e7e7;padding:15px 0;text-align:center;background:#fff;font-size:13px;}
+/*.board_list table th:first-child,
+.board_list table td:first-child{border-left:solid 1px #e7e7e7;}*/
+.board_list table td.tleft{padding-left:10px;text-align:left;}
+
+.board_list.reserve table {border-top:2px solid #bbb;border-bottom:2px solid #bbb;position:relative;}
+.board_list.reserve table th{padding:20px 0;text-align:center;vertical-align:middle;font-weight:normal;background:#f4f4f4;border-bottom:1px solid #ccc;font-size:13px;}
+.board_list.reserve table thead th:first-child{border-left:none;}
+.board_list.reserve table tfoot td{background:#f5f5f5;font-size:13px;}
+.board_list.reserve table td:first-child,.board_list.reserve table th:first-child {border-left:none;}
+.board_list.reserve table td.text-l{padding-left:10px;}
+.board_list.reserve table td ul.text-l li{text-align:left;padding-left:10px;color:#888;line-height:18px;}
+.board_list.reserve table td .payment{color:#ff7800;font-size:23px}
+
+/*table_view*/
+.board_view {}
+.board_view table {width:100%;border-top:1px solid #ebebeb;border-right:1px solid #ebebeb;background:#fff;}
+.board_view table thead td {padding:18px 0 18px 20px;border-left:1px solid #e3e2da;border-bottom:1px solid #e3e2da;text-align:left;font-size:12px;color:#666;background:#fbfbfb;}
+.board_view table tbody th {font-weight:normal;padding-left:20px;height:50px;border-left:1px solid #e3e2da;border-bottom:1px solid #e3e2da;text-align:left;font-size:13px;color:#666;}
+.board_view table tbody td {padding-left:20px;height:50px;border-left:1px solid #e3e2da;border-bottom:1px solid #e3e2da;text-align:left;font-size:12px;color:#666;font-size:13px;color:#888;}
+.board_view table tbody td textarea{width:95%;border:1px solid #ebebeb;background:#fbfbfb;}
+.board_view table tbody .padding{padding-top:12px;padding-bottom:12px;}
+.board_view table tbody .important{background:url('http://jjscooter.cdn3.cafe24.com/images/common/bg_point.png') no-repeat 10px center;}
+.board_view table tbody .intxt02{*margin-top:0;}
+.board_view table tfoot td {padding:18px 0 18px 20px;border-left:1px solid #e3e2da;border-bottom:1px solid #e3e2da;text-align:left;font-size:12px;color:#666;}
+.board_view table tfoot td{padding-right:20px;}
+
+/*confirm*/
+.confirm_cover{max-width:779px;margin:0 auto;border-top:solid 1px #e1e1e1;border-bottom:solid 1px #e1e1e1;padding:35px 0;text-align:center;}
+.confirm_cover p{font-size:16px;margin-bottom:20px;}
+.info_input{max-width:403px;margin:0 auto;position:relative;}
+.info_input ul{margin-right:110px;}
+.info_input ul li{text-align:left;}
+.info_input ul li input{height:48px;width:291px;text-align:center;padding-left:0}
+.info_input ul li.phone_num{width:100%;display:inline-block;zoom:1*display:inline;}
+.info_input ul li p{width:29%;float:left;text-align:right;margin:0;}
+.info_input ul li p:first-child{width:42%;text-align:left;}
+.info_input ul li p input{width:79px;}
+.info_input ul li p select{width:96%;height:50px;font-size:20px;font-family:play;background:#f9f9f9 url('http://jjscooter.cdn3.cafe24.com/images/content/bg_arrow02.gif') no-repeat right top}
+.info_input .btn{position:absolute;right:0;top:0;}
+.info_input .btn a{display:block;width:105px;height:105px;text-align:center;line-height:105px;background:#333;font-size:20px;color:#fff;}
+
+
+/*information*/
+.inquiry li{margin-bottom:10px;text-align:center;line-height:20px;}
+.inquiry li.letter_zero{margin-bottom:0;font-size:16px;width:142px;margin:0 auto;text-align:left;}
+.information_cover{margin-top:40px;border-top:solid 1px #e1e1e1;}
+.information_cover ul {overflow:hidden;}
+.information_cover li{float:left;background:#fbfbfb;width:25%;}
+.information_cover li a{display:block;border:solid 1px #e1e1e1;border-left:none;border-top:none;height:155px;padding-top:59px;text-align:center;font-size:16px;}
+.information_cover li:first-child a{border-left:solid 1px #e1e1e1;}
+.information_cover li a .bg{display:block;width:59px;height:65px;background:url("http://jjscooter.cdn3.cafe24.com/images/content/bg_info.png") no-repeat left top;margin:0 auto 27px;}
+.information_cover li.info02 a .bg{width:65px;height:65px;background-position:-59px top}
+.information_cover li.info03 a .bg{width:60px;height:65px;background-position:-124px top;}
+.information_cover li.info04 a .bg{width:62px;height:63px;background-position:-184px top;}
+.information_cover li.info05 a .bg{width:65px;height:62px;background-position:left -65px;}
+.information_cover li.info06 a .bg{width:65px;height:62px;background-position:-65px -65px;}
+.information_cover li.info07 a .bg{width:59px;height:62px;background-position:-130px -65px;}
+.information_cover li.info08 a .bg{width:57px;height:65px;background-position:-189px -65px;}
+
+/*about*/
+/*.about{background:#333;padding:80px 0;text-align:center;margin-bottom:80px;}*/	
+.location_cover{padding:80px 100px;background:#f1f1f1;}
+.location{text-align:center;margin-bottom:30px;}
+.location dt{font-size:18px;color:#444;margin-bottom:30px;}
+.location dd{font-size:15px;margin-bottom:10px;}
+.location_cover #Maps{border:solid 1px #bfb9b4}
+
+/* community */
+.menu_list{overflow:hidden;margin-bottom:10px;}
+.menu_list li{float:left;width:20%;text-align:center;padding-bottom:8px;}
+.menu_list li a{display:block;border:solid 1px #e1e1e1;border-left:none;line-height:50px;color:#444;background:#fff}
+.menu_list li:first-child a{border-left:solid 1px #e1e1e1;}
+.menu_list li.on{background:url("/board/images/bg_menu_list.gif") no-repeat center bottom}
+.menu_list li.on a{color:#fff;background:#333;border-color:#333;}
+.menu_list.guide li{width:250px;}
+
+.pw_pop{position:absolute;top:50%;left:50%;width:100%;max-width:310px;padding:50px 0;margin-left:-155px;background:#fff;border:1px solid #e5e5e5;text-align:center;}
+.pw_pop .title{font-size:18px;}
+.pw_pop .info{font-size:14px;margin-top:5px}
+.pw_pop .input_pw{position:relative;height:30px;margin-top:15px;}
+.pw_pop .input_pw input{height:28px;line-height:28px;}
+.pw_pop .input_pw a{display:inline-block;zoom:1;*display:inline;font-size:12px;color:#666;height:28px;line-height:28px;padding:0 18px;margin-left:2px;border:1px solid #e1e1e1;}
+.pw_pop .btn_close{position:absolute;top:20px;right:20px}
+
+.rent_guide{font-size:13px;color:#666;}
+.rent_guide .g_title{margin-bottom:20px;text-align:center;}
+.rent_guide > div{margin-bottom:50px;}
+.reserve_infoCover{text-align:center;}
+.reserve_infoCover .tel_num{font-size:36px;color:#df242d;line-height:36px;margin-top:10px;font-family:'Play','���� ����','Malgun Gothic','���� ����','Nanum Gothic','dotum';}
+.reserve_infoCover .reserve_step li{width:20%;float:left;}
+.reserve_infoCover .reserve_step li img{max-width:100%;}
+.reserve_infoCover > dl dd{line-height:20px;margin-top:7px;}
+
+.board_list.refundCover table tbody td.tleft{padding-left:20px;}
+.rent_guide .board_view table tbody th, .rent_guide .board_view table tbody td{height:auto;padding:12px 10px 12px 20px;color:#666}
+.rent_guide .board_view table tbody th{background:#fbfbfb;font-size:16px;color:#444}
+.rent_guide .board_view.attention th{height:50px;padding:0;text-align:center;font-size:18px;color:#888;font-family:'Play','���� ����','Malgun Gothic','���� ����','Nanum Gothic','dotum';}
+.board_view.insurance table tbody td p{margin-top:5px;}
+.board_view.insurance table tbody td p:first-child{margin-top:0;}
+
+.communityCover .searchWrap .text-r{padding-right:0;}
+.communityCover .searchWrap .cover{padding-right:10px;}
+
+/*paging*/
+.paging{height:48px;text-align:center;border:solid 1px #e3e2da;background:#fff;position:relative;}
+.paging a, .paging strong{background:url('http://jjscooter.cdn3.cafe24.com/images/common/bg_bar04.png') no-repeat left center;color:#888;line-height:48px;text-align:center;display:inline-block;padding:0 10px;font-family: 'Open Sans', sans-serif;font-weight:400 !important;}
+.paging strong{color:#444;}
+.paging .first {background:none;}
+.paging .prevCover{position:absolute;left:0;top:0;}
+.paging .nextCover{position:absolute;right:0;top:0;}
+.paging .prevCover span, .paging .nextCover span{display:inline-block;float:left;height:48px;width:48px;}
+.paging .prevCover span img, .paging .nextCover span img{vertical-align:middle;margin-top:17px;}
+.paging .prevCover .prev, .paging .nextCover .next{border-left:solid 1px #e3e2da;border-right:solid 1px #e3e2da;}
+.paging .prevCover a,.paging .nextCover a {background:none;padding:0;}
+
+.paging.type02{text-align:center;background:none;border:none;height:20px;}
+.paging.type02 a{background:none;}
+.paging.type02 a,.paging.type02 span,.paging.type02 strong{display:inline-block;line-height:20px;padding:0 8px;height:22px;font-size:14px;color:#999;margin-left:-1px;vertical-align:top;}
+.paging.type02 strong{color:#444;}
+.paging.type02 .prev, .paging.type02 .prevEnd, .paging.type02 .next, .paging.type02 .nextEnd{padding:5px;height:12px;margin-top:1px;}
+.paging.type02 span img{vertical-align:middle;margin-top:-2px;}
+
+
+
+
+/**** Isotope Filtering ****/
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/* End: Recommended Isotope styles */
+
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+/* slide
+.owl-carousel .owl-wrapper:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.owl-carousel{
+	display: none;
+	position: relative;
+	width: 100%;
+	-ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper{
+	display: none;
+	position: relative;
+	-webkit-transform: translate3d(0px, 0px, 0px);
+}
+.owl-carousel .owl-wrapper-outer{
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight{
+	-webkit-transition: height 500ms ease-in-out;
+	-moz-transition: height 500ms ease-in-out;
+	-ms-transition: height 500ms ease-in-out;
+	-o-transition: height 500ms ease-in-out;
+	transition: height 500ms ease-in-out;
+}.owl-carousel .owl-item{
+	float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div{
+	cursor: pointer;
+}
+.owl-controls {
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.grabbing { 
+    cursor:url(grabbing.png) 8 8, move;
+}
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item{
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility:    hidden;
+	-ms-backface-visibility:     hidden;
+  -webkit-transform: translate3d(0,0,0);
+  -moz-transform: translate3d(0,0,0);
+  -ms-transform: translate3d(0,0,0);
+}
+.owl-theme .owl-controls{
+	margin-top: 10px;
+	text-align: center;
+}
+.owl-theme .owl-controls .owl-buttons div{
+	color: #FFF;
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+	margin: 5px;
+	padding: 3px 10px;
+	font-size: 12px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	background: #869791;
+	filter: Alpha(Opacity=50);
+	opacity: 0.5;
+}
+.owl-theme .owl-controls.clickable .owl-buttons div:hover{
+	filter: Alpha(Opacity=100);
+	opacity: 1;
+	text-decoration: none;
+}
+.owl-theme .owl-controls .owl-page{
+	display: inline-block;
+	zoom: 1;
+	*display: inline;
+}
+.owl-theme .owl-controls .owl-page span{
+	display: block;
+	width: 12px;
+	height: 12px;
+	margin: 5px 5px 5px 0;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background: #9e9d9c;
+}
+.owl-theme .owl-controls .owl-page.active span,
+.owl-theme .owl-controls.clickable .owl-page:hover span{
+	background: #fb916a;
+}
+.owl-theme .owl-controls .owl-page span.owl-numbers{
+	height: auto;
+	width: auto;
+	color: #FFF;
+	padding: 2px 10px;
+	font-size: 12px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+.owl-item.loading{
+	min-height: 150px;
+	background: url(AjaxLoader.gif) no-repeat center center
+}*/
+.contCover{}
+.contCover .guide_list{overflow:hidden;margin-bottom:20px;}
+.contCover .guide_list li{width:326px;height:186px;margin:0 11px 10px 0;float:left;background:#fff;position:relative;}
+.contCover .guide_list li span{display:block;}
+.contCover .guide_list li .title{height:48px;line-height:48px;font-size:16px;color:#444;border:solid 1px #e3e2da;background:#f9f9f9;padding-left:20px;position:relative;}
+.contCover .guide_list li .title a{position:absolute;right:0;top:0;display:block;padding:12px 15px 10px;height:26px;border-left:solid 1px #e3e2da;background:#fff;}
+.contCover .guide_list li .cont{height:96px;color:#888;line-height:18px;padding:20px;border:solid 1px #e3e2da;border-top:none;}
+.contCover .guide_list li .date span{display:inline;color:#888;}
+.contCover .guide_list li .date span.font-400{padding-left:21px;background:url('http://jjscooter.cdn3.cafe24.com/images/common/bg_bar04.png') no-repeat 10px 3px;}
+.cont_prev,
+.cont_next{position:relative;border-top:solid 1px #e3e2da;display:inline-block;width:100%;}
+.contCover .icon {position:absolute;left:0;top:0;border-right:solid 1px #e3e2da;width:49px;padding:20px 0;text-align:center;}
+.contCover .cont_title,
+.contCover .next_title, 
+.contCover .prev_title{margin-left:50px;padding:15px;} 
+
+
+/*�����Է�_����*/
+.inputCover{overflow:hidden;background:#fff;border:solid 1px #e3e2da;padding:20px;}
+.inputCover textarea{float:left;width:815px;height:63px;border-left:1px solid #c8c8c8 !important;}
+.inputCover .registerBtn{float:left;text-align:center;border:solid 1px #c8c8c8;border-left:none;background:#fff;}
+.inputCover .registerBtn a{display:block;width:98px;height:73px;line-height:73px;font-size:16px;}
+
+.inputCover .answer{float:left;width:73px;height:48px;padding-top:25px;border:solid 1px #c7965b;text-align:center;}
+.inputCover.qna textarea{border-left:none !important;width:741px;}
+
+/*���۸���_����*/
+.replyCover{background:#fff;border:solid 1px #e5e4dc;}
+.replyCover ul > li{position:relative;padding:25px 20px;border-top:solid 1px #e5e4dc;}
+.replyCover ul > li:first-child{border-top:none;}
+.replyCover ul > li.reply{margin:0 20px;border-top:solid 1px #e5e4dc;padding:20px 0 20px 20px;background:url('http://jjscooter.cdn3.cafe24.com/images/common/bg_reply.gif') no-repeat left 22px;}
+.replyCover ul > li.reply .btn {right:0;}
+.replyCover ul > li .btn{position:absolute;right:20px;top:20px;}
+.replyCover ul > li .reply{padding:20px 0;margin-top:20px;border-top:solid 1px #e5e4dc;padding-left:20px;background:url('http://jjscooter.cdn3.cafe24.com/images/common/bg_reply.gif') no-repeat left 22px;}
+.replyCover .inputCover{background:none;padding:0;border:none;}
+.replyCover .inputCover textarea{height:42px;}
+.replyCover .reply .inputCover textarea{height:42px;width:792px;}
+.replyCover .inputCover .registerBtn a{height:52px;line-height:52px;}
+
+/*notice_view ����*/
+.noticeView .title{position:relative;background:#f4f4f4;border:solid 1px #e5e4dc;}
+.noticeView .title > p{padding-left:20px;font-size:14px;color:#444;line-height:48px;}
+.noticeView .title > ul{position:absolute;right:0;top:0;display:inline-block;zoom:1*display:inline;}
+.noticeView .title > ul li{float:left;padding:0 20px;height:48px;line-height:48px;border-left:solid 1px #e5e4dc;text-align:center;}
+.noticeView .title > ul li:first-child{line-height:14px;}
+.noticeView .title > ul li > span{display:inline-block;padding:0 2px}
+.noticeView .title > ul li > span a{display:block;width:25px;height:25px;margin-top:12px;font-size:0;text-indent:-9999px;background:url('http://jjscooter.cdn3.cafe24.com/images/btn/view_title.png') no-repeat left top;}
+.noticeView .title > ul li > span.twitter a{background-position:-63px top}
+.noticeView .title > ul li > span.face_b a{background-position:-93px top}
+.noticeView .contCover{border:solid 1px #e5e4dc;border-top:none;background:#fff;}
+.noticeView .contCover .cont{padding:30px;text-align:center}
+.noticeView .contCover .cont img{max-width:100%;}
+.noticeView .contCover .file{height:48px;padding-left:55px;line-height:46px;font-size:14px;border-top:solid 1px #e5e4dc;background:url('http://jjscooter.cdn3.cafe24.com/images/icon/file.png') no-repeat 30px center}
+
+@media screen and (min-width:320px){
+	/*.section_bg{display:none;}*/
+	.sub_visual{height:180px;background-size:auto 180px;}	
+
+	.board_view table tbody th, 
+	.board_view table tbody td{padding-left:10px;}
+
+	col.w_120{width:90px;}
+
+	.p_tc{display:none;}
+	.p_tl{display:none;}
+
+	.m_b{display:block;}
+	.m_layout_tc{display:none;}
+	.m_layout_tl{display:none;}
+
+	.writer{margin-top:5px;}
+
+	.menu_list li a{font-size:14px;}	
+	
+	.contCover .guide_list li{width:100%;float:none;margin:0 0 10px 0;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}	
+
+	.noticeView .title > ul{width:100%;position:static;border-top:solid 1px #e5e4dc;}
+	.noticeView .title > ul li{width:33.3%;padding:0;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.noticeView .title > ul li:first-child{width:33.4%;border-left:none;}
+	.noticeView .title > ul li:last-child{display:none;}
+
+	.inquiry li:nth-child(2){font-size:11px !important;line-height:16px;}
+	.inquiry li img{width:280px}
+	.information_cover li{width:50%;}
+	.information_cover li:nth-child(3) a{border-left:solid 1px #e1e1e1;}		
+		
+	.confirm_cover{}
+	.confirm_cover p{font-size:13px;}	
+	.info_input ul{margin:0 0 10px 0;}
+	.info_input ul li{text-align:left;}
+	.info_input ul li input{width:100%;height:50px;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}	
+	.info_input ul li p{width:30%;padding-left:10px;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.info_input ul li p:first-child{width:40%;padding-left:0;}
+	.info_input ul li p input{width:100%;}
+	.info_input ul li p select{width:100%;}
+	.info_input .btn{position:static;}
+	.info_input .btn a{width:auto;height:50px;line-height:50px;font-size:16px;}
+
+	.search_cover{padding:20px 10px;}
+	.search_cover ul{width:100%;}
+	.search_cover ul li{float:none;margin:5px 0 0 0;font-size:13px;color:#444}
+	.search_cover ul li:first-child{margin:0;}		
+	.search_cover ul li input{vertical-align:middle;width:90px;font-size:14px;}		
+	.reserve_info{line-height:16px;padding:20px 10px;font-size:12px;}
+	.search_btn{width:100%;padding:0;font-size:13px;}
+	
+	.bike_list li{float:none;width:100%;}	
+	.bike_list li a{height:auto;}	
+	.bike_list li dl{font-size:14px;}
+	.bike_list li dl dd del{font-size:14px;}
+	.bike_list li dl dd span{font-size:20px;}	
+
+	.bike_reserve .bike_info > p{min-height:0;text-align:center;}	
+	.bike_reserve .bike_detail > div{padding:10px}	
+	.bike_reserve .reserve_detail .search{padding:10px;}	
+	.bike_reserve .bike_info{width:100%;float:none;}	
+	.bike_reserve .bike_detail{margin:20px 0;}		
+	.bike_reserve .reserve_detail{width:100%;float:none;}		
+	.bike_reserve .reserve_detail .search dl{position:relative;padding-left:58px;}
+	.bike_reserve .reserve_detail .search dt{position:absolute;left:0;top:0;line-height:40px;}	
+	.bike_reserve .reserve_detail .search dd{padding-right:75px;}
+	.bike_reserve .reserve_detail .search dd p{position:relative;padding-right:39px;}
+	.bike_reserve .reserve_detail .search dd p input[type="text"]{width:100%;height:40px;font-size:14px;
+		-webkit-box-sizing:border-box;
+		box-sizing:border-box;
+	}
+	.bike_reserve .reserve_detail .search dd p img{position:absolute;right:0;top:0;}	
+	.bike_reserve .reserve_detail .charge{padding:10px;}
+	.bike_reserve .reserver_info .i_name,
+	.bike_reserve .reserver_info .i_mail{padding-right:10px;}
+	.bike_reserve .reserver_info input[type="text"]{width:100%;max-width:250px;padding:0;text-indent:5px;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+	}
+
+	/*.bike_reserve .reserve_detail .search > div dl dd{padding-right:0;}
+	.bike_reserve .reserve_detail .search > div dl dd select{position:static;width:50%;background-position: 98% center;}
+	.bike_reserve .reserve_detail .search > div dl dd input[type="text"]{width:50%;height:40px;padding:0;text-indent:5px;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+	}*/	
+	.bike_reserve .reserve_detail .charge ul li > div > dl.people_num input{width:100%;height:40px;text-indent:5px;padding:0;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;
+	}	
+
+	.bike_reserve .phone_num{width:100%;}
+	.bike_reserve .phone_num li{width:28%;margin:0;padding-left:10px;}
+	.bike_reserve .phone_num li:before{float:left;width:10px;line-height:28px;margin-left:-10px;color: #888;text-align: center;content: '-';}	
+	.bike_reserve .phone_num li:first-child{padding-left:0;}
+	.bike_reserve .phone_num li:first-child:before{width:0 !important;height:0 !important;margin-left:0px !important;line-height:0px !important;content:'' !important;}
+	.bike_reserve .phone_num li .i_select{width:100%;margin:0;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;				
+	}
+	.bike_reserve .phone_num li input[type="text"]{width:100% !important;padding:0;text-indent:5px;
+		box-sizing:border-box;
+		-webkit-box-sizing:border-box;		
+	}
+	.bike_reserve .phone_num li .hyphen{display:none;}
+	.bike_reserve .reserve_detail .btn li a{line-height:50px;font-size:14px;}
+
+	.location_cover{padding:50px 10px;}
+
+	.reserve_infoCover .reserve_step{margin:20px 0 25px;}	
+	.reserve_infoCover .reserve_step li{width:100%;float:none;margin-top:10px;}
+	.reserve_infoCover .reserve_step li:first-child{margin-top:0}	
+	
+
+	.board_list.refundCover table{border-top:solid 1px #e7e7e7}
+	.board_list.refundCover table tbody td:first-child{background:#fbfbfb;padding-left:0;text-align:center;}
+	.board_list.refundCover table tbody td:first-child span{display:block;}
+	.board_list.refundCover table .refund_rule{display:table-cell;line-height:20px;}		
+	.rent_guide .board_view table tbody th{text-align:center;padding:12px 10px 12px;font-size:14px;}	
+	.board_view.insurance table tbody th span{display:block;margin-top:3px}
+	.rent_guide .sort{width:90px;}
+
+	.sort_list{display:inline-block;zoom:1;*display:inline;width:100%;border:solid 1px #e1e1e1;margin-bottom:10px;
+		box-sizing:border-box;
+	}
+	.sort_list a{display:block;float:left;width:33.3%;line-height:40px;text-align:center;border-left:solid 1px #e1e1e1;
+		box-sizing:border-box;
+	}
+	.sort_list a:first-child{border-left:none;width:33.4%;}
+
+}
+
+@media screen and (min-width:640px){
+	.sub_visual{height:360px;background-size:auto 360px;}
+
+	.contCover .guide_list li{width:49%;float:left;margin:0 0.5% 10px !important}		
+	.contCover .guide_list li:first-child{margin-top:0;}	
+
+	.inquiry li:nth-child(2){font-size:14px !important;line-height:20px;}
+	.inquiry li img{width:auto}
+	.information_cover li{width:25%;}
+	.information_cover li:nth-child(3) a{border-left:none;}
+
+	.search_cover{border:solid 1px #e1e1e1;background:#f5f5f5;padding:29px 0;text-align:center;}
+	.search_cover ul{width:auto;}
+	.search_cover ul li{float:left;margin:0 0 0 5px;}
+	.search_cover ul li:first-child{margin-left:0;}
+	.search_btn{width:auto;padding:0 15px;font-size:13px;}
+	.reserve_info{font-size:14px;}
+
+	.bike_list li{width:50%;float:left;}
+	
+	.main_menu ul li{width:20%}
+	.main_menu ul li a{border-right:1px solid #efefef;border-bottom:none}
+	.main_menu ul li:first-child a{border-left:1px solid #efefef}
+	.main_menu ul li a:hover{background-position:center -158px}
+
+	.rent_guide .sort{width:150px;}
+
+	.sort_list a{width:100px;text-align:center;border-left:none;border-right:solid 1px #e1e1e1}
+	.sort_list a:first-child{width:100px;}
+	.sort_list a.on{background:#888;color:#fff;}	
+	
+}
+
+@media screen and (min-width:768px){
+	.m_b{display:none;}
+	.m_layout_tc{display:table-cell;}
+	.m_layout_tl{display:table-column;}
+
+
+	.section_bg{display:block;}		
+
+	.board_view table tbody th, 
+	.board_view table tbody td{padding-left:20px;}
+
+	col.w_120{width:120px;}
+
+	.p_tc{display:table-cell;}
+	.p_tl{display:table-column;}	
+
+	.menu_list li a{font-size:16px;}
+	
+	.noticeView .title > ul{position:absolute;right:0;top:0;width:auto;border-top:none}
+	.noticeView .title > ul li{width:auto;padding:0 15px;}
+	.noticeView .title > ul li:first-child{width:auto;border-left:solid 1px #e5e4dc;}
+	.noticeView .title > ul li:last-child{display:block;}
+
+	.confirm_cover{max-width:779px;margin:0 auto;border-top:solid 1px #e1e1e1;border-bottom:solid 1px #e1e1e1;padding:35px 0;text-align:center;}
+	.confirm_cover p{font-size:16px;margin-bottom:20px;}
+	.info_input{max-width:403px;margin:0 auto;position:relative;}
+	.info_input ul{margin:0 110px 0 0;}	
+	.info_input ul li{text-align:left;}
+	.info_input ul li input{height:48px;width:291px;text-align:center;padding-left:0		
+		-webkit-box-sizing:inherit;
+		box-sizing:inherit;
+	}
+	.info_input ul li.phone_num{width:100%;display:inline-block;zoom:1*display:inline;}
+	.info_input ul li p{width:29%;float:left;text-align:right;padding-left:0;
+		-webkit-box-sizing:inherit;
+		box-sizing:inherit;
+	}
+	.info_input ul li p:first-child{width:42%;text-align:left;}
+	.info_input ul li p input{width:79px;}
+	.info_input ul li p select{width:96%;height:50px;font-size:20px;font-family:play;background:#f9f9f9 url('http://jjscooter.cdn3.cafe24.com/images/content/bg_arrow02.gif') no-repeat right top}
+	.info_input .btn{position:absolute;right:0;top:0;}
+	.info_input .btn a{display:block;width:105px;height:105px;text-align:center;line-height:105px;background:#333;font-size:20px;color:#fff;}
+
+	.bike_reserve{}		
+	.bike_reserve .bike_info{width:100%;float:none;}	
+	.bike_reserve .bike_info > p{min-height:527px;}
+	.bike_reserve .bike_info{width:62%;float:left;}			
+	.bike_reserve .bike_detail{margin:9px 0 20px;}			
+	.bike_reserve .reserve_detail{width:37%;float:right;}	
+	
+	.bike_reserve .reserve_detail .search dl{position:relative;padding-left:0;}
+	.bike_reserve .reserve_detail .search dt{position:static;left:0;top:0;line-height:16px;}		
+	.bike_reserve .reserve_detail .search dd p input[type='text']{font-size:16px;}
+	.bike_reserve .reserve_detail .search dd select{font-size:16px;}
+
+	.bike_reserve .reserve_detail .search > div{display:inline-block;zoom:1*display:inline;width:100%;}
+	.bike_reserve .reserve_detail .search > div dl{float:left;width:49%}
+	.bike_reserve .reserve_detail .search > div dl.people_num{float:right;}
+	.bike_reserve .reserve_detail .search > div dl dd{padding-right:0;}
+	.bike_reserve .reserve_detail .search > div dl dd select{background-position:95% 50%;width:100%;}
+	.bike_reserve .reserve_detail .search > div dl dd input[type="text"]{width:100%;}
+
+
+	.bike_reserve .phone_num{width:100%;}
+	.bike_reserve .phone_num li{width:auto;padding:0;}
+	.bike_reserve .phone_num li:before{display:none;}	
+	.bike_reserve .phone_num li:first-child{padding-left:0;margin-right:2px;}		
+	.bike_reserve .phone_num li input[type="text"]{width:45px !important;text-align:center;padding:0;text-indent:0;
+		box-sizing:inherit;
+		-webkit-box-sizing:inherit;		
+	}
+	.bike_reserve .phone_num li .hyphen{display:inline-block;}	
+
+	.location_cover{padding:80px 100px;}	
+	
+	.reserve_infoCover .reserve_step{display:inline-block;width:100%}	
+	.reserve_infoCover .reserve_step li{width:20%;float:left;margin-top:0;}
+	.reserve_infoCover .reserve_step li img{max-width:90%;}	
+	.board_list.refundCover table{border-top:none}
+	.board_list.refundCover table tbody td:first-child{background:none;text-align:left;padding-left:20px;}
+	.board_list.refundCover table tbody td:first-child span{display:inline}
+	.board_list.refundCover table .refund_rule{display:none}		
+	.rent_guide .board_view table tbody th{text-align:left;padding-left:20px;font-size:16px;}		
+	.board_view.insurance table tbody th span{display:inline;margin-top:3px}
+	.rent_guide .sort{width:30%;}
+	
+
+}
+@media screen and (min-width:800px){	
+	#animation{
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-o-transform: scale(1);
+		-ms-transform: scale(1);
+		transform: scale(1);
+	}
+	.main_con{height:auto}
+}
+@media screen and (min-width:1000px){	
+	.contCover .guide_list{overflow:hidden;}
+	.contCover .guide_list li{width:33%;height:186px;margin:0 0.15% 10px !important}		
+	.contCover .guide_list li span{display:block;}		
+
+	.bike_list li{width:33.3%;}
+	.search_cover ul li{margin:0 0 0 20px;font-size:16px;color:#888;}
+	.search_cover ul li:first-child{margin-left:0;}
+	.search_cover ul li input{width:120px;font-size:18px;}		
+	.search_btn{width:150px;padding:0;font-size:16px;}	
+
+
+	/* reserve */
+	.bike_reserve{}	
+	.bike_reserve .bike_info{width:70%;}
+	.bike_reserve .bike_info > p{height:526px;}	
+	.bike_reserve .bike_info > p img{max-height:100%;}
+	.bike_reserve .reserve_detail{width:29%;}	
+	.bike_reserve .reserve_detail .btn li a{line-height:126px;font-size:18px;}	
+
+	.reserve_infoCover .reserve_step li img{max-width:100%;}
+
+}
+#container .expo_list{width:100%;}
+#container .expo_list .expoCont{width:330px;margin-bottom:10px;margin-left:3px;position:absolute;left:0;top:0;}
+#container .expo_list .expoCont img {width:100%;}
+#container .expo_list .expoCont dl{padding:20px;border:solid 1px #e7e7e7;background:#fbfaf9;}
+
+/**** Isotope Filtering ****/
+
+.isotope-item {
+  z-index: 2;
+}
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+
+/**** Isotope CSS3 transitions ****/
+
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:      -o-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+     -moz-transition-duration: 0s;
+      -ms-transition-duration: 0s;
+       -o-transition-duration: 0s;
+          transition-duration: 0s;
+}
+
+/* End: Recommended Isotope styles */
+
+
+
+/* disable CSS transitions for containers with infinite scrolling*/
+.isotope.infinite-scrolling {
+  -webkit-transition: none;
+     -moz-transition: none;
+      -ms-transition: none;
+       -o-transition: none;
+          transition: none;
+}
+
+
+.searchWrap{display:inline-block;width:100%;margin-bottom:20px;}
+.searchWrap .sort_list{float:left;}
+.searchWrap .sort_list > li{float:left;position:relative;}
+.searchWrap .sort_list > li > a{display:inline-block;height:26px;padding:7px 10px 0 20px;color:#888;border:solid 1px #e4e2dd;border-left:none;}
+.searchWrap .sort_list > li > a img{padding-top:7px;}
+.searchWrap .sort_list > li:first-child a{border:solid 1px #e4e2dd;padding-right:20px;}
+.searchWrap .sort_list > li ul{border:solid 1px #e4e2dd;border-top:none;position:absolute;left:-1px;z-index:9999;background:#fff;display:none;}
+.searchWrap .sort_list > li ul li a{display:block;width:62px;border-top:solid 1px #e4e2dd;line-height:28px;padding-left:20px;letter-spacing:0;}
+.searchWrap .sort_list > li ul li:first-child a{border-top:none;}
+.searchWrap .sort_list.guide > li a {padding:7px 20px 0 20px;}
+.searchWrap .sort_list.guide > li.on a {background-color:rgb(166, 130, 199);color:#fff;}
+.searchWrap .cover{float:right;width:239px;height:30px;padding:5px 0 0 10px;;background:url("http://jjscooter.cdn3.cafe24.com/images/common/bg_search.gif") no-repeat left top;position:relative;}
+.searchWrap .cover label{font-size:14px;position:absolute;left:10px;top:8px;cursor:text;}
+.searchWrap .search_txt{border:none;color:#888;width:193px;line-height:22px;}
+.searchWrap .img{display:inline-block;padding-top:2px;margin-left:16px;}
+
+.more_btn{display:inline-block;height:35px;width:100%;padding-top:13px;border:solid 1px #e4e2dd;text-align:center;font-size:14px;}

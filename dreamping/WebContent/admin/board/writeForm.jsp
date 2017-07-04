@@ -26,17 +26,14 @@
 		reLevel=article.getReLevel();
   	}catch(Exception e){}
   }else if("photo".equals(category)){
-	categoryName = "스쿠터 후기";
+	categoryName = "갤러리";
 	thumbImgUrl = request.getParameter("thumbImgUrl")==null ? "":request.getParameter("thumbImgUrl"); 
-  }else if("review".equals(category)){
-	categoryName = "출발전 한컷";
+  }else if("event".equals(category)){
+	categoryName = "이벤트";
 	thumbImgUrl = request.getParameter("thumbImgUrl")==null ? "":request.getParameter("thumbImgUrl"); 
-  }else if("nolgo".equals(category)){
-	categoryName = "놀고";
+  }else if("group".equals(category)){
+	categoryName = "제휴/단체문의";
 	thumbImgUrl = request.getParameter("thumbImgUrl")==null ? "":request.getParameter("thumbImgUrl");   
-  }else if("mukgo".equals(category)){
-    categoryName = "먹고";
-	thumbImgUrl = request.getParameter("thumbImgUrl")==null ? "":request.getParameter("thumbImgUrl"); 
   }
   
 %> 
@@ -161,7 +158,7 @@
 							<td class="board_bgcolor"><span style="color:#000000;font-size:12px;">제목</span></td>
 							<td class="board_desc"><input title="input" type='text' class='public_input input_form' id='subject' name="subject" style="border:1px solid #EAEAEA;height:20px;" maxlength="100" size="100" value="<%=subject%>"/></td>
 						</tr>
-				<%if(category.equals("photo")||category.equals("review")){ %>
+				<%if(category.equals("photo")||category.equals("event")){ %>
 						<tr height='30' class='board'>
 							<td class="board_bgcolor"><span style="color:#000000;font-size:12px;">목록이미지</span></td>
 							<td class="board_desc"><input title="input" type='file' class='public_input input_form' id='thumbImgUrl' name="thumbImgUrl" style="border:1px solid #EAEAEA;height:20px;" maxlength="50" size="50" value="<%=thumbImgUrl%>"/>

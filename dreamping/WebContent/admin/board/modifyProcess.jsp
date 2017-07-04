@@ -20,7 +20,7 @@
 	String comBoardSearchCode = mr.getParameter("comBoardSearchCode");
 	String comBoardSearchValue = mr.getParameter("comBoardSearchValue");
 	String thumbImgUrl = "";
-	if("photo".equals(category)||"review".equals(category)){
+	if("photo".equals(category)||"event".equals(category)){
 		File s_file = mr.getFile("thumbImgUrl");
 		System.out.println(s_file);
 		if(s_file == null){

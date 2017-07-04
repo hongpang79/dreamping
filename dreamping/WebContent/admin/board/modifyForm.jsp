@@ -15,18 +15,16 @@
     if (category == null){
     	category = "notice";
     	categoryName = "공지사항";
-    }else if("notice".equals(request.getParameter("category"))){
+    }else if("notice".equals(category)){
     	categoryName = "공지사항";
-    }else if("qna".equals(request.getParameter("category"))){
+    }else if("qna".equals(category)){
     	categoryName = "문의하기";
-    }else if("photo".equals(request.getParameter("photo"))){
-    	categoryName = "스쿠터 후기";
-    }else if("review".equals(request.getParameter("review"))){
-    	categoryName = "출발전 한컷";
-    }else if("nolgo".equals(category)){
-    	categoryName = "놀고";
-    }else if("mukgo".equals(category)){
-        categoryName = "먹고";
+    }else if("event".equals(category)){
+    	categoryName = "이벤트";
+    }else if("photo".equals(category)){
+    	categoryName = "갤러리";
+    }else if("group".equals(category)){
+    	categoryName = "제휴/단체문의";
     }
     
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -158,7 +156,7 @@
 			<input type="hidden" name="reStep" value="<%=article.getReStep()%>">
 			<input type="hidden" name="reLevel" value="<%=article.getReLevel()%>">
 			<input type="hidden" name="writer" value="<%=article.getWriter()%>">
-        	<input type='hidden' name='password' value="jeju" />
+        	<input type='hidden' name='password' value="mnmdream" />
         	<input type="hidden" name="thumbImgUrlOrg" value="<%=thumbImgUrlOrg %>">
 		
 		<tr>
@@ -169,7 +167,7 @@
 						<td class="board_bgcolor"><span style="color:#000000;font-size:12px;">제목</span></td>
 						<td class="board_desc"><input title="input" type='text' class='public_input input_form' id='border' name="subject" style="border:1px solid #EAEAEA;height:20px;" maxlength="100" size="100" value="<%=article.getSubject()%>"/></td>
 					</tr>
-				<%if(category.equals("photo")||category.equals("review")){ %>
+				<%if(category.equals("photo")||category.equals("event")){ %>
 					<tr height='30' class='board'>
 						<td class="board_bgcolor"><span style="color:#000000;font-size:12px;">목록이미지</span></td>
 						<td class="board_desc"><input title="input" type='file' class='public_input input_form' id='thumbImgUrl' name="thumbImgUrl" style="border:1px solid #EAEAEA;height:20px;" maxlength="50" size="50" value=""/>

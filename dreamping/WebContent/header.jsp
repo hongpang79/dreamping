@@ -28,14 +28,14 @@
 <!-- menu -->
 <section id="menu-0">
 
-    <nav class="navbar navbar-dropdown navbar-fixed-top">
+    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
         <div class="container">
 
             <div class="mbr-table">
                 <div class="mbr-table-cell">
 
                     <div class="navbar-brand">
-                        <a href="https://thedreamping.com" class="navbar-logo"><img src="/img/headerLogo.png" alt="thedreamping.com"></a>
+                        <a href="http://thedreamping.com" class="navbar-logo"><img src="/img/headerLogo.png" alt="thedreamping.com"></a>
                         
                     </div>
 
@@ -47,34 +47,34 @@
                     </button>
 
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                    	<li class="nav-item dropdown"><a class="nav-link link" href="dreamping.html" aria-expanded="false">DREAMPING</a></li>
+                    	<li class="nav-item dropdown"><a class="nav-link link" href="/dreamping.html" aria-expanded="false">DREAMPING</a></li>
                     	<li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="#" aria-expanded="false" data-toggle="dropdown-submenu">Vintage Village</a>
                     		<div class="dropdown-menu">
-                    			<a class="dropdown-item" href="village.html">전체보기</a>
-	                    		<a class="dropdown-item" href="village.html">VINTAGE CARAVAN</a>
-	                    		<a class="dropdown-item" href="village.html">VINTAGE CAVANA</a>
-	                    		<a class="dropdown-item" href="village.html">VINTAGE TIPI</a>
+                    			<a class="dropdown-item" href="/village.html">전체보기</a>
+	                    		<a class="dropdown-item" href="/village.html">VINTAGE CARAVAN</a>
+	                    		<a class="dropdown-item" href="/village.html">VINTAGE CAVANA</a>
+	                    		<a class="dropdown-item" href="/village.html">VINTAGE TIPI</a>
                     		</div>
                     	</li>
-                    	<li class="nav-item"><a class="nav-link link" href="surfcafe.html" aria-expanded="false">SURF CAFE</a></li>
-                    	<li class="nav-item"><a class="nav-link link" href="mmwatersports.html">M&amp;M Watersports</a></li>
+                    	<li class="nav-item"><a class="nav-link link" href="/surfcafe.html" aria-expanded="false">SURF CAFE</a></li>
+                    	<li class="nav-item"><a class="nav-link link" href="/mmwatersports.html">M&amp;M Watersports</a></li>
                     	<li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="#" aria-expanded="false" data-toggle="dropdown-submenu">CONTENTS</a>
                     		<div class="dropdown-menu">
-                    			<a class="dropdown-item" href="mmwatersports.html">드림스나이퍼</a>
-                    			<a class="dropdown-item" href="mmwatersports.html">키즈카트라이더</a>
-                    			<a class="dropdown-item" href="mmwatersports.html">세그웨이 & 자전거</a>
-                    			<a class="dropdown-item" href="mmwatersports.html">아웃도어바</a>
-                    			<a class="dropdown-item" href="mmwatersports.html">낚시</a>
-                    			<a class="dropdown-item" href="mmwatersports.html">FREE</a>
+                    			<a class="dropdown-item" href="/mmwatersports.html">드림스나이퍼</a>
+                    			<a class="dropdown-item" href="/mmwatersports.html">키즈카트라이더</a>
+                    			<a class="dropdown-item" href="/mmwatersports.html">세그웨이 & 자전거</a>
+                    			<a class="dropdown-item" href="/mmwatersports.html">아웃도어바</a>
+                    			<a class="dropdown-item" href="/mmwatersports.html">낚시</a>
+                    			<a class="dropdown-item" href="/mmwatersports.html">FREE</a>
                     		</div>
                     	</li>
                     	<li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="#" aria-expanded="false" data-toggle="dropdown-submenu">COMMUNITY</a>
                     		<div class="dropdown-menu">
-                    			<a class="dropdown-item" href="/main/board/list.jsp?category=notice">공지사항</a>
-                    			<a class="dropdown-item" href="/main/board/list.jsp?category=qna">Q&amp;A</a>
-                    			<a class="dropdown-item" href="/main/board/gallerylist.jsp?category=event">이벤트</a>
-                    			<a class="dropdown-item" href="/main/board/gallerylist.jsp?category=photo">갤러리</a>
-                    			<a class="dropdown-item" href="/main/board/list.jsp?category=group">제휴/단체문의</a>
+                    			<a class="dropdown-item" href="/board/list.jsp?category=notice">공지사항</a>
+                    			<a class="dropdown-item" href="/board/list.jsp?category=qna">Q&amp;A</a>
+                    			<a class="dropdown-item" href="/board/gallerylist.jsp?category=event">이벤트</a>
+                    			<a class="dropdown-item" href="/board/gallerylist.jsp?category=photo">갤러리</a>
+                    			<a class="dropdown-item" href="/board/list.jsp?category=group">제휴/단체문의</a>
                     		</div>
                     	</li>
                     	<li class="nav-item nav-btn"><a class="nav-link btn btn-black-outline btn-black" href="/Reservation.do">예약하기</a></li>

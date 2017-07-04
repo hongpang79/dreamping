@@ -41,7 +41,7 @@ public class Reservation extends HttpServlet {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		
 		if(step.equals("one")){
-			path = "/main/reservation/reservation.jsp";
+			path = "/reservation/reservation.jsp";
 			
 			Calendar rightNow = Calendar.getInstance();
 			TimeZone tz = TimeZone.getTimeZone("GMT+09:00");
@@ -74,7 +74,7 @@ public class Reservation extends HttpServlet {
 			Vector<SeasonVO> seasons = action.getSeason(request); // 성수기 기간
 			Vector<SiteVO> zone = action.getZoneInformation(ym);
 			if( zone == null ) {
-				path = "/main/reservation/information.jsp";
+				path = "/reservation/information.jsp";
 			}
 			request.setAttribute("seasons",seasons);
 			request.setAttribute("zone",zone);
@@ -83,7 +83,7 @@ public class Reservation extends HttpServlet {
 			request.setAttribute("reservationDate", reservationDate);
 			
 		}else if(step.equals("two")){
-			path = "/main/reservation/reservationConfirm.jsp";
+			path = "/reservation/reservationConfirm.jsp";
 			ReservationDAO action = new ReservationDAO();
 			action.getDay(request);
 		
@@ -171,7 +171,7 @@ public class Reservation extends HttpServlet {
 			response.getWriter().print(obj);
 		
 		}else if(step.equals("three")){
-			path = "/main/reservation/reservationProcess.jsp";
+			path = "/reservation/reservationProcess.jsp";
 			request.setAttribute("chooseZone", request.getParameter("chooseZone"));
 			request.setAttribute("chooseDate", request.getParameter("chooseDate"));
 			request.setAttribute("productNo", request.getParameter("productNo"));
@@ -217,7 +217,7 @@ public class Reservation extends HttpServlet {
 			action.setReservation(request);
 			
 		}else if(step.equals("rinfo")){
-			path = "/main/reservation/reservationBookProcess.jsp";
+			path = "/reservation/reservationBookProcess.jsp";
 //			String id = (String) request.getSession().getAttribute("memId");
 			ReservationDAO action = new ReservationDAO();
 			Vector<ReservationVO> reservations = null;
@@ -240,10 +240,10 @@ public class Reservation extends HttpServlet {
 			request.setAttribute("reservations", reservations);
 			
 		}else if(step.equals("rcancle")){
-			path = "/main/reservation/reservationCancel.jsp";
+			path = "/reservation/reservationCancel.jsp";
 			String reservationNo = request.getParameter("reservationNo");
 			if(reservationNo == null){
-				path = "/main/reservation/reservationBook.jsp";
+				path = "/reservation/reservationBook.jsp";
 			}else{
 				ReservationDAO action = new ReservationDAO();
 				ReservationVO reservation = action.getReservationDataForReservationNo(reservationNo);
@@ -286,7 +286,7 @@ public class Reservation extends HttpServlet {
 			response.getWriter().print(obj);
 //			System.out.println("data = " + list.toString());
 		}else{
-			path = "/main/reservation/information.jsp";
+			path = "/reservation/information.jsp";
 		}
 		
 		if(step.equals("search")||step.equals("roomInfo")||step.equals("rcancleOK")||step.equals("siteSearch")){
