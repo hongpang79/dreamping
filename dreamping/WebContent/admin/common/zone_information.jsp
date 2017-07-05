@@ -174,7 +174,7 @@ $(function() {
 							<th width='80' align="center">정렬순서</th>
 							<th align="center">사용시작일자</th>
 							<th align="center">사용종료일자</th>
-							<th align="center">옵션상품용 여부</th>
+							<th align="center">부가서비스용 여부</th>
 							<th width='150' align="center">선택</th>
 						</tr>
 						</thead>
@@ -252,9 +252,9 @@ $(function() {
 								<input type="text" id="datepicker1" name="useStartDay" size="12" value="" /> ~
 								<input type="text" id="datepicker2" name="useEndDay" size="12" value="" /> 
 							</td>
-							<td class='tbsbj'>옵션상품용 여부</td>
+							<td class='tbsbj'>부가서비스용 여부</td>
 							<td height='28' class='tbcont'>
-								<input type='radio' id='additionYn' name='additionYn' value="Y">옵션상품용
+								<input type='radio' id='additionYn' name='additionYn' value="Y">부가서비스용
 								<input type='radio' id='additionYn' name='additionYn' value="N" selected>숙박시설용
 							</td>
 						</tr>

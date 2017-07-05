@@ -4,7 +4,7 @@
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<title>DREAMPING 관리</title>
+<title>THE DREAMPING ADMIN</title>
 <link rel="icon" href="/ico/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="/ico/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon.png">

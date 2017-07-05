@@ -27,7 +27,7 @@ int rsvtRefdCompCnt = statistics.getRsvtRefdCompCnt();
 %>
 <html>
 <head>
-<title>드림핑 관리</title>
+<title>THE DREAMPING ADMIN</title>
 <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
 <link rel="icon" href="/ico/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="/ico/favicon.ico">

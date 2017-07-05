@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>컴포넌트관리 > 펜션</title>
+<title>THE DREAMPING ADMIN</title>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <script language=javascript src='/admin/js/common.js'></script>
@@ -90,7 +90,7 @@
 <br>
 
 <center>
-	<img src="/admin/aimg/reservation/tbtn_bg_022.gif" align="absmiddle" class="imp"><input type="button" value="새 부가서비스 등록하기" class="bt_a32 tmb22" onclick="location.href='/admin/component/menu.php?component=reservation&file=product_addition_modify&moduleIdx=1';">
+	<img src="/admin/img/reservation/tbtn_bg_022.gif" align="absmiddle" class="imp"><input type="button" value="새 부가서비스 등록하기" class="bt_a32 tmb22" onclick="location.href='/admin/product/product_addition_modify.jsp';">
 </center>
 <br>
 
