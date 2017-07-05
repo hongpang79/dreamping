@@ -221,7 +221,7 @@ public class ProductDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		
-		String SQL = "SELECT zone_no, zone_name, order_no, use_start_day, use_end_day  FROM zone_information " +
+		String SQL = "SELECT zone_no, zone_name, order_no, use_start_day, use_end_day, addition_yn  FROM zone_information " +
 	             "ORDER BY order_no ASC";
 //				System.out.println("[ProductDAO][selectZoneList] SQL = " + SQL);
 		try{
@@ -238,6 +238,7 @@ public class ProductDAO {
 					zone.setOrderNo(rs.getInt("order_no"));
 					zone.setUseStartDay(rs.getDate("use_start_day"));
 					zone.setUseEndDay(rs.getDate("use_end_day"));
+					zone.setAdditionYn(rs.getString("addition_yn"));
 					zones.add(zone);
 				}while(rs.next());
 			}

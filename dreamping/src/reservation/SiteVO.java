@@ -56,7 +56,7 @@ CREATE TABLE `product` (
  */
 public class SiteVO {
 	
-	String zoneName,siteName,productName,useYn,saleMemo,productMemo;
+	String zoneName,siteName,productName,useYn,saleMemo,productMemo,additionYn;
 	int zoneNo,orderNo,zoneCnt,siteNo,productNo,users,maxUsers,addChildPrice,addUserPrice,sale,flatPrice;
 	int lowSeasonWeekday,lowSeasonWeekend,lowSeasonPicnic;
 	int middleSeasonWeekday,middleSeasonWeekend,middleSeasonPicnic;
@@ -64,6 +64,12 @@ public class SiteVO {
 	int peakSeasonWeekday,peakSeasonWeekend,peakSeasonPicnic;
 	Date displayStartDay,displayEndDay,saleStartDay,saleEndDay,flatPriceStartDay,flatPriceEndDay,useStartDay,useEndDay;
 	
+	public String getAdditionYn() {
+		return additionYn;
+	}
+	public void setAdditionYn(String additionYn) {
+		this.additionYn = additionYn;
+	}
 	public int getLowSeasonPicnic() {
 		return lowSeasonPicnic;
 	}

@@ -112,7 +112,7 @@ function numnberCheck()
 	}
 }
 
-function editZone(zoneNo,zoneName,orderNo,useStartDay,useEndDay)
+function editZone(zoneNo,zoneName,orderNo,useStartDay,useEndDay,additionYn)
 {
 	var f = document.addform;
 
@@ -123,6 +123,12 @@ function editZone(zoneNo,zoneName,orderNo,useStartDay,useEndDay)
 	document.getElementsByName( 'useStartDay' )[0].value = useStartDay;
 	document.getElementsByName( 'useEndDay' )[0].value = useEndDay;
 	document.getElementsByName( 'orgZoneName' )[0].value = zoneName;
+	if(additionYn == "N"){
+		document.getElementsByName( 'additionYn' )[1].checked = true;
+	}else{
+		document.getElementsByName( 'additionYn' )[0].checked = true;
+	}
+	
 }
 
 $(function() {
@@ -168,6 +174,7 @@ $(function() {
 							<th width='80' align="center">정렬순서</th>
 							<th align="center">사용시작일자</th>
 							<th align="center">사용종료일자</th>
+							<th align="center">옵션상품용 여부</th>
 							<th width='150' align="center">선택</th>
 						</tr>
 						</thead>
@@ -185,6 +192,7 @@ $(function() {
 		int orderNo = 0;
 		String useStartDay = "";
 		String useEndDay = "";
+		String additionYn = "";
 		
 		SiteVO zone = null;
 		for(int i=0; i<vZone.size(); i++){
@@ -194,6 +202,7 @@ $(function() {
 			orderNo = zone.getOrderNo();
 			useStartDay = transFormat.format(zone.getUseStartDay());
 			useEndDay = transFormat.format(zone.getUseEndDay());
+			additionYn = zone.getAdditionYn();
 			
 %>						
 					<tr height='28'>
@@ -201,8 +210,9 @@ $(function() {
 						<td width='80' align="center"><%=orderNo %></td>
 						<td align="center"><%=useStartDay %></td>
 						<td align="center"><%=useEndDay %></td>
+						<td align="center"><%=additionYn %></td>
 						<td width='150' align="center">
-							<a href="javascript:;" onclick="editZone('<%=zoneNo %>','<%=zoneName %>',<%=orderNo %>,'<%=useStartDay %>','<%=useEndDay %>')">수정</a>
+							<a href="javascript:;" onclick="editZone('<%=zoneNo %>','<%=zoneName %>',<%=orderNo %>,'<%=useStartDay %>','<%=useEndDay %>','<%=additionYn %>')">수정</a>
 							<a href="javascript:;" onclick="javascript:deleteCheck('<%=zoneNo %>','<%=orderNo%>')">삭제</a>
 						</td>
 					</tr>
@@ -238,9 +248,14 @@ $(function() {
 						</tr>
 						<tr height='28'>
 							<td class='tbsbj' width='140'>사용기간</td>
-							<td class='tbcont' colspan="3">
+							<td class='tbcont'>
 								<input type="text" id="datepicker1" name="useStartDay" size="12" value="" /> ~
 								<input type="text" id="datepicker2" name="useEndDay" size="12" value="" /> 
+							</td>
+							<td class='tbsbj'>옵션상품용 여부</td>
+							<td height='28' class='tbcont'>
+								<input type='radio' id='additionYn' name='additionYn' value="Y">옵션상품용
+								<input type='radio' id='additionYn' name='additionYn' value="N" selected>숙박시설용
 							</td>
 						</tr>
 					</table>
