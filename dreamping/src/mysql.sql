@@ -7,6 +7,7 @@ drop table reservation_day;
 drop table refund;
 drop table season;
 drop table product;
+drop table addition;
 drop table site_information;
 drop table zone_information;
 drop table holyday;
@@ -112,6 +113,21 @@ CREATE TABLE `product` (
   `product_memo` varchar(512) default NULL,
   `del_yn` varchar(1) default 'N',
   PRIMARY KEY  (`product_no`)
+) ENGINE=MyISAM;
+
+CREATE TABLE `addition` (
+  `addition_no` int(3) NOT NULL auto_increment,
+  `addition_name` varchar(64) default NULL,
+  `zone_no` int(3) NOT NULL,
+  `unit` varchar(32) default NULL,/*단위*/
+  `addition_price` int(6) default '0',
+  `quantity` int(6) default '9999', /*판매가능한 수량*/
+  `addition_memo` varchar(512) default NULL,
+  `display_start_day` date default NULL,
+  `display_end_day` date default NULL,
+  `use_yn` varchar(1) default 'Y', 	/*사용여부*/
+  `del_yn` varchar(1) default 'N',
+  PRIMARY KEY  (`addition_no`)
 ) ENGINE=MyISAM;
 
 CREATE TABLE `reservation` (

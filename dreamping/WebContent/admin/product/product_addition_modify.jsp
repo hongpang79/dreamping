@@ -65,46 +65,43 @@
 
 <!--본문 타이틀------------------------------------------------------------>
 <ul class="content_title">
-	<li>예약모듈 관리
-	<li class="location">펜션객실관리>부가서비스 관리>부가서비스 등록
+	<li>부가서비스 등록</li>
+	<li class="location">예약상품관리>부가서비스 관리>부가서비스 등록</li>
 </ul>
 
 <!--본문---------------------------------------------------------------------->
 <form name="basicInfoForm" method="post">
 
-<ul class="bullet_title"><li>부가서비스 기본정보입력</ul>
+<ul class="bullet_title"><li>부가서비스 정보입력</ul>
 
 <table class="product_table" id="product_addition_table">
 <col width="200px"></col><col width="300px"></col><col width="150px"></col><col width="150px"></col>
 	<tr>
 		<th>부가서비스명</td>
-		<td><input type="text" name="name" size="40" value=""></td>
+		<td><input type="text" name="additionName" size="40" value=""></td>
 		<th>단위</td>
 		<td><input type="text" name="unit" size="16" value=""></td>
 	</tr>
 	<tr>
 		<th>가격</td>
-		<td><input type="text" name="price" size="30" value=""> 원</td>
+		<td><input type="text" name="additionPrice" size="30" value=""> 원</td>
 		<th>예약상품 1개당<br>판매가능한 수량</td>
 		<td><input type='text' name="quantity" size='10' value=""></td>
+	</tr>
+	<tr>
+		<th>상품진열기간</th>
+		<td><input type="text" id="datepicker1" name="displayStartDay" size="12" value="<%=displayStartDay%>" /> ~ 
+            <input type="text" id="datepicker2" name="displayEndDay" size="12" value="<%=displayEndDay%>" /></td>
+		<th>상품진열여부</th>
+		<td><input type="radio" name="useYn" value="Y" <% if(useYn.equals("Y")){ %> checked <%} %>/>진열
+			<input type="radio" name="useYn" value="N" <% if(useYn.equals("N")){ %> checked <%} %>/>진열안함</td>
 	</tr>
 	<tr>
 		<th>부가서비스 설명</th>
 		<td colspan="3"><input type='text' name="desc" size='100' value=""></td>
 	</tr>
-	<!--
-	<tr>
-		<th>상세정보 사용여부</th>
-		<td colspan="3">
-			<input type='radio' id="useDetailT" name='useDetail' value="T" onclick="toggleDetailPanel( event );">
-			<label for="useDetailT" hidefocus="true">사용</label>
-			<input type='radio' id="useDetailF" name='useDetail' value="F" onclick="toggleDetailPanel( event );" checked>
-			<label for="useDetailF" hidefocus="true">사용안함</label>
-		</td>
-	</tr>
-	-->
+	
 </table>
-<input type="hidden" name="useDetail" value="F">
 <br>
 <center>
 	<img src="/admin/img/reservation/tbtn_bg_022.gif" align="absmiddle" class="imp"><input type="button" value="저장하기" class="bt_a32 tmb22" onclick="saveBasicInfo();">
