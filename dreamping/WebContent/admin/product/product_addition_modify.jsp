@@ -133,7 +133,7 @@ $(function() {
 	{
 		var f = document.basicInfoForm;
 
-		for( var i = 0 , iptsLabel = { 'name' : '부가서비스명' , 'unit' : '단위' , 'price' : '가격' , 'quantity' : '수량' } , ipts = f.getElementsByTagName( 'input' ) , iptName = null ; i < ipts.length ; i++ )
+		for( var i = 0 , iptsLabel = { 'additionName' : '부가서비스명' , 'unit' : '단위' , 'additionPrice' : '가격' , 'quantity' : '수량' , 'displayStartDay' : '상품진열기간' , 'displayEndDay' : '상품진열기간' } , ipts = f.getElementsByTagName( 'input' ) , iptName = null ; i < ipts.length ; i++ )
 		{
 			iptName = ipts[ i ].getAttribute( 'name' );
 			if( !iptName ) continue;
@@ -150,6 +150,12 @@ $(function() {
 				ipts[ i ].focus();
 				return alert( iptsLabel[ iptName ] + '에는 숫자만 입력해 주세요' );
 			}
+		}
+		
+		if(f.orgStep.value == "modify"){
+			f.step.value = "update";
+		}else{
+			f.step.value = "insert";
 		}
 
 		f.submit();
@@ -171,6 +177,7 @@ $(function() {
 	<input type="hidden" id="orgStep" name="orgStep" value="<%=step %>"/>
 	<input type="hidden" id="step" name="step" value="<%=step %>"/>
 	<input type="hidden" id="rtn" name="rtn" value="<%=rtn%>">
+	<input type="hidden" id="additionNo" name="additionNo" value="<%=additionNo %>"/>
 <ul class="bullet_title"><li>부가서비스 정보입력</ul>
 
 <table class="product_table" id="product_addition_table">

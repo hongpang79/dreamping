@@ -732,7 +732,7 @@ public class ProductDAO {
 		
 		int rtn = 0;
 		int additionNo = 0;
-		String addtionName = "";
+		String additionName = "";
 		int zoneNo = 0;
 		String unit = "";
 		int additionPrice = 0;
@@ -749,7 +749,7 @@ public class ProductDAO {
 			if(step == null){
 				step = "new";
 			}else{
-				addtionName = request.getParameter("addtionName");
+				additionName = request.getParameter("additionName");
 				zoneNo = Integer.parseInt((String)request.getParameter("zoneNo"));
 				unit = request.getParameter("unit");
 				additionPrice = Integer.parseInt((String)request.getParameter("additionPrice"));
@@ -766,7 +766,7 @@ public class ProductDAO {
 					+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
 				conn = ConnectionUtil.getConnection();
 				pstmt = conn.prepareStatement(SQL);
-				pstmt.setString(1, addtionName);
+				pstmt.setString(1, additionName);
 				pstmt.setInt(2, zoneNo);
 				pstmt.setString(3, unit);
 				pstmt.setInt(4, additionPrice);
@@ -775,19 +775,19 @@ public class ProductDAO {
 				pstmt.setString(7, displayStartDay);
 				pstmt.setString(8, displayEndDay);
 				pstmt.setString(9, useYn);
-				pstmt.setString(10, delYn);
+				pstmt.setString(10, "N");
 				
 				rtn = pstmt.executeUpdate();
 				
 			}else if(step.equals("update")){
 				additionNo = Integer.parseInt((String) request.getParameter("additionNo"));
 				SQL = "UPDATE addition SET addition_name=?, zone_no=?, unit=?, addition_price=?, quantity=?, addition_memo=?,  " 
-				    + "display_start_day=?, display_end_day=?, use_yn=?, del_yn=? "
+				    + "display_start_day=?, display_end_day=?, use_yn=? "
 				    + "WHERE addition_no = ?";
 				
 				conn = ConnectionUtil.getConnection();
 				pstmt = conn.prepareStatement(SQL);
-				pstmt.setString(1, addtionName);
+				pstmt.setString(1, additionName);
 				pstmt.setInt(2, zoneNo);
 				pstmt.setString(3, unit);
 				pstmt.setInt(4, additionPrice);
@@ -796,15 +796,14 @@ public class ProductDAO {
 				pstmt.setString(7, displayStartDay);
 				pstmt.setString(8, displayEndDay);
 				pstmt.setString(9, useYn);
-				pstmt.setString(10, delYn);
-				pstmt.setInt(11, additionNo);
+				pstmt.setInt(10, additionNo);
 				
 				rtn = pstmt.executeUpdate();
 				
 			}
 //			System.out.println(rtn);
 //			if(rtn == 0){
-//				productNo = 0;
+//				additionNo = 0;
 //			}
 		} catch(Exception ex) {
 	        ex.printStackTrace();
@@ -813,6 +812,64 @@ public class ProductDAO {
 	    }
 		
 		return rtn;
+	}
+	
+	public Vector<AdditionVO> selectAdditionList(){
+		Vector<AdditionVO> additions = new Vector<AdditionVO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String SQL = "SELECT z.zone_name, s.* FROM zone_information z, addition s WHERE s.del_yn = 'N' AND z.zone_no = s.zone_no " +
+	             "ORDER BY z.zone_name, addition_name ASC";
+//			System.out.println("[ProductDAO][selectAdditionList] SQL = " + SQL);
+		try{
+			conn = ConnectionUtil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+
+			
+			if( rs.next() ){
+				do{
+					AdditionVO addition = new AdditionVO();
+					addition.setAdditionNo(rs.getInt("addition_no"));
+					addition.setAdditionName(rs.getString("addition_name"));
+					addition.setZoneName(rs.getString("zone_name"));
+					addition.setAdditionPrice(rs.getInt("addition_price"));
+					addition.setDisplayStartDay(rs.getDate("display_start_day"));
+					addition.setDisplayEndDay(rs.getDate("display_end_day"));
+					addition.setUseYn(rs.getString("use_yn"));
+					addition.setAdditionMemo(rs.getString("addition_memo"));
+					additions.add(addition);
+				}while(rs.next());
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			close(rs,pstmt,conn);
+		}
+		return additions;
+	}
+	
+	public int deleteAddition(int additionNo) throws Exception {
+	    int x=0;
+	    Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+	    try {
+			conn = ConnectionUtil.getConnection();
+	        //pstmt = conn.prepareStatement("delete from addition where addition_no=?");
+			pstmt = conn.prepareStatement("UPDATE addition SET del_yn='Y' WHERE addition_no = ?");
+	        pstmt.setInt(1, additionNo);
+	        x = pstmt.executeUpdate();
+	    } catch(Exception ex) {
+	        ex.printStackTrace();
+	    } finally {
+	    	close(rs,pstmt,conn);
+	    }
+		return x;
 	}
 
 }

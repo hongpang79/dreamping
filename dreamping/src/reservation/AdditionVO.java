@@ -24,9 +24,15 @@ import java.util.Date;
 public class AdditionVO {
 	
 	int additionNo, zoneNo, additionPrice, quantity;
-	String additionName, unit, additionMemo, useYn, delYn;
+	String additionName, unit, additionMemo, useYn, delYn, zoneName;
 	Date displayStartDay, displayEndDay;
 	
+	public String getZoneName() {
+		return zoneName;
+	}
+	public void setZoneName(String zoneName) {
+		this.zoneName = zoneName;
+	}
 	public int getAdditionNo() {
 		return additionNo;
 	}
