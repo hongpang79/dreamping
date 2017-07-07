@@ -49,7 +49,7 @@ try{
                 </table>
             </div>
             <div style="text-align:right;padding-right:10px;padding-top:8px;">
-                <a href='/index.jsp' target='_blank'><img src='/admin/img/btn_mysitebarogagi.gif' align='absmiddle'></a>
+                <a href='http://thedreamping.com' target='_blank'><img src='/admin/img/btn_mysitebarogagi.gif' align='absmiddle'></a>
             </div>
             <div style="clear:both"></div>
         </div>
