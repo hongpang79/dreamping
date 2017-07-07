@@ -72,174 +72,208 @@
 %>
 <jsp:include page="/header.jsp" />
 
-<style type="text/css">
-.calendar > p{width:100%;font-size:0px;margin:10px; }
-.calendar > p span.Ym{font-size:23px;margin:0px 10px;font-weight:bold;}
-.calendar > p a{display:inline-block;vertical-align:bottom;line-height:23px;font-weight:bold;}
-.calendar > ul > li > div.today{background:#fff8cf !important;}
-.calendar > ul > li > div.Sun > time, .calendar > ul > li > div.Sun > time span{color:#cc2220;}
-.calendar > ul > li > div.Sat > time, .calendar > ul > li > div.Sat > time span{color:#2453a5;}
-@media only screen and (min-width : 761px){
-	.calendar > p{text-align:center;}
-	.calendar > ul{display:table;width:100%;font-size:0px;margin-bottom:15px;}
-	.calendar > ul > li{display:table-row;width:100%;}
-	.calendar > ul > li > div{display:table-cell;width:14%;min-height:80px;height:80px;border-right:1px solid #dfd8c6;border-bottom:1px solid #dfd8c6;}
-	.calendar > ul > li > div:last-child{border-right:0px;}
-	.calendar > ul > li.header > div{height:30px;line-height:30px;min-height:0px;border-top:1px solid #dfd8c6;border-right:1px solid #dfd8c6;border-bottom:1px solid #dfd8c6background:#fbfaf7;color:#777777;font-weight:bold;text-align:center;}
-	.calendar > ul > li.header > div:last-child{border-right:0px;}
-	.calendar > ul > li.header > div.Sun{color:#cc2220;}
-	.calendar > ul > li.header > div.Sat{color:#2453a5;}
-	.calendar > ul > li > div.empty{background:#fbfaf7;}
-	.calendar > ul > li > div > time{display:block;padding:3px 0 3px 3px;font-weight:bold;min-height:15px;}
-	.calendar > ul > li > div > time span{display:none;}
-	.calendar > ul > li > div > reserve{display:block;padding:3px 0 3px 3px;font-weight:bold;min-height:45px;}
-	.calendar > ul > li > div ul{width:100%;font-size:0px;text-align:right;padding:0 3px;min-height:60px;}
-	.calendar > ul > li > div ul li{margin:0px 3px 3px 0px;padding:3px;}
-}
-@media only screen and (max-width : 760px){
-	.calendar > p{text-align:left;}
-	.calendar > ul{width:100%;display:block;border-top:2px solid #dfd8c6;margin-bottom:15px;}
-	.calendar > ul > li{display:block;}
-	.calendar > ul > li > div{width:100%;border-bottom:1px solid #dfd8c6;}
-	.calendar > ul > li.header{display:none;}
-	.calendar > ul > li > div.empty{display:none;}
-	.calendar > ul > li > div > time{display:table-cell;vertical-align:middle;border-right:1px solid #dfd8c6;width:80px;text-align:right;padding:10px 5px 10px 0;background:#fbfaf7;font-weight:bold;}
-	.calendar > ul > li > div > time span.Ym{font-size:10px;display:block;margin-bottom:5px;}
-	.calendar > ul > li > div > time span.W{margin-left:5px;}
-	.calendar > ul > li > div > reserve{margin-left:5px;display:block;}
-	.calendar > ul > li > div ul{display:table-cell;padding:5px 10px;vertical-align:middle;}
-	.calendar > ul > li > div ul li{margin:2px 2px 2px 0px;padding:3px;}
-}
-
-</style>
-
-
-	<div class="calendar">
-		<p>
-			<a href="/Reservation.do?y=<%= laterYear %>&m=<%= laterMonth %>">&laquo;</a>
-			<span class="Ym"><%= nowYear+"년 "+nowMonth+"월" %></span>
-			<a href="/Reservation.do?y=<%= nextYear %>&m=<%= nextMonth %>">&raquo;</a>
-		</p>
-	 
-		<ul>
-			<li class="header">
-				<div class="Sun">SUN</div>
-				<div class="Mon">MON</div>
-				<div class="Tue">TUE</div>
-				<div class="Wed">WED</div>
-				<div class="Thu">THU</div>
-				<div class="Fri">FRI</div>
-				<div class="Sat">SAT</div>
-			</li>
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01" >
+		<tr>
+			<td align="center">
 			
-			<%	while( true ){	%>
-			<li>
-			<%	for( int i=0; i<7 ; i++ ){		// 날짜 출력
-					if( i<firstWeekday-1 && count == 1 ){ out.print("<div class='empty'></div>"); continue; } 
-					if( count > lastDay ){out.print("<div class='empty'></div>");}else{ 
-						if(i==0){
-					%>
-						<div class="Sun">
-					<%
-						}else if(i==6){
-					%>
-						<div class="Sat">
-			        <%
-						}else{
-					%>
-						<div>
-					<%	
-						}
-					%>
-							<time>
-								<span class="Ym">[<%= nowYear+". "+nowMonth %>]</span>
-								<%= count++ %>
-								<span class="W">(<%= day[i] %>)&nbsp;
-								<%
-									int sChkDate = Integer.parseInt(month+""+(((count-1) < 10) ? "0"+(count-1) : (count-1)));
-									String sName = "비수기";
-									for(int s=0; s<season.size(); s++){
-										if(sChkDate >= iStartSeason[s] && sChkDate <= iEndSeason[s]){
-											sName = seasonName[s];
-										}
-									}
-									out.print(sName);
-								%>
-								</span>
-							</time>
-							<reserve>
-							<%								
-							if( count > chkNowDate )
-								
-								if( zone != null )
-									for( int j=0; j<zone.size();j++ ){	// Zone 갯수만큼 루프
-										bluRed = 2;
-										String thisDate = ""+year+(month < 10 ? "0"+month : month)+((count-1) < 10 ? "0"+(count-1) : (count-1));
-										if(reservationDate.size() > 0){
-											usedZone = "0";
-											bluRed = 2;
-											for(int k=0; k<reservationDate.size(); k+=6){	// 예약날짜 만큼 루프
-												//System.out.println("i = " + reservationDate.size());
-												//System.out.println("1 : "+ reservationDate.get(k)+reservationDate.get(k+1));
-												//System.out.println("2 : "+ thisDate+zone.get(j).getGubun());
-												if((reservationDate.get(k)+reservationDate.get(k+1)).equals(thisDate+zone.get(j).getZoneName())){
-													//System.out.println("for : " +k +" , "+ reservationDate.get(k)+reservationDate.get(k+1));
-													//System.out.println("date gubun : " +reservationDate.get(k+1));
-													//if(reservationDate.get(k+1).equals(zone.get(j).getGubun())){
-														usedZone = zone.get(j).getZoneName()+"("+reservationDate.get(k+3)+"/"+reservationDate.get(k+2)+")";
-														if(reservationDate.get(k+3).equals("0")){
-															bluRed = 0;
-														}else if(!reservationDate.get(k+3).equals(reservationDate.get(k+2))){
-															bluRed = 1;
+				<table width="1200" height="700" border="0" cellspacing="0" cellpadding="0">
+					<tr height="30"><td></td></tr>
+					<tr>
+    					<td align="center" valign="top">
+    					
+							<table width="1200" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+    								<td align="center">
+    									
+    									<!-- 예약게시판 시작 -->
+    									<form name="step2Form" method="post" action="/Reservation.do">
+											<input type="hidden" name="step" value="two" />
+											<input type="hidden" name="chooseDate" />
+											<input type="hidden" name="chooseZoneName" />
+										</form>
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/sub_layout.css'>
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/style.css'>
+    									<div id="contents">
+											<div class="con_wrap">
+												<!--tab-->
+												<div class="con_tab mb30">
+													<ul>
+														<li><a href="/Reservation.do"><img src="/reservation/images/tab2_on.gif" alt="예약하기" /></a></li>
+														<li><a href="/Reservation.do?step=rinfo"><img src="/reservation/images/tab3.gif" alt="예약확인" /></a></li>
+														<li><a href="/Reservation.do?step=rcancle"><img src="/reservation/images/tab4.gif" alt="예약취소" /></a></li>
+													</ul>
+													<div>
+														<a href="javascript:popupUrbanMap()"><img src="/reservation/images/map.png"></a>
+													</div>
+												</div>
+												<!--//tab-->
+												<div class="reser">
+									
+													<ul class="reser_tok">
+														<li><img src="/reservation/images/sm_state1.gif" alt="예약가능" /> 예약가능</li>
+														<li><img src="/reservation/images/sm_state3.gif" alt="예약완료" /> 예약완료</li>
+													</ul>
+									
+													<div class="calendar">
+														<!--날짜-->
+														<ul class="date">
+															<li class="fl">TODAY : <%= nowYear+"년 "+nowMonth+"월 "+nowDate+"일" %></li>
+															<li class="cen">
+																<ul>
+																	<li><a href="/Reservation.do?y=<%= laterYear %>&m=<%= laterMonth %>">&laquo;</a></li>
+																	<li class="mon"><%= year+"년 "+month+"월" %></li>
+																	<li><a href="/Reservation.do?y=<%= nextYear %>&m=<%= nextMonth %>">&raquo;</a></li>
+																</ul>
+															</li>
+															<li class="fr"></li>
+														</ul>
+														<!--//날짜-->
+														<table class="state">
+															<caption>예약현황</caption>
+															<colgroup>
+																<col width="140" />
+																<col width="140" />
+																<col width="140" />
+																<col width="141" />
+																<col width="140" />
+																<col width="140" />
+																<col width="140" />
+															</colgroup>
+															<tbody>
+																<tr>
+																	<th class="week">일요일</th>
+																	<th class="week">월요일</th>
+																	<th class="week">화요일</th>
+																	<th class="week">수요일</th>
+																	<th class="week">목요일</th>
+																	<th class="week">금요일</th>
+																	<th class="week">토요일</th>
+																</tr>
+									
+												<%	while( true ){	%>
+													<tr>
+													<%	for( int i=0; i<7 ; i++ ){		// 날짜 출력
+															if( i<firstWeekday-1 && count == 1 ){ out.print("<td><table><tbody><tr><th><p class='num'>&nbsp;</p><p class='num_con'>&nbsp;</p></th></tr><tr><td><ul style='min-height:60px;'></ul></td></tr></tbody></table></td>"); continue; } 
+															if( count > lastDay ){out.print("<td><table><tbody><tr><th><p class='num'>&nbsp;</p><p class='num_con'>&nbsp;</p></th></tr><tr><td><ul style='min-height:60px;'></ul></td></tr></tbody></table></td>");}else{ %>
+																<td>
+																	<table summary="">
+																		<tbody>
+																			<tr>
+																				<th>
+																					<p class="num"><%= count++ %></p>
+																					<p class="num_con">
+																						<%
+																							int sChkDate = Integer.parseInt(month+""+(((count-1) < 10) ? "0"+(count-1) : (count-1)));
+																							String sName = "비수기";
+																							for(int s=0; s<season.size(); s++){
+																								if(sChkDate >= iStartSeason[s] && sChkDate <= iEndSeason[s]){
+																									sName = seasonName[s];
+																								}
+																							}
+																							out.print(sName);
+																						%>
+																					</p>
+																				</th>
+																			</tr>
+																			<tr>
+																				<td>
+																					<ul style="min-height:60px;">
+																<%								
+																	if( count > chkNowDate )
+																		
+																		if( zone != null )
+																			for( int j=0; j<zone.size();j++ ){	// Zone 갯수만큼 루프
+																				bluRed = 2;
+																				String thisDate = ""+year+(month < 10 ? "0"+month : month)+((count-1) < 10 ? "0"+(count-1) : (count-1));
+																				if(reservationDate.size() > 0){
+																					usedZone = "0";
+																					bluRed = 2;
+																					for(int k=0; k<reservationDate.size(); k+=6){	// 예약날짜 만큼 루프
+																						//System.out.println("i = " + reservationDate.size());
+																						//System.out.println("1 : "+ reservationDate.get(k)+reservationDate.get(k+1));
+																						//System.out.println("2 : "+ thisDate+zone.get(j).getGubun());
+																						if((reservationDate.get(k)+reservationDate.get(k+1)).equals(thisDate+zone.get(j).getZoneName())){
+																							//System.out.println("for : " +k +" , "+ reservationDate.get(k)+reservationDate.get(k+1));
+																							//System.out.println("date gubun : " +reservationDate.get(k+1));
+																							//if(reservationDate.get(k+1).equals(zone.get(j).getGubun())){
+																								usedZone = zone.get(j).getZoneName()+"("+reservationDate.get(k+3)+"/"+reservationDate.get(k+2)+")";
+																								if(reservationDate.get(k+3).equals("0")){
+																									bluRed = 0;
+																								}else if(!reservationDate.get(k+3).equals(reservationDate.get(k+2))){
+																									bluRed = 1;
+																								}
+																								break;
+																							//}else{
+																							//	usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+																							//}
+																						}
+																					}
+																					if(usedZone.equals("0")){
+																						usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+																					}
+																					//System.out.println("usedZone : " + usedZone);
+																				}else{
+																					usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+																				}
+																				
+																				cLinkF=""+(count-1);
+																				cLinkB=zone.get(j).getZoneName();
+																				
+																				if(bluRed == 0){
+																		%>											
+																					<li class="s03"><font color="red"><b id="noLink"><%=usedZone %></b></font></li>
+																			<%	
+																				}else if(bluRed == 1){
+																		%>
+																					<li class="s01"><font color="#2F9D27"><b id="link" onClick="javascript:chooseRoom('<%=cLinkF%>','<%=cLinkB%>')"><%=usedZone %></b></font></li>
+																			<%			
+																				}else{
+																		%>											
+																					<li class="s01"><font color="blue"><b id="link" onClick="javascript:chooseRoom('<%=cLinkF%>','<%=cLinkB%>')"><%=usedZone %></b></font></li>
+																			<%
+																				}
+																				
+																				//System.out.println(zone.get(j).getZoneName());
+																
+																			}
+																		%>
+																						
+																					</ul>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</td>
+																<% 		
+															}
 														}
-														break;
-													//}else{
-													//	usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
-													//}
+													%>
+													</tr>
+												<%	
+													if( count > lastDay ) break;	// while 문 종료
 												}
-											}
-											if(usedZone.equals("0")){
-												usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
-											}
-											//System.out.println("usedZone : " + usedZone);
-										}else{
-											usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
-										}
+												%>
+												
+															</tbody>
+														</table>
+													</div>
+									
+												</div>
+											</div>
+										</div>
+										<!-- //예약게시판 끝 -->
 										
-										cLinkF=""+(count-1);
-										cLinkB=zone.get(j).getZoneName();
-										
-										if(bluRed == 0){
-								%>											
-											<div style="height:18px; color:#000000;"><%=usedZone %></div>
-									<%	
-										}else if(bluRed == 1){
-								%>
-											<div style="height:18px; color:#000000;"><%=usedZone %></div>
-									<%			
-										}else{
-								%>											
-											<div style="height:18px; color:#000000;"><%=usedZone %></div>
-									<%
-										}
-										
-										//System.out.println(zone.get(j).getZoneName());
-						
-									}
-								%>
-							</reserve>
-						</div>
-						<% 		
-					}
-				}
-			%>
-				</li>
-			<%	
-			if( count > lastDay ) break;	// while 문 종료
-		}
-		%>			
-		</ul>
-	</div>
+										</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr height="150"><td></td></tr>
+				</table>
+
+			 </td>
+		</tr>
+	</table>
 
 
 <jsp:include page="/footer.jsp" />

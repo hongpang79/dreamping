@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+table, caption, tbody, tfoot, thead, tr, th, td 
+{margin:0; padding:0; border:0;}
+ol, ul, li {list-style:none;}
+caption{display:none}
+
+.m_visual02 {width:100%; padding:160px 0 0 0;}
+
+/*인사말*/
+.greeting {position:relative;top:-40px;width:100%;height:799px;margin:0 0 -85px 0;text-align:center;background:#242425 url(/img/01caravan/bg0101.jpg) no-repeat center 0;}
+.greeting_box{overflow:hidden;clear:both;width:980px;margin:0 auto;}
+.gre_con_le {width:190px; float:left; padding-top:100px; padding-left:30px;}
+.gre_con_ri { width:610px; float:right; padding-top:100px; color:#9f9a94;text-align:left; padding-right:50px; line-height:1.7; letter-spacing:-0.08em;}
+
+/*찾아오시는길*/
+.contact{position:relative;top:-40px;width:100%;height:505px;margin:0 0 -80px 0;text-align:left;background:url(/img/02rooms/bg_room.gif) repeat top;}
+.contact_box{overflow:hidden;clear:both;width:980px;margin:0 auto;}
+.contact_fl{float:left;width:450px;padding:100px 0 0 30px;color:#9f9a94;}
+.contact_fl p.tit{margin:0 0 22px 0;}
+.contact_fl .cont_txt{width:450px;margin:0 0 45px 0;font-size:12px;}
+.contact_fl .cont_txt li{vertical-align:middle;margin:0 0 4px 0;}
+.contact_fl .cont_txt li .icon{float:left;width:25px;}
+.contact_fl .cont_txt img{vertical-align:middle;}
+.contact_fl .cont_txt li a{color:#9f9a94;font-size:12px;}
+.contact_fl .map_go{overflow:hidden;clear:both;width:450px;font-size:11px;}
+.contact_fl .map_go li{float:left;margin:0 10px 0 0;text-align:center;}
+.contact_fl .map_go li img{margin:0 0 6px 0;}
+.contact_fl .map_go li a{color:#9f9a94;font-size:11px;}
+.contact_fr{float:right;width:400px;padding:62px 30px 0 0;}
+.contact_con{width:665px;margin:0 auto;padding:60px 0 0 315px;text-align:left;background:url(/img/01caravan/bg_contact.gif) no-repeat 30px 65px;}
+
+/*spot*/
+.spot{position:relative;top:-40px;margin:0 0 -40px 0;left:0;width:100%;height:116px;text-align:center;background:url(/img/03reservation/bg_spot.gif) repeat-x top;}
+.spot2{position:relative;top:-40px;margin:0 0 -40px 0;left:0;width:100%;height:181px;text-align:center;background:url(/img/03reservation/bg_spot.gif) repeat top;}
+.spot2_on{width:100%;height:181px;text-align:center;background:url(/img/03reservation/bg_spot2.gif) no-repeat center;}
+
+
+/*예약현황,예약하기*/
+.reser{width:980px;color:#666;}
+.reser_tok{float:right;color:#666;clear:both;}
+.reser_tok li{float:left;margin:0 6px 0 0;vertical-align:middle;}
+.reser_tok li img{margin:-2px 0 0 0;vertical-align:middle;}
+.reser .calendar{overflow:hidden;clear:both;width:980px;padding:15px 0 0 0;}
+.reser .calendar .date{overflow:hidden;clear:both;height:35px;margin:0 0 10px 0;border:1px solid #ededed;}
+.reser .calendar .date .fl{float:left;width:308px;height:25px;padding:10px 0 0 10px;text-align:left;color:#ba8b5a;font-weight:bold;}
+.reser .calendar .date .fr{float:right;height:25px;padding:10px 10px 0 0;text-align:right;color:#666;vertical-align:middle;}
+.reser .calendar .date .fr img{vertical-align:middle;}
+.reser .calendar .date .fr a{color:#666;}
+.reser .calendar .date .fr a:hover{color:#333;}
+.reser .calendar .date .cen{float:left;text-align:center;}
+.reser .calendar .date .cen ul{display:inline-block;text-align:center;vertical-align:middle;}
+.reser .calendar .date .cen ul li{float:left;height:27px;padding:8px 0 0 0;font-size:21px;}
+.reser .calendar .date .cen ul li a{font-size:21px;color:#666;text-decoration: none; cursor: pointer;}
+.reser .calendar .date .cen ul li.mon{width:140px;height:25px;margin:0 10px;padding:10px 0 0 0;font-size:15px;font-weight:bold;color:#000;border-right:1px solid #ededed;border-left:1px solid #ededed;}
+
+.reser .calendar table.state{width:100%;border:1px solid #ddd;border-collapse:collapse;}
+.reser .calendar table.state th{padding:7px 0;border-right:1px solid #ddd;}
+.reser .calendar table.state td{padding:0;border-right:1px solid #ddd;vertical-align:top;}
+.reser .calendar table.state .week{text-align:center;font-size:12px;border-bottom:none;font-weight:bold;color:#555;background:#f5f5f5;}
+.reser .calendar table.state .bon{border-right:none;}
+.reser .calendar table.state table{width:100%;border-collapse:collapse;}
+.reser .calendar table.state table th{padding:7px;font-size:11px;color:#555;border:none;border-top:1px solid #ddd;border-bottom:1px solid #f5f5f5;background:#fcfcfc;}
+.reser .calendar table.state table th .num{float:left;width:30px;text-align:left;font-weight:bold;}
+.reser .calendar table.state table th .num_con{float:right;width:75px;text-align:right;font-weight:normal;}
+.reser .calendar table.state table th .num_con span{color:#c87c8a;}
+.reser .calendar table.state table td{padding:5px;text-align:left;border-right:none;font-size:11px;}
+.reser .calendar table.state table td ul{font-size:11px;}
+.reser .calendar table.state table td ul li{list-style:none;margin:0 0 0 -40px;}
+.reser .calendar table.state table td ul li.s01{color:#5fbac5;padding:0 0 2px 20px;background:url(/images/reservation/sm_state1.gif) no-repeat 0 50%; cursor:pointer;}
+.reser .calendar table.state table td ul li.s01 a{color:#5fbac5; cursor:pointer;}
+.reser .calendar table.state table td ul li.s02{color:#ba8b5a;padding:0 0 2px 20px;background:url(/images/reservation/sm_state2.gif) no-repeat 0 50%;}
+.reser .calendar table.state table td ul li.s02 a{color:#ba8b5a;}
+.reser .calendar table.state table td ul li.s03{color:#c87c8a;padding:0 0 2px 20px;background:url(/images/reservation/sm_state3.gif) no-repeat 0 50%;}
+.reser .calendar table.state table td ul li.s03 a{color:#c87c8a;}
+.reser .calendar table.state table td ul li.s03_{color:#c87c8a;padding:0 0 2px 20px;text-decoration:line-through;background:url(/images/reservation/sm_state3.gif) no-repeat 0 50%;}
+.reser .calendar table.state table td ul li.s03_ a{color:#c87c8a;}
+
+.reser .calendar table.state table td ul li.s04{color:#666;padding:0 0 0 20px;background:url(/images/reservation/sm_state4.gif) no-repeat 0 50%;}
+.reser .calendar table.state table td ul li.s04 a{color:#666;}
+
+/*예약페이지*/
+.reser_box{overflow:hidden;clear:both;width:980px;}
+.reser_con{float:left;width:735px;text-align:left;}
+.reser_cust{float:right;text-align:right;}
+
+
+/*room list*/
+.roomset{padding:12px;margin-bottom:25px;border:1px solid #dbdbdb;background:#f9f9f9;}
+.room_lst_bg{position:relative;top:-40px;width:100%;height:550px;margin:0 0 -80px 0;text-align:left;background:url(/img/02rooms/bg_room_lst.jpg) repeat top center;}
+.room_lst_con{width:980px;margin:0 auto;}
+.room_lst_con ul{overflow:hidden;clear:both;width:100%;}
+.room_lst_con ul li{float:left;margin:0; padding-top:80px;padding-right:1px;}
+/*rooms*/
+.room_box{position:relative;width:100%;height:615px;background:url(/img/02rooms/bg_room.gif) repeat top;}
+.room_img{position:relative;width:1000px;height:500px;top:-50px;margin:0 auto -65px auto;background:url(/img/02rooms/bg_room_img.png) no-repeat;}
+.room_img .img_cana{position:relative;width:1000px;height:476px;padding:5px 0 0 0;}
+.room_img .img_cana .room_lst{position:absolute;top:200px;left:0;clear:both;width:815px;padding:0 15px 0 35px;}
+.room_img .img_cana .room_lst .fl{float:left;}
+.room_img .img_cana .room_lst .fr{float:right;}
+.room_img .img_cana .sm_img_box{position:absolute;top:5px;right:0;width:158px;height:476px;text-align:center;background:url(/img/02rooms/bg_sm_img.png) repeat;}
+/*.room_img .img_cana .sm_img_box ul{padding:5px 0 0 0;}*/
+.room_img .img_cana .sm_img_box ul li{margin:2px 0;}
+.room_img .img_cana .sm_img_box ul li.updwn{margin:6px 0;*margin:10px 0;}
+.room_txt{position:relative;width:1000px;margin:0 auto;padding:15px 0 0 0;text-align:left;}
+.view_btn001 {position:absolute; right:0; top:-168px;}
+.btn_rese_box{position:relative;width:1000px;margin:0 auto;}
+.btn_rese{position:absolute;top:-63px;right:0;}
+
+
+.new_item {display:inline-block; position:relative; width:125px; height:420px; overflow:hidden; top:0;}
+.new_item ul.mitem {height:1000px; padding:0px; position:relative; overflow:hidden; margin:0px; left:0px; border:0; list-style:none;}
+.new_item ul li {position:relative; width: 125px; height:77px; padding-bottom:5px;}
+.new_item ul li.txt {position:relative; width: 125px; padding:40px 0 18px 0; color:#fff; text-align:center; height:50px;font-weight:bold;}
+
+/*specialy*/
+.spec{position:relative;top:-40px;width:100%;height:612px;margin:0 0 -85px 0;text-align:center;background:url(/img/02rooms/bg_room.gif) repeat top;}
+.spec_bg{width:100%;height:548px;padding:60px 0 0 0;background:url(/img/04specialy/bg_specialy.jpg) no-repeat center;}
+.spec_tab{width:980px;margin:0 auto 20px auto;text-align:center;}
+.spec_tab ul{overflow:hidden;clear:both;width:980px;}
+.spec_tab ul li{display:inline;margin:0 3px;}
+.spec_con{overflow:hidden;clear:both;width:980px;height:415px;padding:5px 10px 0 10px;margin:0 auto;text-align:left;background:url(/img/04specialy/bg_spec_con.png) no-repeat;}
+.spec_con_txt{float:left;width:480px;padding:55px 0 0 60px; letter-spacing:-0.1em;}
+.spec_con_txt .tit{margin:0 0 20px 0;}
+.spec_con_txt .tt{margin:0 0 20px 0;}
+.spec_con_txt ul{margin:0 0 18px 0;color:#666;}
+.spec_con_txt ul li{font-size:12px;}
+.spec_con_txt ul li.txt_s{font-size:11px;}
+.spec_con_txt ul li strong{font-size:12px;}
+.spec_con_img{float:right;width:389px;}
+
+/*specialy 01_01_*/
+.spec_box{position:relative;width:1000px;margin:0 auto;}
+.spec_box .sthumb1{position:absolute;top:0;left:285px;}
+.spec_box .sthumb2{position:absolute;top:0;left:355px;}
+.spec_box .sthumb3{position:absolute;top:0;left:425px;}
+.spec_box .sthumb4{position:absolute;top:0;left:495px;}
+.spec_box .sthumb5{position:absolute;top:0;left:565px;}
+.spec_box .sthumb6{position:absolute;top:0;left:635px;}
+.spec_con_ab{position:absolute;overflow:hidden;clear:both;width:980px;height:405px;top:90px;padding:5px 10px 0 10px;margin:0 auto;text-align:left;background:url(/img/04specialy/bg_spec_con.png) no-repeat;}
+
+.photo { padding-top: 1px;position: relative;}
+.ready {background: url("/img/common/ready.png") no-repeat center 130px;height: 447px;}
+
+/*tour*/
+.tour{position:relative;top:-40px;width:100%;height:535px;margin:0 0 -85px 0;text-align:center;background:url(/img/05tour/bg_tour.gif) repeat-x top;}
+.tour_bg{width:100%;height:535px;background:url(/img/05tour/bg_tour_con.jpg) no-repeat center;}
+.tour_con{position:relative;width:980px;margin:0 auto;text-align:left;}
+.tour_con .thumb {float:left; margin:1px 1px 0 0;}
+.tour_con .view{position:absolute;top:180px;left:0;width:980px;}
+.tour_con .view ul{overflow:hidden;clear:both;width:980px;}
+.tour_con .view ul li.fl{float:left;width:410px;}
+.tour_con .view ul li.fr{float:right;width:515px;padding:12px 0 0 0;color:#fff;font-size:12px;}
+.tour_con .view ul li.fr p{margin:0 0 15px 0;}
+.tour_con .view ul li.fr p.end{margin:0 0 12px 0;}
+
+
+/*community*/
+.commun_tit{text-align:center;color:#a4a4a4;font-size:11px;}
+.commun_tit img{margin:0 0 5px 0;}
+
+.event{width:980px;}
+.event table{width:920px;margin:0 auto;color:#777;font-size:12px;border-collapse:collapse;border:1px solid #e4e4e4}
+.event table td{padding:12px;border:1px solid #e4e4e4;text-align:center;}
+.event table td img{width:279px;height:145px;margin:0 0 15px 0;}
+
+table {vertical-align: middle; font-size:1em; font-family:Dotum,"돋움",sans-serif;}
