@@ -10,6 +10,7 @@ import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
+import reservation.AdditionVO;
 import reservation.SiteVO;
 import util.ConnectionUtil;
 
@@ -675,6 +676,136 @@ public class ProductDAO {
 				
 			}
 //			System.out.println("[ProductDAO][modifyProducts] rtn = " + rtn);
+		} catch(Exception ex) {
+	        ex.printStackTrace();
+	    } finally {
+	    	close(rs,pstmt,conn);
+	    }
+		
+		return rtn;
+	}
+	
+	public AdditionVO getAddition(int additionNo){
+		AdditionVO addition = new AdditionVO();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String SQL = "SELECT * FROM addition where addition_no = ?";
+//		System.out.println("[ProductDAO][getAddition] additionNo = " + additionNo);
+		try{
+			conn = ConnectionUtil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1, additionNo);
+			rs = pstmt.executeQuery();
+			
+			if( rs.next() ){
+				do{
+					addition.setAdditionName(rs.getString("addition_name"));
+					addition.setZoneNo(rs.getInt("zone_no"));
+					addition.setUnit(rs.getString("unit"));
+					addition.setAdditionPrice(rs.getInt("addition_price"));
+					addition.setQuantity(rs.getInt("quantity"));
+					addition.setDisplayStartDay(rs.getDate("display_start_day"));
+					addition.setDisplayEndDay(rs.getDate("display_end_day"));
+					addition.setUseYn(rs.getString("use_yn"));
+					addition.setDelYn(rs.getString("del_yn"));
+					addition.setAdditionMemo(rs.getString("addition_memo"));
+				}while(rs.next());
+			}
+			
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			close(rs,pstmt,conn);
+		}
+		return addition;
+	}
+	
+	public int modifyAddition(HttpServletRequest request) throws ServletException,IOException{
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		request.setCharacterEncoding("UTF-8");
+		String step = request.getParameter("step");
+		
+		int rtn = 0;
+		int additionNo = 0;
+		String addtionName = "";
+		int zoneNo = 0;
+		String unit = "";
+		int additionPrice = 0;
+		int quantity = 9999;
+		String displayStartDay = "";
+		String displayEndDay = "";
+		String useYn = "Y";
+		String delYn = "N";
+		String additionMemo = "";
+		String msg = "";
+		
+		String SQL = "";
+		try {
+			if(step == null){
+				step = "new";
+			}else{
+				addtionName = request.getParameter("addtionName");
+				zoneNo = Integer.parseInt((String)request.getParameter("zoneNo"));
+				unit = request.getParameter("unit");
+				additionPrice = Integer.parseInt((String)request.getParameter("additionPrice"));
+				quantity = Integer.parseInt((String)request.getParameter("quantity"));
+				displayStartDay = request.getParameter("displayStartDay")==""?null:request.getParameter("displayStartDay");
+				displayEndDay = request.getParameter("displayEndDay")==""?null:request.getParameter("displayEndDay");
+				useYn = request.getParameter("useYn");
+				delYn = request.getParameter("delYn");
+				additionMemo = request.getParameter("additionMemo");
+			}
+		
+			if(step.equals("insert")){
+				SQL = "INSERT INTO addition (addition_name,zone_no,unit,addition_price,quantity,addition_memo,display_start_day,display_end_day,use_yn,del_yn) "
+					+ "VALUES (?,?,?,?,?,?,?,?,?,?)";
+				conn = ConnectionUtil.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				pstmt.setString(1, addtionName);
+				pstmt.setInt(2, zoneNo);
+				pstmt.setString(3, unit);
+				pstmt.setInt(4, additionPrice);
+				pstmt.setInt(5, quantity);
+				pstmt.setString(6, additionMemo);
+				pstmt.setString(7, displayStartDay);
+				pstmt.setString(8, displayEndDay);
+				pstmt.setString(9, useYn);
+				pstmt.setString(10, delYn);
+				
+				rtn = pstmt.executeUpdate();
+				
+			}else if(step.equals("update")){
+				additionNo = Integer.parseInt((String) request.getParameter("additionNo"));
+				SQL = "UPDATE addition SET addition_name=?, zone_no=?, unit=?, addition_price=?, quantity=?, addition_memo=?,  " 
+				    + "display_start_day=?, display_end_day=?, use_yn=?, del_yn=? "
+				    + "WHERE addition_no = ?";
+				
+				conn = ConnectionUtil.getConnection();
+				pstmt = conn.prepareStatement(SQL);
+				pstmt.setString(1, addtionName);
+				pstmt.setInt(2, zoneNo);
+				pstmt.setString(3, unit);
+				pstmt.setInt(4, additionPrice);
+				pstmt.setInt(5, quantity);
+				pstmt.setString(6, additionMemo);
+				pstmt.setString(7, displayStartDay);
+				pstmt.setString(8, displayEndDay);
+				pstmt.setString(9, useYn);
+				pstmt.setString(10, delYn);
+				pstmt.setInt(11, additionNo);
+				
+				rtn = pstmt.executeUpdate();
+				
+			}
+//			System.out.println(rtn);
+//			if(rtn == 0){
+//				productNo = 0;
+//			}
 		} catch(Exception ex) {
 	        ex.printStackTrace();
 	    } finally {
