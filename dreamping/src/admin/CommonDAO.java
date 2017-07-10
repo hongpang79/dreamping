@@ -699,20 +699,20 @@ public class CommonDAO {
 				int orderNo = Integer.parseInt((String) request.getParameter("orderNoOrg"));
 				String useStartDay = request.getParameter("useStartDay");
 				String useEndDay = request.getParameter("useEndDay");
-				String additionYn = request.getParameter("additionYn");
+				String displayYn = request.getParameter("displayYn");
 				
 				SQL = "UPDATE zone_information SET order_no = order_no+1 WHERE order_no >= ?";
 				pstmt = conn.prepareStatement(SQL);
 				pstmt.setInt(1, orderNo);
 				rtn = pstmt.executeUpdate();
 				
-				SQL = "INSERT INTO zone_information(zone_name, order_no, use_start_day, use_end_day, addition_yn) VALUES (?,?,?,?,?) ";
+				SQL = "INSERT INTO zone_information(zone_name, order_no, use_start_day, use_end_day, display_yn) VALUES (?,?,?,?,?) ";
 				pstmt = conn.prepareStatement(SQL);
 				pstmt.setString(1, zoneName);
 				pstmt.setInt(2, orderNo);
 				pstmt.setString(3, useStartDay);
 				pstmt.setString(4, useEndDay);
-				pstmt.setString(5, additionYn);
+				pstmt.setString(5, displayYn);
 				rtn = pstmt.executeUpdate();
 				
 				msg = "저장되었습니다.";
@@ -724,7 +724,7 @@ public class CommonDAO {
 				String useStartDay = request.getParameter("useStartDay");
 				String useEndDay = request.getParameter("useEndDay");
 				String orgZoneName = request.getParameter("orgZoneName");
-				String additionYn = request.getParameter("additionYn");
+				String displayYn = request.getParameter("displayYn");
 				
 				//update 필요가 없음. 20170627
 //				SQL = "UPDATE zone_information SET order_no = order_no+1 WHERE order_no >= ?";
@@ -732,13 +732,13 @@ public class CommonDAO {
 //				pstmt.setInt(1, orderNo);
 //				rtn = pstmt.executeUpdate();
 				
-				SQL = "UPDATE zone_information SET zone_name=?, order_no=?, use_start_day=?, use_end_day=?, addition_yn=? WHERE zone_no=?";
+				SQL = "UPDATE zone_information SET zone_name=?, order_no=?, use_start_day=?, use_end_day=?, display_yn=? WHERE zone_no=?";
 				pstmt = conn.prepareStatement(SQL);
 				pstmt.setString(1, zoneName);
 				pstmt.setInt(2, orderNo);
 				pstmt.setString(3, useStartDay);
 				pstmt.setString(4, useEndDay);
-				pstmt.setString(5, additionYn);
+				pstmt.setString(5, displayYn);
 				pstmt.setInt(6, zoneNo);
 				rtn = pstmt.executeUpdate();
 				

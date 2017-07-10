@@ -40,10 +40,8 @@
         		<td height=21 style='padding:3 0 8 0'>
                     <img src=/admin/img/bl_left2.gif><a href="/admin/board/list.jsp?category=notice"  >공지사항</a><br>
                     <img src=/admin/img/bl_left2.gif><a href="/admin/board/list.jsp?category=qna"  >문의하기</a><br>
-                    <br>
                     <img src=/admin/img/bl_left2.gif><a href="/admin/board/list.jsp?category=event"  >이벤트</a><br>
                     <img src=/admin/img/bl_left2.gif><a href="/admin/board/list.jsp?category=photo"  >갤러리</a><br>
-                    <br>
                     <img src=/admin/img/bl_left2.gif><a href="/admin/board/list.jsp?category=group"  >제휴/단체문의</a><br>
                 </td>
             </tr>

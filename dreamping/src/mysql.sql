@@ -62,7 +62,7 @@ CREATE TABLE `zone_information` (
   `order_no` int(2) NOT NULL,
   `use_start_day` date default NULL,
   `use_end_day` date default NULL,
-  `addition_yn` varchar(1) default 'N',
+  `display_yn` varchar(1) default 'Y',
   `del_yn` varchar(1) default 'N',
   PRIMARY KEY  (`zone_no`)
 ) ENGINE=MyISAM;
