@@ -18,13 +18,20 @@
     String category=request.getParameter("category");
     
     String categoryName = "";
+    String imgpath = "";
     if (category == null){
     	category = "notice";
     	categoryName = "공지사항";
+    	imgpath = "/board/images/notice.png";
     }else if("notice".equals(request.getParameter("category"))){
     	categoryName = "공지사항";
+    	imgpath = "/board/images/notice.png";
     }else if("qna".equals(request.getParameter("category"))){
     	categoryName = "Q & A";
+    	imgpath = "/board/images/qna.png";
+    }else if("group".equals(request.getParameter("category"))){
+    	categoryName = "제휴/단체문의";
+    	imgpath = "/board/images/group.png";
     }
     String pageNum = request.getParameter("pageNum");
     if (pageNum == null) {//페이지 번호가 인수로 넘어오지 않으면 1을 기억
@@ -101,13 +108,14 @@
 	<!-- #container -->
 <div id="container">	
 	<br><br><h2></h2>
+	<h2><img src="<%=imgpath %>" alt="" /></h2>
 	<!-- customerCover -->
 	<div class="communityCover">
 		<ul class="menu_list">
 			<li <%if(category.equals("notice")){out.print("class='on'");} %>><a href="/board/list.jsp?action=board&category=notice">공지사항</a></li>
 			<li <%if(category.equals("qna")){out.print("class='on'");} %>><a href="/board/list.jsp?action=board&category=qna">Q & A</a></li>
-			<li <%if(category.equals("event")){out.print("class='on'");} %>><a href="/board/list.jsp?action=board&category=event">이벤트</a></li>
-			<li <%if(category.equals("photo")){out.print("class='on'");} %>><a href="/board/list.jsp?action=board&category=photo">갤러리</a></li>
+			<li <%if(category.equals("event")){out.print("class='on'");} %>><a href="/board/gallerylist.jsp?action=board&category=event">이벤트</a></li>
+			<li <%if(category.equals("photo")){out.print("class='on'");} %>><a href="/board/gallerylist.jsp?action=board&category=photo">갤러리</a></li>
 			<li <%if(category.equals("group")){out.print("class='on'");} %>><a href="/board/list.jsp?action=board&category=group">제휴/단체문의</a></li>	
 		</ul>
 </div>
@@ -156,7 +164,7 @@ if(category.equals("notice")){
 		</tbody>
 	</table>	
 <%
-}else if(category.equals("qna")){
+}else if(category.equals("qna") || category.equals("group")){
 %>
 	<table summary="" class="mgb30">
 		<caption>자유 게시판</caption>
@@ -283,7 +291,7 @@ if(category.equals("notice")){
 		</p>																	
 	</div>
 <%
-if(category.equals("qna")){
+if(category.equals("qna") || category.equals("group")){
 %>	
 	<div class="text-r"><span class="btn_pack gray"><a href="/board/writeForm.jsp?action=<%=action %>&category=<%=category%>">글쓰기</a></span></div>
 <%
