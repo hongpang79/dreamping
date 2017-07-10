@@ -19,7 +19,7 @@ if(!cmd.equals("list")){
 %>
 <html>
 <head>
-<title></title>
+<title>THE DREAMPING ADMIN</title>
 <meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <script language=javascript src='/admin/js/common.js'></script>

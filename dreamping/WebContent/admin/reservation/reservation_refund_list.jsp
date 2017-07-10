@@ -43,7 +43,7 @@ if(jobDvsn.equals("update")){
 %>
 <html>
 <head>
-<title>환불관리</title>
+<title>THE DREAMPING ADMIN</title>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <script language=javascript src='/admin/js/common.js'></script>

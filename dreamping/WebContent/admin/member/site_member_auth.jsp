@@ -1,7 +1,7 @@
 <!--common Top Start//-->
 <html>
 <head>
-<title></title>
+<title>THE DREAMPING ADMIN</title>
 <meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <link rel="stylesheet" type="text/css" href="http://img.cafe24.com/css/text_button.css">

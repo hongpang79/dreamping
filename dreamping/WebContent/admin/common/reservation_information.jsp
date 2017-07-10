@@ -24,7 +24,7 @@ if(!cmd.equals("list")){
 %>
 <html>
 <head>
-<title>예약환경설정</title>
+<title>THE DREAMPING ADMIN</title>>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <link rel="icon" href="/ico/favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="/ico/favicon.ico">

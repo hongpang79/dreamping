@@ -14,7 +14,7 @@
 %>
 <html>
 <head>
-<title>UrbanSlowCity Admin</title>
+<title>THE DREAMPING ADMIN</title>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <link rel="stylesheet" type="text/css" href="/admin/css/text_button.css">
