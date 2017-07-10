@@ -185,11 +185,11 @@
 	    	
 	    	if(category.equals("qna")){
 %>	    		
-	    		<img src="/images/content/icon_question.png" alt="Q"/>
+	    		<img src="/board/images/icon_question.png" alt="Q"/>
 <%
 	    		if(article.getReDescription()!=null){
 %>	    			
-	    			<img src="/images/content/icon_answer.png" alt="A" class="mgl03" />
+	    			<img src="/board/images/icon_answer.png" alt="A" class="mgl03" />
 <%
 	    		}
 	    	}
