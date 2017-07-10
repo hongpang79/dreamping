@@ -43,11 +43,11 @@ public class Board extends HttpServlet {
 			int currentPage = Integer.parseInt(request.getParameter("currentPage"));
 			List<BoardVO> list = null;
 			String result = "";
-			String expoCont = "<div class='element expoCont'><a href='/main/board/view.jsp?num=";
+			String expoCont = "<div class='element expoCont'><a href='/board/view.jsp?num=";
 			String param = "&pageNum="+currentPage+"&category="+category+"&action=review";
 			String imgs = "'><img src='";
 			String imge = "' alt='' /></a>";
-			String dl = "<dl><dt class='fs_14 mgb05'><a href='/main/board/view.jsp?num=";
+			String dl = "<dl><dt class='fs_14 mgb05'><a href='/board/view.jsp?num=";
 			String dt = "'>";
 			String dd = "</a></dt><dd><p class='fc_02 mgb15 web_only'>";
 			String p = "</p><p class='fc_05'><span class='letter_zero mgr15'>";
@@ -87,7 +87,7 @@ public class Board extends HttpServlet {
 			//obj.put("data", result);
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(result);
-//			System.out.println("data = " + result);
+			System.out.println("data = " + result);
 		}else if(step.equals("passwordChk")){
 			int num = Integer.parseInt((String) request.getParameter("num"));
 //			String pageNum = request.getParameter("pageNum");
@@ -101,18 +101,22 @@ public class Board extends HttpServlet {
 					pr.println("<html>");
 					pr.println("<head><script language='JavaScript'>");
 					pr.println("alert('비밀번호가 틀렸습니다.');");
-					pr.println("location.href='/main/board/list.jsp?action=board&category=qna';");
+					if(category.equals("group")){
+						pr.println("location.href='/board/list.jsp?action=board&category=group';");
+					}else{
+						pr.println("location.href='/board/list.jsp?action=board&category=qna';");
+					}
 					pr.println("</script>");
 					pr.println("</head></html>");
 		    	}else{
-		    		path = "/main/board/view.jsp";
+		    		path = "/board/view.jsp";
 		    		BoardVO board = bd.getArticle(num);
 					request.setAttribute("board", board);
 					
 					RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 					dispatcher.forward(request,	response);
 				}
-				
+		    	System.out.println("passwordChk = " + rtn);	
 	    	} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

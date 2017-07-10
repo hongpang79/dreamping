@@ -89,6 +89,7 @@
 <!-- <link rel="stylesheet" type="text/css" media="all" href="/css/jquery.ui.datepicker.css" /> -->
 <link rel="stylesheet" type="text/css" media="all" href="/css/owl.carousel.css" />
 <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css' />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <!--[if lt IE 9]>
 	<script type="text/javascript" src="/js/respond.min.js"></script>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -331,7 +332,7 @@ function passwdOk(){
 		$('#b_passwd').focus();
 		return false;
 	}
-	document.frm_passwd.action='/board.do?action=board&step=passwordChk&category=<%=category%>&pageNum=<%=pageNum%>';
+	document.frm_passwd.action='/Board.do?action=board&step=passwordChk&category=<%=category%>&pageNum=<%=pageNum%>';
 	document.frm_passwd.submit();
 }
 //Layer 숨김

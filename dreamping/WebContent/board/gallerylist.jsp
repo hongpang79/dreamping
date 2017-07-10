@@ -46,14 +46,15 @@
 	<link rel="stylesheet" type="text/css" media="all" href="/board/css/content.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="/css/owl.carousel.css" />
 	<link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css' />
+	<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
 <!--[if lt IE 9]>
 	<script type="text/javascript" src="/js/respond.min.js"></script>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <!--<script language='javascript' src='/js/common.js'></script> -->
 	<script type="text/javascript" src="/js/owl.carousel.js"></script>	
-<!--	<script type="text/javascript" src="/js/jquery.ui.core.js"></script>
-	<script type="text/javascript" src="/js/lib.js"></script> -->
+	<script type="text/javascript" src="/js/jquery.ui.core.js"></script>
+<!-- <script type="text/javascript" src="/js/lib.js"></script> -->
 </HEAD>
 <div id="containerWrap">
 	<div id="contCover">
