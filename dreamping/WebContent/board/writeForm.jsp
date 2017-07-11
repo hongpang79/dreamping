@@ -196,9 +196,7 @@ function _onSubmit(f){
 	<!-- // #footer -->
 
 	<!-- BOTTOM -->
-</div>
-</body>
-</html>
+
 <script type="text/javascript">
 $(function(){
 	setTimeout( resize , 500 );

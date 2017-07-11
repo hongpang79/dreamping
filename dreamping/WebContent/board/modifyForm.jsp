@@ -216,9 +216,6 @@ function _onSubmit(f){
 	<!-- // #footer -->
 
 	<!-- BOTTOM -->
-</div>
-</body>
-</html>
 <%
  }catch(Exception e){}
  %>

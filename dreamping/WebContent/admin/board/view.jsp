@@ -197,7 +197,7 @@
 	    		<tr>
 	    			<td height='10'></td>
 	    		</tr>
-<% if(!category.equals("notice")){ %>	    		
+<% if(category.equals("qna")||category.equals("group")){ %>	    		
 			<form name='com_board' method='post' action='/admin/board/replyProcess.jsp'>
 			  	<input type="hidden" name="category" value="<%=category%>"/>
 			  	<input type="hidden" name="num" value="<%=num%>"/>
