@@ -86,7 +86,9 @@ public class ReservationDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "select z.zone_name, count(*) as zone_cnt from zone_information z, site_information s where z.zone_no = s.zone_no and use_start_day <= '"+ym+"-01' and use_end_day >= '"+ym+"-28' group by z.zone_name order by z.order_no";
+		String SQL = "select z.zone_name, count(*) as zone_cnt from zone_information z, site_information s"+
+		             " where z.zone_no = s.zone_no and z.use_start_day <= '"+ym+"-01' and z.use_end_day >= '"+ym+"-28'"+
+				     " group by z.zone_name order by z.order_no";
 		try{
 			conn = ConnectionUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);

@@ -58,6 +58,8 @@ caption{display:none}
 .reser .calendar table.state th{padding:7px 0;border-right:1px solid #ddd;}
 .reser .calendar table.state td{padding:0;border-right:1px solid #ddd;vertical-align:top;}
 .reser .calendar table.state .week{text-align:center;font-size:12px;border-bottom:none;font-weight:bold;color:#555;background:#f5f5f5;}
+.reser .calendar table.state .sun{text-align:center;font-size:12px;border-bottom:none;font-weight:bold;color:#FF0000;background:#f5f5f5;}
+.reser .calendar table.state .sat{text-align:center;font-size:12px;border-bottom:none;font-weight:bold;color:#0000FF;background:#f5f5f5;}
 .reser .calendar table.state .bon{border-right:none;}
 .reser .calendar table.state table{width:100%;border-collapse:collapse;}
 .reser .calendar table.state table th{padding:7px;font-size:11px;color:#555;border:none;border-top:1px solid #ddd;border-bottom:1px solid #f5f5f5;background:#fcfcfc;}
@@ -67,16 +69,16 @@ caption{display:none}
 .reser .calendar table.state table td{padding:5px;text-align:left;border-right:none;font-size:11px;}
 .reser .calendar table.state table td ul{font-size:11px;}
 .reser .calendar table.state table td ul li{list-style:none;margin:0 0 0 -40px;}
-.reser .calendar table.state table td ul li.s01{color:#5fbac5;padding:0 0 2px 20px;background:url(/images/reservation/sm_state1.gif) no-repeat 0 50%; cursor:pointer;}
+.reser .calendar table.state table td ul li.s01{color:#5fbac5;padding:0 0 2px 20px;background:url(/reservation/images/sm_state1.gif) no-repeat 0 50%; cursor:pointer;}
 .reser .calendar table.state table td ul li.s01 a{color:#5fbac5; cursor:pointer;}
-.reser .calendar table.state table td ul li.s02{color:#ba8b5a;padding:0 0 2px 20px;background:url(/images/reservation/sm_state2.gif) no-repeat 0 50%;}
+.reser .calendar table.state table td ul li.s02{color:#ba8b5a;padding:0 0 2px 20px;background:url(/reservation/images/sm_state2.gif) no-repeat 0 50%;}
 .reser .calendar table.state table td ul li.s02 a{color:#ba8b5a;}
-.reser .calendar table.state table td ul li.s03{color:#c87c8a;padding:0 0 2px 20px;background:url(/images/reservation/sm_state3.gif) no-repeat 0 50%;}
+.reser .calendar table.state table td ul li.s03{color:#c87c8a;padding:0 0 2px 20px;background:url(/reservation/images/sm_state3.gif) no-repeat 0 50%;}
 .reser .calendar table.state table td ul li.s03 a{color:#c87c8a;}
-.reser .calendar table.state table td ul li.s03_{color:#c87c8a;padding:0 0 2px 20px;text-decoration:line-through;background:url(/images/reservation/sm_state3.gif) no-repeat 0 50%;}
+.reser .calendar table.state table td ul li.s03_{color:#c87c8a;padding:0 0 2px 20px;text-decoration:line-through;background:url(/reservation/images/sm_state3.gif) no-repeat 0 50%;}
 .reser .calendar table.state table td ul li.s03_ a{color:#c87c8a;}
 
-.reser .calendar table.state table td ul li.s04{color:#666;padding:0 0 0 20px;background:url(/images/reservation/sm_state4.gif) no-repeat 0 50%;}
+.reser .calendar table.state table td ul li.s04{color:#666;padding:0 0 0 20px;background:url(/reservation/images/sm_state4.gif) no-repeat 0 50%;}
 .reser .calendar table.state table td ul li.s04 a{color:#666;}
 
 /*예약페이지*/

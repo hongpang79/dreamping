@@ -71,7 +71,9 @@
 	int bluRed = 0;
 %>
 <jsp:include page="/header.jsp" />
-
+<link rel='stylesheet' type='text/css' href='/reservation/css/company.css'>
+<br><br><h2></h2>
+	<h2><img src="" alt="" /></h2>
 	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01" >
 		<tr>
 			<td align="center">
@@ -92,7 +94,7 @@
 											<input type="hidden" name="chooseZoneName" />
 										</form>
     									<link rel='stylesheet' type='text/css' href='/reservation/css/sub_layout.css'>
-    									<link rel='stylesheet' type='text/css' href='/reservation/css/style.css'>
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/style.css?ver=1'>
     									<div id="contents">
 											<div class="con_wrap">
 												<!--tab-->
@@ -103,7 +105,7 @@
 														<li><a href="/Reservation.do?step=rcancle"><img src="/reservation/images/tab4.gif" alt="예약취소" /></a></li>
 													</ul>
 													<div>
-														<a href="javascript:popupUrbanMap()"><img src="/reservation/images/map.png"></a>
+														<a href="javascript:popupSiteMap()"><img src="/reservation/images/map.png"></a>
 													</div>
 												</div>
 												<!--//tab-->
@@ -141,13 +143,13 @@
 															</colgroup>
 															<tbody>
 																<tr>
-																	<th class="week">일요일</th>
+																	<th class="sun">일요일</th>
 																	<th class="week">월요일</th>
 																	<th class="week">화요일</th>
 																	<th class="week">수요일</th>
 																	<th class="week">목요일</th>
 																	<th class="week">금요일</th>
-																	<th class="week">토요일</th>
+																	<th class="sat">토요일</th>
 																</tr>
 									
 												<%	while( true ){	%>
@@ -160,7 +162,7 @@
 																		<tbody>
 																			<tr>
 																				<th>
-																					<p class="num"><%= count++ %></p>
+																					<p class="num"><% if(i==0){out.print("<font color='red'>"); out.print(count++); out.print("</font>");}else if(i==6){out.print("<font color='blue'>"); out.print(count++); out.print("</font>");}else { out.print(count++);}%></p>
 																					<p class="num_con">
 																						<%
 																							int sChkDate = Integer.parseInt(month+""+(((count-1) < 10) ? "0"+(count-1) : (count-1)));
@@ -268,12 +270,30 @@
 							</table>
 						</td>
 					</tr>
-					<tr height="150"><td></td></tr>
 				</table>
 
 			 </td>
 		</tr>
 	</table>
 
-
 <jsp:include page="/footer.jsp" />
+<script language="javascript" src="/reservation/js/popup.js"></script>
+<script language="javascript">
+	// 날짜와 방을 선택
+	function chooseRoom(chooseDate,zoneName){
+		//document.getElementById("aa").innerHTML=cDate;
+		//alert("신청"+cDate+","+rno);
+		var month = <%= month %>;
+		month = (month < 10) ? "0"+month : month; 
+		var date = (chooseDate < 10) ? "0"+chooseDate : chooseDate; 
+		document.step2Form.chooseDate.value = <%= year %>+""+month+date; 
+		document.step2Form.chooseZoneName.value = zoneName;
+		document.step2Form.submit();
+	}
+	
+	function popupUrbanMap(){
+		var url = "/reservation/popupSiteMap.jsp";
+		popup.openWindowPopup(url, 'SiteMap', {width : '820px', height : '540px'});
+	}
+			
+</script>

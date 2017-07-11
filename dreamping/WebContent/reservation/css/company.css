@@ -1,0 +1,111 @@
+/*img*/
+img {border:0}
+
+/* font */
+td {font-size:12px;font-family:나눔고딕;color:666666}
+.txt {font-size:12px;font-family:나눔고딕;color:666666}
+input {font-size:12px;font-family:나눔고딕;color:666666}
+input#border {font-size:12px;font-family:나눔고딕;color:666666;border:1 solid #D4D4D4}
+textarea#border{font-size:12px;font-family:나눔고딕;color:666666;border:1 solid #e0e0e0}
+div {font-size:12px;font-family:나눔고딕;color:666666}
+
+/*form*/
+.radio {margin-bottom:-2}
+
+
+/**/
+.bbsnewf5 a:link{color:555555;text-decoration:none}
+.bbsnewf5 a:visited{color:555555;text-decoration:none}
+.bbsnewf5 a:hover{color:FF5500;text-decoration:none}
+.bbsnew55 a:link{color:555555;text-decoration:none}
+.bbsnew55 a:visited{color:555555;text-decoration:none}
+.bbsnew55 a:hover{color:555555;text-decoration:underline}
+.rec_link a:link{color:ff5500;text-decoration:none}
+.rec_link a:visited{color:ff5500;text-decoration:none}
+.rec_link a:hover{color:ff5500;text-decoration:none}
+.press_cont a:link{color:555555;text-decoration:none}
+.press_cont a:visited{color:555555;text-decoration:none}
+.press_cont a:hover{color:ff5500;text-decoration:none}
+
+/*LINk*/
+a.:link {text-decoration:none;color:555555}
+a.:visited {text-decoration:none;color:555555}
+a.:hover {text-decoration:underline;color:555555}
+
+.history a:link {text-decoration:none;color:555555}
+.history a:link {text-decoration:none;color:999999}
+.history a:visited {text-decoration:none;color:999999}
+.history a:hover {text-decoration:none;color:999999}
+
+/*table*/
+.tbgrey {background-color:f6f6f6;color:000000;height:30;padding-top:3}
+.tb55 {color:555555;padding-top:3}
+.tbfc {color:000000;background-color:FCF7E6;height:27}
+.bbsbody01{width:464;overflow:hidden;text-overflow:ellipsis;padding-left:10;padding-right:10}/*overflowµÇ´Â ¸®½ºÆ®*/
+.bbsbody02{padding-left:10;padding-right:10}/*non overflow ¸®½ºÆ®*/
+
+.bbsbody03{width:340;overflow:hidden;text-overflow:ellipsis;padding-left:5;padding-right:5}/*overflowµÇ´Â ¸®½ºÆ®,qna*/
+/**/
+.pagenum {color:FF5500;font-weight:bold;}
+.pagenum a:link{color:555555;font-weight:normal;text-decoration:none}
+.pagenum a:visited{color:555555;font-weight:normal;text-decoration:none}
+.pagenum a:hover{color:555555;font-weight:normal;text-decoration:underline}
+
+/**/
+.layercontent {margin-top:5;background:FCF7E6;height:30;padding:9 6 9 6;width:334;text-align:justify;line-height:140%}
+
+
+/**/
+.schedule_title{color:166C9F;font-famliy:dotum;font-size:14px;font-weight:bold}
+.schedule_txt a:link{color:D71F27;font-size:11px;line-height:14px}
+.schedule_txt a:visited{color:D71F27;font-size:11px;line-height:14px}
+.schedule_txt a:hover{color:D71F27;font-size:11px;line-height:14px}
+
+td#schedule1 {padding:4 5 5 10}/**/
+td#schedule2 {padding:4 5 5 15}/**/
+
+.schedule_view_title {background:url(../about/img/sc_view_title.gif) no-repeat;padding:16 20 0 32;color:000000}/*´Þ·Â º¸±â ÆäÀÌÁöÀÇ Å¸ÀÌÆ² ºÎºÐ*/
+.schedule_view {background:url(../about/img/sc_view_bg.gif) top repeat-y;padding:15 26 15 26;line-height:150%;color:333333}/*´Þ·Â º¸±â ÆäÀÌÁöÀÇ ³»¿ëºÎºÐ*/
+
+.tbcont {padding-left:8} /**/
+
+/**/
+.news_header {color:0e3d72;font-size:16px;letter-spacing:-1;font-weight:bold}/**/
+
+.newstitle a:link{color:0E3D72;font-size:14px;font-weight:bold;letter-spacing:-1;text-decoration:none}
+.newstitle a:visited{color:0E3D72;font-size:14px;font-weight:bold;letter-spacing:-1;text-decoration:none}
+.newstitle a:hover{color:0E3D72;font-size:14px;font-weight:bold;letter-spacing:-1;text-decoration:underline}
+
+
+/*main*/
+.notice {color:999999;font-size:11px}
+.notice a:link{color:333333;font-size:12px}
+.notice a:visited{color:333333;font-size:12px}
+.notice a:hover{color:FF5500;font-size:12px;text-decoration:none}
+.notice_2 {color:004D7B;font-size:11px}
+.notice_2 a:link{color:004D7B;font-size:12px}
+.notice_2 a:visited{color:004D7B;font-size:12px}
+.notice_2 a:hover{color:004D7B;font-size:12px;}
+/*main carlendar*/
+.sunday {color:FF6666;font-size:11;}
+.sunday a:link{color:FF6666;background:FFE4C8;width:14;font-size:11;}
+.sunday a:visited{color:FF6666;background:FFE4C8;width:14;font-size:11;}
+.sunday a:hover{color:FFE4C8;background:FFE4C8;text-decoration:none;width:14;font-size:11;}
+
+.day {color:000000;font-size:11;}
+.day a:link{color:000000;background:FFE4C8;width:14;font-size:11;}
+.day a:visited{color:000000;background:FFE4C8;width:14;font-size:11;}
+.day a:hover{color:000000;background:FFE4C8;text-decoration:none;width:14;font-size:11;}
+
+/*poll*/
+.poll{background:url(/main/img/img_pollbar_03.gif) left no-repeat;padding-top:1}
+
+.banner1, .banner2, .banner3, .banner4, .banner5, .banner6, .banner7 {
+    float: left;
+    padding-left:42px;
+   /* height: 240px; */
+}
+
+.banner1 a, .banner2 a, .banner3 a, .banner4 a, .banner5 a, .banner6 a, .banner7 a  {
+    /*display: block;*/
+}
