@@ -195,7 +195,6 @@
 							</table>
 						</td>
 					</tr>
-					<tr height="150"><td></td></tr>
 				</table>
 
 			 </td>

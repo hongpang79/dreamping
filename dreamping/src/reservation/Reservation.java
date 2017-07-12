@@ -228,7 +228,7 @@ public class Reservation extends HttpServlet {
 //			}else{
 				String sname = request.getParameter("sch_name");
 				if(sname == null){
-					path = "/main/reservation/reservationBook.jsp";
+					path = "/reservation/reservationBook.jsp";
 				}else{
 					String sphone1 = request.getParameter("sch_phone1");
 					String sphone2 = request.getParameter("sch_phone2");

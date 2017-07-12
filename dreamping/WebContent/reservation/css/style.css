@@ -82,8 +82,8 @@ caption{display:none}
 .reser .calendar table.state table td ul li.s04 a{color:#666;}
 
 /*예약페이지*/
-.reser_box{overflow:hidden;clear:both;width:980px;}
-.reser_con{float:left;width:735px;text-align:left;}
+.reser_box{overflow:hidden;clear:both;}
+.reser_con{float:left;text-align:left;}
 .reser_cust{float:right;text-align:right;}
 
 

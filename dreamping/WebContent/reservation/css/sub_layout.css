@@ -40,7 +40,7 @@
 .w_box{padding:25px;border:1px solid #f0f0f0;background:#fff;line-height:18px;}
 
 /***************************** 탭설정 ******************************/
-.con_tab{overflow:hidden;clear:both;width:980px;}
+.con_tab{overflow:hidden;clear:both;}
 .con_tab ul li{float:left;margin:0 1px 0 0;}
 .con_tab div{float:right;margin:0 0 0 0;}
 

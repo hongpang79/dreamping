@@ -53,8 +53,8 @@
 												<div class="con_tab mb30">
 													<ul>
 														<li><a href="/Reservation.do"><img src="/reservation/images/tab2.gif" alt="예약하기" /></a></li>
-														<li><a href="/Reservation.do?step=rinfo"><img src="/reservation/images/reservation/tab3_on.gif" alt="예약확인" /></a></li>
-														<li><a href="/Reservation.do?step=rcancle"><img src="/reservation/images/reservation/tab4.gif" alt="예약취소" /></a></li>
+														<li><a href="/Reservation.do?step=rinfo"><img src="/reservation/images/tab3_on.gif" alt="예약확인" /></a></li>
+														<li><a href="/Reservation.do?step=rcancle"><img src="/reservation/images/tab4.gif" alt="예약취소" /></a></li>
 													</ul>
 												</div>
 												<!--//tab-->
@@ -104,7 +104,6 @@
 							</table>
 						</td>
 					</tr>
-					<tr height="150"><td></td></tr>
 				</table>
 
 			 </td>

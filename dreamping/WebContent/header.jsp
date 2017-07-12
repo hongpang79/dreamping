@@ -47,25 +47,25 @@
                     </button>
 
                     <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar">
-                    	<li class="nav-item dropdown"><a class="nav-link link" href="/dreamping.html" aria-expanded="false">DREAMPING</a></li>
+                    	<li class="nav-item dropdown"><a class="nav-link link" href="/dreamping/dreamping.html" aria-expanded="false">DREAMPING</a></li>
                     	<li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="#" aria-expanded="false" data-toggle="dropdown-submenu">Vintage Village</a>
                     		<div class="dropdown-menu">
-                    			<a class="dropdown-item" href="/village.html">전체보기</a>
-	                    		<a class="dropdown-item" href="/village.html">VINTAGE CARAVAN</a>
-	                    		<a class="dropdown-item" href="/village.html">VINTAGE CAVANA</a>
-	                    		<a class="dropdown-item" href="/village.html">VINTAGE TIPI</a>
+                    			<a class="dropdown-item" href="/dreamping/village.html">전체보기</a>
+	                    		<a class="dropdown-item" href="/dreamping/village.html">VINTAGE CARAVAN</a>
+	                    		<a class="dropdown-item" href="/dreamping/village.html">VINTAGE CAVANA</a>
+	                    		<a class="dropdown-item" href="/dreamping/village.html">VINTAGE TIPI</a>
                     		</div>
                     	</li>
-                    	<li class="nav-item"><a class="nav-link link" href="/surfcafe.html" aria-expanded="false">SURF CAFE</a></li>
-                    	<li class="nav-item"><a class="nav-link link" href="/mmwatersports.html">M&amp;M Watersports</a></li>
+                    	<li class="nav-item"><a class="nav-link link" href="/dreamping/surfcafe.html" aria-expanded="false">SURF CAFE</a></li>
+                    	<li class="nav-item"><a class="nav-link link" href="/dreamping/mmwatersports.html">M&amp;M Watersports</a></li>
                     	<li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="#" aria-expanded="false" data-toggle="dropdown-submenu">CONTENTS</a>
                     		<div class="dropdown-menu">
-                    			<a class="dropdown-item" href="/mmwatersports.html">드림스나이퍼</a>
-                    			<a class="dropdown-item" href="/mmwatersports.html">키즈카트라이더</a>
-                    			<a class="dropdown-item" href="/mmwatersports.html">세그웨이 & 자전거</a>
-                    			<a class="dropdown-item" href="/mmwatersports.html">아웃도어바</a>
-                    			<a class="dropdown-item" href="/mmwatersports.html">낚시</a>
-                    			<a class="dropdown-item" href="/mmwatersports.html">FREE</a>
+                    			<a class="dropdown-item" href="/dreamping/mmwatersports.html">드림스나이퍼</a>
+                    			<a class="dropdown-item" href="/dreamping/mmwatersports.html">키즈카트라이더</a>
+                    			<a class="dropdown-item" href="/dreamping/mmwatersports.html">세그웨이 & 자전거</a>
+                    			<a class="dropdown-item" href="/dreamping/mmwatersports.html">아웃도어바</a>
+                    			<a class="dropdown-item" href="/dreamping/mmwatersports.html">낚시</a>
+                    			<a class="dropdown-item" href="/dreamping/mmwatersports.html">FREE</a>
                     		</div>
                     	</li>
                     	<li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="#" aria-expanded="false" data-toggle="dropdown-submenu">COMMUNITY</a>

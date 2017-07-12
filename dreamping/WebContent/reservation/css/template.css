@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-body {font-size:75%; min-width:1000px;font-family:Dotum,sans-serif; color:#474747; line-height:16px;margin:0 auto; text-align:center;}
+body {font-size:75%; font-family:Dotum,sans-serif; color:#474747; line-height:16px;margin:0 auto; text-align:left;}
 body.main {background:#292929;}
 
 a, a:link {color: #474747; text-decoration: none; cursor: pointer; }
@@ -64,6 +64,7 @@ a:hover, a:active, a:focus {color:#E87F2B; text-decoration: none;}
 /* Tag(Paragraph) */
 p { margin: 0; padding:0; border:0;}
 p.em { color: #06c; margin: 0; padding: 0; }
+p.tit{margin-bottom:10px;font-size:15px;color:#0391b1;font-weight:bold;}
 
 /* Button */
 .ct_bt01{height:20px; line-height:18px; padding-left:0px; padding-right:0px; padding-bottom:2px; font-size:0.92em; letter-spacing:-1px; color:#281E00; border:1px solid; border-color:#cdcdcd #909090 #909090 #cdcdcd; background-color:#f2f2f2; cursor:pointer;}
@@ -78,21 +79,8 @@ table.table1 tbody td input{vertical-align:middle;}
 table.table1 tbody td select{height:20px;}
 table.table1 .p1{padding:10px;line-height:16px;}
 
-/* Table */
-table.table2{width:560px;color:#666;border:1px solid #ddd;line-height:16px;border-bottom:1px solid #ddd;}
-table.table2 tbody th{padding:8px 0;border-bottom:1px solid #ddd;text-align:center;font-weight:normal;background:#f5f5f5;vertical-align:top;}
-table.table2 tbody th.bon{border:none;text-align:left;}
-table.table2 tbody td{padding:8px 10px;text-align:left;border-bottom:1px solid #ddd;vertical-align:middle;}
-table.table2 tbody td input{vertical-align:middle;}
-table.table2 tbody td select{height:20px;}
-table.table2 .p1{padding:10px;line-height:16px;}
-
 /* Input */
 .input_box{padding:2px 5px;background-color:#fff;border:1px solid #CDCDCD;font-size:12px;color:#666;}
-.input_box2 {background-color:#FFFFFF;border:1px solid #CDCDCD;font-size:1em;height:15px;padding:3px 3px 0; width:120px;}
-.login_input {background-color:#FFFFFF;border:1px solid #CDCDCD;font-size:1em;height:15px;padding:3px 3px 0; width:160px;}
-
-
 
 /* Padding */
 .pt0 {padding-top:0px;}
