@@ -1,19 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
-<HTML>
-<HEAD>
-	<meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<TITLE>Urban Slow City </TITLE>
-	<link rel='stylesheet' type='text/css' href='/css/company.css'>
-	<script language='javascript' src='/js/common.js'></script>
-	
-</HEAD>
-<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" onLoad="javascript:messageCall();">
-	<!--menu-->
-	<jsp:include page="/main/menu.jsp" />
-	<!--//menu-->
-	
+<jsp:include page="/header.jsp" />
+	<link rel='stylesheet' type='text/css' href='/reservation/css/company.css'>
 	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01" >
 		<tr>
 			<td align="center">
@@ -28,10 +16,10 @@
     								<td align="center">
     									
     									<!-- 예약게시판 시작 -->
-    									<link rel='stylesheet' type='text/css' href='/css/sub_layout.css'>
-    									<link rel='stylesheet' type='text/css' href='/css/style.css'>
-    									<link rel='stylesheet' type='text/css' href='/css/template.css'>
-										<script language="javascript">										
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/sub_layout.css'>
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/style.css'>
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/template.css'>
+										<script type="text/javascript">										
 											function CheckSpaces(str,m) {
 											    var flag=true;
 											    var strValue = str.value;
@@ -64,9 +52,9 @@
 												<!--tab-->
 												<div class="con_tab mb30">
 													<ul>
-														<li><a href="/Reservation.do"><img src="/images/reservation/tab2.gif" alt="예약하기" /></a></li>
-														<li><a href="/Reservation.do?step=rinfo"><img src="/images/reservation/tab3_on.gif" alt="예약확인" /></a></li>
-														<li><a href="/Reservation.do?step=rcancle"><img src="/images/reservation/tab4.gif" alt="예약취소" /></a></li>
+														<li><a href="/Reservation.do"><img src="/reservation/images/tab2.gif" alt="예약하기" /></a></li>
+														<li><a href="/Reservation.do?step=rinfo"><img src="/reservation/images/reservation/tab3_on.gif" alt="예약확인" /></a></li>
+														<li><a href="/Reservation.do?step=rcancle"><img src="/reservation/images/reservation/tab4.gif" alt="예약취소" /></a></li>
 													</ul>
 												</div>
 												<!--//tab-->
@@ -101,7 +89,7 @@
 																	</tbody>
 																</table>
 														</div>
-														<p class="mt40 tac"><input type="image" src="/images/reservation/btn_reservation7.gif" alt="예약확인" /></p>
+														<p class="mt40 tac"><input type="image" src="/reservation/images/btn_reservation7.gif" alt="예약확인" /></p>
 									
 													</form>
 									
@@ -122,12 +110,5 @@
 			 </td>
 		</tr>
 	</table>
-
-	<!--bottom-->
-	<jsp:include page="/main/bottom.jsp" />
-	<!--//bottom-->
 	
-</BODY>
-</HTML>
-<script language="javascript" type="text/javascript" src="/js/urban.lib.js?date=1364782903"></script>
-<script language="javascript" src="/js/urban.board.js"></script>
+<jsp:include page="/footer.jsp" />

@@ -65,27 +65,8 @@
 	
 	}
 %>
-<HTML>
-<HEAD>
-	<meta http-equiv='Content-Type' content='text/html; charset=euc-kr'>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<TITLE>Urban Slow City </TITLE>
-	<link rel='stylesheet' type='text/css' href='/css/company.css'>
-	<script language='javascript' src='/js/common.js'></script>
-	<script language="javascript">
-		function messageCall(){
-			alert(<%= str %>);
-			if(result != 1){
-				history.go(-1);
-			}
-		}
-	</script>
-</HEAD>
-<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" onLoad="javascript:messageCall();">
-	<!--menu-->
-	<jsp:include page="/main/menu.jsp" />
-	<!--//menu-->
-	
+<jsp:include page="/header.jsp" />
+	<link rel='stylesheet' type='text/css' href='/reservation/css/company.css'>
 	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" id="Table_01" >
 		<tr>
 			<td align="center">
@@ -100,18 +81,18 @@
     								<td align="center">
     									
     									<!-- 예약게시판 시작 -->
-    									<link rel='stylesheet' type='text/css' href='/css/sub_layout.css'>
-    									<link rel='stylesheet' type='text/css' href='/css/style.css'>
-    									<link rel='stylesheet' type='text/css' href='/css/template.css'>
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/sub_layout.css'>
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/style.css'>
+    									<link rel='stylesheet' type='text/css' href='/reservation/css/template.css'>
 
     									<div id="contents">
 											<div class="con_wrap">
 												<!--tab-->
 												<div class="con_tab mb30">
 													<ul>
-														<li><a href="/Reservation.do"><img src="/images/reservation/tab2_on.gif" alt="예약하기" /></a></li>
-														<li><a href="/Reservation.do?step=rinfo"><img src="/images/reservation/tab3.gif" alt="예약확인" /></a></li>
-														<li><a href="/Reservation.do?step=rcancle"><img src="/images/reservation/tab4.gif" alt="예약취소" /></a></li>
+														<li><a href="/Reservation.do"><img src="/reservation/images/tab2_on.gif" alt="예약하기" /></a></li>
+														<li><a href="/Reservation.do?step=rinfo"><img src="/reservation/images/tab3.gif" alt="예약확인" /></a></li>
+														<li><a href="/Reservation.do?step=rcancle"><img src="/reservation/images/tab4.gif" alt="예약취소" /></a></li>
 													</ul>
 												</div>
 												<!--//tab-->
@@ -242,60 +223,12 @@
 			 </td>
 		</tr>
 	</table>
-<!-- 전환페이지 설정 -->
- <script type="text/javascript" src="http://wcs.naver.net/wcslog.js"> </script> 
- <script type="text/javascript">
-var _nasa={};
- _nasa["cnv"] = wcs.cnv("4","1"); // 전환유형, 전환가치 설정해야함. 설치매뉴얼 참고
-</script> 
-
-
-
-
- <script type="text/javascript"> 
- //<![CDATA[ 
- var DaumConversionDctSv="type=W,orderID=,amount="; 
- var DaumConversionAccountID="LrsJ.vyJcYk_jPjMNcEUOQ00"; 
- if(typeof DaumConversionScriptLoaded=="undefined"&&location.protocol!="file:"){ 
- 	var DaumConversionScriptLoaded=true; 
- 	document.write(unescape("%3Cscript%20type%3D%22text/javas"+"cript%22%20src%3D%22"+(location.protocol=="https:"?"https":"http")+"%3A//t1.daumcdn.net/cssjs/common/cts/vr200/dcts.js%22%3E%3C/script%3E")); 
- } 
- //]]> 
- </script> 
-
-
-
-
-
-<!-- Google Code for &#50696;&#50557;&#49888;&#52397; Conversion Page -->
+<jsp:include page="/footer.jsp" />
 <script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 949186539;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "PY5CCMP_nl4Q69_NxAM";
-var google_remarketing_only = false;
-/* ]]> */
+$(function(){
+	alert(<%= str %>);
+	if(result != 1){
+		history.go(-1);
+	}
+});
 </script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/949186539/?label=PY5CCMP_nl4Q69_NxAM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-<!-- adinsight 주문 총금액 받아옴. start -->
-<script language='javascript'> 
- var TRS_AMT='<%=payAll%>'; 
- var TRS_ORDER_ID='<%= chooseDate %>_<%=siteNo%>'; 
-</script>
-<!-- adinsight 주문 총금액 받아옴. end -->
-	<!--bottom-->
-	<jsp:include page="/main/bottom.jsp" />
-	<!--//bottom-->
-	
-</BODY>
-</HTML>
-<script language="javascript" type="text/javascript" src="/js/urban.lib.js?date=1364782903"></script>
-<script language="javascript" src="/js/urban.board.js"></script>

@@ -263,7 +263,7 @@
 	</table>
 
 <jsp:include page="/footer.jsp" />
-<script language="javascript" src="/reservation/js/popup.js"></script>
+<script type="text/javascript" src="/reservation/js/popup.js"></script>
 <script type="text/javascript">
 //select box 동적변경
 //function change_useday(){

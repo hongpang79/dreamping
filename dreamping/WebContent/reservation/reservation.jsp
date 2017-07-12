@@ -277,8 +277,8 @@
 	</table>
 
 <jsp:include page="/footer.jsp" />
-<script language="javascript" src="/reservation/js/popup.js"></script>
-<script language="javascript">
+<script type="text/javascript" src="/reservation/js/popup.js"></script>
+<script type="text/javascript">
 	// 날짜와 방을 선택
 	function chooseRoom(chooseDate,zoneName){
 		//document.getElementById("aa").innerHTML=cDate;
