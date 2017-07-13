@@ -85,7 +85,7 @@
 <jsp:include page="/header.jsp" />
 <link rel="stylesheet" type="text/css" media="all" href="/board/css/common.css" />
 <link rel="stylesheet" type="text/css" media="all" href="/board/css/layout.css" />
-<link rel="stylesheet" type="text/css" media="all" href="/board/css/content.css" />
+<link rel="stylesheet" type="text/css" media="all" href="/board/css/content.css?ver=1" />
 <!-- <link rel="stylesheet" type="text/css" media="all" href="/css/jquery.ui.datepicker.css" /> -->
 <link rel="stylesheet" type="text/css" media="all" href="/css/owl.carousel.css" />
 <link href='http://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css' />

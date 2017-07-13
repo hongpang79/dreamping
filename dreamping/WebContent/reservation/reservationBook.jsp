@@ -26,7 +26,7 @@
 	
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-6">
 				<p class="tit">예약확인</p>
 				<p class="mb15">
 					1. 성명과 휴대폰 번호를 입력하시면 예약 확인이 가능합니다.</br />
