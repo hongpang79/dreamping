@@ -48,7 +48,7 @@ if(jobDvsn.equals("update")){
 <link rel='stylesheet' type='text/css' href='/admin/css/admin.css'>
 <script language=javascript src='/admin/js/common.js'></script>
 <script language=javascript src='/admin/js/admin.js'></script>
-<script type="text/javascript" src="/js/popup.js"></script>
+<script type="text/javascript" src="/admin/js/popup.js"></script>
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js" type="text/javascript"></script>
