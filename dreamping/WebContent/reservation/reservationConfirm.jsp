@@ -58,6 +58,7 @@
 				</div>
 				<div class="panel-body">
 					<table class="table1">
+					  <tbody>
 						<tr>
 							<th style="width:105px;">시설명</th>
 							<td colspan="2"><strong><%= chooseZone %></td>
@@ -113,61 +114,59 @@
 							<th style="width:105px;">결제액</th>
 							<td colspan="2"><b id="allMondy"></b></td>
 						</tr>
+					  </tbody>
 					</table>
 				</div>
 			</div>
 			
-			<div class="col-md-6">
-				<div class="panel panel-default">
-				  <div class="panel-heading"><p class="tit">예약자정보</div>
-				  <div class="panel-body">
-					   <table class="table1">
-						<tbody>
-							<tr>
-								<th style="width:105px;"><strong class="jinred">*</strong> 예약자명</th>
-								<td><input type="text" id="r_name" name="r_name" title="예약자명" class="input_box" style="width:150px;margin-right:5px;" /> 
-									<br>예약자 실명을 입력하세요.<br><strong>예약자와 입금자 성함이 동일해야 합니다.</strong>
-								</td>
-							</tr>
-							<tr>
-								<th style="width:105px;"><strong class="jinred">*</strong> 연락처</th>
-								<td>
-									<input type="text" id="r_phone1" name="r_phone1" maxlength="4" title="연락처" class="input_box" style="width:50px;" /> -
-									<input type="text" id="r_phone2" name="r_phone2" maxlength="4" title="연락처" class="input_box" style="width:50px;" /> -
-									<input type="text" id="r_phone3" name="r_phone3" maxlength="4" title="연락처" class="input_box" style="width:50px;margin-right:5px;"  /> <!-- 예약관련 정보가 문자메시지로 전송됩니다. -->
-								</td>
-							</tr>
-							<tr>
-								<th style="width:105px;">비상연락처</th>
-								<td>
-									<input type="text" id="r_tel1" name="r_tel1" maxlength="4" title="비상연락처" class="input_box" style="width:50px;" /> -
-									<input type="text" id="r_tel2" name="r_tel2" maxlength="4" title="비상연락처" class="input_box" style="width:50px;" /> -
-									<input type="text" id="r_tel3" name="r_tel3" maxlength="4" title="비상연락처" class="input_box" style="width:50px;" /></td>
-							</tr>
-							<tr>
-								<th style="width:105px;">이메일</th>
-								<td><input type="text" id="r_email" name="r_email" title="이메일" class="input_box" style="width:150px;" /></td>
-							</tr>
-							<tr>
-								<th style="width:105px;">예약요청사항</th>
-								<td>
-									<textarea rows="12" name="r_content" id="r_content" style="width:100%;padding:10px;"></textarea>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				  </div>
-				</div>
+			
+			<div class="panel panel-default col-md-6">
+			  <div class="panel-heading"><p class="tit">예약자정보</div>
+			  <div class="panel-body">
+				   <table class="table1">
+					<tbody>
+						<tr>
+							<th style="width:105px;"><strong class="jinred">*</strong> 예약자명</th>
+							<td><input type="text" id="r_name" name="r_name" title="예약자명" class="input_box" style="width:150px;margin-right:5px;" /> 
+								<br>예약자 실명을 입력하세요.<br><strong>예약자와 입금자 성함이 동일해야 합니다.</strong>
+							</td>
+						</tr>
+						<tr>
+							<th style="width:105px;"><strong class="jinred">*</strong> 연락처</th>
+							<td>
+								<input type="text" id="r_phone1" name="r_phone1" maxlength="4" title="연락처" class="input_box" style="width:50px;" /> -
+								<input type="text" id="r_phone2" name="r_phone2" maxlength="4" title="연락처" class="input_box" style="width:50px;" /> -
+								<input type="text" id="r_phone3" name="r_phone3" maxlength="4" title="연락처" class="input_box" style="width:50px;margin-right:5px;"  /> <!-- 예약관련 정보가 문자메시지로 전송됩니다. -->
+							</td>
+						</tr>
+						<tr>
+							<th style="width:105px;">비상연락처</th>
+							<td>
+								<input type="text" id="r_tel1" name="r_tel1" maxlength="4" title="비상연락처" class="input_box" style="width:50px;" /> -
+								<input type="text" id="r_tel2" name="r_tel2" maxlength="4" title="비상연락처" class="input_box" style="width:50px;" /> -
+								<input type="text" id="r_tel3" name="r_tel3" maxlength="4" title="비상연락처" class="input_box" style="width:50px;" /></td>
+						</tr>
+						<tr>
+							<th style="width:105px;">이메일</th>
+							<td><input type="text" id="r_email" name="r_email" title="이메일" class="input_box" style="width:150px;" /></td>
+						</tr>
+						<tr>
+							<th style="width:105px;">예약요청사항</th>
+							<td>
+								<textarea rows="12" name="r_content" id="r_content" style="width:100%;padding:10px;"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			  </div>
 			</div>
-			
-			
 			
 			<div class="col-md-12">
 				<p class="tit">이용시 유의사항</p>
 				<table class="table" summary="예약자명, 생년월일, 연락처, 이메일 요청사항, 결제방법을 기입하는 표">
 					<tbody>
 						<tr>
-							<th><strong>무통장입금<br/>계좌안내</strong></th>
+							<th style="width:105px;"><strong>무통장입금<br/>계좌안내</strong></th>
 							<td>
 								<p class="p1"><strong>국민 037601-04-039667 / 예금주  (주)더드림핑</strong><br/>
 								※ 예약을 신청하신 후 24시간 이내에 무통장입금을 하시면 예약이 완료되며, 미입금시 예약이 취소 됩니다.
@@ -175,7 +174,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th><strong>환불/취소<br />수수료 안내</strong></th>
+							<th style="width:105px;"><strong>환불/취소<br />수수료 안내</strong></th>
 							<td>
 								<p class="p1">※ 예약의 취소는 위약수수료가 있사오니 신중히 결정하시고 예약을 진행해 주시기 바랍니다.<br />
 								※ 사이트의 예약안내에 명시한 환불기준을 꼭 확인하세요.<br />
@@ -197,7 +196,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th><strong>개인정보 활용 동의</strong></th>
+							<th style="width:105px;"><strong>개인정보 활용 동의</strong></th>
 							<td>
 								<p class="p1">귀하의 소중한 개인정보는 개인정보보호법의 관련 규정에 의하여 예약 및 조회 등 아래의 목적으로 수집 및 이용됩니다.</br>
 								1. 개인정보의 수집·이용 목적 - 프로그램/숙박/대관 예약, 조회를 위한 본인 확인 절차</br>
