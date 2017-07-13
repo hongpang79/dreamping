@@ -35,13 +35,19 @@ public class Reservation extends HttpServlet {
 		String path = null;
 		
 		if(step == null){
-			step = "one";
+			step = "check";
 		}
 //		System.out.println("step : " + step);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 		
-		if(step.equals("one")){
+		if(step.equals("check")){
 			path = "/reservation/reservation.jsp";
+		}else if(step.equals("one")){
+			path = "/reservation/reservation_pc.jsp";
+			
+			if(request.getParameter("agent").equals("mobile")){
+				path = "/reservation/reservation_mobile.jsp";
+			}
 			
 			Calendar rightNow = Calendar.getInstance();
 			TimeZone tz = TimeZone.getTimeZone("GMT+09:00");
