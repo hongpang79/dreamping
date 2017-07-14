@@ -14,7 +14,6 @@
 	String chooseDate = request.getParameter("chooseDate").toString();
 %>
 <jsp:include page="/header.jsp" />
-<link rel="stylesheet" href="/css/bootstrap.theme.css">
 <link rel="stylesheet" href="/reservation/css/template.css?ver=2">
 <br><br><br><br>
 <section class="mbr-section mbr-section__container article" id="header3-n" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
