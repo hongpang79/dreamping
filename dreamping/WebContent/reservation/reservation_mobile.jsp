@@ -144,7 +144,7 @@ ol, ul, li {list-style:none;}
 					
 					<%	
 						while(count <= lastDay){ //1일부터 현재 월의 마지막 날짜
-							if( count > chkNowDate ){ // 오늘날짜보다 큰경우에만 보여줌
+							if( count >= chkNowDate ){ // 오늘날짜보다 큰경우에만 보여줌
 								out.print("<tr>");
 								
 								if(firstWeekday==1){
