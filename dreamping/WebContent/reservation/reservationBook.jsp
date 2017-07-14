@@ -36,14 +36,14 @@
 					<tbody>
 						<tr>
 							<th style="width:105px;">예약자명</th>
-							<td><input type="text" id="sch_name" name="sch_name" title="예약자명" class="input_box" style="width:150px;margin-right:5px;" /> 예약시 신청하셨던 예약자명 입력하세요.</td>
+							<td><input type="text" id="sch_name" name="sch_name" title="예약자명" class="input_box" style="width:150px;margin-right:5px;" /> <br>예약시 신청하셨던 예약자명 입력하세요.</td>
 						</tr>
 						<tr>
 							<th style="width:105px;">전화번호</th>
 							<td>
 								<input type="text" id="sch_phone1" name="sch_phone1" maxlength="4" title="전화번호" class="input_box" style="width:50px;" /> - 
 								<input type="text" id="sch_phone2" name="sch_phone2" maxlength="4" title="전화번호" class="input_box" style="width:50px;" /> - 
-								<input type="text" id="sch_phone3" name="sch_phone3" maxlength="4" title="전화번호" class="input_box" style="width:50px;margin-right:5px;" /> 예약시 기록한 핸드폰번호를 적어주세요.</td>
+								<input type="text" id="sch_phone3" name="sch_phone3" maxlength="4" title="전화번호" class="input_box" style="width:50px;margin-right:5px;" /><br> 예약시 기록한 핸드폰번호를 적어주세요.</td>
 						</tr>
 					</tbody>
 				</table>

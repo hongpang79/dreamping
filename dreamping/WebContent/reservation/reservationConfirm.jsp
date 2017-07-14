@@ -61,15 +61,15 @@
 					  <tbody>
 						<tr>
 							<th style="width:105px;">시설명</th>
-							<td colspan="2"><strong><%= chooseZone %></td>
+							<td><strong><%= chooseZone %></td>
 						</tr>
 						<tr>
 							<th style="width:105px;">이용일자</th>
-							<td colspan="2"><%= chooseDate.substring(0,4)+"년 "+chooseDate.substring(4,6)+"월 "+chooseDate.substring(6,8)+"일 "+days[0]+"요일" %></td>
+							<td><%= chooseDate.substring(0,4)+"년 "+chooseDate.substring(4,6)+"월 "+chooseDate.substring(6,8)+"일 "+days[0]+"요일" %></td>
 						</tr>
 						<tr>
 							<th style="width:105px;">이용기간</th>
-							<td colspan="2">
+							<td>
 								<select id="nights" name="nights">
 									<option value=''>-- SELECT --</option>																			
 									<% for(int i=1; i<maxRange+1 ; i++){ %>
@@ -91,11 +91,10 @@
 								<br />
 								</b>
 							</td>
-							<td><a href="javascript:popupSiteMap()"><img src="/reservation/images/map.png"></a></td>
 						</tr>
 						<tr>
 							<th style="width:105px;">이용인원</th>
-							<td colspan="2">유아 
+							<td>유아 
 								<select id="toddler" name="toddler" >
 									<option value="0">-</option>
 								</select>
@@ -112,7 +111,7 @@
 						</tr>
 						<tr>
 							<th style="width:105px;">결제액</th>
-							<td colspan="2"><b id="allMondy"></b></td>
+							<td><b id="allMondy"></b></td>
 						</tr>
 					  </tbody>
 					</table>
@@ -323,18 +322,21 @@ $("#productNo").change(function(){
 				document.getElementById("mmemo").innerHTML="  (기준인원"+obj.data.users+"명/최대인원"+obj.data.maxUser+"명)<br>(기준인원 초과시 아동 한명당 "+number_format(obj.data.addChildPrice)+"원, 일반 한명당 "+number_format(obj.data.addUserPrice)+"원 추가)";
 				document.getElementById("allMondy").innerHTML=number_format(obj.data.payMoney)+"원";
 				document.getElementById("wday").innerHTML="-비수기<br />"
-						+"(평일 "+number_format(obj.data.lowSeasonWeekday)+"원  / 주말 "+number_format(obj.data.lowSeasonWeekend)+"원  / Picnic "+number_format(obj.data.lowSeasonPicnic)+"원)<br />"
-						+"-준성수기<br />"
-						+"(평일 "+number_format(obj.data.middleSeasonWeekday)+"원  / 주말 "+number_format(obj.data.middleSeasonWeekend)+"원  / Picnic "+number_format(obj.data.middleSeasonPicnic)+"원)<br />"
-						+"-성수기<br />"
-						+"(평일 "+number_format(obj.data.highSeasonWeekday)+"원  / 주말 "+number_format(obj.data.highSeasonWeekend)+"원  / Picnic "+number_format(obj.data.highSeasonPicnic)+"원<br />"
-						+"<br/><font color='red'>"+saleMemo+"<br/>"+obj.data.productMemo+"</font>";
-				//$("#mmemo").val("추가 (한명 추가당 "+number_format(obj.data.addman)+"원 추가)");
-				//$("#wday").val("비수기 평일 "+number_format(obj.data.weekday)+"원 추가<br />"
-				//		+"비수기 주말 "+number_format(obj.data.weekend)+"원 추가<br />"
-				//		+"성수기 평일 "+number_format(obj.data.sweekday)+"원 추가<br />"
-				//		+"성수기 주말 "+number_format(obj.data.sweekend)+"원 추가");
-				//$("#allMondy").val(number_format(obj.data.payMoney)+"원");
+					+"(평일 "+number_format(obj.data.lowSeasonWeekday)+"원  / 주말 "+number_format(obj.data.lowSeasonWeekend)+"원)<br />"
+					+"-준성수기<br />"
+					+"(평일 "+number_format(obj.data.middleSeasonWeekday)+"원  / 주말 "+number_format(obj.data.middleSeasonWeekend)+"원)<br />"
+					+"-성수기<br />"
+					+"(평일 "+number_format(obj.data.highSeasonWeekday)+"원  / 주말 "+number_format(obj.data.highSeasonWeekend)+"원)<br />"
+					+"<br/><font color='red'>"+saleMemo+"<br/>"+obj.data.productMemo+"</font>";
+				//2017.07.14 picnic 제외	
+				//document.getElementById("wday").innerHTML="-비수기<br />"
+				//		+"(평일 "+number_format(obj.data.lowSeasonWeekday)+"원  / 주말 "+number_format(obj.data.lowSeasonWeekend)+"원  / Picnic "+number_format(obj.data.lowSeasonPicnic)+"원)<br />"
+				//		+"-준성수기<br />"
+				//		+"(평일 "+number_format(obj.data.middleSeasonWeekday)+"원  / 주말 "+number_format(obj.data.middleSeasonWeekend)+"원  / Picnic "+number_format(obj.data.middleSeasonPicnic)+"원)<br />"
+				//		+"-성수기<br />"
+				//		+"(평일 "+number_format(obj.data.highSeasonWeekday)+"원  / 주말 "+number_format(obj.data.highSeasonWeekend)+"원  / Picnic "+number_format(obj.data.highSeasonPicnic)+"원<br />"
+				//		+"<br/><font color='red'>"+saleMemo+"<br/>"+obj.data.productMemo+"</font>";
+				//end 2017.07.14
 			}
 		});		
 	}

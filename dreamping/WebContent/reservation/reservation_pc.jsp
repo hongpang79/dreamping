@@ -113,9 +113,9 @@
 						<li class="fl">TODAY : <%= nowYear+"년 "+nowMonth+"월 "+nowDate+"일" %></li>
 						<li class="cen">
 							<ul>
-								<li><a href="/Reservation.do?y=<%= laterYear %>&m=<%= laterMonth %>">&laquo;</a></li>
+								<li><a href="/Reservation.do?step=one&agent=pc&y=<%= laterYear %>&m=<%= laterMonth %>">&laquo;</a></li>
 								<li class="mon"><%= year+"년 "+month+"월" %></li>
-								<li><a href="/Reservation.do?y=<%= nextYear %>&m=<%= nextMonth %>">&raquo;</a></li>
+								<li><a href="/Reservation.do?step=one&agent=pc&y=<%= nextYear %>&m=<%= nextMonth %>">&raquo;</a></li>
 							</ul>
 						</li>
 						<li class="fr"></li>
@@ -145,9 +145,9 @@
 				
 				<%	while( true ){	%>
 							<tr>
-				<%	for( int i=0; i<7 ; i++ ){		// 날짜 출력
-						if( i<firstWeekday-1 && count == 1 ){ out.print("<td><table><tbody><tr><th><p class='num'>&nbsp;</p><p class='num_con'>&nbsp;</p></th></tr><tr><td><ul style='min-height:60px;'></ul></td></tr></tbody></table></td>"); continue; } 
-						if( count > lastDay ){out.print("<td><table><tbody><tr><th><p class='num'>&nbsp;</p><p class='num_con'>&nbsp;</p></th></tr><tr><td><ul style='min-height:60px;'></ul></td></tr></tbody></table></td>");}else{ %>
+				<%		for( int i=0; i<7 ; i++ ){		// 날짜 출력
+							if( i<firstWeekday-1 && count == 1 ){ out.print("<td><table><tbody><tr><th><p class='num'>&nbsp;</p><p class='num_con'>&nbsp;</p></th></tr><tr><td><ul style='min-height:60px;'></ul></td></tr></tbody></table></td>"); continue; } 
+							if( count > lastDay ){out.print("<td><table><tbody><tr><th><p class='num'>&nbsp;</p><p class='num_con'>&nbsp;</p></th></tr><tr><td><ul style='min-height:60px;'></ul></td></tr></tbody></table></td>");}else{ %>
 								<td>
 									<table summary="">
 										<tbody>

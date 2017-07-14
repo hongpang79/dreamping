@@ -37,7 +37,7 @@
 	int nowMonth = now.get(Calendar.MONTH)+1;		// 현재 월
 	int nowDate = now.get(Calendar.DATE);			// 현재 일
 	
-	String[] day = {"일","월","화","수","목","금","토"};
+	String[] day = {"","일","월","화","수","목","금","토"};
 	int year = Integer.parseInt(request.getAttribute("year").toString());
 	int month = Integer.parseInt(request.getAttribute("month").toString());
 //	out.print(year+"/"+month);
@@ -59,11 +59,17 @@
 	cal.set(year, month-1, 1);
 	int firstWeekday = cal.get(Calendar.DAY_OF_WEEK);	// 선택월의 1일에 해당하는 요일
 	int lastDay = cal.getActualMaximum(Calendar.DAY_OF_MONTH);	// 현재 월의 마지막 날짜
-//	out.print("이번달 : "+toYear+" "+(toMonth+1)+" "+firstWeekday+" "+lastDay);	// 확인  년/월/첫날요일값 1~7
+	System.out.println("이번달 : "+nowYear+" "+(nowMonth)+" "+firstWeekday+" "+lastDay);	// 확인  년/월/첫날요일값 1~7
 	int chkNowDate = month == nowMonth ? nowDate : 0 ;
-	if( (year*100)+month == (nowYear*100)+nowMonth ) chkNowDate = nowDate;
-	else if( (year*100)+month < (nowYear*100)+nowMonth ) chkNowDate = 32;
-	else chkNowDate = 0;
+	
+	if( (year*100)+month == (nowYear*100)+nowMonth ){
+		chkNowDate = nowDate;
+	}else if( (year*100)+month < (nowYear*100)+nowMonth ){
+		chkNowDate = 32;
+	}else{
+		chkNowDate = 0;
+	}
+	
 	int count = 1;
 	String usedZone = null;
 	String cLinkF = "";
@@ -104,6 +110,17 @@
 .today{background:#fff8cf !important;}
 .Sun{color:#cc2220;}
 .Sat{color:#2453a5;}
+ol, ul, li {list-style:none;}
+.reser_tok{float:right;color:#666;clear:both;}
+.reser_tok li{float:left;margin:0 6px 0 0;vertical-align:middle;}
+.reser_tok li img{margin:-2px 0 0 0;vertical-align:middle;}
+.s01{color:#5fbac5;padding:0 0 2px 20px;background:url(/reservation/images/sm_state1.gif) no-repeat 0 50%; cursor:pointer;}
+.s01 a{color:#5fbac5; cursor:pointer;}
+.s03{color:#c87c8a;padding:0 0 2px 20px;background:url(/reservation/images/sm_state3.gif) no-repeat 0 50%;}
+.s03 a{color:#c87c8a;}
+.s03_{color:#c87c8a;padding:0 0 2px 20px;text-decoration:line-through;background:url(/reservation/images/sm_state3.gif) no-repeat 0 50%;}
+.s03_ a{color:#c87c8a;}
+
 </style>
 	
 	<div class="container">
@@ -113,26 +130,103 @@
 				
 				<div class="calendar">
 					<p>
-						<a href="/Reservation.do?y=<%= laterYear %>&m=<%= laterMonth %>">&laquo;</a>
+						<a href="/Reservation.do?step=one&agent=mobile&y=<%= laterYear %>&m=<%= laterMonth %>">&laquo;</a>
 						<span class="Ym"><%= year+"년 "+month+"월" %></span>
-						<a href="/Reservation.do?y=<%= nextYear %>&m=<%= nextMonth %>">&raquo;
+						<a href="/Reservation.do?step=one&agent=mobile&y=<%= nextYear %>&m=<%= nextMonth %>">&raquo;</a>
 					</p>
 				</div>
-				
+				<ul class="reser_tok">
+					<li><img src="/reservation/images/sm_state1.gif" alt="예약가능" /> 예약가능</li>
+					<li><img src="/reservation/images/sm_state3.gif" alt="예약완료" /> 예약완료</li>
+				</ul>
 				<table class="table1">
 					<tbody>
-						<tr>
-							<th class="Sat" style="width:105px;">1(토)<br>비수기</th>
-							<td></td>
-						</tr>
-						<tr>
-							<th class="Sun" style="width:105px;">2(일)<br>비수기</th>
-							<td></td>
-						</tr>
-						<tr>
-							<th style="width:105px;">3(월)<br>비수기</th>
-							<td></td>
-						</tr>
+					
+					<%	
+						while(count <= lastDay){ //1일부터 현재 월의 마지막 날짜
+							if( count > chkNowDate ){ // 오늘날짜보다 큰경우에만 보여줌
+								out.print("<tr>");
+								
+								if(firstWeekday==1){
+									out.print("<th class='Sun' style='width:105px;'>");
+								}else if(firstWeekday==7){
+									out.print("<th class='Sat' style='width:105px;'>");
+								}else{
+									out.print("<th style='width:105px;'>");
+								}
+									out.print(count); out.print("("+day[firstWeekday]+")<br/>");
+								int sChkDate = Integer.parseInt(month+""+(((count) < 10) ? "0"+(count) : (count)));
+								String sName = "비수기";
+								for(int s=0; s<season.size(); s++){
+									if(sChkDate >= iStartSeason[s] && sChkDate <= iEndSeason[s]){
+										sName = seasonName[s];
+									}
+								}
+									out.print(sName);
+									out.print("</th>");
+									
+									out.print("<td>");
+								
+									if( zone != null ){
+										for( int j=0; j<zone.size();j++ ){	// Zone 갯수만큼 루프
+											bluRed = 2;
+											String thisDate = ""+year+(month < 10 ? "0"+month : month)+((count) < 10 ? "0"+(count) : (count));
+											
+											if(reservationDate.size() > 0){
+												usedZone = "0";
+												bluRed = 2;
+												
+												for(int k=0; k<reservationDate.size(); k+=6){	// 예약날짜 만큼 루프
+													if((reservationDate.get(k)+reservationDate.get(k+1)).equals(thisDate+zone.get(j).getZoneName())){
+														usedZone = zone.get(j).getZoneName()+"("+reservationDate.get(k+3)+"/"+reservationDate.get(k+2)+")";
+														if(reservationDate.get(k+3).equals("0")){
+															bluRed = 0;
+														}else if(!reservationDate.get(k+3).equals(reservationDate.get(k+2))){
+															bluRed = 1;
+														}
+														break;
+													}
+												}
+												if(usedZone.equals("0")){
+													usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+												}
+											}else{
+												usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+											}
+										
+											cLinkF=""+(count-1);
+											cLinkB=zone.get(j).getZoneName();
+										
+											if(bluRed == 0){
+												out.print("<p class='s03'><font color='red'><b id='noLink'>"+usedZone+"</b></font></p>");
+											}else{
+												out.print("<p class='s01'>");
+												if(bluRed == 1){
+													out.print("<font color='#2F9D27'>");	
+												}else{
+													out.print("<font color='blue'>");	
+												}
+					%>
+												<b id="link" onClick="javascript:chooseRoom('<%=cLinkF %>','<%=cLinkB %>');"><%=usedZone %></b></font></p>
+					<%
+											}
+										} // end for zonesize
+									} // end if zone!=null	
+									
+									out.print("</td>");
+								out.print("</tr>");
+							} // end if
+						
+							count++;
+							if(firstWeekday < 7){
+								firstWeekday++;
+							}else{
+								firstWeekday = 1;
+							}
+						} // end while
+					%>		
+
+					</tbody>
 				</table>
 		
 			</div>

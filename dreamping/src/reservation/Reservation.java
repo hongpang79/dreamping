@@ -278,7 +278,7 @@ public class Reservation extends HttpServlet {
 			pr.println("<html>");
 			pr.println("<head><script language='JavaScript'>");
 			pr.println("alert('예약이 취소 되었습니다.');");
-			pr.println("location.href='/Reservation.do?step=one';");
+			pr.println("location.href='/Reservation.do';");
 			pr.println("</script>");
 			pr.println("</head></html>");
 			
