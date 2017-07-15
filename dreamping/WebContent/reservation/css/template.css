@@ -70,6 +70,9 @@ p.tit{ margin-top: 30px;margin-bottom:10px;font-size:15px;color:#0391b1;font-wei
 .ct_bt01{height:20px; line-height:18px; padding-left:0px; padding-right:0px; padding-bottom:2px; font-size:0.92em; letter-spacing:-1px; color:#281E00; border:1px solid; border-color:#cdcdcd #909090 #909090 #cdcdcd; background-color:#f2f2f2; cursor:pointer;}
 .ct_bt02{height:20px; line-height:18px; padding-left:0px; padding-right:0px; padding-bottom:2px; font-size:0.92em; letter-spacing:-1px; color:#FFFFFF; border:1px solid; border-color:#858585 #606060 #606060 #858585; background-color:#A2A2A2; cursor:pointer;}
 
+/* 이미지 버튼 */
+img.linked { cursor:pointer; }
+
 /* Table */
 table.table1{border-collapse:collapse;width:100%;color:#666;border-top:1px solid #f0f0f0;line-height:16px;border-bottom:1px solid #f0f0f0;}
 table.table1 tbody th{padding:8px 0;border-bottom:1px solid #fff;text-align:center;font-weight:normal;background:#f5f5f5;vertical-align:top;}

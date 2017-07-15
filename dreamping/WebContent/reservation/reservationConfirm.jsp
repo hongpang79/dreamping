@@ -14,7 +14,7 @@
 	String chooseDate = request.getParameter("chooseDate").toString();
 %>
 <jsp:include page="/header.jsp" />
-<link rel="stylesheet" href="/reservation/css/template.css?ver=2">
+<link rel="stylesheet" href="/reservation/css/template.css?ver=3">
 <br><br><br><br>
 <section class="mbr-section mbr-section__container article" id="header3-n" style="background-color: rgb(255, 255, 255); padding-top: 20px; padding-bottom: 20px;">
     <div class="container">
@@ -106,6 +106,33 @@
 									<option value="0">-</option>
 								</select>
 								<br><b id="mmemo"></b>
+							</td>
+						</tr>
+						<tr>
+							<th style="width:105px;">Surf Cafe</th>
+							<td>
+								<select name="surfCafe">
+									<option value="">----- 선택안함 -----</option>
+									<option value="">실내서핑</option>
+								</select>
+								<input type="number" style="width:50px;" name="surfCafeNum">
+							</td>
+						</tr>
+						<tr>
+							<th style="width:105px;">M&M Watersport</th>
+							<td>
+								<div id="watersportForm"  style="display:block;" >
+									<span id="watersportRow0">
+										<input type="hidden" id="watersportUseFlag0" name="watersportUseFlag[0]" value="T">
+										<select name="watersport">
+											<option value="">----- 선택안함 -----</option>
+											<option value=""></option>
+										</select>
+										<input type="number" style="width:50px;" id="watersport_add[]" name="watersport_add[]">
+										<img src="/reservation/images/btn_add.gif" class="linked" align="absmiddle" onclick="addRows('watersport');" alt="추가">
+									</span>
+									<span id="watersportAdd"></span>
+								</div>
 							</td>
 						</tr>
 						<tr>
@@ -502,6 +529,37 @@ function chkReservation(){
 	//alert("성수기(6월~10월) 예약취소시 위약금 안내\r\n-이용당일, 7일전 환불불가\r\n-8~10일 90% 환불\r\n-10일이전 100% 환불");
 	document.resForm.submit();
 	
+}
+
+function addRows(type){
+    var addRow = "";
+
+    var rowCnt = document.getElementsByName(type+"_add[]").length;
+
+    addRow += '<span id="'+type+'Row'+rowCnt+'">';
+    addRow += '<br><br>';
+    addRow += '<input type="hidden" id="'+type+'UseFlag'+rowCnt+'" name="'+type+'UseFlag['+rowCnt+']" value="T">';
+    addRow += '<select name="'+type+'">';
+    addRow += '<option value="">----- 선택안함 -----</option>';
+    addRow += '<option value=""></option>';
+    addRow += '</select>&nbsp;';
+    addRow += '<input type="number" style="width:50px;" id="'+type+'_add[]" name="'+type+'_add[]">&nbsp;';
+    addRow += '<img src="/reservation/images/btn_add.gif" class="linked" align="absmiddle" onclick="addRows(\''+type+'\');" alt="추가">&nbsp;';
+    addRow += '<img src="/reservation/images/btn_del.gif" class="linked" align="absmiddle" onclick="deleteRows(\''+type+'\', '+rowCnt+');" alt="삭제">';
+    addRow += '</span>';
+
+    document.getElementById(type+"Add").innerHTML += addRow;
+}
+
+function deleteRows(type, num){
+
+    document.getElementById(type+"Row"+num).style.display = 'none';
+
+    if(type.indexOf("add") < 0){
+        document.getElementById("deleted_rows["+num+"]").value = num;
+    }
+
+    document.getElementById(type+"UseFlag"+num).value = 'F';
 }
 
 function popupSiteMap(){

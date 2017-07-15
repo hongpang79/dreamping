@@ -25,6 +25,7 @@
 	String tel3 = "";
 	String email = "";
 	String content = "";
+	String addition = "";
 	
 	int iNight = 0;
 	
@@ -115,6 +116,10 @@
 						<tr>
 							<th style="width:105px;">이용인원</th>
 							<td>유아<%=toddler %>, 아동<%=child %>, 일반<%= users %>명</td>
+						</tr>
+						<tr>
+							<th style="width:105px;">옵션상품</th>
+							<td><%=addition %></td>
 						</tr>
 						<tr>
 							<th style="width:105px;">결제액</th>
