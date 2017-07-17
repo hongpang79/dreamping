@@ -136,7 +136,7 @@
 					</tr>									
 					<tr>
 						<th scope="row">내용</th>
-						<td class="padding"><textarea name="description" id="description" rows="10" cols="90" style="width:840px; height:350px; display:none;"></textarea></td>
+						<td class="padding"><textarea name="description" id="description" rows="10" style="width:100%; min-width:260px; height:30em; display:none;"></textarea></td>
 					</tr>
 <%
 	if(category.equals("notice")||category.equals("qna")||category.equals("group")){

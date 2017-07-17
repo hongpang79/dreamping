@@ -42,9 +42,9 @@
     int startRow = (currentPage - 1) * pageSize + 1;  //그 페이지의 시작행 지정
     // 2페이지의 경우
     // (2-1)*10 + 1 = 11
-    int endRow = currentPage * pageSize; // 그 페이지의 끝행 지정
+    // int endRow = currentPage * pageSize; // 그 페이지의 끝행 지정 ORACLE
     // 2페이지의 경우
-    //  2+10 = 20
+    //  2*10 = 20
     int count = 0;    // 전체 글 수
     int number=0;   // 그 페이지에서 시작행 번호
     
@@ -70,12 +70,15 @@
     		count = dbPro.getArticleCount(category, comBoardSearchCode, comBoardSearchValue);
     	}
 	    if (count > 0) {
-            articleList = dbPro.getArticles(startRow, endRow, category, comBoardSearchCode, comBoardSearchValue);
+            articleList = dbPro.getArticles(startRow, pageSize, category, comBoardSearchCode, comBoardSearchValue); // mysql
+            // articleList = dbPro.getArticles(startRow, endRow, category, comBoardSearchCode, comBoardSearchValue); // oracle
         }
     }else{
     	count = dbPro.getArticleCount(category);
     	if (count > 0) {
-   	        articleList = dbPro.getArticles(startRow, endRow, category);
+    		// mysql limit 이용시 startRow, pageSize 
+    		// oracle 사용시 startRow, endRow
+   	        articleList = dbPro.getArticles(startRow, pageSize, category);
    	    }
     }
     number=count-(currentPage-1)*pageSize;//그 페이지에서 시작 행 번호
