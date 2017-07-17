@@ -35,7 +35,7 @@
     // (2-1)*10 + 1 = 11
     int endRow = currentPage * pageSize; // 그 페이지의 끝행 지정
     // 2페이지의 경우
-    //  2+10 = 20
+    //  2*10 = 20
     int count = 0;    // 전체 글 수
     int number=0;   // 그 페이지에서 시작행 번호
     

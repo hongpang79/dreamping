@@ -223,7 +223,7 @@ col.w_120{width:120px;}
 
 /*paging*/
 .paging{height:48px;text-align:center;border:solid 1px #e3e2da;background:#fff;position:relative;}
-.paging a, .paging strong{background:url('/board/images/common/bg_bar04.png') no-repeat left center;color:#888;text-align:center;display:inline-block;padding:0 10px;font-family: 'Open Sans', sans-serif;font-weight:400 !important;}
+.paging a, .paging strong{background:url('/board/images/common/bg_bar04.png') no-repeat left center;color:#888;text-align:center;display:inline-block;padding:0 2px;font-family: 'Open Sans', sans-serif;font-weight:400 !important;}
 .paging strong{color:#444;line-height:48px;}
 .paging .first {background:none;}
 .paging .prevCover{position:absolute;left:0;top:0;}

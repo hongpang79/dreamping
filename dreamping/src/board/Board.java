@@ -57,7 +57,7 @@ public class Board extends HttpServlet {
 //				System.out.println("[Board][step : list] param : " + start + ", " + end + ", " + currentPage);
 				if(currentPage > 1){
 					start = start + (10 * (currentPage-1));
-					end = end + (10 * (currentPage-1));
+					// end = end + (10 * (currentPage-1)); // ORACLE
 				}
 //				System.out.println("[Board][step : list] start : " + start + " , end : " + end);
 				list = bd.getArticles(start, end, category);
