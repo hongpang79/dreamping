@@ -86,9 +86,13 @@ public class ReservationDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "select z.zone_name, count(*) as zone_cnt from zone_information z, site_information s"+
-		             " where z.zone_no = s.zone_no and z.use_start_day <= '"+ym+"-01' and z.use_end_day >= '"+ym+"-28'"+
-				     " group by z.zone_name order by z.order_no";
+//		String SQL = "select z.zone_name, count(*) as zone_cnt from zone_information z, site_information s"+
+//		             " where z.zone_no = s.zone_no and z.use_start_day <= '"+ym+"-01' and z.use_end_day >= '"+ym+"-28'"+
+//				     " group by z.zone_name order by z.order_no";
+		String SQL = "select z.zone_name, s.zone_cnt from zone_information z LEFT JOIN "+
+                     "(SELECT zone_no, count(*) as zone_cnt FROM site_information GROUP BY zone_no ) s ON z.zone_no = s.zone_no " +
+				     "WHERE z.del_yn = 'N' AND z.display_yn = 'Y' AND z.use_start_day <= '"+ym+"-01' and z.use_end_day >= '"+ym+"-28'"+
+				     "ORDER BY z.order_no";
 		try{
 			conn = ConnectionUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);
@@ -155,6 +159,7 @@ public class ReservationDAO {
 	
 	//step2 start
 	public void getDay(HttpServletRequest request){
+		// 피크닉 가능 여부 확인
 		String chooseDate = (String)request.getParameter("chooseDate");	//선택한 날짜
 		int maxRange = 30;
 		String[] da = {"일","월","화","수","목","금","토"};
@@ -181,6 +186,7 @@ public class ReservationDAO {
 		request.setAttribute("maxRange", maxRange);
 		request.setAttribute("days", days);
 		request.setAttribute("picnicYn", picnicYn);
+		
 	}
 	
 	//search
@@ -694,7 +700,7 @@ public class ReservationDAO {
 							String depositDate = util.CommonUtil.callPlusDate(1);
 							depositDate = util.CommonUtil.isAfterDate(resDate, depositDate);
 //							System.out.println(depositDate);
-							String subject = "어반슬로우시티 예약접수안내";
+							String subject = "더드림핑 예약접수안내";
 							int msgNo = 1;
 							String dvsn = "user";
 							String msg = "";
@@ -992,4 +998,102 @@ public class ReservationDAO {
 		return list;
 	}
 	
+	// additionGroupList
+	public Vector<AdditionVO> getAdditionGroupList(String chooseDate){
+		Vector<AdditionVO> additionGroupList = new Vector<AdditionVO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "select z.order_no, z.zone_no, z.zone_name, s.zone_cnt from zone_information z INNER JOIN "+
+                     "(SELECT zone_no, count(*) as zone_cnt FROM addition GROUP BY zone_no ) s ON z.zone_no = s.zone_no " +
+				     "WHERE z.del_yn = 'N' AND z.display_yn = 'Y' AND z.use_start_day <= '"+chooseDate+"' and z.use_end_day >= '"+chooseDate+"'"+
+				     "ORDER BY z.order_no";
+		try{
+			conn = ConnectionUtil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			if( rs.next() ){
+				do{
+					AdditionVO additionGroup = new AdditionVO();
+					additionGroup.setZoneNo(rs.getInt("zone_no"));
+					additionGroup.setZoneName(rs.getString("zone_name"));
+					additionGroupList.add(additionGroup);
+				}while(rs.next());	
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			close(rs,pstmt,conn);
+		}
+		return additionGroupList;
+	}
+	
+	// additionGroupList
+	public Vector<AdditionVO> getAdditionVector(String chooseDate, int zoneNo){
+		Vector<AdditionVO> AdditionVector = new Vector<AdditionVO>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "select addition_no, addition_name, zone_no, unit, addition_price, quantity, addition_memo from addition "+
+                     "WHERE del_yn = 'N' AND use_yn = 'Y' AND zone_no = '"+zoneNo+"' AND display_start_day <= '"+chooseDate+"' and display_end_day >= '"+chooseDate+"'"+
+				     "ORDER BY addition_no";
+		//System.out.println("[ReservationDAO][getAdditionVector] SQL : " + SQL);
+		try{
+			conn = ConnectionUtil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			if( rs.next() ){
+				do{
+					AdditionVO addition = new AdditionVO();
+					addition.setAdditionNo(rs.getInt("addition_no"));
+					addition.setAdditionName(rs.getString("addition_name"));
+					addition.setZoneNo(rs.getInt("zone_no"));
+					addition.setUnit(rs.getString("unit"));
+					addition.setAdditionPrice(rs.getInt("addition_price"));
+					addition.setQuantity(rs.getInt("quantity"));
+					addition.setAdditionMemo(rs.getString("addition_memo"));
+					AdditionVector.add(addition);
+				}while(rs.next());	
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			close(rs,pstmt,conn);
+		}
+		return AdditionVector;
+	}
+	
+	public ArrayList<Map<String,String>> getAdditionList(String chooseDate, int zoneNo){
+		ArrayList<Map<String,String>> additionList = new ArrayList<Map<String,String>>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "select addition_no, addition_name, zone_no, unit, addition_price, quantity, addition_memo from addition "+
+                     "WHERE del_yn = 'N' AND use_yn = 'Y' AND zone_no = '"+zoneNo+"' AND display_start_day <= '"+chooseDate+"' and display_end_day >= '"+chooseDate+"'"+
+				     "ORDER BY addition_no";
+		//System.out.println("[ReservationDAO][getAdditionList] SQL : " + SQL);
+		try{
+			conn = ConnectionUtil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			rs = pstmt.executeQuery();
+			if( rs.next() ){
+				do{
+					Map<String,String> addition = new HashMap<String,String>();
+					addition.put("additionNo", Integer.toString(rs.getInt("addition_no")));
+					addition.put("additionName", rs.getString("addition_name"));
+					addition.put("zoneNo", Integer.toString(rs.getInt("zone_no")));
+					addition.put("unit", rs.getString("unit"));
+					addition.put("additionPrice", Integer.toString(rs.getInt("addition_price")));
+					addition.put("quantity", Integer.toString(rs.getInt("quantity")));
+					addition.put("additionMemo", rs.getString("addition_memo"));
+					additionList.add(addition);
+				}while(rs.next());	
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			close(rs,pstmt,conn);
+		}
+		return additionList;
+	}
 }

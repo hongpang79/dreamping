@@ -204,7 +204,7 @@
 <jsp:include page="/footer.jsp" />
 <script type="text/javascript">
 $(function(){
-	alert(<%= str %>);
+	alert('<%= str %>');
 	if(result != 1){
 		history.go(-1);
 	}

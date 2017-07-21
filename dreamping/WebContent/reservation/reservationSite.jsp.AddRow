@@ -1,7 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.text.NumberFormat" %>
-<%@ page import="reservation.SiteVO" %>
+<%@ page import="reservation.AdditionVO" %>
 <%@ page import="reservation.DepositVO" %>
+<%@ page import="java.util.Vector" %>
 <%
 	request.setCharacterEncoding("UTF-8");
 	NumberFormat nf = NumberFormat.getInstance();
@@ -108,33 +109,49 @@
 								<br><b id="mmemo"></b>
 							</td>
 						</tr>
+					<%  Vector<AdditionVO> additionGroupList = (Vector<AdditionVO>)request.getAttribute("additionGroupList"); 
+						for(int x=0; x<additionGroupList.size(); x++){
+							int zoneNo = additionGroupList.get(x).getZoneNo();
+							String zoneName = additionGroupList.get(x).getZoneName();
+							String selectName = "additionList"+x;
+							
+					%>
 						<tr>
-							<th style="width:105px;">Surf Cafe</th>
+							<th style="width:105px;"><%=zoneName %></th>
 							<td>
-								<select name="surfCafe">
-									<option value="">----- 선택안함 -----</option>
-									<option value="">실내서핑</option>
-								</select>
-								<input type="number" style="width:50px;" name="surfCafeNum">
-							</td>
-						</tr>
-						<tr>
-							<th style="width:105px;">M&M Watersport</th>
-							<td>
-								<div id="watersportForm"  style="display:block;" >
-									<span id="watersportRow0">
-										<input type="hidden" id="watersportUseFlag0" name="watersportUseFlag[0]" value="T">
-										<select name="watersport">
+								<div id="<%=zoneName %>Form"  style="display:block;" >
+									<span id="<%=zoneName %>Row0">
+										<select name="<%=selectName%>[]">
 											<option value="">----- 선택안함 -----</option>
-											<option value=""></option>
+					<%
+							Vector<AdditionVO> additionList = (Vector<AdditionVO>)request.getAttribute(selectName); 
+									for(int z=0; z<additionList.size(); z++){
+										int additionNo = additionList.get(z).getAdditionNo();
+										String additionName = additionList.get(z).getAdditionName()+" [("+additionList.get(z).getUnit() + ") " + additionList.get(z).getAdditionPrice()+"원]";
+										int additionPrice = additionList.get(z).getAdditionPrice();
+					%>
+											<option value="<%=additionNo%>"><%=additionName %></option><div id='<%=additionNo %>' value='<%=additionPrice %>'></div>
+					<%										
+									}
+					%>
 										</select>
-										<input type="number" style="width:50px;" id="watersport_add[]" name="watersport_add[]">
-										<img src="/reservation/images/btn_add.gif" class="linked" align="absmiddle" onclick="addRows('watersport');" alt="추가">
+										<input type="number" style="width:50px;" id="<%=zoneName %>_add[]" name="<%=zoneName %>_add[]">
+					<%
+									if(additionList.size() > 1){
+					%>
+										<img src="/reservation/images/btn_add.gif" class="linked" align="absmiddle" onclick="addRows('<%=zoneName %>','<%=zoneNo %>');" alt="추가">
+					<%
+									}
+					%>
 									</span>
-									<span id="watersportAdd"></span>
+									<span id="<%=zoneName %>Add"></span>
 								</div>
 							</td>
 						</tr>
+					<%
+						}
+						
+					%>
 						<tr>
 							<th style="width:105px;">결제액</th>
 							<td><b id="allMondy"></b></td>
@@ -253,7 +270,9 @@
 	<input type="hidden" name="chooseDate" value="<%= chooseDate %>" />
 	<input type="hidden" id="sNight" name="sNight" value="" />
 	<input type="hidden" id="chooseProductNo" name="chooseProductNo" value="" />
+	<input type="hidden" id="chooseZoneNo" name="chooseZoneNo" value="" />
 </form>
+
 <jsp:include page="/footer.jsp" />
 <script type="text/javascript" src="/reservation/js/popup.js"></script>
 <script type="text/javascript">
@@ -531,33 +550,107 @@ function chkReservation(){
 	
 }
 
-function addRows(type){
-    var addRow = "";
+function addAddition(additionName, additionPrice){
+	
+	var addRow = "";
 
     var rowCnt = document.getElementsByName(type+"_add[]").length;
+    
+    $("#step").val("addition");
+	$("#chooseZoneNo").val(zoneNo);
+    var params = $('#search').serialize();
+	$.ajax({
+			type: 'POST',
+			url: '/Reservation.do',
+			data: params,
+			dataType: 'json',
+			success: function(obj){   //{"data":[{"unit":"ê°œ","zoneNo":"5","additionName":"ë¬´ì œí•œ 3ì‹œê°„ 2ì¸","additionMemo":"","quantity":"9999","additionPrice":"100000","additionNo":"6"}]}
+				if(obj == null){
+					obj = 0;
+				}
+				
+				addRow += '<span id="'+type+'Row'+rowCnt+'">';
+			    addRow += '<br><br>';
+			    addRow += '<input type="hidden" id="'+type+'UseFlag'+rowCnt+'" name="'+type+'UseFlag[]" value="T">';
+			    addRow += '<select name="'+type+'[]">';
+			    addRow += '<option value="">----- 선택안함 -----</option>';
+				
+				//alert(obj.data.length);
+				for(var i=0; i<obj.data.length; i++){				
+					//String additionName = additionList.get(z).getAdditionName()+" [("+additionList.get(z).getUnit() + ") " + additionList.get(z).getAdditionPrice()+"원]";
+					addRow += '<option value="'+obj.data[i].additionNo+'">'+obj.data[i].additionName+' [('+obj.data[i].unit+') '+obj.data[i].additionPrice+'원]</option>';
+					addRow += '<div id="'+obj.data[i].additionNo+'" value="'+obj.data[i].additionPrice+'"></div>';
+				}
+				
+				addRow += '</select>&nbsp;';
+		    	addRow += '<input type="number" style="width:50px;" id="'+type+'_add[]" name="'+type+'_add[]">&nbsp;';
+//			if(rowCnt < obj.data.length){    
+		    	addRow += '<img src="/reservation/images/btn_add.gif" class="linked" align="absmiddle" onclick="addRows(\''+type+'\',\''+zoneNo+'\');" alt="추가">&nbsp;';
+//			}
+		    	addRow += '<img src="/reservation/images/btn_del.gif" class="linked" align="absmiddle" onclick="deleteRows(\''+type+'\', '+rowCnt+');" alt="삭제">';
+		    	addRow += '</span>';
 
-    addRow += '<span id="'+type+'Row'+rowCnt+'">';
-    addRow += '<br><br>';
-    addRow += '<input type="hidden" id="'+type+'UseFlag'+rowCnt+'" name="'+type+'UseFlag['+rowCnt+']" value="T">';
-    addRow += '<select name="'+type+'">';
-    addRow += '<option value="">----- 선택안함 -----</option>';
-    addRow += '<option value=""></option>';
-    addRow += '</select>&nbsp;';
-    addRow += '<input type="number" style="width:50px;" id="'+type+'_add[]" name="'+type+'_add[]">&nbsp;';
-    addRow += '<img src="/reservation/images/btn_add.gif" class="linked" align="absmiddle" onclick="addRows(\''+type+'\');" alt="추가">&nbsp;';
-    addRow += '<img src="/reservation/images/btn_del.gif" class="linked" align="absmiddle" onclick="deleteRows(\''+type+'\', '+rowCnt+');" alt="삭제">';
-    addRow += '</span>';
+		    	document.getElementById(type+"Add").innerHTML += addRow;
+		    	//alert(addRow);
+			}
+	});
+		
+}
 
-    document.getElementById(type+"Add").innerHTML += addRow;
+function addRows(type, zoneNo){
+	
+	var addRow = "";
+
+    var rowCnt = document.getElementsByName(type+"_add[]").length;
+    
+    $("#step").val("addition");
+	$("#chooseZoneNo").val(zoneNo);
+    var params = $('#search').serialize();
+	$.ajax({
+			type: 'POST',
+			url: '/Reservation.do',
+			data: params,
+			dataType: 'json',
+			success: function(obj){   //{"data":[{"unit":"ê°œ","zoneNo":"5","additionName":"ë¬´ì œí•œ 3ì‹œê°„ 2ì¸","additionMemo":"","quantity":"9999","additionPrice":"100000","additionNo":"6"}]}
+				if(obj == null){
+					obj = 0;
+				}
+				
+				addRow += '<span id="'+type+'Row'+rowCnt+'">';
+			    addRow += '<br><br>';
+			    addRow += '<input type="hidden" id="'+type+'UseFlag'+rowCnt+'" name="'+type+'UseFlag[]" value="T">';
+			    addRow += '<select name="'+type+'[]">';
+			    addRow += '<option value="">----- 선택안함 -----</option>';
+				
+				//alert(obj.data.length);
+				for(var i=0; i<obj.data.length; i++){				
+					//String additionName = additionList.get(z).getAdditionName()+" [("+additionList.get(z).getUnit() + ") " + additionList.get(z).getAdditionPrice()+"원]";
+					addRow += '<option value="'+obj.data[i].additionNo+'">'+obj.data[i].additionName+' [('+obj.data[i].unit+') '+obj.data[i].additionPrice+'원]</option>';
+					addRow += '<div id="'+obj.data[i].additionNo+'" value="'+obj.data[i].additionPrice+'"></div>';
+				}
+				
+				addRow += '</select>&nbsp;';
+		    	addRow += '<input type="number" style="width:50px;" id="'+type+'_add[]" name="'+type+'_add[]">&nbsp;';
+//			if(rowCnt < obj.data.length){    
+		    	addRow += '<img src="/reservation/images/btn_add.gif" class="linked" align="absmiddle" onclick="addRows(\''+type+'\',\''+zoneNo+'\');" alt="추가">&nbsp;';
+//			}
+		    	addRow += '<img src="/reservation/images/btn_del.gif" class="linked" align="absmiddle" onclick="deleteRows(\''+type+'\', '+rowCnt+');" alt="삭제">';
+		    	addRow += '</span>';
+
+		    	document.getElementById(type+"Add").innerHTML += addRow;
+		    	//alert(addRow);
+			}
+	});
+		
 }
 
 function deleteRows(type, num){
 
     document.getElementById(type+"Row"+num).style.display = 'none';
 
-    if(type.indexOf("add") < 0){
-        document.getElementById("deleted_rows["+num+"]").value = num;
-    }
+    //if(type.indexOf("add") < 0){
+    //    document.getElementById("deleted_rows["+num+"]").value = num;
+    //}
 
     document.getElementById(type+"UseFlag"+num).value = 'F';
 }

@@ -218,7 +218,7 @@ CREATE TABLE `sms_phone` (
 ) ENGINE=MyISAM ;
 
 INSERT INTO `sms_phone` VALUE ('01093167879','홍성규','manager','관리자');
-INSERT INTO `sms_phone` VALUE ('01023182373','김예은','admin','운영자');
+INSERT INTO `sms_phone` VALUE ('01000000000','김예은','admin','운영자');
 
 CREATE TABLE `sms_log` (
   `log_no` int(18) NOT NULL auto_increment,

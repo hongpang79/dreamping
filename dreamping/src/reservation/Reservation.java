@@ -33,6 +33,7 @@ public class Reservation extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String step = request.getParameter("step");
 		String path = null;
+		Boolean df = true;
 		
 		if(step == null){
 			step = "check";
@@ -89,16 +90,44 @@ public class Reservation extends HttpServlet {
 			request.setAttribute("reservationDate", reservationDate);
 			
 		}else if(step.equals("two")){
-			path = "/reservation/reservationConfirm.jsp";
 			ReservationDAO action = new ReservationDAO();
+			String additionYn = request.getParameter("chooseAddition");
+			if(additionYn.equals("Y")){
+				path = "/reservation/reservationAddition.jsp";
+			}else{
+				path = "/reservation/reservationSite.jsp";
+			}
 			action.getDay(request);
+			String chooseDate = (String)request.getParameter("chooseDate");	//선택한 날짜
+			Vector<AdditionVO> additionGroupList = action.getAdditionGroupList(chooseDate);
+			request.setAttribute("additionGroupList",additionGroupList);
+			
+			for(int x=0; x<additionGroupList.size(); x++){
+				Vector<AdditionVO> additionList = action.getAdditionVector(chooseDate, additionGroupList.get(x).getZoneNo());
+				request.setAttribute("additionList"+x,additionList);
+			}
+			
 		
 			//회원제일 경우 로그인한 user 정보
 //			String id = (String) request.getSession().getAttribute("memId");
 //			action.getUserInfo(id,request);
 //			request.setAttribute("userInfo", userMap);
 			
+		}else if(step.equals("addition")){
+			df = false;
+			ReservationDAO action = new ReservationDAO();
+			int chooseZoneNo = Integer.parseInt(request.getParameter("chooseZoneNo"));
+			String chooseDate = request.getParameter("chooseDate");
+
+			ArrayList<Map<String,String>> list = action.getAdditionList(chooseDate, chooseZoneNo);
+			
+			JSONObject obj = new JSONObject();
+			obj.put("data", list);
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().print(obj);
+			
 		}else if(step.equals("search")){
+			df = false;
 			ReservationDAO action = new ReservationDAO();
 			String chooseZone = request.getParameter("chooseZone");
 			String chooseDate = request.getParameter("chooseDate");
@@ -113,6 +142,7 @@ public class Reservation extends HttpServlet {
 			response.getWriter().print(obj);
 		
 		}else if(step.equals("roomInfo")){
+			df = false;
 			//-------------------------------------------------------
 			// return JSON : maxMen, addMenPrice, getWeekday, getWeekend, getSweekday, getSweekend, payMoney
 			//-------------------------------------------------------		
@@ -218,6 +248,19 @@ public class Reservation extends HttpServlet {
 //			}
 			request.setAttribute("r_content", content);
 			
+			String[] additionNo = request.getParameterValues("additionNo[]");
+			String[] additionName = request.getParameterValues("additionName[]");
+			String[] additionCnt = request.getParameterValues("additionCnt[]");
+			String additionTotal = request.getParameter("additionTotal");
+			String addition = "";
+			if(additionNo != null & additionNo.length > 0){
+				for(int x=0; x<additionNo.length; x++){
+					addition += additionName[x] + " [수량 : " + additionCnt[x] + " 개] <br>";
+				}
+			}
+			request.setAttribute("addition", addition);
+			request.setAttribute("", request.getParameter("r_email"));
+			
 			ReservationDAO action = new ReservationDAO();
 			action.getDepositInformation(request); // 계좌정보
 			action.setReservation(request);
@@ -257,6 +300,7 @@ public class Reservation extends HttpServlet {
 			}
 			
 		}else if(step.equals("rcancleOK")){	
+			df = false;
 			int msgNo = 0;
 			String reservationNo = request.getParameter("reservationNo");
 			String payStatus = request.getParameter("payStatus");
@@ -283,6 +327,7 @@ public class Reservation extends HttpServlet {
 			pr.println("</head></html>");
 			
 		}else if(step.equals("siteSearch")){
+			df = false;
 			ReservationDAO action = new ReservationDAO();
 			int zoneNo = Integer.parseInt(request.getParameter("searchZoneNo"));
 			ArrayList<Map<String,String>> list = action.getSiteListForZoneNo(zoneNo);
@@ -295,9 +340,7 @@ public class Reservation extends HttpServlet {
 			path = "/reservation/information.jsp";
 		}
 		
-		if(step.equals("search")||step.equals("roomInfo")||step.equals("rcancleOK")||step.equals("siteSearch")){
-//			System.out.println("Json Write");
-		}else{
+		if(df){
 			RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 			dispatcher.forward(request,	response);
 		}

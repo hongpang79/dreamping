@@ -69,6 +69,7 @@
 	String cLinkF = "";
 	String cLinkB = "";
 	int bluRed = 0;
+	String additionYn = "N";
 %>
 <jsp:include page="/header.jsp" />
 <link rel='stylesheet' type='text/css' href='/reservation/css/company.css'>
@@ -94,6 +95,7 @@
 		<input type="hidden" name="step" value="two" />
 		<input type="hidden" name="chooseDate" />
 		<input type="hidden" name="chooseZoneName" />
+		<input type="hidden" name="chooseAddition" />
 	</form>
 	<link rel='stylesheet' type='text/css' href='/reservation/css/sub_layout.css'>
 	<link rel='stylesheet' type='text/css' href='/reservation/css/style.css?ver=1'>
@@ -202,11 +204,23 @@
 														}
 													}
 													if(usedZone.equals("0")){
-														usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+														if(zone.get(j).getZoneCnt() == 0){
+															usedZone = zone.get(j).getZoneName();
+															additionYn = "Y";
+														}else{
+															usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+															additionYn = "N";
+														}
 													}
 													//System.out.println("usedZone : " + usedZone);
 												}else{
-													usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+													if(zone.get(j).getZoneCnt() == 0){
+														usedZone = zone.get(j).getZoneName();
+														additionYn = "Y";
+													}else{
+														usedZone = zone.get(j).getZoneName()+"("+zone.get(j).getZoneCnt()+"/"+zone.get(j).getZoneCnt()+")";
+														additionYn = "N";
+													}
 												}
 												
 												cLinkF=""+(count-1);
@@ -218,11 +232,11 @@
 											<%	
 												}else if(bluRed == 1){
 										%>
-													<li class="s01"><font color="#2F9D27"><b id="link" onClick="javascript:chooseRoom('<%=cLinkF%>','<%=cLinkB%>')"><%=usedZone %></b></font></li>
+													<li class="s01"><font color="#2F9D27"><b id="link" onClick="javascript:chooseRoom('<%=cLinkF%>','<%=cLinkB%>','<%=additionYn%>')"><%=usedZone %></b></font></li>
 											<%			
 												}else{
 										%>											
-													<li class="s01"><font color="blue"><b id="link" onClick="javascript:chooseRoom('<%=cLinkF%>','<%=cLinkB%>')"><%=usedZone %></b></font></li>
+													<li class="s01"><font color="blue"><b id="link" onClick="javascript:chooseRoom('<%=cLinkF%>','<%=cLinkB%>','<%=additionYn%>')"><%=usedZone %></b></font></li>
 											<%
 												}
 												
@@ -262,18 +276,19 @@
 <script type="text/javascript" src="/reservation/js/popup.js"></script>
 <script type="text/javascript">
 	// 날짜와 방을 선택
-	function chooseRoom(chooseDate,zoneName){
+	function chooseRoom(chooseDate,zoneName,addition){
 		//document.getElementById("aa").innerHTML=cDate;
-		//alert("신청"+cDate+","+rno);
+		//alert("신청"+addition);
 		var month = <%= month %>;
 		month = (month < 10) ? "0"+month : month; 
 		var date = (chooseDate < 10) ? "0"+chooseDate : chooseDate; 
 		document.step2Form.chooseDate.value = <%= year %>+""+month+date; 
 		document.step2Form.chooseZoneName.value = zoneName;
+		document.step2Form.chooseAddition.value = addition;
 		document.step2Form.submit();
 	}
 	
-	function popupUrbanMap(){
+	function popupSiteMap(){
 		var url = "/reservation/popupSiteMap.jsp";
 		popup.openWindowPopup(url, 'SiteMap', {width : '820px', height : '540px'});
 	}
