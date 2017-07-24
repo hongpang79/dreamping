@@ -20,6 +20,7 @@ import java.util.Date;
 *   `bank_name` varchar(20) default NULL,		/입금은행명/
 *   `account` varchar(20) default NULL,		/입금계좌번호/
 *   `pay_status` char(1) default 'N',				/입금여부/
+*   `addition` varchar(2048) default NULL,
 *   `reserver` varchar(12) NOT NULL,			/예약자/
 *   `email` varchar(50) default NULL,
 *   `phone1` varchar(5) default NULL,
@@ -60,15 +61,7 @@ public class ReservationVO {
 	//지불방법, 은행명, 계좌번호, 지불여부(N:입금대기/Y:입금완료/C:예약취소/R:환불완료), 예약자, 이메일, 연락처1,2,3, 비상연락처1,2,3, 요청사항
 	String payment="",bankName="",account="",payStatus="",reserver="",email="",phone1="",phone2="", phone3="", cell1="", cell2="", cell3="", memo=""; 
 	//환불은행명, 환불예금주, 환불계좌번호, 취소사유
-	String refundBank="", refundDepositor="", refundAccount="", remark="", refundMemo="", adminMemo="", productName=""; 
-	public String getRefundMemo() {
-		return refundMemo;
-	}
-
-	public void setRefundMemo(String refundMemo) {
-		this.refundMemo = refundMemo;
-	}
-
+	String refundBank="", refundDepositor="", refundAccount="", remark="", refundMemo="", adminMemo="", productName="", addition="";	
 	//예약년월, 예약일자, zone명, 지불상태코드 (W : 대기 / C : 완료) 
 	String reservationMonth="", reservationDay="", zoneName="", status="", siteName="";
 	//환불금액타입
@@ -420,7 +413,21 @@ public class ReservationVO {
 		this.productName = productName;
 	}
 	
-	
+	public String getRefundMemo() {
+		return refundMemo;
+	}
+
+	public void setRefundMemo(String refundMemo) {
+		this.refundMemo = refundMemo;
+	}
+
+	public String getAddition() {
+		return addition;
+	}
+
+	public void setAddition(String addition) {
+		this.addition = addition;
+	}
 	
 	
 }

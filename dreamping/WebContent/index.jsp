@@ -193,7 +193,7 @@
 	        <div class="mbr-table-md-up">
                 <div class="mbr-table-cell mbr-right-padding-md-up col-md-8 text-xs-center text-md-left">
                     <h2 class="mbr-info-subtitle mbr-section-subtitle"><strong>MAP_</strong></h2>
-                    <h3 class="mbr-info-title mbr-section-title display-2"><span style="font-weight: normal;">경기도 남양주시 화도읍 금남리 123</span></h3>
+                    <h3 class="mbr-info-title mbr-section-title display-2"><span style="font-weight: normal;">경기도 남양주시 화도읍 북한강로 1630-18 (금남리 123)</span></h3>
                 </div>
                 <div class="mbr-table-cell col-md-4">
                 </div>

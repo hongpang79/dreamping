@@ -58,6 +58,7 @@
 	String content = "";
 	String payStatus = "";
 	String status = "";
+	String addition = "";
 	
 	if( reservations != null ){
 		for( int j=0; j<reservations.size();j++ ){
@@ -82,8 +83,9 @@
 			}else if(payStatus.equals("R")){
 				status="예약취소";
 			}
+			addition = reservations.get(j).getAddition()==null?"":reservations.get(j).getAddition();
 %>
-						<tr onclick="javascript:chooseReservation('<%=reservationNo%>','<%=chooseDate%>','<%=zoneName%>','<%=productName%>','<%=toddler %>','<%=child %>','<%=users%>','<%=nights%>','<%=payAll%>','<%=payStatus %>','<%=status%>','<%=content.replace("\r\n","<br/>")%>')">
+						<tr onclick="javascript:chooseReservation('<%=reservationNo%>','<%=chooseDate%>','<%=zoneName%>','<%=productName%>','<%=toddler %>','<%=child %>','<%=users%>','<%=nights%>','<%=payAll%>','<%=payStatus %>','<%=status%>','<%=content.replace("\r\n","<br/>")%>','<%=addition%>')">
 							<td><%= chooseDate.substring(0,4)+"년 "+chooseDate.substring(4,6)+"월 "+chooseDate.substring(6,8)+"일" %></td>
 							<td><%= zoneName %></td>
 							<td><%= productName %></td>
@@ -115,6 +117,7 @@
 		}else if(payStatus.equals("R")){
 			status="예약취소";
 		}
+		addition = reservations.get(0).getAddition()==null?"":reservations.get(0).getAddition();
 	}else{
 %>
 						<tr>
@@ -161,6 +164,10 @@
 								<td><b id="allUser">유아<%=toddler %>, 아동<%=child %>, 일반<%= users %>명</b></td>
 							</tr>
 							<tr>
+								<th style="width:105px;">옵션상품</th>
+								<td><b id="allAddition"><%=addition %></b></td>
+							</tr>
+							<tr>
 								<th style="width:105px;">결제액</th>
 								<td><b id="allMoney"><% out.print(nf.format(payAll)); %>원</b></td>
 							</tr>
@@ -202,7 +209,7 @@ function number_format(numStr) {
 		return numstr; 
 }
 
-function chooseReservation(reservationNo,chooseDate,zoneName,siteName,toddler,child,users,nights,payAll,payStatus,status,content){ 
+function chooseReservation(reservationNo,chooseDate,zoneName,siteName,toddler,child,users,nights,payAll,payStatus,status,content,addition){ 
 	var payMoney = Number(payAll);
 	var night = Number(nights);
 	night = night+1;
@@ -217,6 +224,7 @@ function chooseReservation(reservationNo,chooseDate,zoneName,siteName,toddler,ch
 	document.getElementById("allMoney").innerHTML=number_format(payMoney)+"원";
 	document.getElementById("allStatus").innerHTML=status;
 	document.getElementById("allContent").innerHTML=content;
+	document.getElementById("allAddition").innerHTML=addition;
 }
 
 function sendit(){

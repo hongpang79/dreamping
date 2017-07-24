@@ -126,12 +126,12 @@ public class CallSMS {
 			String charsetType = "UTF-8";
 			String sms_url = "https://sslsms.cafe24.com/sms_sender.php"; // SMS 전송요청 URL
 	        String user_id = base64Encode("mlksms");
-	        String secure = base64Encode("");//인증키
+	        String secure = base64Encode("f3f0ba20edf675a4d49cef53567675d8");//인증키
 	        msg = base64Encode(msg);
 	        String rphone = base64Encode(phoneNumber); //예) 받는 번호 011-011-111 , '-' 포함해서 입력.
 	        String sphone1 = base64Encode("031");
-	        String sphone2 = base64Encode("");
-	        String sphone3 = base64Encode("");
+	        String sphone2 = base64Encode("559");
+	        String sphone3 = base64Encode("8763");
 	        String rdate = base64Encode(""); //예약 날짜 예)20090909
 	        String rtime = base64Encode(""); //예약 시간 예)173000 ,오후 5시 30분,예약시간은 최소 10분 이상으로 설정.
 	        String mode = base64Encode("1");

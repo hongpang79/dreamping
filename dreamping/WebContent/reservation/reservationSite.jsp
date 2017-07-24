@@ -205,7 +205,7 @@
 						<tr>
 							<th style="width:105px;"><strong>무통장입금<br/>계좌안내</strong></th>
 							<td>
-								<p class="p1"><strong>국민 037601-04-039667 / 예금주  (주)더드림핑</strong><br/>
+								<p class="p1"><strong>국민 401301-04-057170 / 예금주  엠앤엠레저컨설팅</strong><br/>
 								※ 예약을 신청하신 후 24시간 이내에 무통장입금을 하시면 예약이 완료되며, 미입금시 예약이 취소 됩니다.
 								</p>
 							</td>
@@ -366,6 +366,8 @@ $("#productNo").change(function(){
 					+"(평일 "+number_format(obj.data.middleSeasonWeekday)+"원  / 주말 "+number_format(obj.data.middleSeasonWeekend)+"원)<br />"
 					+"-성수기<br />"
 					+"(평일 "+number_format(obj.data.highSeasonWeekday)+"원  / 주말 "+number_format(obj.data.highSeasonWeekend)+"원)<br />"
+					+"-극성수기<br />"
+					+"(평일 "+number_format(obj.data.peakSeasonWeekday)+"원  / 주말 "+number_format(obj.data.peakSeasonWeekend)+"원)<br />"
 					+"<br/><font color='red'>"+saleMemo+"<br/>"+obj.data.productMemo+"</font>";
 				//2017.07.14 picnic 제외	
 				//document.getElementById("wday").innerHTML="-비수기<br />"

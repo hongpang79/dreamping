@@ -117,6 +117,7 @@ public class ReservationDAO {
 					reservation.setMemo(rs.getString("memo"));
 					reservation.setPayStatus(rs.getString("pay_status"));
 					reservation.setAdminMemo(rs.getString("admin_memo"));
+					reservation.setAddition(rs.getString("addition"));
 					reservations.add(reservation);
 				}while(rs.next());
 			}
@@ -208,6 +209,7 @@ public class ReservationDAO {
 					reservation.setMemo(rs.getString("memo"));
 					reservation.setPayStatus(rs.getString("pay_status"));
 					reservation.setAdminMemo(rs.getString("admin_memo"));
+					reservation.setAddition(rs.getString("addition"));
 					reservations.add(reservation);
 				}while(rs.next());
 			}
@@ -505,6 +507,7 @@ public class ReservationDAO {
 					reservation.setRefundMemo(rs.getString("refund_memo"));
 					reservation.setCalcPrice(rs.getInt("calc_price"));
 					reservation.setRefundAmount(rs.getInt("refund_amount"));
+					reservation.setAddition(rs.getString("addition"));
 					reservations.add(reservation);
 				}while(rs.next());
 			}

@@ -309,6 +309,7 @@ $(function() {
 		String refundType = "";
 		int refundPrice = -1;
 		int calcPrice = 0;
+		String addition = "";
 		for( int i=0; i<count; i++){
 			ReservationVO reservation = vReservation.get(i);
 			reservationNo = reservation.getReservationNo();
@@ -341,6 +342,7 @@ $(function() {
 			}else if(payStatus.equals("C")){
 				status="예약취소<br>환불요청";
 			}
+			addition = reservation.getAddition()==null?"":reservation.getAddition();
 %>	
 		<tr>
 			<td><%= i+1 %></td>
@@ -354,7 +356,7 @@ $(function() {
 			<td>
 				<%= chooseDate %><br>
 				(<% if(nights==0){ out.print("picnic"); }else{out.print(nights+"박"+(nights+1)+"일");} %>)<br>
-				<% out.print(nf.format(price)); %>원
+				<a href="#" title='<%=addition%>'><% out.print(nf.format(price)); %>원</a>
 			</td>
 			<td style="text-align: right;">
 				<%= refundRegDate %>&nbsp;<br>

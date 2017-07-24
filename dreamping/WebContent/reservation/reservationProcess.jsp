@@ -48,6 +48,7 @@
 			child = (String) request.getAttribute("child");
 			users = (String) request.getAttribute("users");
 			//id = (String) request.getAttribute("id");
+			addition = request.getAttribute("addition")==null?"":(String) request.getAttribute("addition");
 			
 			reserver = (String) request.getAttribute("r_name");
 			phone1 = (String) request.getAttribute("r_phone1");
@@ -168,7 +169,7 @@
 						<tr>
 							<th style="width:105px;"><strong>무통장입금<br/>계좌안내</strong></th>
 							<td>
-								<p class="p1"><strong>국민 037601-04-039667 / 예금주  (주)더드림핑</strong><br/>
+								<p class="p1"><strong>국민 401301-04-057170 / 예금주  엠앤엠레저컨설팅</strong><br/>
 								※ 예약을 신청하신 후 24시간 이내에 무통장입금을 하시면 예약이 완료되며, 미입금시 예약이 취소 됩니다.
 								</p>
 							</td>

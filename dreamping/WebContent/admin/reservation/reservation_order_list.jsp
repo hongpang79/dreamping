@@ -63,6 +63,7 @@ String phone = "";
 String cell = "";
 String email = "";
 String adminMemo = "";
+String addition = "";
 int totalUser = 0;
 
 String ip = request . getHeader ( "X-Forwarded-For" );   
@@ -302,9 +303,8 @@ $(function() {
 		<col width='10'></col>
 		<col width='80'></col>
 		<col width='160'></col>
-		<col width='130'></col>
-		<col width='80'></col>
 		<col></col>
+		<col width='80'></col>
 		<col width='80'></col>
 		<col width='60'></col>		
 		<thead>
@@ -312,9 +312,8 @@ $(function() {
 	            <th>No.</th>
 	            <th>예약상품명</th>
 	            <th>예약자 정보</th>
-				<th>예약내용</th>
+				<th>예약내용<br>(예약요청사항)</th>
 	            <th>결제금액</th>
-	            <th>예약요청사항</th>
 	            <th>접수일자<br>(예약상태)</th>
 	            <th>상태변경</th>
 	        </tr>
@@ -333,7 +332,7 @@ $(function() {
 	if( vReservation == null ){
 %>
 		<tr>
-			<td colspan="8" align="center">
+			<td colspan="7" align="center">
 				<br>검색 결과가 없습니다<br><br>
 			</td>
 		</tr>
@@ -369,11 +368,12 @@ $(function() {
 			}else if(payStatus.equals("R")){
 				status="예약취소";
 			}
+			addition = reservation.getAddition()==null?"":reservation.getAddition();
 %>
 		<tr style="height:'56px';">
-			<td><%= i+1 %></td>
-			<td><%= productName %></td>
-			<td style="text-align: left;">
+			<td rowspan="2"><%= i+1 %></td>
+			<td rowspan="2"><%= productName %></td>
+			<td rowspan="2" style="text-align: left;">
 				&nbsp;<%= reserver %><br>
 				&nbsp;<%= phone %><br>
 				&nbsp;<%= cell %><br>
@@ -381,11 +381,12 @@ $(function() {
 			</td>
 			<td style="text-align: left;">
 				&nbsp;<%= chooseDate %>&nbsp;(<% if(nights==0){ out.print("picnic"); }else{out.print(nights+"박"+(nights+1)+"일");} %>)<br>
-				&nbsp;<%=totalUser%>명 &nbsp;(&nbsp;<%= toddler %>&nbsp;/&nbsp;<%= child %>&nbsp;/&nbsp;<%= users %>&nbsp;)</td>
-			<td style="text-align: right;"><% out.print(nf.format(price)); %>원&nbsp;<br><%=adminMemo %>&nbsp;</td>
-			<td style="text-align: left;">&nbsp;<%= content %></td>
-			<td><%= regDate %><br><a href="javascript:adminMemo('<%=reservationNo%>','<%=price%>','<%=adminMemo %>')">[<%= status %>]</a></td>
-			<td>
+				&nbsp;<%=totalUser%>명 &nbsp;(&nbsp;유아:<%= toddler %>&nbsp;/&nbsp;아동:<%= child %>&nbsp;/&nbsp;성인:<%= users %>&nbsp;)<br>
+				<font color="red"><%= addition %></font>
+			</td>
+			<td rowspan="2" style="text-align: right;"><% out.print(nf.format(price)); %>원&nbsp;<br><%=adminMemo %>&nbsp;</td>
+			<td rowspan="2"><%= regDate %><br><a href="javascript:adminMemo('<%=reservationNo%>','<%=price%>','<%=adminMemo %>')">[<%= status %>]</a></td>
+			<td rowspan="2">
 				<% 
 					if(payStatus.equals("N")){ 
 				%>
@@ -399,6 +400,9 @@ $(function() {
 					}
 				%>
 			</td>
+		</tr>
+		<tr>
+			<td style="text-align: left;">&nbsp;<%= content %></td>
 		</tr>
 <% 		}
 	} 
@@ -415,18 +419,16 @@ $(function() {
 		<col width='10'></col>
 		<col width='80'></col>
 		<col width='160'></col>
-		<col width='130'></col>
-		<col width='80'></col>
 		<col></col>
+		<col width='80'></col>
 		<col width='80'></col>	
 		<thead>
 	        <tr>
 	            <th>No.</th>
 	            <th>예약상품명</th>
 	            <th>예약자 정보</th>
-				<th>예약내용</th>
+				<th>예약내용<br>(예약요청사항)</th>
 	            <th>결제금액</th>
-	            <th>예약요청사항</th>
 	            <th>접수일자<br>(예약상태)</th>
 	        </tr>
 		</thead>
@@ -434,7 +436,7 @@ $(function() {
 		if( vStayReservation == null ){
 %>
 			<tr>
-				<td colspan="7" align="center">
+				<td colspan="6" align="center">
 					<br>연박 이용자가 없습니다<br><br>
 				</td>
 			</tr>
@@ -470,11 +472,12 @@ $(function() {
 				}else if(payStatus.equals("R")){
 					status="예약취소";
 				}
+				addition = reservation.getAddition()==null?"":reservation.getAddition();
 	%>
 			<tr>
-				<td><%= i+1 %></td>
-				<td><%= productName %></td>
-				<td style="text-align: left;">
+				<td rowspan="2"><%= i+1 %></td>
+				<td rowspan="2"><%= productName %></td>
+				<td rowspan="2" style="text-align: left;">
 					&nbsp;<%= reserver %><br>
 					&nbsp;<%= phone %><br>
 					&nbsp;<%= cell %><br>
@@ -482,10 +485,14 @@ $(function() {
 				</td>
 				<td style="text-align: left;">
 					&nbsp;<%= chooseDate %>&nbsp;(<% if(nights==0){ out.print("picnic"); }else{out.print(nights+"박"+(nights+1)+"일");} %>)<br>
-					&nbsp;<%=totalUser%>명&nbsp; (&nbsp;<%= toddler %>&nbsp;/&nbsp;<%= child %>&nbsp;/&nbsp;<%= users %>&nbsp;)</td>
-				<td style="text-align: right;"><% out.print(nf.format(price)); %>원&nbsp;<br><%=adminMemo %>&nbsp;</td>
+					&nbsp;<%=totalUser%>명&nbsp; (&nbsp;유아:<%= toddler %>&nbsp;/&nbsp;아동:<%= child %>&nbsp;/&nbsp;성인:<%= users %>&nbsp;)<br>
+					<font color="red"><%= addition %></font>
+				</td>
+				<td rowspan="2" style="text-align: right;"><% out.print(nf.format(price)); %>원&nbsp;<br><%=adminMemo %>&nbsp;</td>
+				<td rowspan="2"><%= regDate %><br>[<%= status %>]</td>
+			</tr>
+			<tr>
 				<td style="text-align: left;">&nbsp;<%= content %></td>
-				<td><%= regDate %><br>[<%= status %>]</td>
 			</tr>
 	<% 		}
 		} 

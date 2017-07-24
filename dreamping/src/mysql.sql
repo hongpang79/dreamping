@@ -13,6 +13,9 @@ drop table zone_information;
 drop table holyday;
 drop table siteboard;
 
+ALTER TABLE `thedreamping`.`reservation` 
+ADD COLUMN `addition` VARCHAR(2048) NULL DEFAULT NULL AFTER `pay_status`;
+
 CREATE TABLE `comboard` (
   `num` int(11) NOT NULL auto_increment,
   `category` varchar(10) default NULL,
@@ -145,6 +148,7 @@ CREATE TABLE `reservation` (
   `bank_name` varchar(20) default NULL,		/*입금은행명*/
   `account` varchar(20) default NULL,		/*입금계좌번호*/
   `pay_status` char(1) default 'N',			/*입금여부*/
+  `addition` varchar(2048) default NULL,    /*부가서비스*/ 
   `reserver` varchar(12) NOT NULL,			/*예약자*/
   `email` varchar(50) default NULL,
   `phone1` varchar(5) default NULL,

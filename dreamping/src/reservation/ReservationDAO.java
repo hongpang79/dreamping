@@ -264,6 +264,9 @@ public class ReservationDAO {
 				site.setMiddleSeasonWeekday(rs.getInt("middle_season_weekday"));// 준성수기주중
 				site.setMiddleSeasonWeekend(rs.getInt("middle_season_weekend"));// 준성수기주말
 				site.setMiddleSeasonPicnic(rs.getInt("middle_season_picnic"));	// 준성수기피크닉
+				site.setPeakSeasonWeekday(rs.getInt("peak_season_weekday"));// 극성수기주중
+				site.setPeakSeasonWeekend(rs.getInt("peak_season_weekend"));// 극성수기주말
+				site.setPeakSeasonPicnic(rs.getInt("peak_season_picnic"));	// 극성수기피크닉
 				site.setSale(rs.getInt("sale"));
 				site.setSaleStartDay(rs.getDate("sale_start_day"));
 				site.setSaleEndDay(rs.getDate("sale_end_day"));
@@ -392,6 +395,8 @@ public class ReservationDAO {
 					}else if(seasonCode.equals("M")){
 //						price[maxRange] = site.getMiddleSeasonPicnic();
 						payMoney = payMoney + site.getMiddleSeasonPicnic();
+					}else if(seasonCode.equals("P")){
+						payMoney = payMoney + site.getPeakSeasonPicnic();
 					}
 					money = Integer.toString(payMoney);
 				}
@@ -457,6 +462,8 @@ public class ReservationDAO {
 							}else if(seasonCode.equals("M")){
 //								price[i] = site.getLowSeasonWeekday();
 								payMoney = payMoney + site.getMiddleSeasonWeekend();
+							}else if(seasonCode.equals("P")){
+								payMoney = payMoney + site.getPeakSeasonWeekend();
 							}
 						}else if(flatPriceYn.equals("Y")){	// 균일가 이벤트
 								payMoney = payMoney + site.getFlatPrice();
@@ -474,6 +481,8 @@ public class ReservationDAO {
 							}else if(seasonCode.equals("M")){
 //								price[i] = site.getHighSeasonWeekday();
 								payMoney = payMoney + site.getMiddleSeasonWeekday();
+							}else if(seasonCode.equals("P")){
+								payMoney = payMoney + site.getPeakSeasonWeekday();
 							}
 
 						}
@@ -564,6 +573,7 @@ public class ReservationDAO {
 			payYn = "N";
 			depositor = deposit.getDepositor();
 		}
+		String addition = request.getAttribute("addition").toString();
 		
 		String reserver = (String) request.getAttribute("r_name");
 		String phone1 = (String) request.getAttribute("r_phone1");
@@ -590,8 +600,8 @@ public class ReservationDAO {
 			if( rs.next() ){
 //				System.out.println("setReservation - count : "+ rs.getInt(1));
 				if( rs.getInt(1) == 0 ){
-					SQL = "INSERT INTO reservation (product_no,site_no,member_no,reservation_date,nights,toddler,child,users,price,payment,bank_name,account,pay_status,reserver,phone1,phone2,phone3,cell1,cell2,cell3,email,memo,reg_date)" +
-							" VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())";
+					SQL = "INSERT INTO reservation (product_no,site_no,member_no,reservation_date,nights,toddler,child,users,price,payment,bank_name,account,pay_status,addition,reserver,phone1,phone2,phone3,cell1,cell2,cell3,email,memo,reg_date)" +
+							" VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())";
 					pstmt = conn.prepareStatement(SQL);
 					pstmt.setInt(1, productNo);
 					pstmt.setInt(2, siteNo);
@@ -606,15 +616,16 @@ public class ReservationDAO {
 					pstmt.setString(11, bankName);
 					pstmt.setString(12, account);
 					pstmt.setString(13, payYn);
-					pstmt.setString(14, reserver);
-					pstmt.setString(15, phone1);
-					pstmt.setString(16, phone2);
-					pstmt.setString(17, phone3);
-					pstmt.setString(18, tel1);
-					pstmt.setString(19, tel2);
-					pstmt.setString(20, tel3);
-					pstmt.setString(21, email);
-					pstmt.setString(22, content);
+					pstmt.setString(14, addition);
+					pstmt.setString(15, reserver);
+					pstmt.setString(16, phone1);
+					pstmt.setString(17, phone2);
+					pstmt.setString(18, phone3);
+					pstmt.setString(19, tel1);
+					pstmt.setString(20, tel2);
+					pstmt.setString(21, tel3);
+					pstmt.setString(22, email);
+					pstmt.setString(23, content);
 					int result = pstmt.executeUpdate();
 					request.setAttribute("insertResult", result);
 //					System.out.println("setReservation - insertResult : "+result);
@@ -796,6 +807,7 @@ public class ReservationDAO {
 					reservation.setPrice(rs.getInt("price"));
 					reservation.setPayStatus(rs.getString("pay_status"));
 					reservation.setMemo(rs.getString("memo"));
+					reservation.setAddition(rs.getString("addition"));
 					reservations.add(reservation);
 				}while(rs.next());
 			}
@@ -843,6 +855,7 @@ public class ReservationDAO {
 					reservation.setPrice(rs.getInt("price"));
 					reservation.setPayStatus(rs.getString("pay_status"));
 					reservation.setMemo(rs.getString("memo"));
+					reservation.setAddition(rs.getString("addition"));
 					reservations.add(reservation);
 				}while(rs.next());
 			}
@@ -881,6 +894,7 @@ public class ReservationDAO {
 				reservation.setPrice(rs.getInt("price"));
 				reservation.setPayStatus(rs.getString("pay_status"));
 				reservation.setMemo(rs.getString("memo"));
+				reservation.setAddition(rs.getString("addition"));
 			}
 		}catch(Exception e){
 			e.printStackTrace();

@@ -13,24 +13,25 @@
                 <br><br>
                 상호명 : 더드림핑<br>
                 대표자명 : 맹정환<br>
-                주소 : 경기도 남양주시 화도읍 금남리 123<br>
-                대표전화 : 1500-0000<br>
-                현장전화 : 000.0000.0000</p>
+                 주소 : 경기도 남양주시 화도읍 금남리 123<br>
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(북한강로 1630-18)<br>
+                대표전화 : 031-559-8763<br>
+                현장전화 : 010.8893.9088</p>
             </div>
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p><font color="#000000" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>LICENCE</strong></span></font>
                 <br><br>
                 사업자등록번호 : 000-000-000000<br>
                 통신판매신고번호 :&nbsp;<br>
-       e-mail : thedreamping@gmail.com<br>
+       e-mail : thedreamping<br>
                 개인정보보호정책 책임자 : 맹정환</p>
             </div>
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p><font color="#7c7c7c" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>BANK INFO<br></strong></span></font>
                 <br>
-                은행명 : OO은행<br>
-                계좌번호 : 000-0000-000-00<br>
-                예금주 : 더드림핑</p>
+               은행명 : 국민은행<br>
+                계좌번호 : 401301-04-057170<br>
+                예금주 : 엠앤엠레저컨설팅</p>
             </div>
 
         </div>

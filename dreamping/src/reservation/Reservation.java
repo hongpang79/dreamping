@@ -194,6 +194,9 @@ public class Reservation extends HttpServlet {
 			resultMap.put("highSeasonWeekday", Integer.toString(site.getHighSeasonWeekday()));
 			resultMap.put("highSeasonWeekend", Integer.toString(site.getHighSeasonWeekend()));
 			resultMap.put("highSeasonPicnic", Integer.toString(site.getHighSeasonPicnic()));
+			resultMap.put("peakSeasonWeekday", Integer.toString(site.getPeakSeasonWeekday()));
+			resultMap.put("peakSeasonWeekend", Integer.toString(site.getPeakSeasonWeekend()));
+			resultMap.put("peakSeasonPicnic", Integer.toString(site.getPeakSeasonPicnic()));
 			resultMap.put("sale", Integer.toString(site.getSale()));
 			resultMap.put("saleYn", saleYn);
 			resultMap.put("flatPriceYn", flatPriceYn);
