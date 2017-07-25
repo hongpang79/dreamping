@@ -13,8 +13,7 @@ drop table zone_information;
 drop table holyday;
 drop table siteboard;
 
-ALTER TABLE `thedreamping`.`reservation` 
-ADD COLUMN `addition` VARCHAR(2048) NULL DEFAULT NULL AFTER `pay_status`;
+
 
 CREATE TABLE `comboard` (
   `num` int(11) NOT NULL auto_increment,
@@ -192,6 +191,7 @@ INSERT INTO `refund` VALUES (7,'P',90);
 INSERT INTO `refund` VALUES (5,'P',70);
 INSERT INTO `refund` VALUES (3,'P',50);
 INSERT INTO `refund` VALUES (1,'P',20);
+INSERT INTO `refund` VALUES (0,'P',0);
 
 CREATE TABLE `sms_manager` (
   `msg_no` int(5) NOT NULL,
@@ -201,12 +201,12 @@ CREATE TABLE `sms_manager` (
   PRIMARY KEY  (`msg_no`,`dvsn`)
 ) ENGINE=MyISAM;
 
-INSERT INTO `sms_manager` VALUES (1,'user','예약완료(무통장입금)','드림핑 [DATE]에 [SITENAME]의 예약신청이 완료되었습니다');
-INSERT INTO `sms_manager` VALUES (2,'user','입금안내 메시지(무통장입금)','드림핑 입금계좌안내 [BANK][ACCOUNT] [DEPOSITOR] [PRICE]원');
+INSERT INTO `sms_manager` VALUES (1,'user','예약접수(무통장입금)','드림핑 [DATE]에 [SITENAME]의 예약신청이 완료되었습니다 입금계좌는 [BANK][ACCOUNT] [DEPOSITOR] [PRICE]원이며, [DEPOSITDATE]까지 입금 부탁 드립니다. 입금이 확인되면 예약이 완료되며, 미입금시에는 예약이 취소됩니다.');
+INSERT INTO `sms_manager` VALUES (2,'user','입금안내 메시지(무통장입금)','입금계좌는 [BANK][ACCOUNT] [DEPOSITOR] [PRICE]원이며, [DEPOSITDATE]까지 입금 부탁 드립니다. 입금이 확인되면 예약이 완료되며, 미입금시에는 예약이 취소됩니다.');
 INSERT INTO `sms_manager` VALUES (3,'user','결제완료(무통장입금)','드림핑 [DATE]에 [SITENAME]의 입금 확인되었습니다. 감사합니다');
 INSERT INTO `sms_manager` VALUES (4,'user','예약취소완료','드림핑 [DATE]에 [SITENAME]의 예약취소가 처리되었습니다');
 INSERT INTO `sms_manager` VALUES (5,'user','환불완료','드림핑 [DATE]에 [SITENAME]의 취소하신 예약환불처리가 완료되었습니다');
-INSERT INTO `sms_manager` VALUES (1,'admin','예약완료(무통장입금)','드림핑 [DATE]에 [SITENAME]의 예약신청이 접수되었습니다');
+INSERT INTO `sms_manager` VALUES (1,'admin','예약접수(무통장입금)','드림핑 [DATE]에 [SITENAME]의 예약신청이 접수되었습니다');
 INSERT INTO `sms_manager` VALUES (2,'admin','입금안내 메시지(무통장입금)','');
 INSERT INTO `sms_manager` VALUES (3,'admin','결제완료(무통장입금)','');
 INSERT INTO `sms_manager` VALUES (4,'admin','예약취소완료','드림핑 [DATE]에 [SITENAME]의 예약이 취소되었습니다(환불없음)');
@@ -222,7 +222,7 @@ CREATE TABLE `sms_phone` (
 ) ENGINE=MyISAM ;
 
 INSERT INTO `sms_phone` VALUE ('01093167879','홍성규','manager','관리자');
-INSERT INTO `sms_phone` VALUE ('01000000000','김예은','admin','운영자');
+INSERT INTO `sms_phone` VALUE ('01059699972','이민진','admin','예약관리자');
 
 CREATE TABLE `sms_log` (
   `log_no` int(18) NOT NULL auto_increment,

@@ -121,7 +121,8 @@ public class CallSMS {
 	public static  void callCafe24SmsSender(int reservationNo, int msgNo, String type, String phoneNumber, String subject, String msg){
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-       
+        String orgMsg = msg;
+        
 		try {
 			String charsetType = "UTF-8";
 			String sms_url = "https://sslsms.cafe24.com/sms_sender.php"; // SMS 전송요청 URL
@@ -268,7 +269,7 @@ public class CallSMS {
 	        
 	        
 	        String SQL = "INSERT INTO sms_log (reservation_no, msg_no, phone_number, msg, return_code, return_msg, reg_date) "
-					+ "VALUES ("+reservationNo+","+msgNo+",'"+phoneNumber+"','"+msg+"','"+returnCode+"','"+alert+"',NOW())";
+					+ "VALUES ("+reservationNo+","+msgNo+",'"+phoneNumber+"','"+orgMsg+"','"+returnCode+"','"+alert+"',NOW())";
 			
 			conn = ConnectionUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);

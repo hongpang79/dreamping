@@ -76,6 +76,7 @@
 	String cLinkB = "";
 	int bluRed = 0;
 	String additionYn = "N";
+
 %>
 <jsp:include page="/header.jsp" />
 <link rel="stylesheet" href="/reservation/css/template.css?ver=3">
@@ -208,7 +209,7 @@ ol, ul, li {list-style:none;}
 												}
 											}
 										
-											cLinkF=""+(count-1);
+											cLinkF=""+(count);
 											cLinkB=zone.get(j).getZoneName();
 										
 											if(bluRed == 0){

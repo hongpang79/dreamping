@@ -256,7 +256,7 @@ public class Reservation extends HttpServlet {
 			String[] additionCnt = request.getParameterValues("additionCnt[]");
 			String additionTotal = request.getParameter("additionTotal");
 			String addition = "";
-			if(additionNo != null & additionNo.length > 0){
+			if(additionNo != null && additionNo.length > 0){
 				for(int x=0; x<additionNo.length; x++){
 					addition += additionName[x] + " [수량 : " + additionCnt[x] + " 개] <br>";
 				}
