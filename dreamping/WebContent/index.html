@@ -457,6 +457,9 @@ if($detect->isMobile() && !$detect->isTablet()) { $TEXT = "STEXT"; $MSIZE = 200;
 	$(document).ready(function () {
 		$('.stage').hide();
 		setTimeout(intro,500);
+		
+		//modal popup
+		$('#my-modal').modal('show');
     });
 	
 	function intro() {
@@ -530,9 +533,22 @@ function ani_logo() {
 		}
 	});
 }
-	
-</script>  
-  
+
+// modal popup link
+$('#popup_img').click(function(){
+	 location.href="/Reservation.do";
+});
+</script> 
+<div id="my-modal" class="modal fade" aria-labelledby="my-modalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+    <div class="modal-dialog" data-dismiss="modal">
+        <div class="modal-content"  >              
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <img id="popup_img" src="/dreamping/img/popup/IMG-5165.JPG" class="img-responsive" style="width: 100%;"/>
+            </div> 
+        </div>
+    </div>
+</div>  
   <input name="animation" type="hidden">
   </body>
 </html>

@@ -215,4 +215,26 @@
     </div>
 </section>
 
-<jsp:include page="/footer.jsp" />
+<div id="my-modal" class="modal fade" aria-labelledby="my-modalLabel" aria-hidden="true" tabindex="-1" role="dialog">
+    <div class="modal-dialog" data-dismiss="modal">
+        <div class="modal-content"  >              
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <img id="popup_img" src="/dreamping/img/popup/IMG-5165.JPG" class="img-responsive" style="width: 100%;"/>
+            </div> 
+        </div>
+    </div>
+</div>
+<jsp:include page="/footer.jsp"  />
+
+<script type="text/javascript">
+ $(document).ready(function(){
+	 $('#my-modal').modal('show');
+	 
+ });
+ 
+ $('#popup_img').click(function(){
+	 location.href="/Reservation.do";
+ });
+
+</script>
