@@ -369,8 +369,8 @@ public class ProductDAO {
 			}else{
 				productName = request.getParameter("productName");
 				zoneNo = Integer.parseInt((String)request.getParameter("zoneNo"));
-				siteNo = Integer.parseInt((String)request.getParameter("siteNo"));
-				siteName = request.getParameter("siteName");
+				siteNo = (String)request.getParameter("siteNo")==null?0:Integer.parseInt((String)request.getParameter("siteNo"));
+				siteName = request.getParameter("siteName")==null?request.getParameter("productName"):request.getParameter("siteName");
 				users = Integer.parseInt((String)request.getParameter("users"));
 				maxUsers = Integer.parseInt((String)request.getParameter("maxUsers"));
 				addChildPrice = Integer.parseInt((String)request.getParameter("addChildPrice"));

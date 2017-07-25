@@ -94,6 +94,11 @@ public class Reservation extends HttpServlet {
 			String additionYn = request.getParameter("chooseAddition");
 			if(additionYn.equals("Y")){
 				path = "/reservation/reservationAddition.jsp";
+				
+				String chooseZoneName = request.getParameter("chooseZoneName");
+				Map<String, String> additionProduct = action.getAdditionProduct(chooseZoneName);
+				request.setAttribute("chooseProductNo", additionProduct.get("productNo"));
+				request.setAttribute("chooseProductName", additionProduct.get("productName"));
 			}else{
 				path = "/reservation/reservationSite.jsp";
 			}

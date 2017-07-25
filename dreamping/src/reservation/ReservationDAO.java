@@ -639,34 +639,36 @@ public class ReservationDAO {
 //						System.out.println("setReservation - reservationNo : "+ rs.getInt(1));
 						reservationNo = rs.getInt(1);
 					}
-								
-					SQL = "INSERT INTO reservation_day (reservation_month,reservation_day,zone_name,site_no,reservation_no,pay_status,reg_date)" +
-							" VALUES(?,?,?,?,?,?,NOW())";
 					
-					int loop = night;
-					if(loop == 0){
-						loop = loop + 1;
-					}
-					for(int i=0; i<loop; i++){
-						pstmt = conn.prepareStatement(SQL);
-						if(i==0){
-							pstmt.setString(1, chooseDate.substring(0,6));
-							pstmt.setString(2, chooseDate);
-						}else{
-							cal.set(Integer.parseInt(chooseDate.substring(0,4)),Integer.parseInt(chooseDate.substring(4,6))-1,Integer.parseInt(chooseDate.substring(6,8)));
-							cal.add(Calendar.DATE,i);
-							endDate = cal.get(Calendar.YEAR)+"";
-							mm = ((cal.get(Calendar.MONTH)+1) < 10) ? "0"+(cal.get(Calendar.MONTH)+1) : (cal.get(Calendar.MONTH)+1)+"";
-							dd = (cal.get(Calendar.DATE) < 10) ? "0"+cal.get(Calendar.DATE) : cal.get(Calendar.DATE)+"";
-							endDate = endDate + mm + dd;
-							pstmt.setString(1, endDate.substring(0,6));
-							pstmt.setString(2, endDate);
+					if(siteNo > 0){
+						SQL = "INSERT INTO reservation_day (reservation_month,reservation_day,zone_name,site_no,reservation_no,pay_status,reg_date)" +
+								" VALUES(?,?,?,?,?,?,NOW())";
+						
+						int loop = night;
+						if(loop == 0){
+							loop = loop + 1;
 						}
-						pstmt.setString(3, chooseZone);
-						pstmt.setInt(4, siteNo);
-						pstmt.setInt(5, reservationNo);
-						pstmt.setString(6, "W");
-						pstmt.executeUpdate();
+						for(int i=0; i<loop; i++){
+							pstmt = conn.prepareStatement(SQL);
+							if(i==0){
+								pstmt.setString(1, chooseDate.substring(0,6));
+								pstmt.setString(2, chooseDate);
+							}else{
+								cal.set(Integer.parseInt(chooseDate.substring(0,4)),Integer.parseInt(chooseDate.substring(4,6))-1,Integer.parseInt(chooseDate.substring(6,8)));
+								cal.add(Calendar.DATE,i);
+								endDate = cal.get(Calendar.YEAR)+"";
+								mm = ((cal.get(Calendar.MONTH)+1) < 10) ? "0"+(cal.get(Calendar.MONTH)+1) : (cal.get(Calendar.MONTH)+1)+"";
+								dd = (cal.get(Calendar.DATE) < 10) ? "0"+cal.get(Calendar.DATE) : cal.get(Calendar.DATE)+"";
+								endDate = endDate + mm + dd;
+								pstmt.setString(1, endDate.substring(0,6));
+								pstmt.setString(2, endDate);
+							}
+							pstmt.setString(3, chooseZone);
+							pstmt.setInt(4, siteNo);
+							pstmt.setInt(5, reservationNo);
+							pstmt.setString(6, "W");
+							pstmt.executeUpdate();
+						}
 					}
 					
 					if(result == 1){
@@ -1109,5 +1111,28 @@ public class ReservationDAO {
 			close(rs,pstmt,conn);
 		}
 		return additionList;
+	}
+	
+	public Map<String,String> getAdditionProduct(String zoneName){
+		Map<String, String> product = new HashMap<String,String>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String SQL = "select * from product where zone_no = (select zone_no from zone_information where zone_name = ?";
+		try{
+			conn = ConnectionUtil.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, zoneName);
+			rs = pstmt.executeQuery();
+			if( rs.next() ){
+				product.put("productNo",Integer.toString(rs.getInt("product_no")));	    // 고유번호 primary key
+				product.put("productName",rs.getString("product_name"));				// site이름
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			close(rs,pstmt,conn);
+		}
+		return product;
 	}
 }

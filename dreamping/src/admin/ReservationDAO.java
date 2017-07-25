@@ -373,12 +373,12 @@ public class ReservationDAO {
 	
 	// 리스트출력 환불정보 검색(YYYY-MM-DD ~ YYYY-MM-DD)
 	public Vector<ReservationVO> selectRefundList(String startDate, String endDate, String periodGubun, String searchSite, String searchUserName, String mode){
-		System.out.println("[ReservationDAO][selectRefundList] [startDate] : " + startDate);
-		System.out.println("[ReservationDAO][selectRefundList] [endDate] : " + endDate);
-		System.out.println("[ReservationDAO][selectRefundList] [periodGubun] : " + periodGubun);
-		System.out.println("[ReservationDAO][selectRefundList] [searchSite] : " + searchSite);
-		System.out.println("[ReservationDAO][selectRefundList] [searchUserName] : " + searchUserName);
-		System.out.println("[ReservationDAO][selectRefundList] [mode] : " + mode);
+//		System.out.println("[ReservationDAO][selectRefundList] [startDate] : " + startDate);
+//		System.out.println("[ReservationDAO][selectRefundList] [endDate] : " + endDate);
+//		System.out.println("[ReservationDAO][selectRefundList] [periodGubun] : " + periodGubun);
+//		System.out.println("[ReservationDAO][selectRefundList] [searchSite] : " + searchSite);
+//		System.out.println("[ReservationDAO][selectRefundList] [searchUserName] : " + searchUserName);
+//		System.out.println("[ReservationDAO][selectRefundList] [mode] : " + mode);
 		
 		Vector<ReservationVO> reservations = null;
 		
@@ -454,7 +454,7 @@ public class ReservationDAO {
 				     ANDSITE + ANDUSER + ANDMODE +
 				     "ORDER BY reservation_date DESC";
 		}
-			System.out.println("[ReservationDAO][selectRefundList] SQL = " + SQL);
+//			System.out.println("[ReservationDAO][selectRefundList] SQL = " + SQL);
 		try{
 			conn = ConnectionUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);

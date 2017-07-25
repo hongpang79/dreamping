@@ -13,6 +13,8 @@
 	
 	String chooseZone = request.getParameter("chooseZoneName");
 	String chooseDate = request.getParameter("chooseDate").toString();
+	String chooseProductNo = request.getParameter("chooseProductNo");
+	String chooseProductName = request.getParameter("chooseProductName");
 %>
 <jsp:include page="/header.jsp" />
 <link rel="stylesheet" href="/reservation/css/template.css?ver=3">
@@ -38,7 +40,7 @@
 		<input type="hidden" id="chooseZone" name="chooseZone" value="<%= chooseZone %>" />
 		<input type="hidden" name="chooseDate" value="<%= chooseDate %>" />
 		<input type="hidden" name="payment" value="bank" />
-		<input type="hidden" id="productName" name="productName" value="" />
+		<input type="hidden" id="productName" name="productName" value="<%= chooseProductName %>" />
 		<input type="hidden" id="siteNo" name="siteNo" value="0" />
 		<input type="hidden" id="payAll" name="payAll" value="" />
 		<input type="hidden" id="sitePrice" name="sitePrice" value="" />
@@ -49,7 +51,7 @@
 		<input type="hidden" id="saleYn" name="saleYn" value=""/>
 		<input type="hidden" id="sale" name="sale" value="" />
 		<input type="hidden" id="nights" name="nights" value="0" />
-		<input type="hidden" id="productNo" name="productNo" value="0" />
+		<input type="hidden" id="productNo" name="productNo" value="<%= chooseProductNo %>" />
 		<input type="hidden" id="toddler" name="toddler" value="0" />
 		<input type="hidden" id="child" name="child" value="0" />
 		<input type="hidden" id="users" name="users" value="0" />
@@ -444,34 +446,6 @@ function calculatePayAll(){
 }
 
 function chkReservation(){
-	
-	var maxUser = Number(document.resForm.maxUser.value);
-	var child = Number(document.resForm.child.value);
-	var users = Number(document.resForm.users.value);
-	
-	var userSum = child+users;
-	if(maxUser < userSum){
-		alert("최대인원보다 많은 인원이 선택되었습니다.");
-		$("select#users").focus();
-		return false;
-	}
-	
-	if ($("select#nights option:selected").val() == ''){
-		alert("이용기간을 선택하세요.");
-		$("select#nights").focus();
-		return false;
-	}
-	if ($("select#productNo option:selected").val() < 1){
-		alert("Site No.를 선택하세요.");
-		$("select#productNo").focus();
-		return false;
-	}
-	
-	if ($("select#users option:selected").val() < 1){
-		alert("이용인원을 선택하세요.");
-		$("select#users").focus();
-		return false;
-	}
 	
 	if ($("#r_name").val() == ''){
 		alert("예약자명을 입력하십시요.");

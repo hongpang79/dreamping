@@ -99,7 +99,7 @@
 					<table class="table1">
 					  <tbody>
 						<tr>
-							<th style="width:105px;">ZONE</th>
+							<th style="width:105px;">시설명</th>
 							<td><strong><%= chooseZone %></strong></td>
 						</tr>
 						<tr>
@@ -111,7 +111,7 @@
 							<td><%= nights %>박 <%=iNight %>일</td>
 						</tr>
 						<tr>
-							<th style="width:105px;">Site No.</th>
+							<th style="width:105px;">상품명</th>
 							<td><%= productName %></td>
 						</tr>
 						<tr>
