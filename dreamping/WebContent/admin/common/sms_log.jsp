@@ -182,7 +182,7 @@ List<Map<String,Object>> smsLogs = SmsDAO.getInstance().selectSmsLog(startDate,e
             <b>[사용안내]</b><br>
 			<b class=ol>ㆍ</b>SMS발송내역을 조회할 수 있습니다.<br>
 			<b class=ol>ㆍ</b>발송실패의 경우 충전금액이 차감되지 않습니다.<br>
-			<b class=ol>ㆍ</b>충전금액 부족으로 발송이 안되는 경우 http://www.sendgo.co.kr/ 접속하여 충전하여 주십시오<br>
+			<b class=ol>ㆍ</b>충전금액 부족으로 발송이 안되는 경우 cafe24 smshosting으로 접속하여 충전하여 주십시오<br>
         </td>
     </tr>
 </table>

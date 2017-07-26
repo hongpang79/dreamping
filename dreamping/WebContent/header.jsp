@@ -51,9 +51,10 @@
                     	<li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="#" aria-expanded="false" data-toggle="dropdown-submenu">Vintage Village</a>
                     		<div class="dropdown-menu">
                     			<a class="dropdown-item" href="/dreamping/village.html">전체보기</a>
-	                    		<a class="dropdown-item" href="/dreamping/village.html">VINTAGE CARAVAN</a>
-	                    		<a class="dropdown-item" href="/dreamping/village.html">VINTAGE CAVANA</a>
+	                    		<a class="dropdown-item" href="/dreamping/caraban.html">VINTAGE CARAVAN</a>
+	                    		<a class="dropdown-item" href="/dreamping/cabana.html">VINTAGE CABANA</a>
 	                    		<a class="dropdown-item" href="/dreamping/village.html">VINTAGE TIPI</a>
+	                    		<a class="dropdown-item" href="/dreamping/facility.html">부대시설</a>
                     		</div>
                     	</li>
                     	<li class="nav-item"><a class="nav-link link" href="/dreamping/surfcafe.html" aria-expanded="false">SURF CAFE</a></li>

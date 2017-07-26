@@ -19,54 +19,14 @@
         <div>
             <div>
                 <ol class="carousel-indicators">
-                    <li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="0" class="active"></li><li data-app-prevent-settings="" data-target="#slider-1" class="" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="2"></li>
+                    <li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="0" class="active"></li>
+                    <li data-app-prevent-settings="" data-target="#slider-1" class="" data-slide-to="1"></li>
+                    <li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(assets/images/man-back.jpg);">
-                        <div class="mbr-table-cell">
-                            <div class="mbr-overlay"></div>
-                            <div class="container-slide container">
-                                
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                        <h2 class="mbr-section-title display-1">FULL SCREEN SLIDER</h2>
-                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
-
-                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(assets/images/sparklers.jpg);">
-                        <div class="mbr-table-cell">
-                            
-                            <div class="container-slide container">
-                                
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-1">
-                                        <h2 class="mbr-section-title display-1">VIDEO SLIDE</h2>
-                                        <p class="mbr-section-lead lead">Slide with youtube video background and color overlay. Title and text are aligned to the left.</p>
-
-                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-primary" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(assets/images/sparklers.jpg);">
-                        <div class="mbr-table-cell">
-                            <div class="mbr-overlay"></div>
-                            <div class="container-slide container">
-                                
-                                <div class="row">
-                                    <div class="col-md-8 col-md-offset-3 text-xs-right">
-                                        <h2 class="mbr-section-title display-1">IMAGE SLIDE</h2>
-                                        <p class="mbr-section-lead lead">Choose from the large selection of latest pre-made blocks - jumbotrons, hero images, parallax scrolling, video backgrounds, hamburger menu, sticky header and more.</p>
-
-                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(/dreamping/img2/dfshsfsj.PNG);">
+                    </div>
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/dreamping/img2/cally.PNG);">
                     </div>
                 </div>
                 <a data-app-prevent-settings="" class="left carousel-control" role="button" data-slide="prev" href="#slider-1">
@@ -88,12 +48,14 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
               <div class="card cart-block">
-                  <div class="card-img"><img src="img/caravan_small.jpg" class="card-img-top"></div>
+                  <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658022.jpg" class="card-img-top"></div>
                   <div class="card-block">
                     <h4 class="card-title">VINTAGE CARAVAN</h4>
+                    <!-- 
                     <h5 class="card-subtitle">Bootstrap 4 has been noted</h5>
                     <p class="card-text">Bootstrap 4 has been noted as one of the most reliable and proven frameworks and Mobirise has been equipped to develop websites using this framework.</p>
                     <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                     -->
                     </div>
                 </div>
             </div>
@@ -101,12 +63,14 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="img/cavana_small.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658337.jpg" class="card-img-top"></div>
                     <div class="card-block">
-                        <h4 class="card-title">VINTAGE CAVANA</h4>
+                        <h4 class="card-title">VINTAGE CABANA</h4>
+                        <!-- 
                         <h5 class="card-subtitle">One of Bootstrap 4's big points</h5>
                         <p class="card-text">One of Bootstrap 4's big points is responsiveness and Mobirise makes effective use of this by generating highly responsive website for you.</p>
                         <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                         -->
                     </div>
                 </div>
             </div>
@@ -114,12 +78,14 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="img/tipi.png" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658169.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">VINTAGE TIPI</h4>
+                        <!-- 
                         <h5 class="card-subtitle">Google has a highly exhaustive list of fonts</h5>
                         <p class="card-text">Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise makes it easy for you to use them on your website easily and freely.</p>
                         <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                         -->
                     </div>
                 </div>
             </div>
@@ -133,12 +99,14 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
               <div class="card cart-block">
-                  <div class="card-img"><img src="img/surfcafe.png" class="card-img-top"></div>
+                  <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658472.jpg" class="card-img-top"></div>
                   <div class="card-block">
                     <h4 class="card-title"><font color="#000000">SURF CAFE</font></h4>
+                    <!-- 
                     <h5 class="card-subtitle">Bootstrap 4 has been noted</h5>
                     <p class="card-text">Bootstrap 4 has been noted as one of the most reliable and proven frameworks and Mobirise has been equipped to develop websites using this framework.</p>
                     <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                     -->
                     </div>
                 </div>
             </div>
@@ -146,12 +114,14 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="img/mm_small.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658678.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">M&amp;M Watersports</h4>
+                        <!-- 
                         <h5 class="card-subtitle">One of Bootstrap 4's big points</h5>
                         <p class="card-text">One of Bootstrap 4's big points is responsiveness and Mobirise makes effective use of this by generating highly responsive website for you.</p>
                         <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                         -->
                     </div>
                 </div>
             </div>
@@ -159,12 +129,14 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="img/sniper.png" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212657818.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">DREAM Sniper</h4>
+                        <!-- 
                         <h5 class="card-subtitle">Google has a highly exhaustive list of fonts</h5>
                         <p class="card-text">Google has a highly exhaustive list of fonts compiled into its web font platform and Mobirise makes it easy for you to use them on your website easily and freely.</p>
                         <div class="card-btn"><a href="https://mobirise.com" class="btn btn-primary">예약하기</a></div>
+                         -->
                     </div>
                 </div>
             </div>
@@ -229,7 +201,7 @@
 
 <script type="text/javascript">
  $(document).ready(function(){
-	 $('#my-modal').modal('show');
+	 //$('#my-modal').modal('show');
 	 
  });
  

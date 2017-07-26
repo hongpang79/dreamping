@@ -205,7 +205,7 @@ public class SmsDAO {
 		ResultSet rs = null;
 		
 		String SQL = "select * from sms_log where reg_date between DATE_FORMAT(?,'%Y-%m-%d') and DATE_FORMAT(?,'%Y-%m-%d')"
-				+ " order by reg_date";
+				+ " order by reg_date desc";
 
 		try{
 			conn = ConnectionUtil.getConnection();
