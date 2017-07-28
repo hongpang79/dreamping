@@ -3,8 +3,8 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Lora:400,700);
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);
-
-
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 
 
 
@@ -13,7 +13,7 @@ body,
 input,
 textarea,
 .mbr-company .list-group-text {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 .mbr-footer-content li,
 .mbr-footer .mbr-contacts li {
@@ -57,6 +57,7 @@ h6,
 .mbr-footer .mbr-contacts strong {
   font-family: 'Montserrat', sans-serif;
 }
+
 .btn {
   border-radius: 1.6em;
 }
@@ -72,11 +73,14 @@ h6,
 .mbr-testimonial .card-block {
   font-family: 'Lora', serif;
 }
+.mbr-section-title {
+  font-family: 'Montserrat', sans-serif;
+}
 .mbr-author-name {
   font-family: 'Montserrat', sans-serif;
 }
 .mbr-author-desc {
-  font-family: 'Lora', serif;
+  font-family: 	'Lora', serif;
 }
 .mbr-plan-title {
   font-family: 'Montserrat', sans-serif;
@@ -902,4 +906,7 @@ h6,
 }
 #contacts1-18 SPAN {
   color: #232323;
+}
+.brush {
+  font-family: 'Nanum Brush Script', serif;
 }
