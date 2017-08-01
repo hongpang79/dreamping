@@ -11,9 +11,9 @@
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p><font color="#000000" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>INFORMATION</strong></span></font>
                 <br><br>
-                상호명 : 더드림핑<br>
+                상호명 : 엠엔엠레저컨설팅<br>
                 대표자명 : 맹정환<br>
-                 주소 : 경기도 남양주시 화도읍 금남리 123<br>
+                 주소 : 경기도 남양주시 화도읍 금남리 105-1<br>
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(북한강로 1630-18)<br>
                 대표전화 : 031-559-8763<br>
                 현장전화 : 010.8893.9088</p>
@@ -21,9 +21,9 @@
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p><font color="#000000" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>LICENCE</strong></span></font>
                 <br><br>
-                사업자등록번호 : 000-000-000000<br>
+                사업자등록번호 : 381-63-00132<br>
                 통신판매신고번호 :&nbsp;<br>
-       e-mail : thedreamping<br>
+       e-mail : <br>
                 개인정보보호정책 책임자 : 맹정환</p>
             </div>
             <div class="mbr-footer-content col-xs-12 col-md-3">
