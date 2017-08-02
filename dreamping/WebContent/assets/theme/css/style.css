@@ -459,7 +459,6 @@ p.lead,
   font-weight: 300; }
   .lead a {
     font-family: "Lora";
-    font-style: italic;
     font-weight: 400; }
     .lead a, .lead a:hover {
       color: #c0a375;
@@ -483,8 +482,7 @@ p.lead,
     font-weight: 600;
     margin-bottom: 1.605rem; }
   .lead blockquote {
-    font-family: "Lora";
-    font-style: italic;
+    font-family: "Noto Sans KR";
     padding: 10px 0 10px 20px;
     border-left: 4px solid #c39f76;
     font-size: 1.09rem;
@@ -501,7 +499,7 @@ p.lead,
   font-weight: 600;
   letter-spacing: -2px;
   margin-bottom: 0.2843em;
-  margin-top: 3.9rem; }
+  /*margin-top: 3.9rem; */}
 
 .display-2 {
   font-size: 3rem;
