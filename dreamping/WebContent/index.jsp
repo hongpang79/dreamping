@@ -22,7 +22,7 @@
                     <li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="0" class="active"></li><li data-app-prevent-settings="" data-target="#slider-1" class="" data-slide-to="1"></li><li data-app-prevent-settings="" data-target="#slider-1" data-slide-to="2"></li>
                 </ol>
                 <div class="carousel-inner" role="listbox">
-                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(/dreamping/img/IMG_8801.jpg);">
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full active" data-bg-video-slide="false" style="background-image: url(/dreamping/00_images/IMG_8801.jpg);">
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay"></div>
                             <div class="container-slide container">
@@ -30,24 +30,23 @@
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 text-xs-center">
                                         <h2 class="mbr-section-title display-1">DREAMPING</h2>
-                                        <p><img src="/dreamping/img/IMG_5279.png"/></p>
-                                        <!-- 
                                         <p class="mbr-section-lead lead">Dream space, Dreaming space</p>
+                                        <!-- 
                                         <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
                                     	 -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/dreamping/img/IMG_8804.jpg);">
+                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/dreamping/00_images/IMG_8804.jpg);">
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay"></div>
                             <div class="container-slide container">
                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-3 text-xs-right">
-                                        <h2 class="mbr-section-title display-1">DREAMPING</h2>
-                                        <p class="mbr-section-lead lead">Dream space, Dreaming space</p>
+                                        <h2 class="mbr-section-title display-1">OPEN EVENT</h2>
+                                        <p class="mbr-section-lead lead">The Dreamping 20% 할인이벤트</p>
 										<!-- 
                                         <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
                                     	 -->
@@ -70,13 +69,57 @@
     </div>
 </section>
 
+<!-- VIP -->
+<section class="mbr-cards mbr-section" id="testimonials1-1h" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 120px;">
+
+        <div class="mbr-section mbr-section__container mbr-section__container--middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-xs-center">
+                        <h3 class="mbr-section-title display-2">THE DREAMPING EXPERIENCE</h3>
+                        <small class="mbr-section-subtitle">꿈꾸던 공간, 꿈꾸는 공간 더드림핑을 경험하다.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="mbr-section mbr-section-nopadding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="mbr-testimonial card">
+                        <div class="card-block"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/760v9wo19D8?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div></div>
+                        <div class="mbr-author card-footer">
+                            <div class="mbr-author-name">더드림핑전경</div>
+                            <small class="mbr-author-desc">드론촬영 2017.08.03</small>
+                        </div>
+                    </div><div class="mbr-testimonial card">
+                        <div class="card-block"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://www.youtube.com/embed/vBIvx4pDgk0?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div></div>
+                        <div class="mbr-author card-footer">
+                            <div class="mbr-author-name">전현무</div>
+                            <small class="mbr-author-desc">엔터테이너</small>
+                        </div>
+                    </div><div class="mbr-testimonial card">
+                        <div class="card-block"><img src="/dreamping/00_images/SIMG_5323.jpg" class="card-img-top"></div>
+                        <div class="mbr-author card-footer">
+                            <div class="mbr-author-name">허영지</div>
+                            <small class="mbr-author-desc">카라</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
 <!-- village -->
 <section class="mbr-cards mbr-section mbr-section-nopadding" id="features3-2" style="background-color: rgb(255, 255, 255);">
     <div class="mbr-cards-row row">
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
               <div class="card cart-block">
-                  <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658022.jpg" class="card-img-top"></div>
+                  <div class="card-img"><a href="/dreamping/caraban.html"><img src="/dreamping/00_images/KakaoTalk_20170723_212658022.jpg" class="card-img-top"></a></div>
                   <div class="card-block">
                     <h4 class="card-title">VINTAGE CARAVAN</h4>
                     <!-- 
@@ -91,7 +134,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658337.jpg" class="card-img-top"></div>
+                    <div class="card-img"><a href="/dreamping/cabana.html"><img src="/dreamping/00_images/KakaoTalk_20170723_212658337.jpg" class="card-img-top"></a></div>
                     <div class="card-block">
                         <h4 class="card-title">VINTAGE CABANA</h4>
                         <!-- 
@@ -106,7 +149,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658169.jpg" class="card-img-top"></div>
+                    <div class="card-img"><a href="#"><img src="/dreamping/00_images/KakaoTalk_20170723_212658169.jpg" class="card-img-top"></a></div>
                     <div class="card-block">
                         <h4 class="card-title">VINTAGE TIPI</h4>
                         <!-- 
@@ -127,7 +170,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
               <div class="card cart-block">
-                  <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658472.jpg" class="card-img-top"></div>
+                  <div class="card-img"><a href="#"><img src="/dreamping/00_images/KakaoTalk_20170723_212658472.jpg" class="card-img-top"></a></div>
                   <div class="card-block">
                     <h4 class="card-title"><font color="#000000">SURF CAFE</font></h4>
                     <!-- 
@@ -142,7 +185,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212658678.jpg" class="card-img-top"></div>
+                    <div class="card-img"><a href="#"><img src="/dreamping/00_images/KakaoTalk_20170723_212658678.jpg" class="card-img-top"></a></div>
                     <div class="card-block">
                         <h4 class="card-title">M&amp;M Watersports</h4>
                         <!-- 
@@ -157,7 +200,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="/dreamping/img/KakaoTalk_20170723_212657818.jpg" class="card-img-top"></div>
+                    <div class="card-img"><a href="#"><img src="/dreamping/00_images/KakaoTalk_20170723_212657818.jpg" class="card-img-top"></a></div>
                     <div class="card-block">
                         <h4 class="card-title">DREAM Sniper</h4>
                         <!-- 
@@ -193,7 +236,7 @@
 	        <div class="mbr-table-md-up">
                 <div class="mbr-table-cell mbr-right-padding-md-up col-md-8 text-xs-center text-md-left">
                     <h2 class="mbr-info-subtitle mbr-section-subtitle"><strong>MAP_</strong></h2>
-                    <h3 class="mbr-info-title mbr-section-title display-2"><span style="font-weight: normal;">경기도 남양주시 화도읍 북한강로 1630-18 (금남리 123)</span></h3>
+                    <h3 class="mbr-info-title mbr-section-title display-2"><span style="font-weight: normal;">경기도 남양주시 화도읍 북한강로 1630-18 (금남리 105-1)</span></h3>
                 </div>
                 <div class="mbr-table-cell col-md-4">
                 </div>
