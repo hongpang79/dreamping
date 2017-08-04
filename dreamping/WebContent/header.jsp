@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="/ico/favicon.ico">
   <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon.png">
   <meta property="og:image" content="/ico/thumbnail.png"/>
-  <meta name="description" content="끔꿔왔던 캠핑의 모든것 드림핑">
+  <meta name="description" content="꿈에 그리던 아웃도어 레저공간, 전혀 색다른 감성으로 가득찬 이곳에서 즐기고, 느끼며, 꿈꾸는 새로운 레저문화를 선도하는 공간">
   <title>DREAMPING</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">

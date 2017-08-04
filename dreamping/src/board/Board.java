@@ -87,7 +87,7 @@ public class Board extends HttpServlet {
 			//obj.put("data", result);
 			response.setCharacterEncoding("UTF-8");
 			response.getWriter().print(result);
-			System.out.println("data = " + result);
+//			System.out.println("data = " + result); //java.lang.NullPointerException
 		}else if(step.equals("passwordChk")){
 			int num = Integer.parseInt((String) request.getParameter("num"));
 //			String pageNum = request.getParameter("pageNum");

@@ -127,7 +127,7 @@ $(function() {
     <col width='80'></col>
 	<col width='100'></col>
 	<col></col>
-	<col width='80'></col>
+	<col width='160'></col>
     <tr height='30'>
         <td class='tbctr' align='center' >발송일자</td>
         <td class='tbctr' align='center' >휴대폰번호</td>

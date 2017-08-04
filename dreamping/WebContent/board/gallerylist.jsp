@@ -223,7 +223,7 @@ $(function(){
             </div>
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p><font color="#000000" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>INFORMATION</strong></span></font>
-                <br><br>
+                <br>
                 상호명 : 엠엔엠레저컨설팅<br>
                 대표자명 : 맹정환<br>
                  주소 : 경기도 남양주시 화도읍 금남리 105-1<br>
@@ -233,7 +233,7 @@ $(function(){
             </div>
             <div class="mbr-footer-content col-xs-12 col-md-3">
                 <p><font color="#000000" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>LICENCE</strong></span></font>
-                <br><br>
+                <br>
                 사업자등록번호 : 381-63-00132<br>
                 통신판매신고번호 :&nbsp;<br>
        e-mail : <br>

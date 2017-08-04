@@ -214,7 +214,7 @@ if(category.equals("notice")){
 					 <a href="#hide" onclick="$('#qna_pwd').show();$('#b_passwd').focus();$('#num').val('<%=article.getNum()%>')"><%=article.getSubject()%></a>
 					 <p class="writer m_b"><%=article.getWriter()%><span class="letter_zero"><%= sdf.format(article.getRegDate())%></span></p>
 				</td>
-				<td class="fs_14 fc_01 m_layout_tc"><%=article.getWriter()%></td>
+				<td class="fs_14 fc_01 m_layout_tc"><%=article.getWriter()%>&nbsp;</td>
 				<td class="letter_zero m_layout_tc"><%= sdf.format(article.getRegDate())%></td>				
 				<td class="letter_zero p_tc"><%=article.getReadCount()%></td>
 			</tr>	
