@@ -161,7 +161,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="http://thedreamping.cdn3.cafe24.com/dreamping/00_images/SIMG_8766.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/00_images/SIMG_8766.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">실내구성</h4>
                         <p class="card-text">침대(매트리스), 커피포트<br>에어컨, 냉장고<br>※공동 샤워실,화장실, 개수대 이용.</p>
@@ -172,7 +172,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="http://thedreamping.cdn3.cafe24.com/dreamping/00_images/SIMG_8759.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/00_images/SIMG_8759.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">구비품목</h4>
                         <p class="card-text">인덕션, 캠핑리빙도구일체<br>(수저세트, 칼, 도마, 코펠, 식기세트 등)<br>화롯대 일체</p>
@@ -183,7 +183,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="http://thedreamping.cdn3.cafe24.com/dreamping/00_images/SIMG_8779.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/00_images/SIMG_8779.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">개인준비물</h4>
                         <p class="card-text">세면도구, 식사 및 간식, 개인용품<br>※일반 수건은 준비되어 있습니다.</p>
@@ -194,7 +194,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="http://thedreamping.cdn3.cafe24.com/dreamping/00_images/SIMG_8787.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/00_images/SIMG_8787.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">예약안내</h4>
                         <p class="card-text">입실 오후 3시 / 퇴실 오전 11시</p>
@@ -214,169 +214,169 @@
                 <div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8742.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8742.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="1" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8743.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8743.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="2" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8745.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8745.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="3" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8746.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8746.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="4" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8749.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8749.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="5" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8750.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8750.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="6" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8751.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8751.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="7" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8752.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8752.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="8" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8755.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8755.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="9" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8756.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8756.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="10" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8759.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8759.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="11" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8760.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8760.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="12" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8763.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8763.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="13" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8764.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8764.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="14" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8766.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8766.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="15" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8768.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8768.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="16" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8770.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8770.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="17" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8771.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8771.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="18" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8778.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8778.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="19" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8779.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8779.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="20" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8781.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8781.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="21" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8787.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8787.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="22" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8798.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8798.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="23" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8799.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8799.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="24" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8801.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8801.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="25" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8802.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8802.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="26" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8803.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8803.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="카라반" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="27" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/10_caravan/SIMG_8804.jpg">
+                            <img alt="" src="/dreamping/10_caravan/SIMG_8804.jpg">
                             <span class="icon-focus"></span>
                         </div>
                     </div>
@@ -540,64 +540,64 @@
             <div>
                 <div>
                 	<div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="공용시설" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8890.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8890.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="공용시설" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/01_panorama/SIMG_8892.jpg">
+                        <img alt="" src="/dreamping/01_panorama/SIMG_8892.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="개수대" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8850.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8850.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="개수대" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8852.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8852.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="개수대" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8854.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8854.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="남자화장실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8855.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8855.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="남자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8857.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8857.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="남자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8859.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8859.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="남자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8860.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8860.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="남자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8861.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8861.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="남자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8863.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8863.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="남자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8865.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8865.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="여자화장실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8866.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8866.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="여자화장실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8869.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8869.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="여자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8872.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8872.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="여자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8873.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8873.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="여자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8876.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8876.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="여자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8878.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8878.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="여자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8879.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8879.jpg">
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="여자샤워실" data-video-url="false">
-                        <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/43_facilities/SIMG_8884.jpg">
+                        <img alt="" src="/dreamping/43_facilities/SIMG_8884.jpg">
                     </div>
                 </div>
             </div>

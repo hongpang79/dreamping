@@ -163,7 +163,7 @@
               <div class="card cart-block">
                   <div class="card-img">
                   	<div href="#lb-galleryVip" data-slide-to="0" data-toggle="modal">
-                  		<img src="http://thedreamping.cdn3.cafe24.com/dreamping/00_images/SIMG_8811.jpg" class="card-img-top">
+                  		<img src="/dreamping/00_images/SIMG_8811.jpg" class="card-img-top">
                   	</div>
                   </div>
                   <div class="card-block">
@@ -178,7 +178,7 @@
                 <div class="card cart-block">
                     <div class="card-img">
                     	<div href="#lb-galleryHan" data-slide-to="0" data-toggle="modal">
-                    		<img src="http://thedreamping.cdn3.cafe24.com/dreamping/00_images/SIMG_8840.jpg" class="card-img-top">
+                    		<img src="/dreamping/00_images/SIMG_8840.jpg" class="card-img-top">
                     	</div>
                     </div>	
                     <div class="card-block">
@@ -193,7 +193,7 @@
                 <div class="card cart-block">
                     <div class="card-img">
                     	<div href="#lb-galleryCube" data-slide-to="0" data-toggle="modal">
-                    		<img src="http://thedreamping.cdn3.cafe24.com/dreamping/00_images/SIMG_8890.jpg" class="card-img-top">
+                    		<img src="/dreamping/00_images/SIMG_8890.jpg" class="card-img-top">
                     	</div>
                     </div>
                     <div class="card-block">
