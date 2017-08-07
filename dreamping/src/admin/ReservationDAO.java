@@ -708,6 +708,7 @@ public class ReservationDAO {
 		
 		request.setCharacterEncoding("UTF-8");
 		int rtn = 0;
+		Boolean bSms = false;
 		
 		String zoneName = "";
 				
@@ -838,6 +839,8 @@ public class ReservationDAO {
 							users = 0;
 							price = 0;
 							content = "그룹예약건<br>("+oProductName+" 과 동일건 입니다.)";
+							
+							bSms = true;
 						}
 						pstmt = conn.prepareStatement(SQL4);
 						pstmt.setInt(1, siteNo);
@@ -874,63 +877,6 @@ public class ReservationDAO {
 							pstmt.executeUpdate();
 						}
 						
-						if(rtn > 0){
-							String phoneNumber = phone1+phone2+phone3;
-							resDate = resDate.substring(0,4)+"-"+resDate.substring(4,6)+"-"+resDate.substring(6);
-							if(phoneNumber.length() > 9){
-								
-								String depositDate = util.CommonUtil.callPlusDate(1);
-								depositDate = util.CommonUtil.isAfterDate(resDate, depositDate);
-//								System.out.println(depositDate);
-								String subject = "더드림핑 예약접수안내";
-								int msgNo = 1;
-								String dvsn = "user";
-								String msg = "";
-								SQL = "SELECT msg FROM sms_manager WHERE msg_no=? and dvsn=? ";
-								pstmt = conn.prepareStatement(SQL);
-								pstmt.setInt(1, msgNo);
-								pstmt.setString(2, dvsn);
-								rs = pstmt.executeQuery();
-								if( rs.next() ){
-									msg = rs.getString(1);
-									msg = msg.replace("[DATE]", resDate);
-									msg = msg.replace("[SITENAME]", productNames);
-									msg = msg.replace("[BANK]", bankName);
-									msg = msg.replace("[ACCOUNT]", account);
-									msg = msg.replace("[DEPOSITOR]", depositor);
-									msg = msg.replace("[PRICE]", util.CommonUtil.makeMoneyType(Integer.toString(totalPrice)));
-									msg = msg.replace("[DEPOSITDATE]", depositDate);
-								}
-								//System.out.println(reservationNo+","+msgNo+","+phoneNumber+","+msg);
-								util.CallSMS.callLMS(reservationNo, msgNo, phoneNumber, subject, msg);
-								
-								msgNo = 1;
-								dvsn = "admin";
-								SQL = "SELECT msg FROM sms_manager WHERE msg_no=? and dvsn=? ";
-								pstmt = conn.prepareStatement(SQL);
-								pstmt.setInt(1, msgNo);
-								pstmt.setString(2, dvsn);
-								rs = pstmt.executeQuery();
-								if( rs.next() ){
-									msg = rs.getString(1);
-									msg = msg.replace("[DATE]", resDate);
-									msg = msg.replace("[SITENAME]", productNames);
-									msg = msg.replace("[RESERVER]", reserver);
-									msg = msg + " 총금액은 "+ util.CommonUtil.makeMoneyType(Integer.toString(totalPrice))+"원 입니다.";
-								}
-								
-								SQL = "SELECT phone_number FROM sms_phone ";
-								pstmt = conn.prepareStatement(SQL);
-								rs = pstmt.executeQuery();
-								if( rs.next() ){
-									do{
-										phoneNumber = rs.getString(1);
-										//System.out.println(reservationNo+","+msgNo+","+phoneNumber+","+msg);
-										util.CallSMS.callLMS(reservationNo, msgNo, phoneNumber, subject, msg);
-									}while(rs.next());
-								}
-							}
-						}
 					}else{
 						System.out.println("setReservation : rs count is not zero!");
 				}
@@ -938,7 +884,66 @@ public class ReservationDAO {
 				System.out.println("setReservation : rs is null!");
 			}
 		} //end for
+		
+		if(bSms){
+			String phoneNumber = phone1+phone2+phone3;
+			resDate = resDate.substring(0,4)+"-"+resDate.substring(4,6)+"-"+resDate.substring(6);
+			if(phoneNumber.length() > 9){
 				
+				String depositDate = util.CommonUtil.callPlusDate(1);
+				depositDate = util.CommonUtil.isAfterDate(resDate, depositDate);
+//					System.out.println(depositDate);
+				String subject = "더드림핑 예약접수안내";
+				int msgNo = 1;
+				String dvsn = "user";
+				String msg = "";
+				SQL = "SELECT msg FROM sms_manager WHERE msg_no=? and dvsn=? ";
+				pstmt = conn.prepareStatement(SQL);
+				pstmt.setInt(1, msgNo);
+				pstmt.setString(2, dvsn);
+				rs = pstmt.executeQuery();
+				if( rs.next() ){
+					msg = rs.getString(1);
+					msg = msg.replace("[DATE]", resDate);
+					msg = msg.replace("[SITENAME]", productNames);
+					msg = msg.replace("[BANK]", bankName);
+					msg = msg.replace("[ACCOUNT]", account);
+					msg = msg.replace("[DEPOSITOR]", depositor);
+					msg = msg.replace("[PRICE]", util.CommonUtil.makeMoneyType(Integer.toString(totalPrice)));
+					msg = msg.replace("[DEPOSITDATE]", depositDate);
+				}
+				//System.out.println(reservationNo+","+msgNo+","+phoneNumber+","+msg);
+				util.CallSMS.callLMS(reservationNo, msgNo, phoneNumber, subject, msg);
+				
+				msgNo = 1;
+				dvsn = "admin";
+				SQL = "SELECT msg FROM sms_manager WHERE msg_no=? and dvsn=? ";
+				pstmt = conn.prepareStatement(SQL);
+				pstmt.setInt(1, msgNo);
+				pstmt.setString(2, dvsn);
+				rs = pstmt.executeQuery();
+				if( rs.next() ){
+					msg = rs.getString(1);
+					msg = msg.replace("[DATE]", resDate);
+					msg = msg.replace("[SITENAME]", productNames);
+					msg = msg.replace("[RESERVER]", reserver);
+					msg = msg + " 총금액은 "+ util.CommonUtil.makeMoneyType(Integer.toString(totalPrice))+"원 입니다.";
+				}
+				
+				SQL = "SELECT phone_number FROM sms_phone ";
+				pstmt = conn.prepareStatement(SQL);
+				rs = pstmt.executeQuery();
+				if( rs.next() ){
+					do{
+						phoneNumber = rs.getString(1);
+						//System.out.println(reservationNo+","+msgNo+","+phoneNumber+","+msg);
+						util.CallSMS.callLMS(reservationNo, msgNo, phoneNumber, subject, msg);
+					}while(rs.next());
+				}
+			}
+		}
+		resDate = resDate.replaceAll("-", "");	
+			
 //			System.out.println("[reservationDAO][insertGroupReservation] rtn = " + rtn);
 		} catch(Exception ex) {
 	        ex.printStackTrace();

@@ -452,7 +452,7 @@ public class ReservationDAO {
 //							flatMoney = flatMoney + site.getFlatPrice();
 //						}else if( day == 6 || day == 7 || day == 8){	// 금요일 또는 토요일 (주말), 국경일전날
 						
-						if( day == 7 || day == 8){	// 토요일 (주말), 국경일전날
+						if( day == 6 || day == 7 || day == 8){	// 금요일 또는 토요일 (주말), 국경일전날
 							if(seasonCode.equals("L")){
 //								price[i] = site.getLowSeasonWeekend();
 								payMoney = payMoney + site.getLowSeasonWeekend();
@@ -1022,7 +1022,7 @@ public class ReservationDAO {
 		ResultSet rs = null;
 		String SQL = "select z.order_no, z.zone_no, z.zone_name, s.zone_cnt from zone_information z INNER JOIN "+
                      "(SELECT zone_no, count(*) as zone_cnt FROM addition GROUP BY zone_no ) s ON z.zone_no = s.zone_no " +
-				     "WHERE z.del_yn = 'N' AND z.display_yn = 'Y' AND z.use_start_day <= '"+chooseDate+"' and z.use_end_day >= '"+chooseDate+"'"+
+				     "WHERE z.del_yn = 'N' AND z.use_start_day <= '"+chooseDate+"' and z.use_end_day >= '"+chooseDate+"'"+
 				     "ORDER BY z.order_no";
 		try{
 			conn = ConnectionUtil.getConnection();
@@ -1118,7 +1118,7 @@ public class ReservationDAO {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String SQL = "select * from product where zone_no = (select zone_no from zone_information where zone_name = ?";
+		String SQL = "select * from product where zone_no = (select zone_no from zone_information where zone_name = ?)";
 		try{
 			conn = ConnectionUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);

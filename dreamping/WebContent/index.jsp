@@ -29,8 +29,8 @@
                                 
                                 <div class="row">
                                     <div class="col-md-8 col-md-offset-2 text-xs-center">
-                                        <h2 class="mbr-section-title display-1">DREAMPING</h2>
-                                        <p class="mbr-section-lead lead">Dream space, Dreaming space</p>
+                                        <h2 class="mbr-section-title display-1">꿈의 카라반 EVENT</h2>
+                                        <p class="mbr-section-lead lead">극성수기 20만원 균일가! 성수기 20%할인가!</p>
                                         <!-- 
                                         <div class="mbr-section-btn"><a class="btn btn-lg btn-success" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
                                     	 -->
@@ -38,7 +38,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/dreamping/00_images/IMG_8804.jpg);">
+                    </div>
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/dreamping/00_images/IMG_8804.jpg);">
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay"></div>
                             <div class="container-slide container">
@@ -47,6 +48,23 @@
                                     <div class="col-md-8 col-md-offset-3 text-xs-right">
                                         <h2 class="mbr-section-title display-1">OPEN EVENT</h2>
                                         <p class="mbr-section-lead lead">The Dreamping 20% 할인이벤트</p>
+										<!-- 
+                                        <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
+                                    	 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/dreamping/51_mnmwatersports/KakaoTalk_20151023_182715178.jpg);">
+                        <div class="mbr-table-cell">
+                            <div class="mbr-overlay"></div>
+                            <div class="container-slide container">
+                                
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-3 text-xs-right">
+                                        <h2 class="mbr-section-title display-1">M&M 수상레저</h2>
+                                        <p class="mbr-section-lead lead">더드림핑 숙박고객 50% 할인 이벤트!</p>
 										<!-- 
                                         <div class="mbr-section-btn"><a class="btn btn-lg btn-info" href="https://mobirise.com">FOR WINDOWS</a> <a class="btn btn-lg btn-white btn-white-outline" href="https://mobirise.com">FOR MAC</a></div>
                                     	 -->

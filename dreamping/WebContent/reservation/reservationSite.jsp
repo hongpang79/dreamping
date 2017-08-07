@@ -112,6 +112,7 @@
 						<tr>
 							<th style="width:105px;">추가옵션</th>
 							<td>
+								※아래 가격은 숙박예약자에게만 적용되는 가격입니다.<br><font color="red">M&M수상레저 50%할인가 적용중!</font><br>
 								<%  Vector<AdditionVO> additionGroupList = (Vector<AdditionVO>)request.getAttribute("additionGroupList"); 
 									for(int x=0; x<additionGroupList.size(); x++){
 										int zoneNo = additionGroupList.get(x).getZoneNo();
