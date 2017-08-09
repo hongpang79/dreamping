@@ -65,7 +65,9 @@
                     	</li>
                     	<!-- 
                     	<li class="nav-item"><a class="nav-link link" href="/dreamping/surfcafe.html" aria-expanded="false">SURF CAFE</a></li>
+                    	-->
                     	<li class="nav-item"><a class="nav-link link" href="/dreamping/mmwatersports.html">M&amp;M Watersports</a></li>
+                    	<!-- 
                     	<li class="nav-item dropdown"><a class="nav-link link dropdown-toggle" href="#" aria-expanded="false" data-toggle="dropdown-submenu">CONTENTS</a>
                     		<div class="dropdown-menu">
                     			<a class="dropdown-item" href="/dreamping/mmwatersports.html">드림스나이퍼</a>

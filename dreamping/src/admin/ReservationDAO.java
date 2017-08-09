@@ -11,7 +11,6 @@ import java.util.Vector;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 
-import reservation.DepositVO;
 import reservation.ReservationVO;
 import util.CommonUtil;
 import util.ConnectionUtil;
@@ -167,14 +166,16 @@ public class ReservationDAO {
 			}
 		}
 		
-		String SQL = "SELECT RM.zone_name, RM.product_name, RM.site_name, R.* FROM reservation R " +
-	             "LEFT OUTER JOIN (select zone_name, product_no, product_name, site_no, site_name FROM product s, zone_information z WHERE z.zone_no = s.zone_no) RM " +
+		String SQL = "SELECT RM.order_no, RM.zone_name, RM.product_name, RM.site_name, R.* FROM reservation R " +
+				"LEFT OUTER JOIN (select zone_name, product_no, product_name, PS.site_no, PS.site_name, PS.order_no FROM zone_information z, " +
+			 	 "(SELECT product_no, product_name, p.zone_no, p.site_no, p.site_name, s.order_no FROM product p " +
+	             "LEFT OUTER JOIN (select site_no, order_no from site_information) s ON p.site_no = s.site_no) PS WHERE z.zone_no = PS.zone_no ) RM " +
 			     "ON R.product_no=RM.product_no " +
 			     "WHERE reservation_no IN (SELECT reservation_no FROM reservation_day WHERE reservation_day BETWEEN ? AND ? AND pay_status IN ('W','C') ) " +
 			     "AND reservation_date NOT BETWEEN DATE_FORMAT(?,'%Y-%m-%d %H:%i:%s') AND DATE_FORMAT(?,'%Y-%m-%d %H:%i:%s') " +
-			     ANDSITE + ANDUSER + ANDMODE +
-			     
+			     ANDSITE + ANDUSER + ANDMODE +			     
 			     "ORDER BY "+ORDER;
+		
 //		System.out.println("[ReservationDAO][selectStayOrderList] SQL = " + SQL);
 		try{
 			conn = ConnectionUtil.getConnection();

@@ -165,7 +165,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0781.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/51_mnmwatersports/S915C0781.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">놀이기구</h4>
                         <p class="card-text">바나나보트, 디스코팡팡, 바이퍼, 빅파이,<br>밴드웨건, 디스코보트 외 7종<br><br>
@@ -177,7 +177,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/SIMG_6321.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/51_mnmwatersports/SIMG_6321.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">초보패키지</h4>
                         <p class="card-text">수상스키 or 웨이크보드<br><br>
@@ -189,7 +189,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/SIMG_6732.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/51_mnmwatersports/SIMG_6732.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">웨이크서핑</h4>
                         <p class="card-text">인보트 (X-star)<br><br>
@@ -201,7 +201,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/zetski.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="/dreamping/51_mnmwatersports/zetski.jpg" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">제트스키</h4>
                         <p class="card-text"><div style="text-align:left;">* 제트스키 10분 : 100,000원</div></p>
@@ -229,164 +229,164 @@
                 <div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="인보트" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0192.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0192.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="웨이크보드" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0240.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0240.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="웨이크보드" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0242.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0242.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="웨이크보드" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0244.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0244.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="웨이크보드" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0248.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0248.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="웨이크보드" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0264.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0264.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="인보트" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0328.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0328.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="인보트" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0338.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0338.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="인보트" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0354.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0354.jpg">
                         </div>
                     </div>
 
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="인보트" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0461.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0461.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0651.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0651.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0652.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0652.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0653.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0653.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0738.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0738.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0753.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0753.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0781.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0781.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0822.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0822.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0835.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0835.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0848.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0848.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0864.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0864.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0875.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0875.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="놀이기구" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C0889.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C0889.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="인보트" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C1096.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C1096.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="인보트" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C1107.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C1107.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="인보트" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C1127.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C1127.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="수상스키" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/S915C9837.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/S915C9837.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="수상스키" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/SIMG_6192.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/SIMG_6192.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="수상스키" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/SIMG_6237.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/SIMG_6237.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="수상스키" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/SIMG_6321.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/SIMG_6321.jpg">
                         </div>
                     </div>
 
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="웨이크보드" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/SIMG_6678.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/SIMG_6678.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="웨이크보드" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/SIMG_6681.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/SIMG_6681.jpg">
                         </div>
                     </div>
                     <div class="mbr-gallery-item mbr-gallery-item__mobirise3 mbr-gallery-item--p1" data-tags="웨이크보드" data-video-url="false">
                         <div href="#lb-gallery4-16" data-slide-to="0" data-toggle="modal">
-                            <img alt="" src="http://thedreamping.cdn3.cafe24.com/dreamping/51_mnmwatersports/SIMG_6732.jpg">
+                            <img alt="" src="/dreamping/51_mnmwatersports/SIMG_6732.jpg">
                         </div>
                     </div>
                 </div>
