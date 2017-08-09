@@ -183,7 +183,7 @@
 <%			
 			}
 	    	
-	    	if(category.equals("qna")){
+	    	if(category.equals("qna")||category.equals("group")){
 %>	    		
 	    		<img src="/board/images/icon_question.png" alt="Q"/>
 <%
