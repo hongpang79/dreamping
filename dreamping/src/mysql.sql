@@ -13,6 +13,8 @@ drop table zone_information;
 drop table holyday;
 drop table siteboard;
 
+ALTER TABLE `thedreamping`.`site_information` 
+ADD COLUMN `order_no` INT NULL DEFAULT 0 AFTER `del_yn`;
 
 
 CREATE TABLE `comboard` (
@@ -76,6 +78,7 @@ CREATE TABLE `site_information` (
   `use_start_day` date default NULL,
   `use_end_day` date default NULL,
   `del_yn` varchar(1) default 'N',
+  `order_no` INT NULL DEFAULT 0,
   PRIMARY KEY  (`site_no`)
 ) ENGINE=MyISAM;
 

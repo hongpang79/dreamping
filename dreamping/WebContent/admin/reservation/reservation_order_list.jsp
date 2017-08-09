@@ -278,7 +278,7 @@ $(function() {
 		<td class='tbctr' align=center>정렬</td>
 		<td class='tbcont'>
 			<input type="radio" id="sort" name="sort" value="reg_date" <% if(sort.equals("reg_date")){%>checked<%}%>>접수일자
-			<input type="radio" id="sort" name="sort" value="zone_name,site_name" <% if(sort.equals("zone_name,site_name")){%>checked<%}%>>SITE명
+			<input type="radio" id="sort" name="sort" value="order_no" <% if(sort.equals("order_no")){%>checked<%}%>>SITE명
 			<input type="radio" id="sort" name="sort" value="reserver,zone_name,site_name" <% if(sort.equals("reserver,zone_name,site_name")){%>checked<%}%>>예약자명
 		</td>
 	</tr>

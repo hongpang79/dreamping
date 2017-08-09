@@ -56,7 +56,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/dreamping/51_mnmwatersports/KakaoTalk_20151023_182715178.jpg);">
+                    <div class="mbr-section mbr-section-hero carousel-item dark center mbr-section-full" data-bg-video-slide="false" style="background-image: url(/dreamping/51_mnmwatersports/915C9832.jpg);">
                         <div class="mbr-table-cell">
                             <div class="mbr-overlay"></div>
                             <div class="container-slide container">
