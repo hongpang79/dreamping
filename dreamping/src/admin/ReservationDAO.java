@@ -711,7 +711,8 @@ public class ReservationDAO {
 		
 		request.setCharacterEncoding("UTF-8");
 		int rtn = 0;
-		Boolean bSms = false;
+		Boolean Sms = false;
+		Boolean Lms = false;
 		
 		String zoneName = "";
 				
@@ -779,7 +780,7 @@ public class ReservationDAO {
 			String SQL5 = "INSERT INTO reservation_day (reservation_month,reservation_day,zone_name,site_no,reservation_no,pay_status,reg_date)" +
 					" VALUES(?,?,?,?,?,?,NOW())";
 			int pSize = sProductNos.length;
-//			System.out.println("pSize : " + pSize);
+//			System.out.println("[insertGroupReservation] pSize : " + pSize);
 			for(int x=1; x<pSize; x++){
 				productNo = Integer.parseInt(sProductNos[x]);
 				pstmt = conn.prepareStatement(SQL1);
@@ -808,7 +809,7 @@ public class ReservationDAO {
 				rs = pstmt.executeQuery();
 
 //				System.out.println("setReservation - count : "+ rs.getInt(1));
-				
+				System.out.println("[insertGroupReservation] sms start : " + Sms);
 				if( rs.next() ){
 					if( rs.getInt(1) == 0 ){
 						pstmt = conn.prepareStatement(SQL3);
@@ -843,8 +844,10 @@ public class ReservationDAO {
 							price = 0;
 							content = "그룹예약건<br>("+oProductName+" 과 동일건 입니다.)";
 							
-							bSms = true;
+							Lms = true;
 						}
+						Sms = true;
+						
 						pstmt = conn.prepareStatement(SQL4);
 						pstmt.setInt(1, siteNo);
 						pstmt.setString(2, resDate);
@@ -887,8 +890,8 @@ public class ReservationDAO {
 				System.out.println("setReservation : rs is null!");
 			}
 		} //end for
-		
-		if(bSms){
+			System.out.println("[insertGroupReservation] sms end : " + Sms);
+		if(Sms){
 			String phoneNumber = phone1+phone2+phone3;
 			resDate = resDate.substring(0,4)+"-"+resDate.substring(4,6)+"-"+resDate.substring(6);
 			if(phoneNumber.length() > 9){
@@ -930,7 +933,7 @@ public class ReservationDAO {
 					msg = msg.replace("[DATE]", resDate);
 					msg = msg.replace("[SITENAME]", productNames);
 					msg = msg.replace("[RESERVER]", reserver);
-					msg = msg + " 총금액은 "+ util.CommonUtil.makeMoneyType(Integer.toString(totalPrice))+"원 입니다.";
+					msg = msg + " 총금액 "+ util.CommonUtil.makeMoneyType(Integer.toString(totalPrice))+"원.";
 				}
 				
 				SQL = "SELECT phone_number FROM sms_phone ";
@@ -940,7 +943,13 @@ public class ReservationDAO {
 					do{
 						phoneNumber = rs.getString(1);
 						//System.out.println(reservationNo+","+msgNo+","+phoneNumber+","+msg);
-						util.CallSMS.callLMS(reservationNo, msgNo, phoneNumber, subject, msg);
+						if(Lms){
+							util.CallSMS.callLMS(reservationNo, msgNo, phoneNumber, subject, msg);
+							System.out.println("[insertGroupReservation] [LMS] "+reservationNo+","+phoneNumber+","+msg);
+						}else{
+							util.CallSMS.callSMS(reservationNo, msgNo, phoneNumber, msg);
+							System.out.println("[insertGroupReservation] [SMS] "+reservationNo+","+phoneNumber+","+msg);
+						}
 					}while(rs.next());
 				}
 			}
